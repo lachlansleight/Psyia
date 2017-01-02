@@ -15,6 +15,7 @@ public class StarMusic : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		mySource.pitch = Mathf.Lerp(minSpeed, 1f, stars.timeScale);
+		if(PsyiaSettings.MusicSlowsWithTime) mySource.pitch = Mathf.Lerp(minSpeed, 1f, stars.timeScale);
+		else mySource.pitch = 1f;
 	}
 }

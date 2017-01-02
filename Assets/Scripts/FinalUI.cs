@@ -76,7 +76,7 @@ public class FinalUI : MonoBehaviour {
 		uiPanel.GetControl("PlayPauseButton").OnPressUp += PlayPauseSelected;
 		uiPanel.GetControl("LoopToggle").OnBooleanChange += LoopChanged;
 		uiPanel.GetControl("VolumeDial").OnFloatChange += VolumeChanged;
-		uiPanel.GetControl("MusicSlowsWithTimeToggle") += MusicSlowsWithTimeChanged;
+		uiPanel.GetControl("MusicSlowsWithTimeToggle").OnBooleanChange += MusicSlowsWithTimeChanged;
 
 		uiPanel.GetControl("Slot1LoadButton").OnPressUp += Slot1Load;
 		uiPanel.GetControl("Slot1SaveButton").OnPressUp += Slot1Save;

@@ -72,7 +72,7 @@ public class Dispatcher : MonoBehaviour {
 	[HideInInspector] public bool rightInactive = false;
 	[HideInInspector] public float timeScale = 1f;
 	float audioZeroTime = 0f;
-	bool noAudio = false;
+	[HideInInspector] public bool noAudio = false;
 
 	//Data set via UI
 	int activeGraphic = 0;
@@ -170,7 +170,6 @@ public class Dispatcher : MonoBehaviour {
 
 		vectors.Add("roomSize", roomSize);
 		vectors.Add("shipSize", Vector3.one * shipSize);
-
 		
 		floats.Add("timeScale", timeScale);
 		floats.Add("fps", 90f);

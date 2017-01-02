@@ -102,15 +102,30 @@ void Physics(uint3 id : SV_DispatchThreadID)
 		float3 returnNorm = normalize(returnDisp);
 		float returnMag = length(returnDisp);
 
-		float3 returnForce = (returnNorm * returnPullForce) / (returnMag + softeningFactor);
-		curCube.velocity = curCube.velocity + (returnForce / particleMass) * finalTimeScale;
+		float forceMagnitude = returnPullForce / (returnMag + softeningFactor);
+
+		float3 vortexForce;
+
+		float3 returnForce = returnNorm * forceMagnitude;
+
+		//add vortex
+		//if (returnMag > 0.25) {
+		//	returnForce = returnForce + cross(float3(0, forceMagnitude, 0), returnDisp * (1.0 + softeningFactor));
+		//}
+		
+		if (time > 5) {
+			curCube.velocity = curCube.velocity + (returnForce / particleMass) * finalTimeScale;
+		}
 
 		//make sure we don't overshoot by clamping velocity as we approach
 		float3 newReturnDisp = float3(0, 1.2, 0) - (curCube.pos + (curCube.velocity * finalTimeScale));
-		if (returnMag < length(newReturnDisp)) {
+		if (returnMag < length(newReturnDisp) && time > 5) {
 			curCube.velocity = (float3(0, 1.2, 0) - curCube.pos) / finalTimeScale;
 		}
-		curCube.pos = curCube.pos + (curCube.velocity * finalTimeScale);
+
+		if (time > 5) {
+			curCube.pos = curCube.pos + (curCube.velocity * finalTimeScale);
+		}
 		outputBuffer[idx] = curCube;
 		return;
 	}
@@ -148,7 +163,8 @@ void Physics(uint3 id : SV_DispatchThreadID)
 		float lengthR = length(distR);
 		float3 normL = normalize(distL);
 		float3 normR = normalize(distR);
-
+		float magL = controllerChargeL * gravConst / pow(lengthL, distanceExponent);
+		float magR = controllerChargeR * gravConst / pow(lengthR, distanceExponent);
 		float3 leftForce;
 		float3 rightForce;
 		float3 dampingForce = -1.0 * curCube.velocity * velocityDampening;
@@ -166,14 +182,14 @@ void Physics(uint3 id : SV_DispatchThreadID)
 		distR = distR * (1.0 + softeningFactor);
 		lengthL = lengthL + softeningFactor;
 		lengthR = lengthR + softeningFactor;
-		leftForce = normL * ((controllerChargeL * gravConst) / pow(lengthL, distanceExponent));
-		rightForce = normR * ((controllerChargeR * gravConst) / pow(lengthR, distanceExponent));
+		leftForce = normL * magL;
+		rightForce = normR * magR;
 
-		float magL = controllerChargeL * gravConst / pow(lengthL, distanceExponent);
+		
 		float3 omegaL = magL * controllerForwardL.xyz;
 		float3 vortexForceLeft = cross(omegaL, distL);
 
-		float magR = controllerChargeR * gravConst / pow(lengthR, distanceExponent);
+		
 		float3 omegaR = magR * controllerForwardR.xyz;
 		float3 vortexForceRight = cross(omegaR, distR);
 
@@ -305,6 +321,10 @@ void Graphics(uint3 id : SV_DispatchThreadID)
 			col = float4(lerp(colA.x, colB.x, normVel.x), lerp(colA.y, colB.y, normVel.y), lerp(colA.z, colB.z, normVel.z), 1.0);
 			curCube.color = lerp(curCube.color, col, 0.1);
 		}
+	}
+
+	if (customMode == 2) {
+		curCube.color = lerp(float4(0, 0, 0, 1), col, saturate(time - 5.0));
 	}
 
 	curCube.scale = shipSize;

@@ -29,7 +29,7 @@ public class TouchToBeginSphere : MonoBehaviour {
 				touchToBeginCanvas.SetActive(false);
 				gameObject.SetActive(false);
 				triggered = false;
-				GameObject.Find("Music").GetComponent<AudioSource>().Play();
+				if(dispatcher.noAudio) GameObject.Find("Music").GetComponent<AudioSource>().Play();
 			}
 		} else if((VRTools.VRInput.GetDevice("ViveRight").position - transform.position).magnitude < 0.025f) {
 			if(tutorialScene) {
@@ -39,7 +39,7 @@ public class TouchToBeginSphere : MonoBehaviour {
 				touchToBeginCanvas.SetActive(false);
 				gameObject.SetActive(false);
 				triggered = false;
-				GameObject.Find("Music").GetComponent<AudioSource>().Play();
+				if(dispatcher.noAudio) GameObject.Find("Music").GetComponent<AudioSource>().Play();
 			}
 		} else if(Input.GetKeyDown(KeyCode.Space)) {
 			if(tutorialScene) {
@@ -49,7 +49,7 @@ public class TouchToBeginSphere : MonoBehaviour {
 				touchToBeginCanvas.SetActive(false);
 				gameObject.SetActive(false);
 				triggered = false;
-				GameObject.Find("Music").GetComponent<AudioSource>().Play();
+				if(dispatcher.noAudio) GameObject.Find("Music").GetComponent<AudioSource>().Play();
 			}
 		}
 	}
