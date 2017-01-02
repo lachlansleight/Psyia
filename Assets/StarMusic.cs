@@ -3,7 +3,7 @@ using System.Collections;
 
 public class StarMusic : MonoBehaviour {
 
-	public Dispatcher stars;
+	public StarLab starLab;
 	public float minSpeed = 0.5f;
 
 	AudioSource mySource;
@@ -15,7 +15,7 @@ public class StarMusic : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(PsyiaSettings.MusicSlowsWithTime) mySource.pitch = Mathf.Lerp(minSpeed, 1f, stars.timeScale);
+		if(PsyiaSettings.MusicSlowsWithTime) mySource.pitch = Mathf.Lerp(minSpeed, 1f, starLab.timeScale);
 		else mySource.pitch = 1f;
 	}
 }
