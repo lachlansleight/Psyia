@@ -23,6 +23,7 @@ public class PsyiaSettings {
 	public static int SongPlaying;
 	public static bool Loop;
 	public static float Volume;
+	public static bool MusicSlowsWithTime;
 
 	//Physics Settings
 	public static float ParticleMass;
@@ -86,6 +87,7 @@ public class PsyiaSettings {
 		newInstance.SongPlaying = SongPlaying;
 		newInstance.Loop = Loop;
 		newInstance.Volume = Volume;
+		newInstance.MusicSlowsWithTime = MusicSlowsWithTime;
 
 		newInstance.ParticleMass = ParticleMass;
 		newInstance.VelocityDampening = VelocityDampening;
@@ -117,6 +119,7 @@ public class PsyiaSettings {
 		SongPlaying = newInstance.SongPlaying;
 		Loop = newInstance.Loop;
 		Volume = newInstance.Volume;
+		MusicSlowsWithTime = newInstance.MusicSlowsWithTime;
 
 		ParticleMass = newInstance.ParticleMass;
 		VelocityDampening = newInstance.VelocityDampening;
@@ -151,6 +154,7 @@ public class PsyiaSettingsInstance {
 	public int SongPlaying;
 	public bool Loop;
 	public float Volume;
+	public bool MusicSlowsWithTime;
 
 	//Physics Settings
 	public float ParticleMass;

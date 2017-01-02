@@ -76,6 +76,7 @@ public class FinalUI : MonoBehaviour {
 		uiPanel.GetControl("PlayPauseButton").OnPressUp += PlayPauseSelected;
 		uiPanel.GetControl("LoopToggle").OnBooleanChange += LoopChanged;
 		uiPanel.GetControl("VolumeDial").OnFloatChange += VolumeChanged;
+		uiPanel.GetControl("MusicSlowsWithTimeToggle") += MusicSlowsWithTimeChanged;
 
 		uiPanel.GetControl("Slot1LoadButton").OnPressUp += Slot1Load;
 		uiPanel.GetControl("Slot1SaveButton").OnPressUp += Slot1Save;
@@ -282,6 +283,10 @@ public class FinalUI : MonoBehaviour {
 	public void VolumeChanged(float newValue) {
 		PsyiaSettings.Volume = newValue;
 		musicSource.volume = newValue;
+	}
+
+	public void MusicSlowsWithTimeChanged(bool newValue) {
+		PsyiaSettings.MusicSlowsWithTime = newValue;
 	}
 
 	void CheckPresetExistence() {
