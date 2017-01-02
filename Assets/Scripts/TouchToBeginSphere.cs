@@ -4,7 +4,7 @@ using System.Collections;
 public class TouchToBeginSphere : MonoBehaviour {
 
 	bool triggered = false;
-	public Dispatcher dispatcher;
+	public StarLab starLab;
 	public GameObject touchToBeginCanvas;
 	public Renderer touchToBeginRenderer;
 	public float waitTime = 2f;
@@ -22,36 +22,23 @@ public class TouchToBeginSphere : MonoBehaviour {
 		transform.Rotate(0f, 20f * Time.deltaTime, 0f, Space.World);
 		if(!triggered) return;
 		if((VRTools.VRInput.GetDevice("ViveLeft").position - transform.position).magnitude < 0.025f) {
-			if(tutorialScene) {
-				UnityEngine.SceneManagement.SceneManager.LoadScene("Stars_Test");
-			} else {
-				dispatcher.StartCoroutine(dispatcher.burstOut());
-				touchToBeginCanvas.SetActive(false);
-				gameObject.SetActive(false);
-				triggered = false;
-				if(dispatcher.noAudio) GameObject.Find("Music").GetComponent<AudioSource>().Play();
-			}
+			if(tutorialScene) UnityEngine.SceneManagement.SceneManager.LoadScene("Stars_Test");
+			else Trigger();
 		} else if((VRTools.VRInput.GetDevice("ViveRight").position - transform.position).magnitude < 0.025f) {
-			if(tutorialScene) {
-				UnityEngine.SceneManagement.SceneManager.LoadScene("Stars_Test");
-			} else {
-				dispatcher.StartCoroutine(dispatcher.burstOut());
-				touchToBeginCanvas.SetActive(false);
-				gameObject.SetActive(false);
-				triggered = false;
-				if(dispatcher.noAudio) GameObject.Find("Music").GetComponent<AudioSource>().Play();
-			}
+			if(tutorialScene) UnityEngine.SceneManagement.SceneManager.LoadScene("Stars_Test");
+			else Trigger();
 		} else if(Input.GetKeyDown(KeyCode.Space)) {
-			if(tutorialScene) {
-				UnityEngine.SceneManagement.SceneManager.LoadScene("Stars_Test");
-			} else {
-				dispatcher.StartCoroutine(dispatcher.burstOut());
-				touchToBeginCanvas.SetActive(false);
-				gameObject.SetActive(false);
-				triggered = false;
-				if(dispatcher.noAudio) GameObject.Find("Music").GetComponent<AudioSource>().Play();
-			}
+			if(tutorialScene) UnityEngine.SceneManagement.SceneManager.LoadScene("Stars_Test");
+			else Trigger();
 		}
+	}
+
+	void Trigger() {
+		starLab.StartCoroutine(starLab.burstOut());
+		touchToBeginCanvas.SetActive(false);
+		gameObject.SetActive(false);
+		triggered = false;
+		if(starLab.noAudio) GameObject.Find("Music").GetComponent<AudioSource>().Play();
 	}
 
 	IEnumerator LerpUp() {
