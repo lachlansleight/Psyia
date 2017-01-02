@@ -50,7 +50,6 @@ public class CPU_Stars : MonoBehaviour {
 	}
 
 	IEnumerator AddSpheres() {
-		yield return new WaitForSeconds(5f);
 		float totalTime = 30f;
 		for(float i = 0; i < 1f; i += Time.deltaTime / totalTime) {
 			int currentIndex = Mathf.FloorToInt(i * count - 1);

@@ -29,7 +29,7 @@ public class StarController : MonoBehaviour {
 	public string deviceName;
 	public string axis;
 
-	public StarLab starLab;
+	public Dispatcher compute;
 
 	// Use this for initialization
 	void Start () {
@@ -60,7 +60,7 @@ public class StarController : MonoBehaviour {
 		fancyBase.enabled = PsyiaSettings.ControllerModels;
 
 		//if we're on the menu with this controller, disable attractor
-		if((starLab.leftInactive && deviceName.Equals("ViveLeft")) || (starLab.rightInactive && deviceName.Equals("ViveRight"))) {
+		if((compute.leftInactive && deviceName.Equals("ViveLeft")) || (compute.rightInactive && deviceName.Equals("ViveRight"))) {
 			fancy.SetActive(false);
 			minimal.SetActive(false);
 		} else {

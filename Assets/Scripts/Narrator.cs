@@ -23,7 +23,7 @@ public class Narrator : MonoBehaviour {
 	}
 
 	IEnumerator DoNarration() {
-		yield return new WaitForSeconds(8f);
+		yield return new WaitForSeconds(3f);
 		sources[0].Play();
 		yield return new WaitForSeconds(waitTimes[0]);
 		if(PlayerPrefs.GetInt("NumberPlays") == 1) {

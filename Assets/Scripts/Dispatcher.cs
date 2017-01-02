@@ -20,7 +20,7 @@ public struct KernelData {
 	public uint z;
 }
 
-public class StarLab : MonoBehaviour {
+public class Dispatcher : MonoBehaviour {
 
 	[Header("External GameObjects")]
 	public AudioData audioData;

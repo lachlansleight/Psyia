@@ -5,7 +5,7 @@ using VRTools.UI;
 public class FinalUI : MonoBehaviour {
 
 	public VRUI_Panel uiPanel;
-	public StarLab starLab;
+	public Dispatcher compute;
 	[Header("Panel Changing Stuff")]
 	public GameObject[] panelCanvases;
 	public GameObject[] panelControls;
@@ -237,7 +237,7 @@ public class FinalUI : MonoBehaviour {
 	}
 
 	public void ResetSystem() {
-		starLab.Reset();
+		compute.Reset();
 		refreshSystemText.SetActive(false);
 
 	}
@@ -333,7 +333,7 @@ public class FinalUI : MonoBehaviour {
 		uiPanel.GetControl("LoopToggle").SetBoolValue(PsyiaSettings.Loop);
 		uiPanel.GetControl("VolumeDial").SetFloatValue(PsyiaSettings.Volume);
 
-		starLab.Reset();
+		compute.Reset();
 	}
 
 	void SavePreset(int number) {

@@ -11,7 +11,7 @@ public class SelectionRing : MonoBehaviour {
 
 	public bool isLeft = false;
 
-	public StarLab starLab;
+	public Dispatcher compute;
 
 	// Use this for initialization
 	void Start () {
@@ -22,8 +22,8 @@ public class SelectionRing : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(isLeft && starLab.leftInactive) ring.enabled = dot.enabled = true;
-		else if(!isLeft && starLab.rightInactive) ring.enabled = dot.enabled = true;
+		if(isLeft && compute.leftInactive) ring.enabled = dot.enabled = true;
+		else if(!isLeft && compute.rightInactive) ring.enabled = dot.enabled = true;
 		else ring.enabled = dot.enabled = false;
 
 		ring.transform.localScale = Vector3.one * Mathf.Lerp(1f, 0f, VRTools.VRInput.GetDevice(isLeft ? "ViveLeft" : "ViveRight").GetAxis("Trigger"));

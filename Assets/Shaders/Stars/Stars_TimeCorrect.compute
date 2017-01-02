@@ -227,30 +227,41 @@ void Physics(uint3 id : SV_DispatchThreadID)
 		curCube.pos = curCube.pos + (curCube.velocity * finalTimeScale);
 
 		if (roomCollision == 1) {
+			int bounce = 0;
 			float velocityBounciness = 0.4;
 			if (curCube.pos.y < 0) {
 				curCube.pos.y = 0;
-				curCube.velocity.y = curCube.velocity.y * -1 * velocityBounciness;
+				curCube.velocity.y = curCube.velocity.y * -1;
+				bounce = 1;
 			}
 			else if (curCube.pos.y > roomSize.y) {
 				curCube.pos.y = roomSize.y;
-				curCube.velocity.y = curCube.velocity.y * -1 * velocityBounciness;
+				curCube.velocity.y = curCube.velocity.y * -1;
+				bounce = 1;
 			}
 			if (curCube.pos.x < -roomSize.x * 0.5) {
 				curCube.pos.x = -roomSize.x * 0.5;
-				curCube.velocity.x = curCube.velocity.x * -1 * velocityBounciness;
+				curCube.velocity.x = curCube.velocity.x * -1;
+				bounce = 1;
 			}
 			else if (curCube.pos.x > roomSize.x * 0.5) {
 				curCube.pos.x = roomSize.x * 0.5;
-				curCube.velocity.x = curCube.velocity.x * -1 * velocityBounciness;
+				curCube.velocity.x = curCube.velocity.x * -1;
+				bounce = 1;
 			}
 			if (curCube.pos.z < -roomSize.z * 0.5) {
 				curCube.pos.z = -roomSize.z * 0.5;
-				curCube.velocity.z = curCube.velocity.z * -1 * velocityBounciness;
+				curCube.velocity.z = curCube.velocity.z * -1;
+				bounce = 1;
 			}
 			else if (curCube.pos.z > roomSize.z * 0.5) {
 				curCube.pos.z = roomSize.z * 0.5;
-				curCube.velocity.z = curCube.velocity.z * -1 * velocityBounciness;
+				curCube.velocity.z = curCube.velocity.z * -1;
+				bounce = 1;
+			}
+
+			if (bounce > 0) {
+				curCube.velocity = curCube.velocity * velocityBounciness;
 			}
 		}
 
