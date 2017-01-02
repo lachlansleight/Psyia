@@ -1,0 +1,332 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel Physics
+#pragma kernel Graphics
+
+#define thread_group_x 10
+#define thread_group_y 10
+#define thread_group_z 10
+
+#define thread_x 10
+#define thread_y 10
+#define thread_z 10
+
+//input data:
+
+//controller and head positions
+float4 controllerPositionL;
+float4 controllerForwardL;
+float controllerChargeL;
+float4 controllerPositionR;
+float4 controllerForwardR;
+float controllerChargeR;
+
+//Audio input
+float bassAudio;
+float midAudio;
+float trebleAudio;
+float avgAudio;
+int useAudio;
+
+//Spawn parameters
+float spawnRangeMin;
+float spawnRangeMax;
+float LRSpawnBalance;
+
+//physics parameters
+float fps;
+float time;
+float maxVelocity;
+float maxForce;
+float minForce;
+float dampening;
+float dispersionDistance;
+float mass;
+float charge;
+float distanceExponent;
+float vortexStrength;
+
+//visual parameters
+float minSize;
+float maxSize;
+
+float4 velocityColorA;
+float4 velocityColorB;
+float velocityColorThreshold;
+int colorMode;
+
+int customMode;
+
+Texture2D<uint> noiseXY;
+Texture2D<uint> noiseYZ;
+Texture2D<uint> noiseXZ;
+
+struct StarData {
+	float3 pos;
+	float3 velocity;
+	float3 scale;
+	float4 color;
+	float2 life;
+	float4 randomSeed;
+};
+
+RWStructuredBuffer<StarData> outputBuffer;
+RWStructuredBuffer<StarData> spawnBuffer;
+
+float2 wrap(float2 input, float multiplier, int size) {
+	return float2((input.x * multiplier) % size, (input.y * multiplier) % size);
+}
+
+[numthreads(10,10,10)]
+void Physics (uint3 id : SV_DispatchThreadID)
+{
+	int idx = id.x + (id.y * thread_group_x * thread_x) + (id.z * thread_group_x * thread_y * thread_group_y * thread_z);
+	StarData curCube = outputBuffer[idx];
+
+	//pause
+	if (customMode == -1) {
+		return;
+	}
+
+	//disperse
+	if (customMode == 1) {
+		curCube.pos = float3(0, 1.2, 0);
+		curCube.velocity = curCube.randomSeed.xyz * 0.00008;
+		outputBuffer[idx] = curCube;
+		return;
+	}
+	//go back to 0,1.2,0
+	else if (customMode == 2) {
+		float3 returnDisp = float3(0, 1.2, 0) - curCube.pos;
+		float3 returnForce = returnDisp * 0.0000001;
+		curCube.velocity = curCube.velocity + returnForce / mass;
+		float3 newReturnDisp = float3(0, 1.2, 0) - (curCube.pos + (curCube.velocity * fps));
+		if (length(returnDisp) < length(newReturnDisp)) {
+			curCube.velocity = (float3(0, 1.2, 0) - curCube.pos) / fps;
+		}
+		curCube.pos = curCube.pos + (curCube.velocity * fps);
+		outputBuffer[idx] = curCube;
+		return;
+	}
+
+	if (curCube.randomSeed.w < spawnRangeMax && curCube.randomSeed.w > spawnRangeMin) {
+		if (curCube.randomSeed.w < LRSpawnBalance) {
+			curCube.pos = controllerPositionL;
+		}
+		else {
+			curCube.pos = controllerPositionR;
+		}
+
+		float cubeSpawnVelocity = 0.00001;
+		curCube.velocity = curCube.randomSeed.xyz * cubeSpawnVelocity;
+		curCube.scale = spawnBuffer[idx].scale;
+		curCube.color = spawnBuffer[idx].color;
+
+		outputBuffer[idx] = curCube;
+	} else {
+
+		float gravConst = 0.000006674;
+
+		float3 distL = controllerPositionL.xyz - curCube.pos;
+		float3 distR = controllerPositionR.xyz - curCube.pos;
+
+		float lengthL = length(distL);
+		float lengthR = length(distR);
+
+		float3 leftForce;
+		float3 rightForce;
+		float3 dampingForce = -1.0 * curCube.velocity * dampening;
+
+		if (lengthL < dispersionDistance) leftForce = float3(0, 0, 0);
+		else leftForce = normalize(distL) * ((controllerChargeL * gravConst * charge) / pow(lengthL, distanceExponent));
+
+		if (lengthR < dispersionDistance) rightForce = float3(0, 0, 0);
+		else rightForce = normalize(distR) * ((controllerChargeR * gravConst * charge) / pow(lengthR, distanceExponent));
+
+		float magL = controllerChargeL * gravConst * charge / pow(lengthL, distanceExponent);
+		float3 omegaL = magL * controllerForwardL.xyz;
+		float3 vortexForceLeft = cross(omegaL, distL);
+
+		float magR = controllerChargeR * gravConst * charge / pow(lengthR, distanceExponent);
+		float3 omegaR = magR * controllerForwardR.xyz;
+		float3 vortexForceRight = cross(omegaR, distR);
+
+		leftForce = leftForce + vortexForceLeft * vortexStrength;
+		rightForce = rightForce + vortexForceRight * vortexStrength;
+
+		/*
+		int forceMode = 2;
+		if (forceMode == 1) {
+			if (lengthL < dispersionDistance) leftForce = float3(0, 0, 0);
+			else leftForce = normalize(distL) * ((controllerChargeL * gravConst * charge) / pow(lengthL, distanceExponent));
+
+			if (lengthR < dispersionDistance) rightForce = float3(0, 0, 0);
+			else rightForce = normalize(distR) * ((controllerChargeR * gravConst * charge) / pow(lengthR, distanceExponent));
+		} else {
+			float magL = controllerChargeL * gravConst * charge;
+			float3 omegaL = float3(0, 0, magL / pow(lengthL, distanceExponent));
+			leftForce = cross(omegaL, distL) + normalize(distL) * ((controllerChargeL * gravConst * charge) / pow(lengthL, distanceExponent));
+
+			float magR = controllerChargeR * gravConst * charge;
+			float3 omegaR = float3(0, 0, magR / pow(lengthR, distanceExponent));
+			rightForce = cross(omegaR, distR) + normalize(distR) * ((controllerChargeR * gravConst * charge) / pow(lengthR, distanceExponent));
+		}
+		*/
+		
+
+		float3 forceSum = leftForce + rightForce;// + headForce;
+		if (useAudio == 1) {
+			forceSum = lerp(forceSum * minForce, forceSum * maxForce, avgAudio);
+		}
+
+		
+
+		//Assign velocity
+		//curCube.velocity = curCube.velocity + (forceSum / mass);
+		/*
+		float eps = 0.001;
+		float n1, n2, a, b;
+		float3 curl;
+
+		//n1 = tex2D(noiseYZ, float2(curCube.pos.y, curCube.pos.z + eps));
+		n1 = noiseYZ[wrap(float2(curCube.pos.y, curCube.pos.z + eps), 10, 128)];
+		n2 = noiseYZ[wrap(float2(curCube.pos.y, curCube.pos.z - eps), 10, 128)];
+		a = (n1 - n2) / (2.0 * eps);
+
+		n1 = noiseYZ[wrap(float2(curCube.pos.y + eps, curCube.pos.z), 10, 128)];
+		n2 = noiseYZ[wrap(float2(curCube.pos.y - eps, curCube.pos.z), 10, 128)];
+		b = (n1 - n2) / (2.0 * eps);
+
+		curl.x = a - b;
+
+		n1 = noiseXZ[wrap(float2(curCube.pos.x + eps, curCube.pos.z), 10, 128)];
+		n2 = noiseXZ[wrap(float2(curCube.pos.x - eps, curCube.pos.z), 10, 128)];
+		a = (n1 - n2) / (2.0 * eps);
+
+		n1 = noiseXZ[wrap(float2(curCube.pos.x, curCube.pos.z + eps), 10, 128)];
+		n2 = noiseXZ[wrap(float2(curCube.pos.x, curCube.pos.z - eps), 10, 128)];
+		b = (n1 - n2) / (2.0 * eps);
+
+		curl.y = a - b;
+
+		n1 = noiseXY[wrap(float2(curCube.pos.x, curCube.pos.y + eps), 10, 128)];
+		n2 = noiseXY[wrap(float2(curCube.pos.x, curCube.pos.y - eps), 10, 128)];
+		a = (n1 - n2) / (2.0 * eps);
+
+		n1 = noiseXY[wrap(float2(curCube.pos.x + eps, curCube.pos.z), 10, 128)];
+		n2 = noiseXY[wrap(float2(curCube.pos.x - eps, curCube.pos.z), 10, 128)];
+		b = (n1 - n2) / (2.0 * eps);
+
+		curl.z = a - b;
+
+		float curlStrength = 0.00000001;
+		float maxCurlVelocity = 10;
+		curl = normalize(curl);
+		curl = curl * curlStrength;
+		curl = curl * clamp(length(curCube.velocity), 0, maxCurlVelocity);
+
+		curCube.scale = curl;
+		curCube.velocity = curCube.velocity + curl;
+		*/
+		
+		
+		
+		//curCube.velocity = curCube.velocity + straightVelocity;
+
+		curCube.velocity = curCube.velocity + (forceSum / mass);
+		curCube.velocity = curCube.velocity + (dampingForce / mass);
+
+		//Update position
+		curCube.pos = curCube.pos + (curCube.velocity * fps);
+
+		int doBounce = 0;
+		if (doBounce == 1) {
+			int bounce = 0;
+			float velocityBounciness = 0.4;
+			float roofHeight = 3;
+			float roomSize = 4;
+			if (curCube.pos.y < 0) {
+				curCube.pos.y = 0;
+				curCube.velocity.y = curCube.velocity.y * -1;
+				bounce = 1;
+			}
+			else if (curCube.pos.y > roofHeight) {
+				curCube.pos.y = roofHeight;
+				curCube.velocity.y = curCube.velocity.y * -1;
+				bounce = 1;
+			}
+			if (curCube.pos.x < -roomSize * 0.5) {
+				curCube.pos.x = -roomSize * 0.5;
+				curCube.velocity.x = curCube.velocity.x * -1;
+				bounce = 1;
+			}
+			else if (curCube.pos.x > roomSize * 0.5) {
+				curCube.pos.x = roomSize * 0.5;
+				curCube.velocity.x = curCube.velocity.x * -1;
+				bounce = 1;
+			}
+			if (curCube.pos.z < -roomSize * 0.5) {
+				curCube.pos.z = -roomSize * 0.5;
+				curCube.velocity.z = curCube.velocity.z * -1;
+				bounce = 1;
+			}
+			else if (curCube.pos.z > roomSize * 0.5) {
+				curCube.pos.z = roomSize * 0.5;
+				curCube.velocity.z = curCube.velocity.z * -1;
+				bounce = 1;
+			}
+
+			if (bounce > 0) {
+				curCube.velocity = curCube.velocity * velocityBounciness;
+			}
+		}
+
+		curCube.life.x -= (1.0 / fps);
+
+		//Clamp velocity to max velocity
+		if (length(curCube.velocity) > maxVelocity) {
+			//curCube.velocity = normalize(curCube.velocity) * maxVelocity;
+		}
+
+		//Update buffer
+		outputBuffer[idx] = curCube;
+	}
+}
+
+
+
+[numthreads(10,10,10)]
+void Graphics (uint3 id : SV_DispatchThreadID)
+{
+	//Get current ID
+	int idx = id.x + (id.y * thread_group_x * thread_x) + (id.z * thread_group_x * thread_y * thread_group_y * thread_z);
+	StarData curCube = outputBuffer[idx];
+
+	//Get Color
+	float4 col = float4(1, 1, 1, 1);
+	if (colorMode == 0) {
+		if (length(curCube.velocity) > 0) {
+			//Turn color into vector
+			col = float4(normalize(curCube.velocity), 1.0) + float4(1.0, 1.0, 1.0, 1.0);
+			col *= 0.5;
+			if (length(col) > 0.8) { col.x = 1.0 - col.x; }
+			col.a = 1.0;
+			curCube.color = lerp(curCube.color, col, 0.1);
+		}
+	}
+	else if (colorMode == 1) {
+		col = lerp(velocityColorA, velocityColorB, length(curCube.velocity) * velocityColorThreshold);
+	}
+
+	//Pulse with music
+	if (useAudio == 1) {
+		curCube.color = lerp(lerp(float4(1, 1, 1, 1), col, 0.5), col, avgAudio * 0.5);
+	}
+
+	//Rescale if we're in cube mode
+	if (useAudio == 1) {
+		//curCube.scale = float3(1, 1, 1) * lerp(minSize, maxSize, avgAudio * avgAudio);
+	}
+
+	//Update buffer
+	outputBuffer[idx] = curCube;
+}

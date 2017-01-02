@@ -1,0 +1,179 @@
+fileFormatVersion: 2
+guid: 94725f441253288479e9c06dae6973eb
+timeCreated: 1473478300
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Button_Base
+    100002: Button_Top
+    100004: Dial_Base
+    100006: Dial_Top
+    100008: Rotary_Base
+    100010: Rotary_Top
+    100012: Slider_Base
+    100014: Slider_Slide
+    100016: Toggle_Base
+    100018: Toggle_Switch
+    100020: //RootNode
+    100022: Vector_Active
+    100024: Vector_Base
+    100026: Vector_SphereBottom
+    100028: Vector_SphereTop
+    100030: XY_Base
+    100032: XY_Center
+    100034: XY_X
+    100036: XY_Y
+    100038: Button
+    100040: Dial
+    100042: Rotary
+    100044: Slider
+    100046: Toggle
+    100048: Vector
+    100050: XY
+    400000: Button_Base
+    400002: Button_Top
+    400004: Dial_Base
+    400006: Dial_Top
+    400008: Rotary_Base
+    400010: Rotary_Top
+    400012: Slider_Base
+    400014: Slider_Slide
+    400016: Toggle_Base
+    400018: Toggle_Switch
+    400020: //RootNode
+    400022: Vector_Active
+    400024: Vector_Base
+    400026: Vector_SphereBottom
+    400028: Vector_SphereTop
+    400030: XY_Base
+    400032: XY_Center
+    400034: XY_X
+    400036: XY_Y
+    400038: Button
+    400040: Dial
+    400042: Rotary
+    400044: Slider
+    400046: Toggle
+    400048: Vector
+    400050: XY
+    2300000: Button_Base
+    2300002: Button_Top
+    2300004: Dial_Base
+    2300006: Dial_Top
+    2300008: Rotary_Base
+    2300010: Rotary_Top
+    2300012: Slider_Base
+    2300014: Slider_Slide
+    2300016: Toggle_Base
+    2300018: Toggle_Switch
+    2300020: Vector_Active
+    2300022: Vector_Base
+    2300024: Vector_SphereBottom
+    2300026: Vector_SphereTop
+    2300028: XY_Base
+    2300030: XY_Center
+    2300032: XY_X
+    2300034: XY_Y
+    3300000: Button_Base
+    3300002: Button_Top
+    3300004: Dial_Base
+    3300006: Dial_Top
+    3300008: Rotary_Base
+    3300010: Rotary_Top
+    3300012: Slider_Base
+    3300014: Slider_Slide
+    3300016: Toggle_Base
+    3300018: Toggle_Switch
+    3300020: Vector_Active
+    3300022: Vector_Base
+    3300024: Vector_SphereBottom
+    3300026: Vector_SphereTop
+    3300028: XY_Base
+    3300030: XY_Center
+    3300032: XY_X
+    3300034: XY_Y
+    4300000: Vector_Base
+    4300002: Vector_Active
+    4300004: Vector_SphereTop
+    4300006: Vector_SphereBottom
+    4300008: XY_Base
+    4300010: XY_X
+    4300012: XY_Y
+    4300014: XY_Center
+    4300016: Rotary_Base
+    4300018: Rotary_Top
+    4300020: Dial_Base
+    4300022: Dial_Top
+    4300024: Toggle_Base
+    4300026: Toggle_Switch
+    4300028: Button_Base
+    4300030: Button_Top
+    4300032: Slider_Base
+    4300034: Slider_Slide
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

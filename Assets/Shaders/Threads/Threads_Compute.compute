@@ -1,0 +1,138 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMain
+
+#define thread_group_x 10
+#define thread_group_y 10
+#define thread_group_z 10
+
+#define thread_x 10
+#define thread_y 10
+#define thread_z 10
+
+//input data:
+
+//controller and head positions
+float4 controllerPositionL;
+float3 controllerVelocityL;
+float controllerMassL;
+float4 controllerPositionR;
+float3 controllerVelocityR;
+float controllerMassR;
+float4 controllerPositionH;
+float3 controllerVelocityH;
+float controllerMassH;
+float timePerFrame;
+
+//physics parameters
+float maxVelocity;
+float maxForce;
+float minForce;
+float dampening;
+float dispersionDistance;
+float dispersionFactor;
+int emitChance;
+float springConstant;
+float dampingConstant;
+
+//visual parameters
+float bassAudio;
+float midAudio;
+float trebleAudio;
+float avgAudio;
+float minBrightness;
+float lightRadius;
+float minSize;
+float maxSize;
+float maxSizeDistance;
+float opacity;
+float extraBrightness;
+float4 velocityColorA;
+float4 velocityColorB;
+float velocityColorThreshold;
+int colorMode;
+
+struct ThreadData {
+	float3 restPos;
+	float3 pos;
+	float4 color;
+	float3 scale;
+	float3 velocity;
+	float mass;
+};
+
+RWStructuredBuffer<ThreadData> outputBuffer;
+
+[numthreads(10,10,10)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+	//Get current ID
+	int idx = id.x + (id.y * thread_group_x * thread_x) + (id.z * thread_group_x * thread_y * thread_group_y * thread_z);
+
+	ThreadData curCube = outputBuffer[idx];
+
+	//Get vectors to controllers and HMD
+	float3 distL = controllerPositionL.xyz - curCube.pos;
+	float3 distR = controllerPositionR.xyz - curCube.pos;
+	float3 distH = controllerPositionH.xyz - curCube.pos;
+
+	//Convert to distances (we use this so much)
+	float lengthL = length(distL);
+	float lengthR = length(distR);
+	float lengthH = length(distH);
+
+	//Declade some constants
+	float gravConst = -0.000006674;
+	float fps = 1.0 / timePerFrame;
+	//fps = 0.0111;
+
+	//Get gravitation forces from controllers and HMD
+	float3 leftForce = (controllerMassL * distL * gravConst) / (lengthL * lengthL);
+	float3 rightForce = (controllerMassR * distR * gravConst) / (lengthR * lengthR);
+	float3 headForce = (controllerMassH * distH * gravConst) / (lengthH * lengthH);
+
+	//Make sure we're outside of dispersion force
+	if(lengthL < dispersionDistance) {
+		leftForce *= dispersionFactor;
+	}
+	if(lengthR < dispersionDistance) {
+		rightForce *= dispersionFactor;
+	}
+
+	float3 forceSum = leftForce + rightForce + headForce;
+	forceSum = lerp(forceSum * minForce, forceSum * maxForce, avgAudio);
+
+	//get offset pos
+	float3 offsetPos = curCube.pos - curCube.restPos;
+
+	//get offset force
+	float3 springForce = -1.0 * springConstant * offsetPos;
+	float3 dampingForce = -1.0 * dampingConstant * curCube.velocity;
+
+	forceSum = forceSum + springForce + dampingForce;
+
+	//Assign velocity
+	curCube.velocity = curCube.velocity + (forceSum);
+	//if(lengthL < 0.05) { curCube.velocity = length(controllerVelocityL) * 0.1 * normalize(distL) * dot(normalize(controllerVelocityL), normalize(distL)); }
+	//if(lengthR < 0.05) { curCube.velocity = length(controllerVelocityR) * 0.1 * normalize(distR) * dot(normalize(controllerVelocityR), normalize(distR)); }
+	//if(lengthH < 0.05) { curCube.velocity = controllerVelocityH; }
+
+	//Update position
+	curCube.pos = curCube.pos + curCube.velocity * fps;
+
+	float4 col = float4(1,1,1,1);
+	//Calculate final colour
+	float lightAmount = min(1.0, max(minBrightness, (1.0 - (lengthR / lightRadius)) + (1.0 - (lengthL / lightRadius))));
+
+	col = float4(normalize(curCube.velocity), 1.0) + float4(1.0, 1.0, 1.0, 1.0);
+	col *= 0.5;
+	if(length(col) > 0.8) { col.x = 1.0 - col.x; }
+	//col *= lightAmount;
+	col.a = 1.0;
+	//col = lerp(col, float4(1,1,1,1), extraBrightness);
+	if(length(curCube.velocity) != 0) {
+		curCube.color = col;
+	}
+
+	//Update buffer
+	outputBuffer[idx] = curCube;
+}
