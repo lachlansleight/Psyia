@@ -10,6 +10,7 @@ public class TouchToBeginSphere : MonoBehaviour {
 	public float waitTime = 2f;
 	public float growTime = 5.5f;
 	public bool tutorialScene = false;
+	public string targetScene = "Stars_Test";
 
 	// Use this for initialization
 	void Start () {
@@ -22,13 +23,13 @@ public class TouchToBeginSphere : MonoBehaviour {
 		transform.Rotate(0f, 20f * Time.deltaTime, 0f, Space.World);
 		if(!triggered) return;
 		if((VRTools.VRInput.GetDevice("ViveLeft").position - transform.position).magnitude < 0.025f) {
-			if(tutorialScene) UnityEngine.SceneManagement.SceneManager.LoadScene("Stars_Test");
+			if(tutorialScene) UnityEngine.SceneManagement.SceneManager.LoadScene(targetScene);
 			else Trigger();
 		} else if((VRTools.VRInput.GetDevice("ViveRight").position - transform.position).magnitude < 0.025f) {
-			if(tutorialScene) UnityEngine.SceneManagement.SceneManager.LoadScene("Stars_Test");
+			if(tutorialScene) UnityEngine.SceneManagement.SceneManager.LoadScene(targetScene);
 			else Trigger();
 		} else if(Input.GetKeyDown(KeyCode.Space)) {
-			if(tutorialScene) UnityEngine.SceneManagement.SceneManager.LoadScene("Stars_Test");
+			if(tutorialScene) UnityEngine.SceneManagement.SceneManager.LoadScene(targetScene);
 			else Trigger();
 		}
 	}

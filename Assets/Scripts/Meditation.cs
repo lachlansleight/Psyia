@@ -213,6 +213,12 @@ public class Meditation : MonoBehaviour {
 		for(int i = 0; i < graphics.Length; i++) graphics[i].SetBuffer("inputBuffer", meditationBuffer);
 	}
 
+	void Update() {
+		if(VRInput.GetDevice("ViveLeft").GetButtonDown("Touchpad") || VRInput.GetDevice("ViveRight").GetButtonDown("Touchpad")) {
+			colorMode = (colorMode + 1) % 5;
+		}
+	}
+
 	void OnRenderObject() {
 		if(!active) return;
 
