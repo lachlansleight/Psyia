@@ -132,7 +132,7 @@ void Physics(uint3 id : SV_DispatchThreadID)
 
 	//if the provided random spawn range encapsulates this cube, we need to spawn
 	if (curCube.randomSeed.w < spawnRangeMax && curCube.randomSeed.w > spawnRangeMin) {
-		//spawn somewhere between current position and last controller position (to prevent very visually apparent 'blobs' of spawned particles when controllers move quickly
+		//spawn somewhere between current position and last controller position (to prevent very visually apparent 'blobs' of spawned particles when controllers move quickly)
 		float lerpFactor = (curCube.randomSeed.w - spawnRangeMin) / (spawnRangeMax - spawnRangeMin);
 		
 		//randomly choose between left or right, based on provided LR weighting
@@ -157,12 +157,18 @@ void Physics(uint3 id : SV_DispatchThreadID)
 		float gravConst = 0.000006674;
 
 		//we use these a lot
-		float3 distL = controllerPositionL.xyz - curCube.pos;
-		float3 distR = controllerPositionR.xyz - curCube.pos;
+		float3 distL = (controllerPositionL.xyz - curCube.pos);
+		float3 distR = (controllerPositionR.xyz - curCube.pos);
 		float lengthL = length(distL);
 		float lengthR = length(distR);
 		float3 normL = normalize(distL);
 		float3 normR = normalize(distR);
+
+		lengthL = lengthL + softeningFactor;
+		lengthR = lengthR + softeningFactor;
+		distL = lengthL * normL;
+		distR = lengthR * normR;
+
 		float magL = controllerChargeL * gravConst / pow(lengthL, distanceExponent);
 		float magR = controllerChargeR * gravConst / pow(lengthR, distanceExponent);
 		float3 leftForce;
@@ -178,10 +184,7 @@ void Physics(uint3 id : SV_DispatchThreadID)
 		//else rightForce = normalize(distR) * ((controllerChargeR * gravConst) / pow(lengthR, distanceExponent));
 
 		//NEW WAY - SOFTENING FACTOR
-		distL = distL * (1.0 + softeningFactor);
-		distR = distR * (1.0 + softeningFactor);
-		lengthL = lengthL + softeningFactor;
-		lengthR = lengthR + softeningFactor;
+
 		leftForce = normL * magL;
 		rightForce = normR * magR;
 

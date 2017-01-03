@@ -15,9 +15,13 @@ public class TouchToBeginSphere : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		transform.localScale = Vector3.zero;
-		StartCoroutine(LerpUp());
+		if(!tutorialScene) StartCoroutine(LerpUp());
 	}
 	
+	public void StartLerp() {
+		StartCoroutine(LerpUp());
+	}
+
 	// Update is called once per frame
 	void Update () {
 		transform.Rotate(0f, 20f * Time.deltaTime, 0f, Space.World);

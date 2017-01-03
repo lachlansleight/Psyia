@@ -22,15 +22,18 @@ public class FinalUI : MonoBehaviour {
 	public GameObject refreshSystemText;
 	public UnityStandardAssets.ImageEffects.Bloom bloomEffect;
 	public AudioSource musicSource;
-	public AudioClip fragile;
-	public AudioClip grief;
-	public AudioClip enthusiast;
+	public AudioClip[] tracks;
+	public string[] trackNames;
+	public UnityEngine.UI.Text nowPlayingText;
 	public GameObject[] loadButtons;
+	private int currentTrack = 2;
 
 	private int newCount = -1;
 
 	// Use this for initialization
 	void Start () {
+		currentTrack = 2;
+
 		panelButtonMaterials = new Material[panelButtonRenderers.Length];
 		for(int i = 0; i < panelButtonRenderers.Length; i++) {
 			panelButtonMaterials[i] = panelButtonRenderers[i].material;
@@ -67,13 +70,13 @@ public class FinalUI : MonoBehaviour {
 		uiPanel.GetControl("AntialiasingRotary").OnIntChange += AntialiasingChanged;
 		uiPanel.GetControl("BloomToggle").OnBooleanChange += BloomChanged;
 		uiPanel.GetControl("RefreshButton").OnPressUp += ResetSystem;
+		uiPanel.GetControl("ReturnToMenuButton").OnPressUp += ReturnToMenu;
 
 		uiPanel.GetControl("VisualizationStrengthPhysicsSlider").OnFloatChange += VisualizationStrengthPhysicsChanged;
 		uiPanel.GetControl("VisualizationStrengthGraphicsSlider").OnFloatChange += VisualizationStrengthGraphicsChanged;
-		uiPanel.GetControl("SongOneButton").OnPressUp += SongOneSelected;
-		uiPanel.GetControl("SongTwoButton").OnPressUp += SongTwoSelected;
-		uiPanel.GetControl("SongThreeButton").OnPressUp += SongThreeSelected;
 		uiPanel.GetControl("PlayPauseButton").OnPressUp += PlayPauseSelected;
+		uiPanel.GetControl("NextTrackButton").OnPressUp += NextTrackSelected;
+		uiPanel.GetControl("PreviousTrackButton").OnPressUp += PreviousTrackSelected;
 		uiPanel.GetControl("LoopToggle").OnBooleanChange += LoopChanged;
 		uiPanel.GetControl("VolumeDial").OnFloatChange += VolumeChanged;
 		uiPanel.GetControl("MusicSlowsWithTimeToggle").OnBooleanChange += MusicSlowsWithTimeChanged;
@@ -242,6 +245,10 @@ public class FinalUI : MonoBehaviour {
 
 	}
 
+	public void ReturnToMenu() {
+		UnityEngine.SceneManagement.SceneManager.LoadScene("Tutorial_And_Menu");
+	}
+
 	public void VisualizationStrengthGraphicsChanged(float newValue) {
 		PsyiaSettings.VisualizationStrengthGraphics = newValue;
 	}
@@ -249,19 +256,16 @@ public class FinalUI : MonoBehaviour {
 		PsyiaSettings.VisualizationStrengthPhysics = newValue;
 	}
 
-	public void SongOneSelected() {
-		SetSong(fragile);
-		PsyiaSettings.SongPlaying = 0;
+	public void NextTrackSelected() {
+		currentTrack++;
+		currentTrack %= tracks.Length;
+		SetSong(tracks[currentTrack]);
 	}
 
-	public void SongTwoSelected() {
-		PsyiaSettings.SongPlaying = 1;
-		SetSong(grief);
-	}
-
-	public void SongThreeSelected() {
-		PsyiaSettings.SongPlaying = 2;
-		SetSong(enthusiast);
+	public void PreviousTrackSelected() {
+		currentTrack--;
+		if(currentTrack < 0) currentTrack += tracks.Length;
+		SetSong(tracks[currentTrack]);
 	}
 
 	public void SetSong(AudioClip newSong) {
@@ -339,6 +343,14 @@ public class FinalUI : MonoBehaviour {
 	void SavePreset(int number) {
 		PsyiaSettings.SavePreset(number);
 		CheckPresetExistence();
+	}
+
+	void Update() {
+		if(starLab.noAudio) {
+			nowPlayingText.text = "Now Playing:\nExternal Audio Source";
+		} else {
+			nowPlayingText.text = "Now Playing:\n" + trackNames[currentTrack];
+		}
 	}
 
 	public void Slot1Load() { LoadPreset(1); }

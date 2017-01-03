@@ -83,6 +83,8 @@ public class Meditation : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		QualitySettings.antiAliasing = 4;
+
 		viveLeft = VRInput.GetDevice("ViveLeft");
 		viveRight = VRInput.GetDevice("ViveRight");
 		viveHMD = VRInput.GetDevice("ViveHMD");
@@ -216,6 +218,9 @@ public class Meditation : MonoBehaviour {
 	void Update() {
 		if(VRInput.GetDevice("ViveLeft").GetButtonDown("Touchpad") || VRInput.GetDevice("ViveRight").GetButtonDown("Touchpad")) {
 			colorMode = (colorMode + 1) % 5;
+		}
+		if((VRInput.GetDevice("ViveLeft").GetButtonDown("Menu") && VRInput.GetDevice("ViveRight").GetButton("Menu")) || (VRInput.GetDevice("ViveRight").GetButtonDown("Menu") && VRInput.GetDevice("ViveLeft").GetButton("Menu"))) {
+			UnityEngine.SceneManagement.SceneManager.LoadScene("Tutorial_And_Menu");
 		}
 	}
 
