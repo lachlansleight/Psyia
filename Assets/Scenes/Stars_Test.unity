@@ -2756,7 +2756,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 454403849}
-  m_Mesh: {fileID: 1174007559}
+  m_Mesh: {fileID: 1221664303}
 --- !u!23 &454403852
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2771,7 +2771,7 @@ MeshRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 1016156937}
+  - {fileID: 563933223}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -3401,6 +3401,35 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 562004493}
+--- !u!21 &563933223
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: PixelSnap
+      second: 0
+    m_Colors:
+    - first:
+        name: _Color
+      second: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &582000972
 GameObject:
   m_ObjectHideFlags: 0
@@ -5711,6 +5740,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starLab: {fileID: 1921066221}
   minSpeed: 0.5
+  clips:
+  - {fileID: 8300000, guid: e5d419d819c555947a8f0d9404a35fd9, type: 3}
+  - {fileID: 8300000, guid: 0f2b8b10541961e45acfe1e9b40bd766, type: 3}
+  - {fileID: 8300000, guid: c01ecfb220ed64f43838ec01a0cf8b1c, type: 3}
+  - {fileID: 8300000, guid: 6ff2520c5160ffb42a527a985235ddfc, type: 3}
+  - {fileID: 8300000, guid: 0d74c6facf16ad34784654ca0ec1723b, type: 3}
+  - {fileID: 8300000, guid: e0e8567dc24c53f44ac53bff60cd84cf, type: 3}
+  - {fileID: 8300000, guid: afaa80e1f9b06eb4382b5744cc18da1d, type: 3}
+  - {fileID: 8300000, guid: 2767b0b15b77d484bbef71657ca425b5, type: 3}
+  - {fileID: 8300000, guid: 333b4a525f8700a43b69ccee4b42c943, type: 3}
+  currentTrack: 3
+  hasBeenStopped: 0
+  loop: 0
 --- !u!1 &936694896
 GameObject:
   m_ObjectHideFlags: 0
@@ -6794,35 +6836,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1009636430}
---- !u!21 &1016156937
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  m_SavedProperties:
-    serializedVersion: 2
-    m_TexEnvs:
-    - first:
-        name: _MainTex
-      second:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - first:
-        name: PixelSnap
-      second: 0
-    m_Colors:
-    - first:
-        name: _Color
-      second: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1018041182
 GameObject:
   m_ObjectHideFlags: 0
@@ -8151,7 +8164,16 @@ GameObject:
   m_PrefabParentObject: {fileID: 1000012827362600, guid: 59d3782c307c90546b7ab16585cc58ef,
     type: 2}
   m_PrefabInternal: {fileID: 1027667601}
---- !u!43 &1174007559
+--- !u!1 &1200027942 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: f07ded2cbe78ded43ae19ced1eda69ff, type: 3}
+  m_PrefabInternal: {fileID: 946203932}
+--- !u!23 &1200027944 stripped
+MeshRenderer:
+  m_PrefabParentObject: {fileID: 2300000, guid: f07ded2cbe78ded43ae19ced1eda69ff,
+    type: 3}
+  m_PrefabInternal: {fileID: 946203932}
+--- !u!43 &1221664303
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -8279,15 +8301,6 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
---- !u!1 &1200027942 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100000, guid: f07ded2cbe78ded43ae19ced1eda69ff, type: 3}
-  m_PrefabInternal: {fileID: 946203932}
---- !u!23 &1200027944 stripped
-MeshRenderer:
-  m_PrefabParentObject: {fileID: 2300000, guid: f07ded2cbe78ded43ae19ced1eda69ff,
-    type: 3}
-  m_PrefabInternal: {fileID: 946203932}
 --- !u!1 &1236934549
 GameObject:
   m_ObjectHideFlags: 0
@@ -8739,6 +8752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiPanel: {fileID: 1273661055}
   starLab: {fileID: 1921066221}
+  music: {fileID: 934345644}
   panelCanvases:
   - {fileID: 1316040816}
   - {fileID: 83827844}
@@ -8770,16 +8784,6 @@ MonoBehaviour:
   refreshSystemText: {fileID: 197206501}
   bloomEffect: {fileID: 1586766407}
   musicSource: {fileID: 934345642}
-  tracks:
-  - {fileID: 8300000, guid: e5d419d819c555947a8f0d9404a35fd9, type: 3}
-  - {fileID: 8300000, guid: 0f2b8b10541961e45acfe1e9b40bd766, type: 3}
-  - {fileID: 8300000, guid: c01ecfb220ed64f43838ec01a0cf8b1c, type: 3}
-  - {fileID: 8300000, guid: 6ff2520c5160ffb42a527a985235ddfc, type: 3}
-  - {fileID: 8300000, guid: 0d74c6facf16ad34784654ca0ec1723b, type: 3}
-  - {fileID: 8300000, guid: e0e8567dc24c53f44ac53bff60cd84cf, type: 3}
-  - {fileID: 8300000, guid: afaa80e1f9b06eb4382b5744cc18da1d, type: 3}
-  - {fileID: 8300000, guid: 2767b0b15b77d484bbef71657ca425b5, type: 3}
-  - {fileID: 8300000, guid: 333b4a525f8700a43b69ccee4b42c943, type: 3}
   trackNames:
   - Introspective Automatron - ColorPulse
   - The Slow Dance of Golden Lights - ColorPulse

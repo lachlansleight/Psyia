@@ -108,7 +108,7 @@ Material:
       second: 0.02
     - first:
         name: _PointSize
-      second: 1.1149843
+      second: 0.8492414
     - first:
         name: _ShadowStrength
       second: 0.5

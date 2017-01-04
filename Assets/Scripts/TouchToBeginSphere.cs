@@ -43,7 +43,7 @@ public class TouchToBeginSphere : MonoBehaviour {
 		touchToBeginCanvas.SetActive(false);
 		gameObject.SetActive(false);
 		triggered = false;
-		if(starLab.noAudio) GameObject.Find("Music").GetComponent<AudioSource>().Play();
+		if(starLab.noAudio) GameObject.Find("Music").GetComponent<StarMusic>().InitialStart();
 	}
 
 	IEnumerator LerpUp() {

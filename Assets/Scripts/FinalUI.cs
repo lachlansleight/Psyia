@@ -6,6 +6,7 @@ public class FinalUI : MonoBehaviour {
 
 	public VRUI_Panel uiPanel;
 	public StarLab starLab;
+	public StarMusic music;
 	[Header("Panel Changing Stuff")]
 	public GameObject[] panelCanvases;
 	public GameObject[] panelControls;
@@ -22,18 +23,14 @@ public class FinalUI : MonoBehaviour {
 	public GameObject refreshSystemText;
 	public UnityStandardAssets.ImageEffects.Bloom bloomEffect;
 	public AudioSource musicSource;
-	public AudioClip[] tracks;
 	public string[] trackNames;
 	public UnityEngine.UI.Text nowPlayingText;
 	public GameObject[] loadButtons;
-	private int currentTrack = 2;
 
 	private int newCount = -1;
 
 	// Use this for initialization
 	void Start () {
-		currentTrack = 2;
-
 		panelButtonMaterials = new Material[panelButtonRenderers.Length];
 		for(int i = 0; i < panelButtonRenderers.Length; i++) {
 			panelButtonMaterials[i] = panelButtonRenderers[i].material;
@@ -257,15 +254,11 @@ public class FinalUI : MonoBehaviour {
 	}
 
 	public void NextTrackSelected() {
-		currentTrack++;
-		currentTrack %= tracks.Length;
-		SetSong(tracks[currentTrack]);
+		music.NextTrack();
 	}
 
 	public void PreviousTrackSelected() {
-		currentTrack--;
-		if(currentTrack < 0) currentTrack += tracks.Length;
-		SetSong(tracks[currentTrack]);
+		music.PreviousTrack();
 	}
 
 	public void SetSong(AudioClip newSong) {
@@ -275,13 +268,12 @@ public class FinalUI : MonoBehaviour {
 	}
 
 	public void PlayPauseSelected() {
-		if(musicSource.isPlaying) musicSource.Pause();
-		else musicSource.UnPause();
+		music.PlayPause();
 	}
 
 	public void LoopChanged(bool newValue) {
 		PsyiaSettings.Loop = newValue;
-		musicSource.loop = newValue;
+		music.loop = newValue;
 	}
 
 	public void VolumeChanged(float newValue) {
@@ -349,7 +341,7 @@ public class FinalUI : MonoBehaviour {
 		if(starLab.noAudio) {
 			nowPlayingText.text = "Now Playing:\nExternal Audio Source";
 		} else {
-			nowPlayingText.text = "Now Playing:\n" + trackNames[currentTrack];
+			nowPlayingText.text = "Now Playing:\n" + trackNames[music.currentTrack];
 		}
 	}
 
