@@ -240,7 +240,7 @@ public class StarLab : MonoBehaviour {
 
 			float posRot = Random.Range(0f, Mathf.PI * 2f);
 			float posRad = Random.Range(0f, 3f);
-			float posHeight = Random.Range(2f, 4f);
+			float posHeight = Random.Range(0f, 4f);
 			Vector3 pos = new Vector3(posRad * Mathf.Cos(posRot), posHeight, posRad * Mathf.Sin(posRot));//new Vector3(0f, 1.2f, 0f) + Random.insideUnitSphere * 4.5f;
 			data[i].position = pos;
 			data[i].scale = vectors["shipSize"];

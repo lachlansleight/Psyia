@@ -4,6 +4,8 @@ using System.Collections;
 public class CPU_Star : MonoBehaviour {
 	//input data:
 
+	public bool invisible = false;
+
 	//controller and head positions
 	public Vector3 controllerPositionL;
 	public Vector3 controllerForwardL;
@@ -62,6 +64,23 @@ public class CPU_Star : MonoBehaviour {
 			transform.localScale = Vector3.one * Mathf.Lerp(0f, 0.01f, i);
 			yield return null;
 		}
+	}
+
+	public void Kill(float delay) {
+		StartCoroutine(KillRoutine(delay));
+	}
+
+	IEnumerator KillRoutine(float delay) {
+		yield return new WaitForSeconds(delay);
+		float startScale = transform.localScale.x;
+		for(float i = 0; i < 1f; i += Time.deltaTime / 0.5f) {
+			transform.localScale = Vector3.one * Mathf.Lerp(startScale, 0f, i);
+			yield return null;
+		}
+
+		transform.localScale = Vector3.zero;
+
+		invisible = true;
 	}
 
 	void Update() {

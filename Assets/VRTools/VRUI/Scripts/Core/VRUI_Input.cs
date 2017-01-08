@@ -39,19 +39,19 @@ namespace VRTools {
 					//if we found an object and it's within the active range, activate it
 					if(tempControl != null && closestValue < 1f) {
 						activeControl = tempControl;
-						activeControl.MakeActive(device.position);
+						activeControl.MakeActive(device.position, this);
 					}
 				} else if(currentClickStatus == -1) {
 					//clear the currently active control
 					if(activeControl != null) {
-						activeControl.MakeInactive(device.position);
+						activeControl.MakeInactive(device.position, this);
 						activeControl = null;
 					}
 				}
 
 				for(int i = 0; i < panels.Length; i++) {
 					//apply movement (i.e. update the values of the active control, if it exists, and update the hover states of all the other controls)
-					panels[i].InputMoved(device.position);
+					panels[i].InputMoved(device.position, this);
 				}
 			}
 

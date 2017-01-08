@@ -8,8 +8,14 @@ public class CPU_Stars : MonoBehaviour {
 	public int count = 100;
 	public Object CPU_Star_Prefab;
 
+	Coroutine AddRoutine;
+
 	// Use this for initialization
 	void Start () {
+		
+		//PsyiaSettings.FirstTime = true;
+		if(!PsyiaSettings.FirstTime) Destroy(gameObject);
+
 		stars = new CPU_Star[count];
 		for(int i = 0; i < stars.Length; i++) {
 			GameObject newStar = Instantiate(CPU_Star_Prefab) as GameObject;
@@ -20,7 +26,7 @@ public class CPU_Stars : MonoBehaviour {
 			stars[i].Initialise();
 		}
 
-		StartCoroutine(AddSpheres());
+		AddRoutine = StartCoroutine(AddSpheres());
 	}
 	
 	// Update is called once per frame
@@ -46,6 +52,30 @@ public class CPU_Stars : MonoBehaviour {
 			if(numGrips == 0) stars[i].timeScale = Mathf.Lerp(stars[i].timeScale, 1f, 0.05f);
 			else if(numGrips == 1) stars[i].timeScale = Mathf.Lerp(stars[i].timeScale, 0.1f, 0.05f);
 			else if(numGrips == 2) stars[i].timeScale = Mathf.Lerp(stars[i].timeScale, 0f, 0.05f);
+		}
+	}
+
+	public void End() {
+		StopCoroutine(AddRoutine);
+		StartCoroutine(KillStars());
+	}
+
+	IEnumerator KillStars() {
+		int killCount = 0;
+		for(int i = 0; i < stars.Length; i++) {
+			stars[i].Kill((float)i * 0.2f);
+			killCount++;
+		}
+		int storedCount = killCount;
+
+		while(killCount > 0) {
+			killCount = 0;
+
+			for(int i = 0; i < stars.Length; i++) {
+				if(stars[i].invisible) killCount++;
+			}
+
+			yield return null;
 		}
 	}
 

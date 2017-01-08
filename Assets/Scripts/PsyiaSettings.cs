@@ -37,6 +37,12 @@ public class PsyiaSettings {
 	public static int Antialiasing;
 	public static bool Bloom;
 
+	//MeditationSettings
+	public static int MeditationPosture;
+
+	//App Settings
+	public static bool FirstTime;
+
 	public static void SavePreset(int slot) {
 		string newName = "Preset_Slot_" + slot + ".psy";
 
@@ -99,6 +105,10 @@ public class PsyiaSettings {
 		newInstance.Antialiasing = Antialiasing;
 		newInstance.Bloom = Bloom;
 
+		newInstance.MeditationPosture = MeditationPosture;
+
+		newInstance.FirstTime = FirstTime;
+
 		return newInstance;
 	}
 
@@ -130,6 +140,10 @@ public class PsyiaSettings {
 		ParticleCount = newInstance.ParticleCount;
 		Antialiasing = newInstance.Antialiasing;
 		Bloom = newInstance.Bloom;
+
+		MeditationPosture = newInstance.MeditationPosture;
+
+		FirstTime = newInstance.FirstTime;
 	}
 }
 
@@ -167,4 +181,10 @@ public class PsyiaSettingsInstance {
 	public int ParticleCount;
 	public int Antialiasing;
 	public bool Bloom;
+
+	//MeditationSettings
+	public int MeditationPosture;
+
+	//App Settings
+	public bool FirstTime;
 }

@@ -1,0 +1,206 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel Physics
+#pragma kernel Graphics
+
+#define thread_group_x 10
+#define thread_group_y 10
+#define thread_group_z 10
+
+#define thread_x 10
+#define thread_y 10
+#define thread_z 10
+
+//input data:
+
+//controller and head positions
+float4 controllerPositionL;
+float4 controllerForwardL;
+float4 controllerVelocityL;
+float controllerChargeL;
+
+float4 controllerPositionR;
+float4 controllerForwardR;
+float4 controllerVelocityR;
+float controllerChargeR;
+
+//Audio input
+float bassAudio;
+float midAudio;
+float trebleAudio;
+float avgAudio;
+
+//Spawn parameters
+float spawnRangeMin;
+float spawnRangeMax;
+float LRSpawnBalance;
+
+//time parameters
+float timeScale;
+float fps;
+float time;
+
+//physics parameters
+float velocityDampening;
+float softeningFactor;
+float particleMass;
+float distanceExponent;
+float vortexStrength;
+float cubeSpawnVelocity;
+//note - these were hard to tune, so I think I'll leave them hardcoded
+//float minAnchorVelocity;
+//float anchorSetSpeed;
+//float maxK;
+//float breakForce;
+int roomCollision;
+int jellyMode;
+float3 roomSize;
+float3 shipSize;
+
+//visual parameters
+int colorMode;
+
+int customMode;
+float burstLaunchVelocity;
+float returnPullForce;
+
+float burstStartTime;
+
+struct StarData {
+	float3 pos;
+	float3 velocity;
+	float3 scale;
+	float4 color;
+	float4 randomSeed;
+	float4 anchor;
+	float age;
+};
+
+RWStructuredBuffer<StarData> outputBuffer;
+RWStructuredBuffer<StarData> spawnBuffer;
+
+[numthreads(10, 10, 10)]
+void Physics(uint3 id : SV_DispatchThreadID)
+{
+	int idx = id.x + (id.y * thread_group_x * thread_x) + (id.z * thread_group_x * thread_y * thread_group_y * thread_z);
+	StarData curCube = outputBuffer[idx];
+
+	float finalTimeScale = timeScale * (90.0 / fps);
+	//curCube.pos = curCube.anchor.xyz;
+	//outputBuffer[idx] = curCube;
+	//return;
+	//pause
+
+	
+
+	if (customMode == -1) {
+		curCube.pos = curCube.anchor.xyz;
+		return;
+	}
+
+	//disperse
+	if (customMode == 1) {
+		curCube.velocity = curCube.velocity + (curCube.randomSeed.xyz * burstLaunchVelocity);
+		//curCube.color = lerp(float4(1, 1, 1, 1), float4(0, 0, 0, 0), (time - burstStartTime) / 5.0);
+		curCube.pos = curCube.pos + (curCube.velocity * finalTimeScale);
+		outputBuffer[idx] = curCube;
+		return;
+	}
+	//go back to 0,1.2,0
+	else if (customMode == 2) {
+		float3 returnDisp = curCube.anchor.xyz - curCube.pos;
+		float3 returnNorm = normalize(returnDisp);
+		float returnMag = length(returnDisp);
+
+		if (returnMag == 0) {
+			return;
+		}
+
+		float forceMagnitude = returnPullForce * curCube.anchor.w / (returnMag + softeningFactor);
+
+		float3 vortexForce;
+
+		float3 returnForce = returnNorm * forceMagnitude;
+
+		//add vortex
+		//if (returnMag > 0.25) {
+		//	returnForce = returnForce + cross(float3(0, forceMagnitude, 0), returnDisp * (1.0 + softeningFactor));
+		//}
+
+		curCube.velocity = curCube.velocity + (returnForce / particleMass) * finalTimeScale;
+
+		//make sure we don't overshoot by clamping velocity as we approach
+		float3 newReturnDisp = curCube.anchor.xyz - (curCube.pos + (curCube.velocity * finalTimeScale));
+		if (returnMag < length(newReturnDisp)) {
+			curCube.velocity = curCube.velocity + (-0.003 * curCube.velocity);
+		}
+
+		curCube.pos = curCube.pos + (curCube.velocity * finalTimeScale);
+		outputBuffer[idx] = curCube;
+		return;
+	}
+}
+
+
+
+[numthreads(10, 10, 10)]
+void Graphics(uint3 id : SV_DispatchThreadID)
+{
+	//Get current ID
+	int idx = id.x + (id.y * thread_group_x * thread_x) + (id.z * thread_group_x * thread_y * thread_group_y * thread_z);
+	StarData curCube = outputBuffer[idx];
+
+	//Get Color
+	float4 col = float4(1, 1, 1, 1);
+
+	if (colorMode == 0) {
+		if (length(curCube.velocity) > 0) {
+			//Turn color into vector
+			col = float4(normalize(curCube.velocity), 1.0) + float4(1.0, 1.0, 1.0, 1.0);
+			col *= 0.5;
+			if (length(col) > 0.8) { col.x = 1.0 - col.x; }
+			col.a = 1.0;
+			curCube.color = lerp(curCube.color, col, 0.1);
+		}
+	}
+	else {
+		float3 colA = float3(1,0,0);
+		float3 colB = float3(0,1,0);
+
+		if (colorMode == 1) {
+			colA = float3(255, 0, 0) / 255.0;
+			colB = float3(255, 206, 0) / 255.0;
+		}
+		else if (colorMode == 2) {
+			colA = float3(0, 2, 255) / 255.0;
+			colB = float3(0, 213, 255) / 255.0;
+		}
+		else if (colorMode == 3) {
+			colA = float3(40, 186, 161) / 255.0;
+			colB = float3(230, 255, 0) / 255.0;
+		}
+		else if (colorMode == 4) {
+			colA = float3(199, 255, 239) / 255.0;
+			colB = float3(163, 190, 255) / 255.0;
+		}
+
+		if (length(curCube.velocity) > 0) {
+			float3 normVel = normalize(curCube.velocity) + float3(1, 1, 1);
+			normVel *= 0.5;
+			col = float4(lerp(colA.x, colB.x, normVel.x), lerp(colA.y, colB.y, normVel.y), lerp(colA.z, colB.z, normVel.z), 1.0);
+			curCube.color = lerp(curCube.color, col, 0.1);
+		}
+	}
+
+	if (length(curCube.pos - curCube.anchor.xyz) < 0.01) {
+		curCube.color = float4(lerp(float3(0, 2, 255) / 255.0, float3(0, 213, 255) / 255.0, curCube.anchor.w), 0.5);
+	}
+
+	if (customMode == 1) {
+		curCube.color = lerp(float4(1, 1, 1, 1), float4(0, 0, 0, 0), (time - burstStartTime) / 5.0);
+	}
+
+	curCube.scale = shipSize;
+
+	//Update buffer
+	outputBuffer[idx] = curCube;
+}

@@ -34,8 +34,8 @@ namespace VRTools
 				base.ChangeBoolValue(Toggled);
 			}
 
-			public override void MakeActive(Vector3 inputPos) {
-				base.MakeActive(inputPos);
+			public override void MakeActive(Vector3 inputPos, VRUI_Input inputDevice) {
+				base.MakeActive(inputPos, inputDevice);
 
 				Toggled = !Toggled;
 				base.ChangeBoolValue(Toggled);

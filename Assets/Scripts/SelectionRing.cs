@@ -13,6 +13,8 @@ public class SelectionRing : MonoBehaviour {
 
 	public StarLab starLab;
 
+	public Collider inactiveZone;
+
 	// Use this for initialization
 	void Start () {
 		ring.enabled = dot.enabled = true;
@@ -22,12 +24,26 @@ public class SelectionRing : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(isLeft && starLab.leftInactive) ring.enabled = dot.enabled = true;
-		else if(!isLeft && starLab.rightInactive) ring.enabled = dot.enabled = true;
-		else ring.enabled = dot.enabled = false;
+		bool leftInactive = false;
+		bool rightInactive = false;
 
-		ring.transform.localScale = Vector3.one * Mathf.Lerp(1f, 0f, VRTools.VRInput.GetDevice(isLeft ? "ViveLeft" : "ViveRight").GetAxis("Trigger"));
-		ringMat.color = Color.Lerp(outerCol, innerCol, VRTools.VRInput.GetDevice(isLeft ? "ViveLeft" : "ViveRight").GetAxis("Trigger"));
+		if(starLab == null) {
+			leftInactive = inactiveZone.bounds.Contains(VRTools.VRInput.GetDevice("ViveLeft").position);
+			rightInactive = inactiveZone.bounds.Contains(VRTools.VRInput.GetDevice("ViveRight").position);
+
+			if(isLeft && leftInactive) ring.enabled = dot.enabled = true;
+			else if(!isLeft && rightInactive) ring.enabled = dot.enabled = true;
+			else ring.enabled = dot.enabled = false;
+		} else {
+			if(isLeft && starLab.leftInactive) ring.enabled = dot.enabled = true;
+			else if(!isLeft && starLab.rightInactive) ring.enabled = dot.enabled = true;
+			else ring.enabled = dot.enabled = false;
+		}
+
+		float triggerAmount = VRTools.VRInput.GetDevice(isLeft ? "ViveLeft" : "ViveRight").GetAxis("Trigger");
+		ring.gameObject.SetActive(triggerAmount > 0);
+		ring.transform.localScale = Vector3.one * Mathf.Lerp(1f, 0f, triggerAmount);
+		ringMat.color = Color.Lerp(outerCol, innerCol, triggerAmount);
 		
 	}
 }

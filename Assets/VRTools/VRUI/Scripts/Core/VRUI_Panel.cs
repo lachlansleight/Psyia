@@ -64,9 +64,9 @@ namespace VRTools
 
 			}
 
-			public void InputMoved(Vector3 position) {
+			public void InputMoved(Vector3 position, VRUI_Input inputDevice) {
 				for(int i = 0; i < controls.Length; i++) {
-					if(controls[i].gameObject.activeSelf) controls[i].InputMoved(position);
+					if(controls[i].gameObject.activeSelf) controls[i].InputMoved(position, inputDevice);
 				}
 			}
 
