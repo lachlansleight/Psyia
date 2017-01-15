@@ -88,9 +88,6 @@ public class StarLabUI : MonoBehaviour {
 		uiPanel.GetControl("Slot4SaveButton").OnPressUp += Slot4Save;
 
 		for(int i = 0; i < uiPanel.controls.Length; i++) uiPanel.controls[i].SetDefaultValue();
-
-		Debug.Log("PsyiaSettings.ParticleMass = " + PsyiaSettings.ParticleMass);
-
 		//gameObject.SetActive(false);
 	}
 
@@ -184,7 +181,6 @@ public class StarLabUI : MonoBehaviour {
 
 	public void ParticleMassChanged(float newValue) {
 		PsyiaSettings.ParticleMass = newValue;
-		Debug.Log("newValue is " + newValue + ", PsyiaSettings.ParticleMass = " + PsyiaSettings.ParticleMass);
 	}
 
 	public void VelocityDampeningChanged(float newValue) {
@@ -294,8 +290,11 @@ public class StarLabUI : MonoBehaviour {
 	}
 
 	void LoadPreset(int number) {
+		int storedParticleCount = PsyiaSettings.ParticleCount;
+
 		string presetName = "Preset_Slot_" + number + ".psy";
 		PsyiaSettings.LoadPreset(presetName);
+
 		//set all the controls to the correct values - yeesh!
 
 		uiPanel.GetControl("ParticleFormRotary").SetIntValue(PsyiaSettings.ParticleForm);
@@ -329,7 +328,7 @@ public class StarLabUI : MonoBehaviour {
 		uiPanel.GetControl("LoopToggle").SetBoolValue(PsyiaSettings.Loop);
 		uiPanel.GetControl("VolumeDial").SetFloatValue(PsyiaSettings.Volume);
 
-		starLab.Reset();
+		if(PsyiaSettings.ParticleCount != storedParticleCount) starLab.Reset();
 	}
 
 	void SavePreset(int number) {

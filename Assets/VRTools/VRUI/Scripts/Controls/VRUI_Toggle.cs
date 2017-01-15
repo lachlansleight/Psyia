@@ -25,10 +25,11 @@ namespace VRTools
 				onRot = Quaternion.Euler(onRotDeg, 0f, 0f);
 
 				base.ActiveElement.localRotation = Toggled ? onRot : offRot;
-				base.ChangeBoolValue(Toggled);
+				SetBoolValue(Toggled);
 			}
 
 			public override void SetBoolValue(bool newValue) {
+				Toggled = newValue;
 				base.SetBoolValue(newValue);
 				base.ActiveElement.localRotation = Toggled ? onRot : offRot;
 				base.ChangeBoolValue(Toggled);

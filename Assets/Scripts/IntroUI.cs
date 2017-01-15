@@ -11,21 +11,13 @@ public class IntroUI : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		if(!PlayerPrefs.HasKey("NumberPlays")) PlayerPrefs.SetInt("NumberPlays", 1);
-
-		else PlayerPrefs.SetInt("NumberPlays", PlayerPrefs.GetInt("NumberPlays") + 1);
-
-		if(Input.GetKeyDown(KeyCode.T)) PlayerPrefs.SetInt("NumberPlays", 1);
+		if(PlayerPrefs.GetInt("NumberPlays") < 2) Destroy(gameObject);
 
 		StartCoroutine(DelayedPop());
-
-		(uiPanel.GetControl("FirstTimeToggle") as VRUI_Toggle).Toggled = PlayerPrefs.GetInt("NumberPlays") == 1;
-
 
 		uiPanel.GetControl("EnterMeditationButton").OnPressUp += EnterMeditationSelected;
 		uiPanel.GetControl("EnterStarLabButton").OnPressUp += EnterStarLabSelected;
 		uiPanel.GetControl("MeditationPostureSlider").OnIntChange += MeditationPostureChanged;
-		uiPanel.GetControl("FirstTimeToggle").OnBooleanChange += FirstTimeChanged;
 
 		for(int i = 0; i < uiPanel.controls.Length; i++) uiPanel.controls[i].SetDefaultValue();
 	}
@@ -61,7 +53,7 @@ public class IntroUI : MonoBehaviour {
 	}
 
 	IEnumerator DelayedPop() {
-		yield return new WaitForSeconds(PlayerPrefs.GetInt("NumberPlays") > 1 ? 2f : 15f);
+		yield return new WaitForSeconds(2f);
 		GameObject.Find("UIMechanism").GetComponent<UIPanelMechanism>().Pop();
 	}
 }

@@ -26,10 +26,10 @@ public class TouchToBeginSphere : MonoBehaviour {
 	void Update () {
 		transform.Rotate(0f, 20f * Time.deltaTime, 0f, Space.World);
 		if(!triggered) return;
-		if((VRTools.VRInput.GetDevice("ViveLeft").position - transform.position).magnitude < 0.025f) {
+		if((VRTools.VRInput.GetDevice("ViveLeft").position + VRTools.VRInput.GetDevice("ViveLeft").forward * 0.0277f - transform.position).magnitude < 0.025f) {
 			if(tutorialScene) UnityEngine.SceneManagement.SceneManager.LoadScene(targetScene);
 			else Trigger();
-		} else if((VRTools.VRInput.GetDevice("ViveRight").position - transform.position).magnitude < 0.025f) {
+		} else if((VRTools.VRInput.GetDevice("ViveRight").position + VRTools.VRInput.GetDevice("ViveRight").forward * 0.0277f - transform.position).magnitude < 0.025f) {
 			if(tutorialScene) UnityEngine.SceneManagement.SceneManager.LoadScene(targetScene);
 			else Trigger();
 		} else if(Input.GetKeyDown(KeyCode.Space)) {
@@ -39,14 +39,15 @@ public class TouchToBeginSphere : MonoBehaviour {
 	}
 
 	void Trigger() {
-		starLab.StartCoroutine(starLab.burstOut());
+		starLab.Reset();
 		touchToBeginCanvas.SetActive(false);
-		gameObject.SetActive(false);
 		triggered = false;
 		if(starLab.noAudio) GameObject.Find("Music").GetComponent<StarMusic>().InitialStart();
+		gameObject.SetActive(false);
 	}
 
 	IEnumerator LerpUp() {
+
 		touchToBeginCanvas.SetActive(false);
 
 		yield return new WaitForSeconds(waitTime);

@@ -28,7 +28,7 @@ namespace VRTools
 
 			public override void SetFloatValue(float newValue) {
 				base.SetFloatValue(newValue);
-				base.ActiveElement.localPosition = new Vector3(0f, 0f, GetPositionFromValue(defaultValue));
+				base.ActiveElement.localPosition = new Vector3(0f, 0f, GetPositionFromValue(newValue));
 				base.ChangeFloatValue(GetValueFromPosition());
 			}
 

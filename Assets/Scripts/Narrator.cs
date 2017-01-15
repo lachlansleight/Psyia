@@ -27,7 +27,7 @@ public class Narrator : MonoBehaviour {
 		sources[0].Play();
 		yield return new WaitForSeconds(waitTimes[0]);
 		
-		if(PsyiaSettings.FirstTime) {
+		if(PlayerPrefs.GetInt("NumberPlays") == 1) {
 			//do tutorial
 			for(int i = 4; i < sources.Length; i++) {
 				sources[i].Play();

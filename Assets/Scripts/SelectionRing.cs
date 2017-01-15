@@ -18,7 +18,7 @@ public class SelectionRing : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		ring.enabled = dot.enabled = true;
-		isLeft = transform.parent.name.Equals("LeftController");
+		isLeft = transform.parent.name.Equals("LeftController") || transform.parent.name.Equals("Controller (left)");
 		ringMat = ring.material;
 	}
 	
@@ -28,6 +28,10 @@ public class SelectionRing : MonoBehaviour {
 		bool rightInactive = false;
 
 		if(starLab == null) {
+			if(inactiveZone == null) {
+				inactiveZone = GameObject.Find("FirstTimeControls").GetComponent<Collider>();
+			}
+
 			leftInactive = inactiveZone.bounds.Contains(VRTools.VRInput.GetDevice("ViveLeft").position);
 			rightInactive = inactiveZone.bounds.Contains(VRTools.VRInput.GetDevice("ViveRight").position);
 

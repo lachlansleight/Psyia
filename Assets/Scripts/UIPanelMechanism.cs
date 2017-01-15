@@ -18,12 +18,16 @@ public class UIPanelMechanism : MonoBehaviour {
 	public bool lerping = false;
 	int lerpCount = 0;
 
+	public bool Toggleable = true;
+
 	void Start() {
 		Panel.localScale = Pole.localScale = Base.localScale = Vector3.zero;
 	}
 
 	void Update() {
-		if(VRTools.VRInput.GetDevice("ViveRight").GetButtonDown("Menu") || VRTools.VRInput.GetDevice("ViveLeft").GetButtonDown("Menu")) Pop();
+		if(Toggleable) {
+			if(VRTools.VRInput.GetDevice("ViveRight").GetButtonDown("Menu") || VRTools.VRInput.GetDevice("ViveLeft").GetButtonDown("Menu")) Pop();
+		}
 	}
 
 	public void Pop() {

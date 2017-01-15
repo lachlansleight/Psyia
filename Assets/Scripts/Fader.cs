@@ -14,7 +14,6 @@ public class Fader : MonoBehaviour {
 	}
 
 	public void FadeOut() {
-		Debug.Log("!");
 		myRenderer.enabled = true;
 		myMat.color = new Color(0,0,0,0);
 		StartCoroutine(FadeRoutine());

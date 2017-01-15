@@ -17,7 +17,7 @@ public class StarController : MonoBehaviour {
 
 	public GameObject fancy;
 	public GameObject minimal;
-	public Renderer fancyBase;
+	public GameObject fancyBase;
 
 	public Transform spinner;
 	public Transform sphere;
@@ -57,7 +57,7 @@ public class StarController : MonoBehaviour {
 		transform.rotation = device.rotation;
 
 		//no matter whether we're on the menu or not, the base should be enabled/disabled regardless
-		fancyBase.enabled = PsyiaSettings.ControllerModels;
+		if(fancyBase.activeSelf != PsyiaSettings.ControllerModels) fancyBase.SetActive(PsyiaSettings.ControllerModels);
 
 		//if we're on the menu with this controller, disable attractor
 		if((starLab.leftInactive && deviceName.Equals("ViveLeft")) || (starLab.rightInactive && deviceName.Equals("ViveRight"))) {

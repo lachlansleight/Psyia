@@ -75,7 +75,8 @@ public class Meditation : MonoBehaviour {
 	public bool debug = false;
 	public int debugMode = 1;
 
-	float menuTimer = 0;
+	public float menuTimer = 0;
+	public float maxMenuTimer = 2f;
 
 	public void Reset() {
 		Deactivate();
@@ -232,13 +233,14 @@ public class Meditation : MonoBehaviour {
 		if(VRInput.GetDevice("ViveLeft").GetButtonDown("Touchpad") || VRInput.GetDevice("ViveRight").GetButtonDown("Touchpad")) {
 			colorMode = (colorMode + 1) % 5;
 		}
-		if((VRInput.GetDevice("ViveLeft").GetButtonDown("Menu") && VRInput.GetDevice("ViveRight").GetButton("Menu")) || (VRInput.GetDevice("ViveRight").GetButtonDown("Menu") && VRInput.GetDevice("ViveLeft").GetButton("Menu"))) {
+		if(VRInput.GetDevice("ViveLeft").GetButton("Menu") && VRInput.GetDevice("ViveRight").GetButton("Menu")) {
 			menuTimer += Time.deltaTime;
 		} else {
-			menuTimer = 0;
+			menuTimer -= Time.deltaTime * 5f;
+			if(menuTimer < 0) menuTimer = 0;
 		}
 
-		if(menuTimer > 2f) {
+		if(menuTimer > maxMenuTimer) {
 			UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
 		}
 	}
@@ -317,13 +319,17 @@ public class Meditation : MonoBehaviour {
 			}
 		}
 
-		toneCounts[chosenTone]++;
+		
 
 		if(totalCrystalCount == 0) {
 			crystals[emptyIndex].growTime = 5f;
 			crystals[emptyIndex].Initialise(tones[0], new Vector3(0f, Random.Range(minHeight, maxHeight), 0.5f));
+
+			toneCounts[0]++;
 		}
 		else {
+
+			toneCounts[chosenTone]++;
 
 			//make sure we don't spawn too close
 			Vector3 chosenPosition = ChoosePosition();

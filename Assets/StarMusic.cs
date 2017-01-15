@@ -60,6 +60,7 @@ public class StarMusic : MonoBehaviour {
 	}
 
 	public void InitialStart() {
+
 		mySource.clip = clips[currentTrack];
 		mySource.Play();
 		initialStart = false;

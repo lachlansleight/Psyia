@@ -20,6 +20,13 @@ namespace VRTools {
 	
 			// Update is called once per frame
 			void Update () {
+				for(int i = 0; i < panels.Length; i++) {
+					if(panels[i] == null) {
+						panels = GameObject.FindObjectsOfType<VRUI_Panel>();
+						break;
+					}
+				}
+
 				device = VRInput.GetDevice(deviceName);
 				int currentClickStatus = GetClickStatus();
 

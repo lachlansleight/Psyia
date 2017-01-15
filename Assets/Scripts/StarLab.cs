@@ -98,6 +98,10 @@ public class StarLab : MonoBehaviour {
 	
 	int count = 50000;
 
+	public bool rendering = false;
+
+	float sceneStartTime = 0;
+
 	public void Reset() {
 		Deactivate();
 
@@ -125,6 +129,8 @@ public class StarLab : MonoBehaviour {
 		InitialiseBuffers();
 		FillBuffers();
 		active = true;
+
+		sceneStartTime = Time.time;
 
 		compute.SetInt("customMode", 2);
 	}
@@ -173,7 +179,7 @@ public class StarLab : MonoBehaviour {
 		
 		floats.Add("timeScale", timeScale);
 		floats.Add("fps", 90f);
-		floats.Add("time", Time.time);
+		floats.Add("time", (Time.time - sceneStartTime));
 
 		floats.Add("vortexStrength", vortexStrength);
 		floats.Add("velocityDampening", 0.01f);
@@ -276,6 +282,8 @@ public class StarLab : MonoBehaviour {
 		for(int i = 0; i < kernels.Length; i++) compute.Dispatch(kernels[i].index, (int)kernels[i].x, (int)kernels[i].y, (int)kernels[i].z);
 		graphics[activeGraphic].SetPass(0);
 		Graphics.DrawProcedural(MeshTopology.Points, buffer.count);
+
+		rendering = true;
 	}
 
 	void UpdateFromSettings() {
@@ -375,10 +383,10 @@ public class StarLab : MonoBehaviour {
         floats["spawnRangeMin"] = spawnCenter - totalSpawnChance * 0.5f;
         floats["spawnRangeMax"] = spawnCenter + totalSpawnChance * 0.5f;
 
-		floats["time"] = Time.time;
+		floats["time"] = (Time.time - sceneStartTime);
 		floats["timeScale"] = timeScale;
 		//note - wait two seconds just in case there are hiccups on load
-		if(Time.time > 2f) floats["fps"] = StaticFPS.frameRate;
+		if((Time.time - sceneStartTime) > 2f) floats["fps"] = StaticFPS.frameRate;
 
 		ints["roomCollision"] = roomCollision ? 1 : 0;
 		ints["jellyMode"] = jellyMode ? 1 : 0;
@@ -412,13 +420,17 @@ public class StarLab : MonoBehaviour {
 		}
 
 		
-		if(audioData.avgVol == 0) {
+		if(audioData.avgVol < 0.0000001f) {
 			audioZeroTime += Time.deltaTime;
 		} else {
 			audioZeroTime = 0f;
 		}
 
-		noAudio = audioZeroTime > 5f;
+		noAudio = audioZeroTime > 2f;
+	}
+
+	public void Burst() {
+		StartCoroutine(burstOut());
 	}
 	public IEnumerator burstOut() {
 		compute.SetInt("customMode", 1);
