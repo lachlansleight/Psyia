@@ -9,9 +9,12 @@ namespace VRTools {
 			public string deviceName = "ViveLeft";
 			public string clickControlName = "Trigger";
 
+			public VRUI_Control closestHoverControl = null;
 			public VRUI_Control activeControl = null;
 
 			VRInputDevice device;
+
+			public DotColorizer dotcol;
 
 			// Use this for initialization
 			void Start () {
@@ -29,9 +32,24 @@ namespace VRTools {
 
 				device = VRInput.GetDevice(deviceName);
 				int currentClickStatus = GetClickStatus();
+				
+				//find the closest object
+				float closestValue = 1f;
+				for(int i = 0; i < panels.Length; i++) {
+					for(int j = 0; j < panels[i].controls.Length; j++) {
+						if(panels[i].controls[j].GetScaledRange(device.position) < closestValue && panels[i].controls[j].gameObject.activeInHierarchy) {
+							closestHoverControl = panels[i].controls[j];
+							closestValue = closestHoverControl.GetScaledRange(device.position);
+						}
+					}
+				}
+				if(closestValue >= 1f) closestHoverControl = null;
+				
+				if(dotcol != null) dotcol.SetCol(closestHoverControl != null, closestHoverControl == null ? Vector3.zero : closestHoverControl.ActiveElement.position);
 
 				//if we clicked down
 				if(currentClickStatus == 2) {
+					/*
 					//find the closest object
 					float closestValue = 1f;
 					VRUI_Control tempControl = null;
@@ -43,9 +61,10 @@ namespace VRTools {
 							}
 						}
 					}
+					*/
 					//if we found an object and it's within the active range, activate it
-					if(tempControl != null && closestValue < 1f) {
-						activeControl = tempControl;
+					if(closestHoverControl != null) {
+						activeControl = closestHoverControl;
 						activeControl.MakeActive(device.position, this);
 					}
 				} else if(currentClickStatus == -1) {

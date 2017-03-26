@@ -15,6 +15,8 @@ public class SelectionRing : MonoBehaviour {
 
 	public Collider inactiveZone;
 
+	public VRTools.UI.VRUI_Input uiInput;
+
 	// Use this for initialization
 	void Start () {
 		ring.enabled = dot.enabled = true;
@@ -28,6 +30,7 @@ public class SelectionRing : MonoBehaviour {
 		bool rightInactive = false;
 
 		if(starLab == null) {
+			
 			if(inactiveZone == null) {
 				inactiveZone = GameObject.Find("FirstTimeControls").GetComponent<Collider>();
 			}
@@ -48,6 +51,5 @@ public class SelectionRing : MonoBehaviour {
 		ring.gameObject.SetActive(triggerAmount > 0);
 		ring.transform.localScale = Vector3.one * Mathf.Lerp(1f, 0f, triggerAmount);
 		ringMat.color = Color.Lerp(outerCol, innerCol, triggerAmount);
-		
 	}
 }

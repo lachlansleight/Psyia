@@ -10,7 +10,6 @@ public class IntroUI : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
 		if(PlayerPrefs.GetInt("NumberPlays") < 2) Destroy(gameObject);
 
 		StartCoroutine(DelayedPop());

@@ -11,6 +11,7 @@ public class StarLabUI : MonoBehaviour {
 	public GameObject[] panelCanvases;
 	public GameObject[] panelControls;
 	public Renderer[] panelButtonRenderers;
+	Material[] panelFrontMaterials;
 	private Material[] panelButtonMaterials;
 	public Color inactiveButtonColor = Color.red;
 	public Color activeButtonColor = Color.black;
@@ -32,8 +33,10 @@ public class StarLabUI : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		panelButtonMaterials = new Material[panelButtonRenderers.Length];
+		panelFrontMaterials = new Material[panelButtonRenderers.Length];
 		for(int i = 0; i < panelButtonRenderers.Length; i++) {
 			panelButtonMaterials[i] = panelButtonRenderers[i].material;
+			panelFrontMaterials[i] = panelButtonRenderers[i].transform.GetChild(0).GetComponent<Renderer>().material;
 		}
 	
 
@@ -96,11 +99,13 @@ public class StarLabUI : MonoBehaviour {
 			panelCanvases[i].SetActive(false);
 			panelControls[i].SetActive(false);
 			panelButtonMaterials[i].color = inactiveButtonColor;
+			panelFrontMaterials[i].color = activeButtonColor;
 		}
 
 		panelCanvases[newPanel].SetActive(true);
 		panelControls[newPanel].SetActive(true);
 		panelButtonMaterials[newPanel].color = activeButtonColor;
+		panelFrontMaterials[newPanel].color = inactiveButtonColor;
 	}
 	public void ShowGraphicsPanel() {
 		SetPanel(0);
