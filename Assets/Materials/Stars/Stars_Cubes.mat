@@ -93,7 +93,7 @@ Material:
       second: 1
     - first:
         name: _LineLength
-      second: 0
+      second: 2.5
     - first:
         name: _Metallic
       second: 0
@@ -108,7 +108,7 @@ Material:
       second: 0.02
     - first:
         name: _PointSize
-      second: 0.5110704
+      second: 0.5
     - first:
         name: _ShadowStrength
       second: 0.5
