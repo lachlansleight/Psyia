@@ -21,7 +21,7 @@ public class ScreenshotCreator : MonoBehaviour {
 	void Update () {
 		transform.position = VRTools.VRInput.GetDevice("ViveHMD").position;
 		Vector3 rot = VRTools.VRInput.GetDevice("ViveHMD").rotation.eulerAngles;
-		rot.x = rot.z = 0;
+		rot.z = 0;
 		transform.rotation = Quaternion.Euler(rot);
 		
 

@@ -14,7 +14,7 @@ public class DotColorizer : MonoBehaviour {
 		myMat = GetComponent<Renderer>().material;
 
 		offCol = myMat.color;
-		onCol = new Color(offCol.r, 0f, 0f, offCol.a);
+		onCol = new Color(offCol.r * 0.5f, offCol.g * 0.5f, 1f, offCol.a);
 	}
 	
 	// Update is called once per frame
@@ -27,7 +27,7 @@ public class DotColorizer : MonoBehaviour {
 
 		if(isOn) {
 			if(AlsoDrawLine == true) {
-				VRTools.VRDebug.DrawLine(transform.position, pos, Color.red, true, 0.0005f);
+				VRTools.VRDebug.DrawLine(transform.position, pos, Color.white, true, 0.0005f);
 			}
 			myMat.color = onCol;
 		} else myMat.color = offCol;

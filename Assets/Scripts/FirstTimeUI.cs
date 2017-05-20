@@ -10,8 +10,7 @@ public class FirstTimeUI : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
-		if(PlayerPrefs.GetInt("NumberPlays") != 1) Destroy(gameObject);
+		if(PlayerPrefs.HasKey("NumberPlays")) Destroy(gameObject);
 
 		StartCoroutine(DelayedPop());
 
@@ -53,5 +52,9 @@ public class FirstTimeUI : MonoBehaviour {
 	IEnumerator DelayedPop() {
 		yield return new WaitForSeconds(15f);
 		GameObject.Find("UIMechanism").GetComponent<UIPanelMechanism>().Pop();
+	}
+
+	void Update() {
+		if(Input.GetKeyDown(KeyCode.T)) PlayerPrefs.DeleteKey("NumberPlays");
 	}
 }

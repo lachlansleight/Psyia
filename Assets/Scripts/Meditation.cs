@@ -230,10 +230,10 @@ public class Meditation : MonoBehaviour {
 	}
 
 	void Update() {
-		if(VRInput.GetDevice("ViveLeft").GetButtonDown("Touchpad") || VRInput.GetDevice("ViveRight").GetButtonDown("Touchpad")) {
+		if(VRInput.GetDevice("ViveLeft").GetButtonDown("Trigger") || VRInput.GetDevice("ViveRight").GetButtonDown("Trigger")) {
 			colorMode = (colorMode + 1) % 5;
 		}
-		if(VRInput.GetDevice("ViveLeft").GetButton("Menu") && VRInput.GetDevice("ViveRight").GetButton("Menu")) {
+		if(VRInput.GetDevice("ViveLeft").GetButton("Touchpad") && VRInput.GetDevice("ViveRight").GetButton("Touchpad")) {
 			menuTimer += Time.deltaTime;
 		} else {
 			menuTimer -= Time.deltaTime * 5f;

@@ -433,10 +433,23 @@ public class StarLab : MonoBehaviour {
 		StartCoroutine(burstOut());
 	}
 	public IEnumerator burstOut() {
+		StartCoroutine(FadeOutGrid());
 		compute.SetInt("customMode", 1);
 		yield return new WaitForEndOfFrame();
 		compute.SetInt("customMode", 0);
 		introFinished = true;
+	}
+
+	IEnumerator FadeOutGrid() {
+		GameObject grid = GameObject.Find("Grid");
+		if(grid == null) yield break;
+
+		Material gridMat = grid.GetComponent<Renderer>().material;
+		for(float i = 0; i < 1f; i += Time.deltaTime / 0.5f) {
+			gridMat.SetColor("_Color", new Color(1f, 1f, 1f, Mathf.Lerp(0.02f, 0f, i)));
+			yield return null;
+		}
+		grid.SetActive(false);
 	}
 
 	public IEnumerator suckIn() {
