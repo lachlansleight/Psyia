@@ -52,13 +52,12 @@ int colorMode;
 float heightCenter;
 
 struct StarData {
-	float3 pos;
-	float3 velocity;
-	float3 scale;
+	float4 pos;
+	float4 velocity;
+	float4 scale;
 	float4 color;
 	float4 randomSeed;
 	float4 anchor;
-	float age;
 };
 
 RWStructuredBuffer<StarData> outputBuffer;
@@ -85,51 +84,59 @@ void Physics(uint3 id : SV_DispatchThreadID)
 	int idx = id.x + (id.y * thread_group_x * thread_x) + (id.z * thread_group_x * thread_y * thread_group_y * thread_z);
 	StarData curCube = outputBuffer[idx];
 
+	float3 pos = curCube.pos.xyz;
+	float3 velocity = curCube.velocity.xyz;
+	float3 scale = curCube.scale.xyz;
+	float age = curCube.pos.w;
+
 	float finalTimeScale = timeScale * (90.0 / fps);
 
 	float gravConst = 0.000006674;
 
-	float3 dampingForce = -1.0 * curCube.velocity * velocityDampening;
+	float3 dampingForce = -1.0 * velocity * velocityDampening;
 
 	float3 forceSum = float3(0, 0, 0);
-	if (attractor0.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor0, curCube.pos, curCube.anchor.x); }
-	if (attractor1.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor1, curCube.pos, curCube.anchor.x); }
-	if (attractor2.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor2, curCube.pos, curCube.anchor.x); }
-	if (attractor3.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor3, curCube.pos, curCube.anchor.x); }
-	if (attractor4.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor4, curCube.pos, curCube.anchor.x); }
-	if (attractor5.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor5, curCube.pos, curCube.anchor.x); }
-	if (attractor6.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor6, curCube.pos, curCube.anchor.x); }
-	if (attractor7.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor7, curCube.pos, curCube.anchor.x); }
-	if (attractor8.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor8, curCube.pos, curCube.anchor.x); }
-	if (attractor9.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor9, curCube.pos, curCube.anchor.x); }
-	if (attractor10.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor10, curCube.pos, curCube.anchor.x); }
-	if (attractor11.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor11, curCube.pos, curCube.anchor.x); }
-	if (attractor12.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor12, curCube.pos, curCube.anchor.x); }
-	if (attractor13.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor13, curCube.pos, curCube.anchor.x); }
-	if (attractor14.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor14, curCube.pos, curCube.anchor.x); }
-	if (attractor15.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor15, curCube.pos, curCube.anchor.x); }
-	if (attractor16.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor16, curCube.pos, curCube.anchor.x); }
-	if (attractor17.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor17, curCube.pos, curCube.anchor.x); }
-	if (attractor18.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor18, curCube.pos, curCube.anchor.x); }
-	if (attractor19.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor19, curCube.pos, curCube.anchor.x); }
+	if (attractor0.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor0, pos, curCube.anchor.x); }
+	if (attractor1.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor1, pos, curCube.anchor.x); }
+	if (attractor2.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor2, pos, curCube.anchor.x); }
+	if (attractor3.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor3, pos, curCube.anchor.x); }
+	if (attractor4.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor4, pos, curCube.anchor.x); }
+	if (attractor5.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor5, pos, curCube.anchor.x); }
+	if (attractor6.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor6, pos, curCube.anchor.x); }
+	if (attractor7.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor7, pos, curCube.anchor.x); }
+	if (attractor8.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor8, pos, curCube.anchor.x); }
+	if (attractor9.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor9, pos, curCube.anchor.x); }
+	if (attractor10.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor10, pos, curCube.anchor.x); }
+	if (attractor11.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor11, pos, curCube.anchor.x); }
+	if (attractor12.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor12, pos, curCube.anchor.x); }
+	if (attractor13.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor13, pos, curCube.anchor.x); }
+	if (attractor14.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor14, pos, curCube.anchor.x); }
+	if (attractor15.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor15, pos, curCube.anchor.x); }
+	if (attractor16.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor16, pos, curCube.anchor.x); }
+	if (attractor17.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor17, pos, curCube.anchor.x); }
+	if (attractor18.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor18, pos, curCube.anchor.x); }
+	if (attractor19.w > 0) { forceSum = forceSum + getForceFromAttractor(attractor19, pos, curCube.anchor.x); }
 
-	//curCube.velocity = curCube.velocity + straightVelocity;
+	//velocity = velocity + straightVelocity;
 
-	curCube.velocity = curCube.velocity + (forceSum / particleMass) * finalTimeScale;
+	velocity = velocity + (forceSum / particleMass) * finalTimeScale;
 		
-	curCube.velocity = curCube.velocity + (dampingForce / particleMass) * finalTimeScale;
+	velocity = velocity + (dampingForce / particleMass) * finalTimeScale;
 
 	//Update position
-	curCube.pos = curCube.pos + (curCube.velocity * finalTimeScale);
+	pos = pos + (velocity * finalTimeScale);
 
-	if (curCube.pos.y < 0) {
-		curCube.pos.y = 0;
-		curCube.velocity.y = curCube.velocity.y * -0.8;
+	if (pos.y < 0) {
+		pos.y = 0;
+		velocity.y = velocity.y * -0.8;
 	}
 
-	curCube.age = curCube.age + finalTimeScale / fps;
+	age = age + finalTimeScale / fps;
 
 	//Update buffer
+	curCube.pos = float4(pos, age);
+	curCube.velocity = float4(velocity, 0);
+	curCube.scale = float4(scale, 0);
 	outputBuffer[idx] = curCube;
 }
 
@@ -142,13 +149,18 @@ void Graphics(uint3 id : SV_DispatchThreadID)
 	int idx = id.x + (id.y * thread_group_x * thread_x) + (id.z * thread_group_x * thread_y * thread_group_y * thread_z);
 	StarData curCube = outputBuffer[idx];
 
+	float3 pos = curCube.pos.xyz;
+	float3 velocity = curCube.velocity.xyz;
+	float3 scale = curCube.scale.xyz;
+	float age = curCube.pos.w;
+
 	//Get Color
 	float4 col = float4(1, 1, 1, 1);
 
 	if (colorMode == 0) {
-		if (length(curCube.velocity) > 0) {
+		if (length(velocity) > 0) {
 			//Turn color into vector
-			col = float4(normalize(curCube.velocity), 1.0) + float4(1.0, 1.0, 1.0, 1.0);
+			col = float4(normalize(velocity), 1.0) + float4(1.0, 1.0, 1.0, 1.0);
 			col *= 0.5;
 			if (length(col) > 0.8) { col.x = 1.0 - col.x; }
 			col.a = 1.0;
@@ -176,8 +188,8 @@ void Graphics(uint3 id : SV_DispatchThreadID)
 			colB = float3(163, 190, 255) / 255.0;
 		}
 
-		if (length(curCube.velocity) > 0) {
-			float3 normVel = normalize(curCube.velocity) + float3(1, 1, 1);
+		if (length(velocity) > 0) {
+			float3 normVel = normalize(velocity) + float3(1, 1, 1);
 			normVel *= 0.5;
 			col = float4(lerp(colA.x, colB.x, normVel.x), lerp(colA.y, colB.y, normVel.y), lerp(colA.z, colB.z, normVel.z), 1.0);
 			curCube.color = lerp(curCube.color, col, 0.1);
@@ -188,8 +200,11 @@ void Graphics(uint3 id : SV_DispatchThreadID)
 		//curCube.color = lerp(float4(0, 0, 0, 1), col, saturate(time - 5.0));
 	}
 
-	curCube.scale = shipSize;
+	scale = shipSize;
 
 	//Update buffer
+	curCube.pos = float4(pos, age);
+	curCube.velocity = float4(velocity, 0);
+	curCube.scale = float4(scale, 0);
 	outputBuffer[idx] = curCube;
 }

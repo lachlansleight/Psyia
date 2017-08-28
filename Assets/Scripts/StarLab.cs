@@ -4,13 +4,12 @@ using System.Collections.Generic;
 using VRTools;
 
 public struct StarData {
-	public Vector3 position;
-	public Vector3 velocity;
-	public Vector3 scale;
-	public Color color;
+	public Vector4 position;
+	public Vector4 velocity;
+	public Vector4 scale;
+	public Vector4 color;
     public Vector4 randomSeed;
 	public Vector4 anchor;
-	public float age;
 }
 
 public struct KernelData {
@@ -202,15 +201,7 @@ public class StarLab : MonoBehaviour {
     }
 
 	void InitialiseBuffers() {
-		int vector3Stride = sizeof(float) * 3;
-		int colorStride = sizeof(int) * 4;
-        int vector2Stride = sizeof(float) * 2;
-        int vector4Stride = sizeof(float) * 4;
-		int floatStride = sizeof(float);
-		stride = vector3Stride * 3 + colorStride + vector4Stride * 2 + floatStride;
-		if(stride % 16 != 0) {
-			Debug.LogWarning("Warning - RWStructuredBuffer size should be divisible by 16 bytes! Add " + ((stride % 16) / 4) + " padding floats to improve performance!");
-		}
+		stride = sizeof(float) * 4 * 6;
 		/* 
 		
 		//don't think I need this
@@ -248,18 +239,19 @@ public class StarLab : MonoBehaviour {
 			float posRad = Random.Range(0f, 3f);
 			float posHeight = Random.Range(0f, 4f);
 			Vector3 pos = new Vector3(posRad * Mathf.Cos(posRot), posHeight, posRad * Mathf.Sin(posRot));//new Vector3(0f, 1.2f, 0f) + Random.insideUnitSphere * 4.5f;
-			data[i].position = pos;
-			data[i].scale = vectors["shipSize"];
+			data[i].position = new Vector4(pos.x, pos.y, pos.z, 0);
+			data[i].scale = new Vector4(vectors["shipSize"].x, vectors["shipSize"].y, vectors["shipSize"].z, 0);
 			data[i].color = Color.Lerp(Color.cyan, Color.magenta, Random.Range(0f, 1f));
-			data[i].velocity = Vector3.zero;//-data[i].position * 0.0001f;
+			data[i].velocity = Vector4.zero;//-data[i].position * 0.0001f;
+
             Vector3 sphere = Random.insideUnitSphere;
             data[i].randomSeed = new Vector4(sphere.x, sphere.y, sphere.z, Random.Range(0f, 1f));
 			data[i].anchor = new Vector4(pos.x, pos.y, pos.z, 0);
 
-            spawnData[i].position = Vector3.zero;
-            spawnData[i].scale = vectors["shipSize"];
+            spawnData[i].position = new Vector4(0, 0, 0, 0);
+            spawnData[i].scale = new Vector4(vectors["shipSize"].x, vectors["shipSize"].y, vectors["shipSize"].z, 0);
             spawnData[i].color = Color.Lerp(Color.cyan, Color.magenta, Random.Range(0f, 1f));
-            spawnData[i].velocity = Vector3.zero;
+            spawnData[i].velocity = Vector4.zero;
             sphere = Random.insideUnitSphere;
             spawnData[i].randomSeed = new Vector4(sphere.x, sphere.y, sphere.z, Random.Range(0f, 1f));
 			spawnData[i].anchor = new Vector4(0,0,0, 0);

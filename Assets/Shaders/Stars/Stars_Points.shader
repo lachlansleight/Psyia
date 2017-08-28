@@ -26,13 +26,12 @@
 			#define TAM 36
 
 			struct data {
-				float3 pos;
-				float3 velocity;
-				float3 size;
-				float4 col;
+				float4 pos;
+				float4 velocity;
+				float4 scale;
+				float4 color;
 				float4 randomSeed;
 				float4 anchor;
-				float age;
 			};
 
 			StructuredBuffer<data> inputBuffer;
@@ -55,9 +54,9 @@
 			{
 				v2f o; // Out here, into geometry shader
 				// Passing on color to next shader (using .r/.g there as tile coordinate)
-				o.col = inputBuffer[id].col;
+				o.col = inputBuffer[id].color;
 				// Passing on center vertex (tile to be built by geometry shader from it later)
-				o.pos = mul(UNITY_MATRIX_VP, float4(inputBuffer[id].pos, 1.0));
+				o.pos = mul(UNITY_MATRIX_VP, float4(inputBuffer[id].pos.xyz, 1.0));
 				//if (inputBuffer[id].x <= 0) o.pos = mul(UNITY_MATRIX_VP, float4(1000, 0, 0, 1.0));
   
 				return o;

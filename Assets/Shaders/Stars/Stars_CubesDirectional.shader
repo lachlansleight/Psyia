@@ -34,13 +34,12 @@ Shader "Geometry/CubesDirectional"
 			#define TAM 24
 
 			struct data {
-				float3 pos;
-				float3 velocity;
-				float3 size;
-				float4 col;
+				float4 pos;
+				float4 velocity;
+				float4 scale;
+				float4 color;
 				float4 randomSeed;
 				float4 anchor;
-				float age;
 			};
 
 			StructuredBuffer<data> inputBuffer;
@@ -69,11 +68,11 @@ Shader "Geometry/CubesDirectional"
 			{
 				gIn o; // Out here, into geometry shader
 				// Passing on color to next shader (using .r/.g there as tile coordinate)
-				o.col = inputBuffer[id].col;				
+				o.col = inputBuffer[id].color;				
 				// Passing on center vertex (tile to be built by geometry shader from it later)
-				o.pos = float4(inputBuffer[id].pos, 1.0);
-				o.nor = inputBuffer[id].size;
-				o.vel = float4(inputBuffer[id].velocity, 0.0);
+				o.pos = float4(inputBuffer[id].pos.xyz, 1.0);
+				o.nor = inputBuffer[id].scale.xyz;
+				o.vel = inputBuffer[id].velocity;
   
 				return o;
 			}

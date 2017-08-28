@@ -2,13 +2,13 @@
 #pragma kernel Physics
 #pragma kernel Graphics
 
-#define thread_group_x 10
-#define thread_group_y 10
-#define thread_group_z 10
+#define thread_group_x 32
+#define thread_group_y 32
+#define thread_group_z 1
 
-#define thread_x 10
-#define thread_y 10
-#define thread_z 10
+#define thread_x 32
+#define thread_y 32
+#define thread_z 1
 
 //input data:
 
@@ -66,26 +66,30 @@ float returnPullForce;
 float burstStartTime;
 
 struct StarData {
-	float3 pos;
-	float3 velocity;
-	float3 scale;
+	float4 pos;
+	float4 velocity;
+	float4 scale;
 	float4 color;
 	float4 randomSeed;
 	float4 anchor;
-	float age;
 };
 
 RWStructuredBuffer<StarData> outputBuffer;
 RWStructuredBuffer<StarData> spawnBuffer;
 
-[numthreads(10, 10, 10)]
+[numthreads(32, 32, 1)]
 void Physics(uint3 id : SV_DispatchThreadID)
 {
 	int idx = id.x + (id.y * thread_group_x * thread_x) + (id.z * thread_group_x * thread_y * thread_group_y * thread_z);
 	StarData curCube = outputBuffer[idx];
 
+	float3 pos = curCube.pos.xyz;
+	float age = curCube.pos.w;
+	float3 velocity = curCube.velocity.xyz;
+	float3 scale = curCube.scale.xyz;
+
 	float finalTimeScale = timeScale * (90.0 / fps);
-	//curCube.pos = curCube.anchor.xyz;
+	//pos = curCube.anchor.xyz;
 	//outputBuffer[idx] = curCube;
 	//return;
 	//pause
@@ -93,21 +97,21 @@ void Physics(uint3 id : SV_DispatchThreadID)
 	
 
 	if (customMode == -1) {
-		curCube.pos = curCube.anchor.xyz;
+		pos = curCube.anchor.xyz;
 		return;
 	}
 
 	//disperse
 	if (customMode == 1) {
-		curCube.velocity = curCube.velocity + (curCube.randomSeed.xyz * burstLaunchVelocity);
+		velocity = velocity + (curCube.randomSeed.xyz * burstLaunchVelocity);
 		//curCube.color = lerp(float4(1, 1, 1, 1), float4(0, 0, 0, 0), (time - burstStartTime) / 5.0);
-		curCube.pos = curCube.pos + (curCube.velocity * finalTimeScale);
+		pos = pos + (velocity * finalTimeScale);
 		outputBuffer[idx] = curCube;
 		return;
 	}
 	//go back to 0,1.2,0
 	else if (customMode == 2) {
-		float3 returnDisp = curCube.anchor.xyz - curCube.pos;
+		float3 returnDisp = curCube.anchor.xyz - pos;
 		float3 returnNorm = normalize(returnDisp);
 		float returnMag = length(returnDisp);
 
@@ -126,15 +130,20 @@ void Physics(uint3 id : SV_DispatchThreadID)
 		//	returnForce = returnForce + cross(float3(0, forceMagnitude, 0), returnDisp * (1.0 + softeningFactor));
 		//}
 
-		curCube.velocity = curCube.velocity + (returnForce / particleMass) * finalTimeScale;
+		velocity = velocity + (returnForce / particleMass) * finalTimeScale;
 
 		//make sure we don't overshoot by clamping velocity as we approach
-		float3 newReturnDisp = curCube.anchor.xyz - (curCube.pos + (curCube.velocity * finalTimeScale));
+		float3 newReturnDisp = curCube.anchor.xyz - (pos + (velocity * finalTimeScale));
 		if (returnMag < length(newReturnDisp)) {
-			curCube.velocity = curCube.velocity + (-0.003 * curCube.velocity);
+			velocity = velocity + (-0.003 * velocity);
 		}
 
-		curCube.pos = curCube.pos + (curCube.velocity * finalTimeScale);
+		pos = pos + (velocity * finalTimeScale);
+
+		curCube.pos = float4(pos, age);
+		curCube.velocity = float4(velocity, 0);
+		curCube.scale = float4(scale, 0);
+
 		outputBuffer[idx] = curCube;
 		return;
 	}
@@ -142,7 +151,7 @@ void Physics(uint3 id : SV_DispatchThreadID)
 
 
 
-[numthreads(10, 10, 10)]
+[numthreads(32, 32, 1)]
 void Graphics(uint3 id : SV_DispatchThreadID)
 {
 	//Get current ID
@@ -152,10 +161,13 @@ void Graphics(uint3 id : SV_DispatchThreadID)
 	//Get Color
 	float4 col = float4(1, 1, 1, 1);
 
+	float3 velocity = curCube.velocity.xyz;
+	float3 pos = curCube.pos.xyz;
+
 	if (colorMode == 0) {
-		if (length(curCube.velocity) > 0) {
+		if (length(velocity) > 0) {
 			//Turn color into vector
-			col = float4(normalize(curCube.velocity), 1.0) + float4(1.0, 1.0, 1.0, 1.0);
+			col = float4(normalize(velocity), 1.0) + float4(1.0, 1.0, 1.0, 1.0);
 			col *= 0.5;
 			if (length(col) > 0.8) { col.x = 1.0 - col.x; }
 			col.a = 1.0;
@@ -183,15 +195,15 @@ void Graphics(uint3 id : SV_DispatchThreadID)
 			colB = float3(163, 190, 255) / 255.0;
 		}
 
-		if (length(curCube.velocity) > 0) {
-			float3 normVel = normalize(curCube.velocity) + float3(1, 1, 1);
+		if (length(velocity) > 0) {
+			float3 normVel = normalize(velocity) + float3(1, 1, 1);
 			normVel *= 0.5;
 			col = float4(lerp(colA.x, colB.x, normVel.x), lerp(colA.y, colB.y, normVel.y), lerp(colA.z, colB.z, normVel.z), 1.0);
 			curCube.color = lerp(curCube.color, col, 0.1);
 		}
 	}
 
-	if (length(curCube.pos - curCube.anchor.xyz) < 0.01) {
+	if (length(pos - curCube.anchor.xyz) < 0.01) {
 		curCube.color = float4(lerp(float3(0, 2, 255) / 255.0, float3(0, 213, 255) / 255.0, curCube.anchor.w), 0.5);
 	}
 
@@ -199,7 +211,7 @@ void Graphics(uint3 id : SV_DispatchThreadID)
 		curCube.color = lerp(float4(1, 1, 1, 1), float4(0, 0, 0, 0), (time - burstStartTime) / 5.0);
 	}
 
-	curCube.scale = shipSize;
+	curCube.scale = float4(shipSize, 0);
 
 	//Update buffer
 	outputBuffer[idx] = curCube;
