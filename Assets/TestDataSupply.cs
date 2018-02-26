@@ -6,20 +6,36 @@ namespace Foliar.Compute {
 
 	public class TestDataSupply : MonoBehaviour {
 
-		public GPUBuffer TargetBuffer;
+		public GpuBuffer TargetBuffer;
 		public int Count = 10000;
 
 		private void Awake() {
+			InitializeData();
+			SetupData();
+		}
+
+		private void Update() {
+			if(Input.GetKeyDown(KeyCode.Space)) {
+				Count = Count / 2;
+				InitializeData();
+				SetupData();
+			}
+		}
+
+		void SetupData() {
 			ComputeStruct[] Data = new ComputeStruct[Count];
 			for(int i = 0; i < Data.Length; i++) {
 				Data[i].Position = Random.insideUnitSphere + new Vector3(0, 1, 0);
 				Data[i].Velocity = Vector3.zero;
-				Data[i].Color = Color.white;
+				Data[i].Color = Color.Lerp(Color.red, Color.blue, Random.Range(0f, 1f));
 			}
 
+			TargetBuffer.SetData(Data);
+		}
+
+		void InitializeData() {
 			TargetBuffer.SetType(typeof(ComputeStruct));
 			TargetBuffer.SetCount(Count);
-			TargetBuffer.SetData(Data);
 		}
 	}
 

@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetBuffer: {fileID: 251398402}
-  Count: 10000
+  Count: 1048576
 --- !u!4 &187930906
 Transform:
   m_ObjectHideFlags: 0
@@ -153,8 +153,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2034363879}
-  m_RootOrder: 3
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &187930907
 MonoBehaviour:
@@ -172,10 +172,10 @@ MonoBehaviour:
   Right: {fileID: 677194979}
   LeftStrength: 0.01
   RightStrength: 0.01
-  Damping: 0.01
-  Charge: -0.1
-  Mass: 1
-  Softening: 1
+  Damping: 0.05
+  ParticleCharge: -0.1
+  ParticleMass: 1
+  SofteningFactor: 0.01
 --- !u!1 &251398401
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 677194978}
   - component: {fileID: 677194977}
   - component: {fileID: 677194976}
+  - component: {fileID: 677194980}
   m_Layer: 0
   m_Name: Right
   m_TagString: Untagged
@@ -352,12 +353,28 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 677194975}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: -0.268, y: 0, z: -0.092}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &677194980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 677194975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a81038eaf889464a8f6e3408e093d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SetCenterOnStart: 1
+  Center: {x: 0, y: 0, z: 0}
+  Amplitude: {x: 0.5, y: 0.5, z: 0.5}
+  Period: {x: 0.5, y: 0.5, z: 0.5}
+  Phase: {x: 0.2, y: 0.5, z: 0.9}
 --- !u!1 &1021608341
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,7 +467,7 @@ GameObject:
   - component: {fileID: 1045708996}
   - component: {fileID: 1045708995}
   m_Layer: 0
-  m_Name: Runner
+  m_Name: DispatcherRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -467,7 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97edc046bd08a074ba01912100243ba5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Buffer: {fileID: 251398402}
+  MainBuffer: {fileID: 251398402}
   BufferName: inputBuffer
   RenderMaterial: {fileID: 2100000, guid: a5cc56c1d0c40d845889a590a06b608a, type: 2}
 --- !u!114 &1045708996
@@ -482,13 +499,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainBuffer: {fileID: 251398402}
-  DataCount: 10000
   Shader: {fileID: 7200000, guid: e6c607a8a0eef7a4191618d1b9d8d6f9, type: 3}
   BufferName: outputBuffer
   KernelName: ParticleFunction
-  ThreadGroupsX: 10
-  ThreadGroupsY: 10
-  ThreadGroupsZ: 10
+  ThreadGroupsX: 64
+  ThreadGroupsY: 16
+  ThreadGroupsZ: 1
 --- !u!4 &1045708997
 Transform:
   m_ObjectHideFlags: 0
@@ -595,9 +611,8 @@ Transform:
   - {fileID: 251398403}
   - {fileID: 566718181}
   - {fileID: 1045708997}
-  - {fileID: 187930906}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2068368241
 GameObject:
@@ -610,6 +625,7 @@ GameObject:
   - component: {fileID: 2068368244}
   - component: {fileID: 2068368243}
   - component: {fileID: 2068368242}
+  - component: {fileID: 2068368246}
   m_Layer: 0
   m_Name: Left
   m_TagString: Untagged
@@ -678,9 +694,25 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2068368241}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: 0.183, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2068368246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2068368241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a81038eaf889464a8f6e3408e093d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SetCenterOnStart: 1
+  Center: {x: 0, y: 0, z: 0}
+  Amplitude: {x: 0.5, y: 0.5, z: 0.5}
+  Period: {x: 0.6, y: 0.45, z: 0.55}
+  Phase: {x: 0.5, y: 0.3, z: 1.5}

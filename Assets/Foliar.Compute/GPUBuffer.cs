@@ -2,7 +2,7 @@
 
 namespace Foliar.Compute {
 
-	public class GPUBuffer : MonoBehaviour {
+	public class GpuBuffer : MonoBehaviour {
 
 		/// <summary>
 		/// Stride of buffer data struct type
@@ -27,9 +27,9 @@ namespace Foliar.Compute {
 		/// </summary>
 		public ComputeBuffer Buffer {
 			get {
-				if(_Buffer == null) {
-					_Buffer = new ComputeBuffer(1, Stride);
-				}
+				if(_Buffer == null) return null;
+				if(DataType == null) return null;
+
 				return _Buffer;
 			} private set {
 				_Buffer = value;
@@ -43,6 +43,19 @@ namespace Foliar.Compute {
 		}
 
 		/// <summary>
+		/// Initializes a compute buffer, releasing and disposing it first if necessary.
+		/// </summary>
+		/// <param name="buffer">The buffer to be initialized - can be null</param>
+		/// <param name="count">The buffer count</param>
+		/// <param name="stride">The buffer stride in bytes</param>
+		private void InitializeBuffer(ref ComputeBuffer buffer, int count, int stride) {
+			if(buffer != null) {
+				buffer.Release();
+			}
+			buffer = new ComputeBuffer(count, stride, BufferType);
+		}
+
+		/// <summary>
 		/// Sets buffer count (does not initialise data)
 		/// </summary>
 		public void SetCount(int NewCount) {
@@ -50,7 +63,9 @@ namespace Foliar.Compute {
 				Debug.LogError("Cannot set buffer count before a type has been assigned - set buffer type first");
 				return;
 			}
-			Buffer = new ComputeBuffer(NewCount, Stride);
+
+			if(Buffer == null) InitializeBuffer(ref _Buffer, NewCount, Stride);
+			else if(Count != NewCount) InitializeBuffer(ref _Buffer, NewCount, Stride);
 		}
 
 		/// <summary>
@@ -67,6 +82,9 @@ namespace Foliar.Compute {
 			if(DataType == null) {
 				SetType(typeof(T));
 			}
+			if(DataType != typeof(T)) {
+				SetType(typeof(T));
+			}
 			if(data.Length != Buffer.count) {
 				Debug.LogError("Cannot set buffer data - supplied array has length " + data.Length + ", buffer has count " + Buffer.count + " - set buffer count first");
 				return;
@@ -74,9 +92,21 @@ namespace Foliar.Compute {
 			Buffer.SetData(data);
 		}
 
+		/// <summary>
+		/// Gets compute data as an array
+		/// </summary>
+		public T[] GetData<T>() {
+			if(DataType != typeof(T)) {
+				Debug.LogError("Invalid type provided - expected " + DataType.Name + ", received " + typeof(T).Name);
+				return null;
+			}
+			T[] OutputData = new T[Count];
+			Buffer.GetData(OutputData);
+			return OutputData;
+		}
+
 		private void OnDestroy() {
-			Buffer.Release();
-			Buffer.Dispose();
+			_Buffer.Release();
 		}
 
 	}

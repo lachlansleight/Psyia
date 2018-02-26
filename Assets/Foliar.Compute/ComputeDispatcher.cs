@@ -6,9 +6,9 @@ namespace Foliar.Compute {
 
 	public class ComputeDispatcher : MonoBehaviour {
 
-		private GPUBuffer SetBuffer;
-		public GPUBuffer MainBuffer;
-		public int DataCount = 10000;
+		private ComputeBuffer SetComputeBuffer;
+		private GpuBuffer SetBuffer;
+		public GpuBuffer MainBuffer;
 
 		public ComputeShader Shader;
 		public string BufferName;
@@ -51,10 +51,18 @@ namespace Foliar.Compute {
 		void TryAssignBuffers() {
 			if(SetBuffer == null) {
 				SetBuffer = MainBuffer;
-				Shader.SetBuffer(KernelIndex, BufferName, SetBuffer.Buffer);
+				SetComputeBuffer = MainBuffer.Buffer;
+				Shader.SetBuffer(KernelIndex, BufferName, SetComputeBuffer);
 			} else if(SetBuffer != MainBuffer) {
 				SetBuffer = MainBuffer;
-				Shader.SetBuffer(KernelIndex, BufferName, SetBuffer.Buffer);
+				SetComputeBuffer = MainBuffer.Buffer;
+				Shader.SetBuffer(KernelIndex, BufferName, SetComputeBuffer);
+			} else if(SetComputeBuffer == null) {
+				SetComputeBuffer = SetBuffer.Buffer;
+				Shader.SetBuffer(KernelIndex, BufferName, SetComputeBuffer);
+			} else if(SetComputeBuffer != SetBuffer.Buffer) {
+				SetComputeBuffer = SetBuffer.Buffer;
+				Shader.SetBuffer(KernelIndex, BufferName, SetComputeBuffer);
 			}
 		}
 	}

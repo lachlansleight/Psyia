@@ -6,17 +6,34 @@ namespace Foliar.Compute {
 
 	public class ComputeRenderer : MonoBehaviour {
 
-		public GPUBuffer Buffer;
+		private ComputeBuffer SetComputeBuffer;
+		private GpuBuffer SetBuffer;
+		public GpuBuffer MainBuffer;
 		public string BufferName;
 		public Material RenderMaterial;
 
-		void Awake() {
-			RenderMaterial.SetBuffer(BufferName, Buffer.Buffer);
+		void OnRenderObject() {
+			TryAssignBuffers();
+			RenderMaterial.SetPass(0);
+			Graphics.DrawProcedural(MeshTopology.Points, SetBuffer.Count);
 		}
 
-		void OnRenderObject() {
-			RenderMaterial.SetPass(0);
-			Graphics.DrawProcedural(MeshTopology.Points, Buffer.Count);
+		void TryAssignBuffers() {
+			if(SetBuffer == null) {
+				SetBuffer = MainBuffer;
+				SetComputeBuffer = MainBuffer.Buffer;
+				RenderMaterial.SetBuffer(BufferName, SetComputeBuffer);
+			} else if(SetBuffer != MainBuffer) {
+				SetBuffer = MainBuffer;
+				SetComputeBuffer = MainBuffer.Buffer;
+				RenderMaterial.SetBuffer(BufferName, SetComputeBuffer);
+			} else if(SetComputeBuffer == null) {
+				SetComputeBuffer = SetBuffer.Buffer;
+				RenderMaterial.SetBuffer(BufferName, SetComputeBuffer);
+			} else if(SetComputeBuffer != SetBuffer.Buffer) {
+				SetComputeBuffer = SetBuffer.Buffer;
+				RenderMaterial.SetBuffer(BufferName, SetComputeBuffer);
+			}
 		}
 	}
 

@@ -2,12 +2,12 @@
 #pragma kernel ParticleFunction
 
 //let's give ourselves a million threads - 10 * 10 * 10 * 10 * 10 * 10
-#define thread_group_x 10
-#define thread_group_y 10
-#define thread_group_z 10
-#define thread_x 10
-#define thread_y 10
-#define thread_z 10
+#define thread_group_x 64
+#define thread_group_y 16
+#define thread_group_z 1
+#define thread_x 64
+#define thread_y 16
+#define thread_z 1
 
 //controller positions
 float4 LeftController;
@@ -28,7 +28,7 @@ struct ParticleData {
 
 RWStructuredBuffer<ParticleData> outputBuffer;
 
-[numthreads(10, 10, 10)]
+[numthreads(64, 16, 1)]
 void ParticleFunction(uint3 id : SV_DispatchThreadID)
 {
 	//First we calculate our position in the buffer, and pull the relevant particle out for computation
@@ -70,21 +70,6 @@ void ParticleFunction(uint3 id : SV_DispatchThreadID)
 
 	//And we update position
 	ThisParticle.pos += ThisParticle.velocity;
-
-
-
-
-	//Let's colour our particle based on the magnitude of its velocity - almost black at rest, and blue when they're moving
-	float VelocityMagnitude = saturate(length(ThisParticle.velocity) * 80);
-	VelocityMagnitude = VelocityMagnitude * VelocityMagnitude;
-
-	//Let's make it so that if they're going super fast, we make them white
-	float ExtraMagnitude = saturate((VelocityMagnitude - 0.4) * 2);
-	ExtraMagnitude = (ExtraMagnitude * ExtraMagnitude) * 0.9 + VelocityMagnitude * 0.1;
-
-	//So set our very fast value for red and green, and our kinda fast value for blue
-	//Add 0.01 so that the particles are never black
-	ThisParticle.color = float4(ExtraMagnitude + 0.01, ExtraMagnitude + 0.01, VelocityMagnitude + 0.01, 1);
 
 
 

@@ -14,13 +14,16 @@ public class TestDataUpdate : MonoBehaviour {
 	public float RightStrength = 1;
 
 	public float Damping = 0.01f;
-	public float Charge = -0.1f;
-	public float Mass = 1;
-	public float Softening = 0.01f;
+	public float ParticleCharge = -0.1f;
+	public float ParticleMass = 1;
+	public float SofteningFactor = 0.01f;
 
 	// Use this for initialization
 	void Start () {
-		
+		Damping = TargetValues.Damping;
+		ParticleCharge = TargetValues.ParticleCharge;
+		ParticleMass = TargetValues.ParticleMass;
+		SofteningFactor = TargetValues.SofteningFactor;
 	}
 	
 	// Update is called once per frame
@@ -29,8 +32,8 @@ public class TestDataUpdate : MonoBehaviour {
 		TargetValues.RightController = new Vector4(Right.position.x, Right.position.y, Right.position.z, RightStrength);
 
 		TargetValues.Damping = Damping;
-		TargetValues.ParticleCharge = Charge;
-		TargetValues.ParticleMass = Mass;
-		TargetValues.SofteningFactor = Softening;
+		TargetValues.ParticleCharge = ParticleCharge;
+		TargetValues.ParticleMass = ParticleMass;
+		TargetValues.SofteningFactor = SofteningFactor;
 	}
 }
