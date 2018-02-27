@@ -21,10 +21,11 @@
 #pragma fragment myFragmentShader
 
 		//Note that this has to match EXACTLY the struct we define in ComputeExample.cs!
-		struct data {
+	struct data {
 		float3 pos;
 		float3 velocity;
 		float4 col;
+		int isAlive;
 	};
 
 	float4 _Color;

@@ -18,6 +18,10 @@ namespace Foliar.Compute {
 			Graphics.DrawProcedural(MeshTopology.Points, SetBuffer.Count);
 		}
 
+		private void Update() {
+			
+		}
+
 		void TryAssignBuffers() {
 			if(SetBuffer == null) {
 				SetBuffer = MainBuffer;

@@ -15,11 +15,6 @@ namespace Foliar.Compute {
 		}
 
 		private void Update() {
-			if(Input.GetKeyDown(KeyCode.Space)) {
-				Count = Count / 2;
-				InitializeData();
-				SetupData();
-			}
 		}
 
 		void SetupData() {
@@ -28,6 +23,7 @@ namespace Foliar.Compute {
 				Data[i].Position = Random.insideUnitSphere + new Vector3(0, 1, 0);
 				Data[i].Velocity = Vector3.zero;
 				Data[i].Color = Color.Lerp(Color.red, Color.blue, Random.Range(0f, 1f));
+				Data[i].IsAlive = 0;
 			}
 
 			TargetBuffer.SetData(Data);

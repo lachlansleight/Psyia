@@ -13,13 +13,11 @@ namespace Foliar.Compute {
 			}
 		}
 		/// <summary>
-		/// Type of compute buffer
-		/// </summary>
-		public ComputeBufferType BufferType = ComputeBufferType.Default;
-		/// <summary>
 		/// Type of buffer data type
 		/// </summary>
 		public System.Type DataType;
+
+		[HideInInspector] public ComputeBufferType BufferType;
 
 		private ComputeBuffer _Buffer;
 		/// <summary>
@@ -48,17 +46,18 @@ namespace Foliar.Compute {
 		/// <param name="buffer">The buffer to be initialized - can be null</param>
 		/// <param name="count">The buffer count</param>
 		/// <param name="stride">The buffer stride in bytes</param>
-		private void InitializeBuffer(ref ComputeBuffer buffer, int count, int stride) {
+		protected virtual void InitializeBuffer(ref ComputeBuffer buffer, int count, int stride) {
 			if(buffer != null) {
 				buffer.Release();
 			}
-			buffer = new ComputeBuffer(count, stride, BufferType);
+			BufferType = ComputeBufferType.Default;
+			buffer = new ComputeBuffer(count, stride, ComputeBufferType.Default);
 		}
 
 		/// <summary>
 		/// Sets buffer count (does not initialise data)
 		/// </summary>
-		public void SetCount(int NewCount) {
+		public virtual void SetCount(int NewCount) {
 			if(DataType == null) {
 				Debug.LogError("Cannot set buffer count before a type has been assigned - set buffer type first");
 				return;
@@ -71,14 +70,14 @@ namespace Foliar.Compute {
 		/// <summary>
 		/// Sets buffer data type
 		/// </summary>
-		public void SetType(System.Type Type) {
+		public virtual void SetType(System.Type Type) {
 			DataType = Type;
 		}
 
 		/// <summary>
 		/// Set compute buffer data
 		/// </summary>
-		public void SetData<T>(T[] data) {
+		public virtual void SetData<T>(T[] data) {
 			if(DataType == null) {
 				SetType(typeof(T));
 			}
@@ -95,7 +94,7 @@ namespace Foliar.Compute {
 		/// <summary>
 		/// Gets compute data as an array
 		/// </summary>
-		public T[] GetData<T>() {
+		public virtual T[] GetData<T>() {
 			if(DataType != typeof(T)) {
 				Debug.LogError("Invalid type provided - expected " + DataType.Name + ", received " + typeof(T).Name);
 				return null;
@@ -105,8 +104,8 @@ namespace Foliar.Compute {
 			return OutputData;
 		}
 
-		private void OnDestroy() {
-			_Buffer.Release();
+		protected virtual void OnDestroy() {
+			if(_Buffer != null) _Buffer.Release();
 		}
 
 	}
