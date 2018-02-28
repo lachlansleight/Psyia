@@ -2,11 +2,11 @@
 #pragma kernel ParticleFunction
 
 //let's give ourselves a million threads - 10 * 10 * 10 * 10 * 10 * 10
-#define thread_group_x 64
-#define thread_group_y 16
+#define thread_group_x 1024
+#define thread_group_y 1
 #define thread_group_z 1
-#define thread_x 64
-#define thread_y 16
+#define thread_x 1024
+#define thread_y 1
 #define thread_z 1
 
 //controller positions
@@ -19,24 +19,44 @@ float ParticleCharge;
 float ParticleMass;
 float SofteningFactor;
 
+//time parameters
+float Lifespan;
+float Time;
+float DeltaTime;
+
 //Note that this has to match EXACTLY the struct we define in ComputeExample.cs!
 struct ParticleData {
 	float3 pos;
 	float3 velocity;
 	float4 color;
 	int isAlive;
+	float age;
 };
 
 RWStructuredBuffer<ParticleData> outputBuffer;
+AppendStructuredBuffer<uint> deadList;
 
-[numthreads(64, 16, 1)]
-void ParticleFunction(uint3 id : SV_DispatchThreadID)
+[numthreads(1024, 1, 1)]
+void ParticleFunction(uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
 {
 	//First we calculate our position in the buffer, and pull the relevant particle out for computation
-	int idx = id.x + (id.y * thread_group_x * thread_x) + (id.z * thread_group_x * thread_x * thread_group_y * thread_y);
-	ParticleData ThisParticle = outputBuffer[idx];
+	int id = tid.x + thread_group_x * gid.x;
+	ParticleData ThisParticle = outputBuffer[id];
 
-	//if (ThisParticle.isAlive == 0) return;
+	if (ThisParticle.isAlive == 0) {
+		ThisParticle.pos = float3(0, -1000000, 0);
+		outputBuffer[id] = ThisParticle;
+		return;
+	}
+
+	ThisParticle.age += DeltaTime;
+	if (ThisParticle.age > Lifespan) {
+		deadList.Append(id);
+		ThisParticle.isAlive = false;
+		ThisParticle.pos = float3(0, -1000000, 0);
+		outputBuffer[id] = ThisParticle;
+		return;
+	}
 
 	//Let's split up our real-time input data into position and charge
 	float3 LeftPosition = LeftController.xyz;
@@ -50,9 +70,6 @@ void ParticleFunction(uint3 id : SV_DispatchThreadID)
 	float3 RightDisplacement = ThisParticle.pos - RightPosition;
 	float LeftDistance = length(LeftDisplacement) + SofteningFactor;
 	float RightDistance = length(RightDisplacement) + SofteningFactor;
-
-
-
 
 	//Time for the physics!
 
@@ -73,10 +90,11 @@ void ParticleFunction(uint3 id : SV_DispatchThreadID)
 
 	//And we update position
 	ThisParticle.pos += ThisParticle.velocity;
+	
 
 
 
 
 	//And finally, push the updated particle to the buffer
-	outputBuffer[idx] = ThisParticle;
+	outputBuffer[id] = ThisParticle;
 }

@@ -1,12 +1,10 @@
 ﻿// Each #kernel tells which function to compile; you can have many kernels
 #pragma kernel CSMain
 
-RWStructuredBuffer<float4> outputBuffer;
-ConsumeStructuredBuffer<int> deadList;
+AppendStructuredBuffer<uint> deadList;
 
-[numthreads(1,1,1)]
+[numthreads(16,1,1)]
 void CSMain (uint3 id : SV_DispatchThreadID)
 {
-	int NewIndex = deadList.Consume();
-	outputBuffer[NewIndex].y = 1.0;
+	deadList.Append(id.x);
 }

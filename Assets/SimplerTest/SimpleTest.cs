@@ -5,12 +5,13 @@ using Foliar.Compute;
 
 public class SimpleTest : MonoBehaviour {
 
-	public int MaxCount = 100;
+	public int MaxCount = 16;
 	public GpuBuffer SimBuffer;
 	public GpuAppendBuffer EmitBuffer;
 
 	public ComputeDispatcher Simulator;
 	public ComputeDispatcher Emitter;
+	public ComputeDispatcher Setupper;
 
 	// Use this for initialization
 	void Start () {
@@ -28,6 +29,9 @@ public class SimpleTest : MonoBehaviour {
 			Simulator.Dispatch();
 			LogOutput();
 		}
+		if(Input.GetKeyDown(KeyCode.S)) {
+			Debug.Log("Current count: " + EmitBuffer.CurrentCount);
+		}
 		
 	}
 
@@ -35,7 +39,6 @@ public class SimpleTest : MonoBehaviour {
 		Vector4[] data = SimBuffer.GetData<Vector4>();
 		string output = "";
 		for(int i = 0; i < data.Length; i++) {
-			Debug.Log(data[i]);
 			if(data[i].y > 0) {
 				output += (data[i].x);
 			} else {
@@ -48,7 +51,7 @@ public class SimpleTest : MonoBehaviour {
 
 	void InitializeBuffers() {
 		SimBuffer.SetType(typeof(Vector4));
-		EmitBuffer.SetType(typeof(int));
+		EmitBuffer.SetType(typeof(uint));
 
 		SimBuffer.SetCount(MaxCount);
 		EmitBuffer.SetCount(MaxCount);
@@ -56,13 +59,14 @@ public class SimpleTest : MonoBehaviour {
 
 	void PopulateBuffers() {
 		Vector4[] SimData = new Vector4[MaxCount];
-		int[] EmitData = new int[MaxCount];
+		uint[] EmitData = new uint[MaxCount];
 		for(int i = 0; i < MaxCount; i++) {
 			SimData[i] = Vector4.zero;
-			EmitData[i] = i;
+			EmitData[i] = (uint)i;
 		}
 		SimBuffer.SetData(SimData);
-		EmitBuffer.SetData(EmitData);
+
+		Setupper.Dispatch();
 	}
 
 

@@ -3,15 +3,12 @@
 
 RWStructuredBuffer<float4> outputBuffer;
 
-[numthreads(8, 8, 1)]
+[numthreads(16, 1, 1)]
 void CSMain (uint3 id : SV_GroupThreadID)
 {
-	int idx = id.x + (id.y * 1 * 8) + (id.z * 1 * 8 * 1 * 8);
+	float4 cur = outputBuffer[id.x];
 
-	int curIndex = idx;
-	float4 cur = outputBuffer[curIndex];
+	if(cur.y > 0) cur.x += 1.0;
 
-	cur.x += 1.0;
-
-	outputBuffer[curIndex] = cur;
+	outputBuffer[id.x] = cur;
 }

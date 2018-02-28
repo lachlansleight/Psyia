@@ -26,6 +26,7 @@
 		float3 velocity;
 		float4 col;
 		int isAlive;
+		float age;
 	};
 
 	float4 _Color;

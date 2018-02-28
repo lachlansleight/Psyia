@@ -65,6 +65,11 @@ namespace Foliar.Compute {
 			Shader.Dispatch(KernelIndex, ThreadGroupsX, ThreadGroupsY, ThreadGroupsZ);
 		}
 
+		public void Dispatch(int OverrideX, int OverrideY, int OverrideZ) {
+			TryAssignBuffers();
+			Shader.Dispatch(KernelIndex, OverrideX, OverrideY, OverrideZ);
+		}
+
 		void TryAssignBuffers() {
 			for(int i = 0; i < TargetBuffers.Length; i++) {
 				if(TargetBuffers[i].SetBuffer == null) {

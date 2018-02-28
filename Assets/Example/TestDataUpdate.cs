@@ -5,7 +5,7 @@ using Foliar.Compute;
 
 public class TestDataUpdate : MonoBehaviour {
 
-	public ShaderValues TargetValues;
+	public ExampleShaderValues TargetValues;
 
 	public Transform Left;
 	public Transform Right;
@@ -17,6 +17,10 @@ public class TestDataUpdate : MonoBehaviour {
 	public float ParticleCharge = -0.1f;
 	public float ParticleMass = 1;
 	public float SofteningFactor = 0.01f;
+
+	public float Lifespan = 5f;
+
+	Vector3 LastSpawnPos = Vector3.zero;
 
 	// Use this for initialization
 	void Start () {
@@ -35,5 +39,18 @@ public class TestDataUpdate : MonoBehaviour {
 		TargetValues.ParticleCharge = ParticleCharge;
 		TargetValues.ParticleMass = ParticleMass;
 		TargetValues.SofteningFactor = SofteningFactor;
+
+		TargetValues.Lifespan = Lifespan;
+		TargetValues.Time = Time.time;
+		TargetValues.DeltaTime = Time.deltaTime;
+
+		
+		TargetValues.LastSpawnPosition = LastSpawnPos;
+		Vector3 SpawnPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 2.5f));
+		if(Input.GetMouseButtonDown(0)) {
+			TargetValues.LastSpawnPosition = SpawnPos;
+		}
+		TargetValues.SpawnPosition = SpawnPos;;
+		LastSpawnPos = SpawnPos;
 	}
 }

@@ -52,7 +52,11 @@ namespace Foliar.Compute {
 			}
 			base.BufferType = ComputeBufferType.Append;
 			buffer = new ComputeBuffer(count, stride, ComputeBufferType.Append);
-			buffer.SetCounterValue(0);
+			SetCounterValue(0);
+		}
+
+		public void SetCounterValue(uint NewValue) {
+			base.Buffer.SetCounterValue(NewValue);
 		}
 
 		protected override void OnDestroy() {
