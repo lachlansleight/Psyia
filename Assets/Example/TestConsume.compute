@@ -15,6 +15,8 @@ ConsumeStructuredBuffer<uint> deadList;
 float3 SpawnPosition;
 float3 LastSpawnPosition;
 
+float Time;
+
 //returns random from 0 to 1
 float rand(float2 n) {
 	return frac(sin(dot(n, float2(12.9898, 78.233))) * 43758.5453);
@@ -28,7 +30,7 @@ void EmitFunction() {
 	CurrentParticle.age = 0;
 	CurrentParticle.isAlive = 1;
 	CurrentParticle.pos = lerp(LastSpawnPosition, SpawnPosition, rand(float2(newIndex - 250.125, newIndex + 250.125)));
-	CurrentParticle.velocity = (float3(rand(float2(newIndex, newIndex)), rand(float2(newIndex + 1000.5, newIndex + 1000.5)), rand(float2(newIndex - 1000.5, newIndex - 1000.5))) - float3(0.5, 0.5, 0.5)) * (rand(float2(newIndex + 500.25, newIndex - 500.25)) * 0.02);
+	CurrentParticle.velocity = ((float3(rand(float2(newIndex, newIndex)), rand(float2(newIndex + 1000.5 + Time, newIndex + 1000.5 - Time)), rand(float2(newIndex - 1000.5 - (Time * 0.3234), newIndex - 1000.5 + (Time * 0.23412)))) - float3(0.5, 0.5, 0.5)) * (rand(float2(newIndex + 500.25 - (Time * 2.3422), newIndex - 500.25 + (Time * 0.112334))) * 0.02)) + ((SpawnPosition - LastSpawnPosition) * 0.05);
 
 
 	outputBuffer[newIndex] = CurrentParticle;
