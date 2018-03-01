@@ -15,6 +15,9 @@ public class ExampleShaderValues : ShaderValues {
 	public Vector4 RightController;
 
 	[ComputeValue]
+	public Vector4 Headset;
+
+	[ComputeValue]
 	public Vector4 SpawnPosition;
 
 	[ComputeValue]

@@ -8,7 +8,15 @@ namespace Foliar.Compute {
 		public ComputeShader TargetShader;
 		public ShaderValues shaderValues;
 	
+		public void ApplyNow() {
+			ApplyValues();
+		}
+
 		void Update () {
+			ApplyValues();
+		}
+
+		void ApplyValues() {
 			var pInfos = shaderValues.GetType().GetFields();
 			foreach(var p in pInfos) {
 				if (Attribute.IsDefined(p, typeof(ComputeValue))) {

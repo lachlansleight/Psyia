@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Name: TestShaderValues
   m_EditorClassIdentifier: 
   _Color: {r: 1, g: 1, b: 1, a: 1}
-  LeftController: {x: 0, y: 0, z: 0, w: 0}
-  RightController: {x: 0, y: 0, z: 0, w: 0}
+  LeftController: {x: 0.095233455, y: -0.21595465, z: -0.18563473, w: 0.01}
+  RightController: {x: -0.5552275, y: -0.15345043, z: -0.048027456, w: 0.01}
+  Headset: {x: 0, y: 0, z: 0, w: 0}
+  SpawnPosition: {x: 7.8483524, y: 2.3866224, z: 0, w: 0}
+  LastSpawnPosition: {x: 7.8483524, y: 2.3866224, z: 0, w: 0}
   Damping: 0.02
   ParticleCharge: -0.01
   ParticleMass: 1
   SofteningFactor: 0.2
   Lifespan: 5
-  Time: 0
-  DeltaTime: 0
+  Time: 74.98898
+  DeltaTime: 0.01656828

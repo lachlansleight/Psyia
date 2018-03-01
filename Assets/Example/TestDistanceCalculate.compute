@@ -1,0 +1,31 @@
+﻿// We need to manually mark what our kernel names are
+#pragma kernel ParticleFunction
+
+//let's give ourselves a million threads - 10 * 10 * 10 * 10 * 10 * 10
+#define thread_group_x 1024
+#define thread_group_y 1
+#define thread_group_z 1
+#define thread_x 1024
+#define thread_y 1
+#define thread_z 1
+
+float4 Headset;
+
+//Note that this has to match EXACTLY the struct we define in ComputeExample.cs!
+struct ParticleData {
+	float3 pos;
+	float3 velocity;
+	float4 color;
+	int isAlive;
+	float age;
+};
+
+RWStructuredBuffer<ParticleData> outputBuffer;
+RWStructuredBuffer<float> distanceBuffer;
+
+[numthreads(1024, 1, 1)]
+void ParticleFunction(uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
+{
+	int id = tid.x + thread_group_x * gid.x;
+	distanceBuffer[id] = length(Headset - outputBuffer[id].pos);
+}

@@ -1,0 +1,54 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel Sort
+
+struct SortStruct {
+	float4 Color;
+};
+
+RWStructuredBuffer<SortStruct> outputBuffer;
+
+int ButterflyStep;
+int SubStep;
+int MergeStep;
+int CreateBitonic;
+
+[numthreads(1024,1,1)]
+void Sort (uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
+{
+	uint CurrentIndex = tid.x + 1024 * gid.x;
+
+	if (CreateBitonic) {
+		uint CurrentSize = pow(2, ButterflyStep - SubStep);
+		uint ButterflySize = pow(2, ButterflyStep);
+
+		uint TargetIndex = CurrentIndex + CurrentSize;
+		bool Skip = CurrentIndex % (CurrentSize * 2) > (CurrentSize - 1);
+		bool Ascending = (uint)floor(CurrentIndex / (ButterflySize * 2)) % 2 > 0;
+
+		if (!Skip) {
+			SortStruct a = outputBuffer[CurrentIndex];
+			SortStruct b = outputBuffer[TargetIndex];
+
+			if (a.Color.x < b.Color.x != Ascending) {
+				outputBuffer[CurrentIndex] = b;
+				outputBuffer[TargetIndex] = a;
+			}
+		}
+	}
+	else {
+		uint CurrentSize = pow(2, MergeStep);
+
+		uint TargetIndex = CurrentIndex + CurrentSize;
+		bool Skip = (uint)floor(CurrentIndex / CurrentSize) % 2 > 0;
+		
+		if (!Skip) {
+			SortStruct a = outputBuffer[CurrentIndex];
+			SortStruct b = outputBuffer[TargetIndex];
+
+			if (a.Color.x > b.Color.x) {
+				outputBuffer[CurrentIndex] = b;
+				outputBuffer[TargetIndex] = a;
+			}
+		}
+	}
+}
