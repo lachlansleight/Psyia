@@ -1,5 +1,7 @@
 ﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Geometry/SortDisplay"
 {
 	Properties
@@ -30,11 +32,12 @@ Shader "Geometry/SortDisplay"
 
 #define TAM 36
 
-	struct data {
-		float4 color;
+	struct SortData {
+		int index;
+		float distance;
 	};
 
-	StructuredBuffer<data> inputBuffer;
+	StructuredBuffer<SortData> inputBuffer;
 
 
 	struct gIn // OUT vertex shader, IN geometry shader
@@ -61,7 +64,7 @@ Shader "Geometry/SortDisplay"
 		
 		// Passing on center vertex (tile to be built by geometry shader from it later)
 		o.pos = float4(_IndexSpread * ((float)id / _IndexCount), 0, 0, 1);
-		o.col = inputBuffer[id].color;
+		o.col = float4(inputBuffer[id].distance, 1, 1, 1);
 
 		return o;
 	}
@@ -71,62 +74,69 @@ Shader "Geometry/SortDisplay"
 	[maxvertexcount(TAM)]
 	// ----------------------------------------------------
 	// Using "point" type as input, not "triangle"
-	void myGeometryShader(point gIn vert[1], inout TriangleStream<v2f> lineStream)
-	{
-		float height = _ValueSpread * (1. + (0.9 * vert[0].col.x));
+	void myGeometryShader(point gIn vert[1], inout TriangleStream<v2f> triStream)
+		{
+		float height = vert[0].col.x > 1000 ? 0 : _ValueSpread * (1. + (0.9 * vert[0].col.x));
 		float width = _IndexSpread / _IndexCount;
+			
+			//float f = _PointSize/20.0f; //half size
+		float3 f = float3(width / 2, height, width / 2);
 
-		float4 LineLengthOffset = float4(0, height, 0, 0);
-		float LineWidthOffset = float4(width, 0, 0, 0);
+			const float4 vc[TAM] = { float4(-f.x,  f.y,  f.z, 0.0f), float4(f.x,  f.y,  f.z, 0.0f), float4(f.x,  f.y, -f.z, 0.0f),	//Top								
+				float4(f.x,  f.y, -f.z, 0.0f), float4(-f.x,  f.y, -f.z, 0.0f), float4(-f.x,  f.y,  f.z, 0.0f),	//Top
 
-		float4 positions[4] = { 
-			vert[0].pos, 
-			vert[0].pos + LineLengthOffset,
-			vert[0].pos + LineWidthOffset + LineLengthOffset,
-			vert[0].pos + LineWidthOffset
-		};
+				float4(f.x,  f.y, -f.z, 0.0f), float4(f.x,  f.y,  f.z, 0.0f), float4(f.x, 0,  f.z, 0.0f),	//Right
+				float4(f.x, 0,  f.z, 0.0f), float4(f.x, 0, -f.z, 0.0f), float4(f.x,  f.y, -f.z, 0.0f),	//Right
 
-		positions[0] = UnityObjectToClipPos(positions[0]);
-		positions[1] = UnityObjectToClipPos(positions[1]);
-		positions[2] = UnityObjectToClipPos(positions[2]);
-		positions[3] = UnityObjectToClipPos(positions[3]);
+				float4(-f.x,  f.y, -f.z, 0.0f), float4(f.x,  f.y, -f.z, 0.0f), float4(f.x, 0, -f.z, 0.0f),	//Front
+				float4(f.x, 0, -f.z, 0.0f), float4(-f.x, 0, -f.z, 0.0f), float4(-f.x,  f.y, -f.z, 0.0f),	//Front
 
-		float4 colors[4] = { 
-			vert[0].col, vert[0].col,
-			vert[0].col, vert[0].col
-		};
+				float4(-f.x, 0, -f.z, 0.0f), float4(f.x, 0, -f.z, 0.0f), float4(f.x, 0,  f.z, 0.0f),	//Bottom										
+				float4(f.x, 0,  f.z, 0.0f), float4(-f.x, 0,  f.z, 0.0f), float4(-f.x, 0, -f.z, 0.0f),	//Bottom
 
-		v2f linePoints[6];
-		linePoints[0].pos = positions[0];
-		linePoints[0].col = colors[0];
-		linePoints[1].pos = positions[1];
-		linePoints[1].col = colors[1];
-		linePoints[2].pos = positions[2];
-		linePoints[2].col = colors[2];
+				float4(-f.x,  f.y,  f.z, 0.0f), float4(-f.x,  f.y, -f.z, 0.0f), float4(-f.x, 0, -f.z, 0.0f),	//Left
+				float4(-f.x, 0, -f.z, 0.0f), float4(-f.x, 0,  f.z, 0.0f), float4(-f.x,  f.y,  f.z, 0.0f),	//Left
 
-		linePoints[3].pos = positions[0];
-		linePoints[3].col = colors[0];
-		linePoints[4].pos = positions[2];
-		linePoints[4].col = colors[2];
-		linePoints[5].pos = positions[3];
-		linePoints[5].col = colors[3];
+				float4(-f.x,  f.y,  f.z, 0.0f), float4(-f.x, 0,  f.z, 0.0f), float4(f.x, 0,  f.z, 0.0f),	//Back
+				float4(f.x, 0,  f.z, 0.0f), float4(f.x,  f.y,  f.z, 0.0f), float4(-f.x,  f.y,  f.z, 0.0f)	//Back
+			};
 
-		lineStream.Append(linePoints[0]);
-		lineStream.Append(linePoints[1]);
-		lineStream.Append(linePoints[2]);
-		lineStream.RestartStrip();
 
-		lineStream.Append(linePoints[3]);
-		lineStream.Append(linePoints[4]);
-		lineStream.Append(linePoints[5]);
-		lineStream.RestartStrip();
-	}
+			const int TRI_STRIP[TAM] = { 0, 1, 2,  3, 4, 5,
+				6, 7, 8,  9,10,11,
+				12,13,14, 15,16,17,
+				18,19,20, 21,22,23,
+				24,25,26, 27,28,29,
+				30,31,32, 33,34,35
+			};
+
+			v2f v[TAM];
+			int i;
+
+			// Assign new vertices positions 
+
+			float4 col = vert[0].col;
+			for (i = 0; i < TAM; i++) { v[i].pos = vert[0].pos + vc[i]; v[i].col = col; }
+
+			// Position in view space
+			for (i = 0; i<TAM; i++) { v[i].pos = UnityObjectToClipPos(v[i].pos); }
+
+			// Build the cube tile by submitting triangle strip vertices
+			for (i = 0; i<TAM / 3; i++)
+			{
+				triStream.Append(v[TRI_STRIP[i * 3 + 0]]);
+				triStream.Append(v[TRI_STRIP[i * 3 + 1]]);
+				triStream.Append(v[TRI_STRIP[i * 3 + 2]]);
+
+				triStream.RestartStrip();
+			}
+		}
 
 	// ----------------------------------------------------
 	float4 myFragmentShader(v2f IN) : COLOR
 	{
 		//return float4(1.0,0.0,0.0,1.0);
-		return float4(IN.col.xyz, 1.0);
+		return float4(IN.col.x, 1.0 - IN.col.x, 1.0 - IN.col.x, 1.0);
 	}
 
 		ENDCG

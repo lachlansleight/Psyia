@@ -122,6 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 804416591}
   - component: {fileID: 804416590}
+  - component: {fileID: 804416592}
   m_Layer: 0
   m_Name: CPUSort
   m_TagString: Untagged
@@ -135,7 +136,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 804416589}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21724b600f9904d42b2d3838716e79ee, type: 3}
   m_Name: 
@@ -164,6 +165,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &804416592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 804416589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 168a18373083ba24c84d0df400ad0836, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Count: 2048
+  DrawMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  DrawMat: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  AutoIncrement: 0
+  IncrementStep: 1
+  TotalDrawSize: 10
+  TotalDrawHeight: 2
+  Stage: 0
+  SubStage: 0
 --- !u!1 &1673464116
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,15 +212,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d59c12c26f89254b9c8c7f389421ed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mode: 1
   Count: 1048576
+  AutoIncrement: 0
+  IncrementStep: 1
+  Increasing: 0
   Sorter: {fileID: 7200000, guid: 5435c6c16d34d3a419c2260d64256b0c, type: 3}
   OutputMaterial: {fileID: 2100000, guid: c4f75636cf807d645b4902e534d62cd7, type: 2}
   ButterflyStep: 0
   SubStep: 0
   MergeStep: 0
   CreateBitonic: 1
-  AutoIncrement: 0
-  IncrementStep: 230
+  Stage: 0
+  SubStage: 0
 --- !u!4 &1673464118
 Transform:
   m_ObjectHideFlags: 0

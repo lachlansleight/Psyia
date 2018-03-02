@@ -1,5 +1,6 @@
 ﻿// Each #kernel tells which function to compile; you can have many kernels
-#pragma kernel Sort
+#pragma kernel Bitonic
+#pragma kernel OddEven
 
 struct SortStruct {
 	float4 Color;
@@ -12,8 +13,13 @@ int SubStep;
 int MergeStep;
 int CreateBitonic;
 
+int Stage;
+int SubStage;
+
+int Increasing;
+
 [numthreads(1024,1,1)]
-void Sort (uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
+void Bitonic (uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
 {
 	uint CurrentIndex = tid.x + 1024 * gid.x;
 
@@ -24,6 +30,10 @@ void Sort (uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
 		uint TargetIndex = CurrentIndex + CurrentSize;
 		bool Skip = CurrentIndex % (CurrentSize * 2) > (CurrentSize - 1);
 		bool Ascending = (uint)floor(CurrentIndex / (ButterflySize * 2)) % 2 > 0;
+		
+		if (Increasing == 0) {
+			Ascending = !Ascending;
+		}
 
 		if (!Skip) {
 			SortStruct a = outputBuffer[CurrentIndex];
@@ -45,10 +55,42 @@ void Sort (uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
 			SortStruct a = outputBuffer[CurrentIndex];
 			SortStruct b = outputBuffer[TargetIndex];
 
-			if (a.Color.x > b.Color.x) {
+			if ((a.Color.x > b.Color.x) == Increasing) {
 				outputBuffer[CurrentIndex] = b;
 				outputBuffer[TargetIndex] = a;
 			}
+		}
+	}
+}
+
+[numthreads(1024, 1, 1)]
+void OddEven(uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
+{
+	uint CurrentIndex = tid.x + 1024 * gid.x;
+
+	uint CurrentLength = pow(2, Stage - SubStage);
+	uint TargetIndex = CurrentIndex + CurrentLength;
+	bool Skip = 0;
+	uint IndexOverLength = CurrentIndex / CurrentLength;
+
+	if (SubStage == 0) {
+		Skip = IndexOverLength % 2 > 0;
+	}
+	else if (SubStage == 1) {
+		Skip = IndexOverLength % 4 != 1;
+	}
+	else {
+		uint ExtraPower = pow(2, SubStage + 1);
+		Skip = IndexOverLength % 2 < 1 || IndexOverLength % ExtraPower == ExtraPower - 1;
+	}
+
+	if (!Skip) {
+		SortStruct a = outputBuffer[CurrentIndex];
+		SortStruct b = outputBuffer[TargetIndex];
+
+		if ((a.Color.x > b.Color.x) == Increasing) {
+			outputBuffer[CurrentIndex] = b;
+			outputBuffer[TargetIndex] = a;
 		}
 	}
 }

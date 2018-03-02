@@ -1,0 +1,112 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel BitonicSort
+#pragma kernel OddEvenSort
+
+struct ParticleData {
+	float3 pos;
+	float3 velocity;
+	float4 color;
+	int isAlive;
+	float age;
+};
+
+struct SortData {
+	int index;
+	float distance;
+};
+
+RWStructuredBuffer<SortData> distanceBuffer;
+
+int ButterflyStep;
+int SubStep;
+int MergeStep;
+int CreateBitonic;
+
+int Stage;
+int SubStage;
+
+int Increasing;
+
+
+[numthreads(1024,1,1)]
+void BitonicSort (uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
+{
+	uint CurrentIndex = tid.x + 1024 * gid.x;
+
+	if (CreateBitonic) {
+		uint CurrentSize = pow(2, ButterflyStep - SubStep);
+		uint ButterflySize = pow(2, ButterflyStep);
+
+		uint TargetIndex = CurrentIndex + CurrentSize;
+		bool Skip = CurrentIndex % (CurrentSize * 2) > (CurrentSize - 1);
+		bool Ascending = (uint)floor(CurrentIndex / (ButterflySize * 2)) % 2 > 0;
+
+		if (Increasing != 1) {
+			Ascending = !Ascending;
+		}
+
+		if (!Skip) {
+			SortData a = distanceBuffer[CurrentIndex];
+			SortData b = distanceBuffer[TargetIndex];
+
+			bool aIsGreater = a.distance > b.distance;
+
+			if ((aIsGreater && Ascending) || (!aIsGreater && !Ascending)) {
+				distanceBuffer[CurrentIndex] = b;
+				distanceBuffer[TargetIndex] = a;
+			}
+		}
+	}
+	else {
+		uint CurrentSize = pow(2, MergeStep);
+
+		uint TargetIndex = CurrentIndex + CurrentSize;
+		bool Skip = (uint)floor(CurrentIndex / CurrentSize) % 2 > 0;
+		
+		if (!Skip) {
+			SortData a = distanceBuffer[CurrentIndex];
+			SortData b = distanceBuffer[TargetIndex];
+
+			bool aIsGreater = a.distance > b.distance;
+
+			if ((aIsGreater && Increasing == 1) || (!aIsGreater && Increasing == 0)) {
+				distanceBuffer[CurrentIndex] = b;
+				distanceBuffer[TargetIndex] = a;
+			}
+		}
+	}
+}
+
+[numthreads(1024, 1, 1)]
+void OddEvenSort(uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
+{
+	uint CurrentIndex = tid.x + 1024 * gid.x;
+
+	uint CurrentLength = pow(2, Stage - SubStage);
+	uint TargetIndex = CurrentIndex + CurrentLength;
+	bool Skip = 0;
+	uint IndexOverLength = CurrentIndex / CurrentLength;
+
+	if (SubStage == 0) {
+		Skip = IndexOverLength % 2 > 0;
+	}
+	else if (SubStage == 1) {
+		Skip = IndexOverLength % 4 != 1;
+	}
+	else {
+		uint ExtraPower = pow(2, SubStage + 1);
+		Skip = IndexOverLength % 2 < 1 || IndexOverLength % ExtraPower == ExtraPower - 1;
+	}
+
+	if (!Skip) {
+		SortData a = distanceBuffer[CurrentIndex];
+		SortData b = distanceBuffer[TargetIndex];
+
+		bool aIsGreater = a.distance > b.distance;
+
+		if ((aIsGreater && Increasing == 1) || (!aIsGreater && Increasing == 0)) {
+			distanceBuffer[CurrentIndex] = b;
+			distanceBuffer[TargetIndex] = a;
+		}
+	}
+}

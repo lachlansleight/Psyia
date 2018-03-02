@@ -6,16 +6,28 @@ namespace Foliar.Compute {
 
 	public class ComputeRenderer : MonoBehaviour {
 
-		private ComputeBuffer SetComputeBuffer;
-		private GpuBuffer SetBuffer;
-		public GpuBuffer MainBuffer;
-		public string BufferName;
+		[System.Serializable]
+		public class ComputeRendererInputBuffer {
+			public string Name;
+
+			[HideInInspector] public ComputeBuffer SetComputeBuffer;
+			[HideInInspector] public GpuBuffer SetBuffer;
+			public GpuBuffer MainBuffer;
+
+		}
+
+		public MeshTopology Topology = MeshTopology.Points;
+		public ComputeRendererInputBuffer[] InputBuffers;
+		public int BufferToCount;
+
 		public Material RenderMaterial;
 
 		void OnRenderObject() {
+			if(BufferToCount >= InputBuffers.Length) BufferToCount = 0;
+
 			TryAssignBuffers();
 			RenderMaterial.SetPass(0);
-			Graphics.DrawProcedural(MeshTopology.Points, SetBuffer.Count);
+			Graphics.DrawProcedural(Topology, InputBuffers[BufferToCount].MainBuffer.Count);
 		}
 
 		private void Update() {
@@ -23,20 +35,26 @@ namespace Foliar.Compute {
 		}
 
 		void TryAssignBuffers() {
-			if(SetBuffer == null) {
-				SetBuffer = MainBuffer;
-				SetComputeBuffer = MainBuffer.Buffer;
-				RenderMaterial.SetBuffer(BufferName, SetComputeBuffer);
-			} else if(SetBuffer != MainBuffer) {
-				SetBuffer = MainBuffer;
-				SetComputeBuffer = MainBuffer.Buffer;
-				RenderMaterial.SetBuffer(BufferName, SetComputeBuffer);
-			} else if(SetComputeBuffer == null) {
-				SetComputeBuffer = SetBuffer.Buffer;
-				RenderMaterial.SetBuffer(BufferName, SetComputeBuffer);
-			} else if(SetComputeBuffer != SetBuffer.Buffer) {
-				SetComputeBuffer = SetBuffer.Buffer;
-				RenderMaterial.SetBuffer(BufferName, SetComputeBuffer);
+			for(int i = 0; i < InputBuffers.Length; i++) {
+				if(InputBuffers[i].SetBuffer == null) {
+					InputBuffers[i].SetBuffer = InputBuffers[i].MainBuffer;
+					InputBuffers[i].SetComputeBuffer = InputBuffers[i].MainBuffer.Buffer;
+
+					RenderMaterial.SetBuffer(InputBuffers[i].Name, InputBuffers[i].SetComputeBuffer);
+				} else if(InputBuffers[i].SetBuffer !=InputBuffers[i]. MainBuffer) {
+					InputBuffers[i].SetBuffer = InputBuffers[i].MainBuffer;
+					InputBuffers[i].SetComputeBuffer = InputBuffers[i].MainBuffer.Buffer;
+
+					RenderMaterial.SetBuffer(InputBuffers[i].Name, InputBuffers[i].SetComputeBuffer);
+				} else if(InputBuffers[i].SetComputeBuffer == null) {
+					InputBuffers[i].SetComputeBuffer = InputBuffers[i].SetBuffer.Buffer;
+
+					RenderMaterial.SetBuffer(InputBuffers[i].Name, InputBuffers[i].SetComputeBuffer);
+				} else if(InputBuffers[i].SetComputeBuffer != InputBuffers[i].SetBuffer.Buffer) {
+					InputBuffers[i].SetComputeBuffer = InputBuffers[i].SetBuffer.Buffer;
+
+					RenderMaterial.SetBuffer(InputBuffers[i].Name, InputBuffers[i].SetComputeBuffer);
+				}
 			}
 		}
 	}
