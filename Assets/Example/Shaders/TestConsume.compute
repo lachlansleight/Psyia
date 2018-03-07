@@ -15,7 +15,9 @@ ConsumeStructuredBuffer<uint> deadList;
 float3 SpawnPosition;
 float3 LastSpawnPosition;
 
-float SpawnVelocity;
+float3 SpawnVelocity;
+float SpawnVelocityScatter;
+float SpawnInheritVelocity;
 
 float Time;
 
@@ -32,8 +34,18 @@ void EmitFunction() {
 	CurrentParticle.age = 0;
 	CurrentParticle.isAlive = 1;
 	CurrentParticle.pos = lerp(LastSpawnPosition, SpawnPosition, rand(float2(newIndex - 250.125, newIndex + 250.125)));
-	CurrentParticle.velocity = (normalize(float3(rand(float2(newIndex, newIndex)), rand(float2(newIndex + 1000.5 + Time, newIndex + 1000.5 - Time)), rand(float2(newIndex - 1000.5 - (Time * 0.3234), newIndex - 1000.5 + (Time * 0.23412)))) - float3(0.5, 0.5, 0.5)) * (rand(float2(newIndex + 500.25 - (Time * 2.3422), newIndex - 500.25 + (Time * 0.112334))) * SpawnVelocity)) + ((SpawnPosition - LastSpawnPosition) * 0.05);
 
+	float3 RandomDirection = float3(
+		rand(float2(newIndex, newIndex)),
+		rand(float2(newIndex + 1000.5 + Time, newIndex + 1000.5 - Time)),
+		rand(float2(newIndex - 1000.5 - (Time * 0.3234), newIndex - 1000.5 + (Time * 0.23412)))
+	);
+	RandomDirection -= float3(0.5, 0.5, 0.5);
+	RandomDirection = normalize(RandomDirection);
+
+	float ScatterStrength = rand(float2(newIndex + 500.25 - (Time * 2.3422), newIndex - 500.25 + (Time * 0.112334))) * SpawnVelocityScatter;
+
+	CurrentParticle.velocity = (RandomDirection * ScatterStrength) + (SpawnVelocity * SpawnInheritVelocity);
 
 	outputBuffer[newIndex] = CurrentParticle;
 }

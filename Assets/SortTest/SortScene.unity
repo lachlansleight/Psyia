@@ -215,7 +215,7 @@ MonoBehaviour:
   Mode: 1
   Count: 1048576
   AutoIncrement: 0
-  IncrementStep: 1
+  IncrementStep: 210
   Increasing: 0
   Sorter: {fileID: 7200000, guid: 5435c6c16d34d3a419c2260d64256b0c, type: 3}
   OutputMaterial: {fileID: 2100000, guid: c4f75636cf807d645b4902e534d62cd7, type: 2}

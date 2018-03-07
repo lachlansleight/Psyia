@@ -44,7 +44,13 @@ namespace Foliar.Compute {
 							TargetShader.SetTexture(TargetShader.FindKernel(KernelName), p.Name, (Texture)p.GetValue(shaderValues));
 						}
 					}
-					if(p.FieldType == typeof(Vector4) || p.FieldType == typeof(Vector3) || p.FieldType == typeof(Vector2) || p.FieldType == typeof(Color))
+					else if(p.FieldType == typeof(Color))
+						TargetShader.SetVector(p.Name, (Color)p.GetValue(shaderValues));
+					else if(p.FieldType == typeof(Vector2))
+						TargetShader.SetVector(p.Name, (Vector2)p.GetValue(shaderValues));
+					else if(p.FieldType == typeof(Vector3))
+						TargetShader.SetVector(p.Name, (Vector3)p.GetValue(shaderValues));
+					else if(p.FieldType == typeof(Vector4))
 						TargetShader.SetVector(p.Name, (Vector4)p.GetValue(shaderValues));
 					else if(p.FieldType == typeof(Vector4[]))
 						TargetShader.SetVectorArray(p.Name, (Vector4[])p.GetValue(shaderValues));

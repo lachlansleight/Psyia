@@ -1,0 +1,64 @@
+﻿// We need to manually mark what our kernel names are
+#pragma kernel UpdateForceField
+
+//let's give ourselves a million threads - 10 * 10 * 10 * 10 * 10 * 10
+#define thread_group_x 8
+#define thread_group_y 8
+#define thread_group_z 8
+#define thread_x 8
+#define thread_y 8
+#define thread_z 8
+
+//controller positions
+float4 LeftController;
+float3 LeftVelocity;
+float4 RightController;
+float3 RightVelocity;
+
+float ControllerForce;
+float ControllerRadius;
+
+float FieldDamping;
+
+float3 FieldStartPos;
+float3 FieldEndPos;
+float3 FieldCount;
+
+struct FieldStruct {
+	float3 pos;
+	float3 force;
+};
+
+RWStructuredBuffer<FieldStruct> ForceField;
+
+[numthreads(8,8,8)]
+void UpdateForceField(uint3 dtid : SV_DispatchThreadID)
+{
+	int id = dtid.x + (dtid.y * thread_group_x * thread_x) + (dtid.z * thread_group_x * thread_y * thread_group_y * thread_z);
+	FieldStruct ThisFieldPoint = ForceField[id];
+
+	float idF = (float)id;
+	float3 FieldPos = float3(floor(idF / (FieldCount.z * FieldCount.y)), floor(idF / FieldCount.z) % FieldCount.y, idF % FieldCount.z);
+	FieldPos /= FieldCount;
+	FieldPos -= float3(0.5, 0, 0.5);
+	FieldPos *= (FieldEndPos - FieldStartPos);
+
+	ThisFieldPoint.pos = FieldPos;
+
+	float3 LeftDisplacement = LeftController.xyz - FieldPos;
+	float3 RightDisplacement = RightController.xyz - FieldPos;
+
+	float LeftLength = length(LeftDisplacement);
+	float RightLength = length(RightDisplacement);
+
+	float LeftAttenuation = max(0.0, ControllerRadius - LeftLength);
+	float RightAttenuation = max(0.0, ControllerRadius - RightLength);
+
+	ThisFieldPoint.force += normalize(LeftDisplacement) * LeftAttenuation * ControllerForce * LeftController.w;
+	ThisFieldPoint.force += normalize(RightDisplacement) * RightAttenuation * ControllerForce * RightController.w;
+
+	ThisFieldPoint.force *= (1.0 - FieldDamping);
+
+	//And finally, push the updated particle to the buffer
+	ForceField[id] = ThisFieldPoint;
+}

@@ -1,0 +1,125 @@
+﻿// We need to manually mark what our kernel names are
+#pragma kernel ParticleFunction
+
+//let's give ourselves a million threads - 10 * 10 * 10 * 10 * 10 * 10
+#define thread_group_x 1024
+#define thread_group_y 1
+#define thread_group_z 1
+#define thread_x 1024
+#define thread_y 1
+#define thread_z 1
+
+//controller positions
+float4 LeftController;
+float4 RightController;
+float4 Headset;
+
+//Physics Parameters:
+float Damping;
+float ParticleCharge;
+float ParticleMass;
+float SofteningFactor;
+
+//time parameters
+float Lifespan;
+float Time;
+float DeltaTime;
+
+//force field parameters
+float3 FieldStartPos;
+float3 FieldEndPos;
+float3 FieldCount;
+
+//Note that this has to match EXACTLY the struct we define in ComputeExample.cs!
+struct ParticleData {
+	float3 pos;
+	float3 velocity;
+	float4 color;
+	int isAlive;
+	float age;
+};
+
+struct DistanceData {
+	int index;
+	float distance;
+};
+
+struct FieldStruct {
+	float3 pos;
+	float3 force;
+};
+
+RWStructuredBuffer<ParticleData> outputBuffer;
+AppendStructuredBuffer<uint> deadList;
+RWStructuredBuffer<DistanceData> distanceBuffer;
+RWStructuredBuffer<FieldStruct> forceField;
+
+float InverseLerp(float a, float b, float t) {
+	return saturate((t - a) / (b - a));
+}
+
+[numthreads(1024, 1, 1)]
+void ParticleFunction(uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
+{
+	//First we calculate our position in the buffer, and pull the relevant particle out for computation
+	int id = tid.x + thread_group_x * gid.x;
+	ParticleData ThisParticle = outputBuffer[id];
+
+	if (ThisParticle.isAlive == 0) {
+		ThisParticle.pos = float3(0, -10000, 0);
+		//ThisParticle.pos = float3(((float)id / 1024.) * 2.5, 2, -0.1);
+		outputBuffer[id] = ThisParticle;
+		//distanceBuffer[id].index = id;
+		//distanceBuffer[id].distance = 10000;
+		return;
+	}
+
+	ThisParticle.age += DeltaTime;
+
+	if (ThisParticle.age > Lifespan) {
+		deadList.Append(id);
+		ThisParticle.isAlive = false;
+		outputBuffer[id] = ThisParticle;
+		return;
+	}
+
+	float3 FieldIndexVector = ThisParticle.pos;
+	FieldIndexVector += ((FieldEndPos - FieldStartPos) / FieldCount) * 0.5;
+	FieldIndexVector /= (FieldEndPos - FieldStartPos);
+	FieldIndexVector += float3(0.5, 0, 0.5);
+	FieldIndexVector *= FieldCount;
+	FieldIndexVector = float3(floor(FieldIndexVector.x), floor(FieldIndexVector.y), floor(FieldIndexVector.z));
+	 
+	int FinalIndex = (int)(FieldIndexVector.x * FieldCount.y * FieldCount.z + FieldIndexVector.y * FieldCount.z + FieldIndexVector.z);
+
+	float3 FieldForce = forceField[FinalIndex].force;
+
+	//And we get a damping force
+	float3 DampingForce = -1.0 * ThisParticle.velocity * Damping;
+
+	//Now we apply the force as acceleration (using newton's second law)
+	ThisParticle.velocity += (FieldForce / ParticleMass);
+	ThisParticle.velocity += (DampingForce / ParticleMass);
+
+	float3 NewPos = ThisParticle.pos + ThisParticle.velocity;
+
+	//apply walls
+	if (NewPos.x < FieldStartPos.x || NewPos.x > FieldEndPos.x) {
+		ThisParticle.velocity.x *= -1;
+	}
+	if (NewPos.y < FieldStartPos.y || NewPos.y > FieldEndPos.y) {
+		ThisParticle.velocity.y *= -1;
+	}
+	if (NewPos.z < FieldStartPos.z || NewPos.z > FieldEndPos.z) {
+		ThisParticle.velocity.z *= -1;
+	}
+
+	//And we update position
+	ThisParticle.pos += ThisParticle.velocity;
+
+	//distanceBuffer[id].index = id;
+	//distanceBuffer[id].distance = length(ThisParticle.pos - Headset.xyz);
+
+	//And finally, push the updated particle to the buffer
+	outputBuffer[id] = ThisParticle;
+}

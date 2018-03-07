@@ -32,8 +32,10 @@ public class TestDataUpdate : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		TargetValues.LeftController = new Vector4(Left.position.x, Left.position.y, Left.position.z, LeftStrength * VRTK_Devices.TriggerAxis("left"));
-		TargetValues.RightController = new Vector4(Right.position.x, Right.position.y, Right.position.z, RightStrength * VRTK_Devices.TriggerAxis("right"));
+		TargetValues.LeftController = new Vector4(Left.position.x, Left.position.y, Left.position.z, LeftStrength * VRTK_Devices.TriggerAxis(VRDevice.Left));
+		TargetValues.RightController = new Vector4(Right.position.x, Right.position.y, Right.position.z, RightStrength * VRTK_Devices.TriggerAxis(VRDevice.Right));
+		TargetValues.LeftVelocity = VRTK_Devices.Velocity(VRDevice.Left);
+		TargetValues.RightVelocity = VRTK_Devices.Velocity(VRDevice.Right);
 		TargetValues.Headset = new Vector4(HMD.position.x, HMD.position.y, HMD.position.z, 0f);
 
 		TargetValues.Damping = Damping;
@@ -43,9 +45,6 @@ public class TestDataUpdate : MonoBehaviour {
 
 		TargetValues.Lifespan = Lifespan;
 		TargetValues.Time = Time.time;
-		TargetValues.DeltaTime = Time.deltaTime;
-
-		
-		
+		TargetValues.DeltaTime = Time.deltaTime;		
 	}
 }

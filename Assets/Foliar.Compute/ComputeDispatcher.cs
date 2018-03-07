@@ -28,7 +28,7 @@ namespace Foliar.Compute {
 		private int KernelIndex {
 			get {
 				if(_KernelIndex == -1) {
-					_KernelIndex = Shader.FindKernel(KernelName);
+					if(Shader != null) _KernelIndex = Shader.FindKernel(KernelName);
 				}
 				return _KernelIndex;
 			}
@@ -60,12 +60,12 @@ namespace Foliar.Compute {
 			}
 		}
 
-		public void Dispatch() {
+		public virtual void Dispatch() {
 			TryAssignBuffers();
 			Shader.Dispatch(KernelIndex, ThreadGroupsX, ThreadGroupsY, ThreadGroupsZ);
 		}
 
-		public void Dispatch(int OverrideX, int OverrideY, int OverrideZ) {
+		public virtual void Dispatch(int OverrideX, int OverrideY, int OverrideZ) {
 			TryAssignBuffers();
 			Shader.Dispatch(KernelIndex, OverrideX, OverrideY, OverrideZ);
 		}

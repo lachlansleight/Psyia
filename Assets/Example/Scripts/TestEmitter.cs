@@ -20,17 +20,19 @@ public class TestEmitter : MonoBehaviour {
 	}
 
 	private void Update() {
-		if(VRTK_Devices.TouchpadPressed("left")) {
+		if(VRTK_Devices.TouchpadPressed(VRDevice.Left)) {
 			if(AppendBuffer.CurrentCount > 0) {
-				SpawnPos = VRTK_Devices.Position("left");
-				if(VRTK_Devices.TouchpadPressDown("left")) LastSpawnPos = SpawnPos;
+				SpawnPos = VRTK_Devices.Position(VRDevice.Left);
+				if(VRTK_Devices.TouchpadPressDown(VRDevice.Left)) LastSpawnPos = SpawnPos;
+				Values.SpawnVelocity = VRTK_Devices.Velocity(VRDevice.Left);
 				SetSpawnPos();
 				Emitter.Dispatch((int)Mathf.Min(EmitCount, AppendBuffer.CurrentCount), 1, 1);
 			}
-		} else if(VRTK_Devices.TouchpadPressed("right")) {
+		} else if(VRTK_Devices.TouchpadPressed(VRDevice.Right)) {
 			if(AppendBuffer.CurrentCount > 0) {
-				SpawnPos = VRTK_Devices.Position("right");
-				if(VRTK_Devices.TouchpadPressDown("right")) LastSpawnPos = SpawnPos;
+				SpawnPos = VRTK_Devices.Position(VRDevice.Right);
+				if(VRTK_Devices.TouchpadPressDown(VRDevice.Right)) LastSpawnPos = SpawnPos;
+				Values.SpawnVelocity = VRTK_Devices.Velocity(VRDevice.Right);
 				SetSpawnPos();
 				Emitter.Dispatch((int)Mathf.Min(EmitCount, AppendBuffer.CurrentCount), 1, 1);
 			}

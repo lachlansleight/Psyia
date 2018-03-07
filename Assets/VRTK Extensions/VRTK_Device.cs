@@ -6,9 +6,9 @@ using VRTK;
 public class VRTK_Device : MonoBehaviour {
 
 	//we use a private one to make sure nobody changes the value in the inspector!
-	private string _Key;
+	private VRDevice _Key;
 
-	public string Key;
+	public VRDevice Key;
 
 	private void Awake() {
 		_Key = Key;

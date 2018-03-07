@@ -4,6 +4,12 @@ using UnityEngine;
 using VRTK;
 using System.Reflection;
 
+public enum VRDevice {
+	Left,
+	Right,
+	HMD
+}
+
 public class VRTK_Devices {
 
 	public class ControllerButtonState {
@@ -111,32 +117,32 @@ public class VRTK_Devices {
 	};
 	#endregion
 
-	static Dictionary<string, Transform> _Transforms;
-	static Dictionary<string, Transform> Transforms {
+	static Dictionary<VRDevice, Transform> _Transforms;
+	static Dictionary<VRDevice, Transform> Transforms {
 		get {
-			if(_Transforms == null) _Transforms = new Dictionary<string, Transform>();
+			if(_Transforms == null) _Transforms = new Dictionary<VRDevice, Transform>();
 			return _Transforms;
 		} set {
 			_Transforms = value;
 		}
 	}
 
-	public static bool HasDevice(string Key) { return Transforms.ContainsKey(Key); }
+	public static bool HasDevice(VRDevice Key) { return Transforms.ContainsKey(Key); }
 
-	static Dictionary<string, VRTK_ControllerEvents> _ControllerEvents;
-	static Dictionary<string, VRTK_ControllerEvents> ControllerEvents {
+	static Dictionary<VRDevice, VRTK_ControllerEvents> _ControllerEvents;
+	static Dictionary<VRDevice, VRTK_ControllerEvents> ControllerEvents {
 		get {
-			if(_ControllerEvents == null) _ControllerEvents = new Dictionary<string, VRTK_ControllerEvents>();
+			if(_ControllerEvents == null) _ControllerEvents = new Dictionary<VRDevice, VRTK_ControllerEvents>();
 			return _ControllerEvents;
 		} set {
 			_ControllerEvents = value;
 		}
 	}
 
-	static Dictionary<string, EventInfo[]> _Events;
-	static Dictionary<string, EventInfo[]> Events {
+	static Dictionary<VRDevice, EventInfo[]> _Events;
+	static Dictionary<VRDevice, EventInfo[]> Events {
 		get {
-			if(_Events == null) _Events = new Dictionary<string, EventInfo[]>();
+			if(_Events == null) _Events = new Dictionary<VRDevice, EventInfo[]>();
 			return _Events;
 		} set {
 			_Events = value;
@@ -144,10 +150,10 @@ public class VRTK_Devices {
 	}
 
 
-	static Dictionary<string, ControllerButtonState> _ButtonStates;
-	static Dictionary<string, ControllerButtonState> ButtonStates {
+	static Dictionary<VRDevice, ControllerButtonState> _ButtonStates;
+	static Dictionary<VRDevice, ControllerButtonState> ButtonStates {
 		get {
-			if(_ButtonStates == null) _ButtonStates = new Dictionary<string, ControllerButtonState>();
+			if(_ButtonStates == null) _ButtonStates = new Dictionary<VRDevice, ControllerButtonState>();
 			return _ButtonStates;
 		} set {
 			_ButtonStates = value;
@@ -157,7 +163,7 @@ public class VRTK_Devices {
 	/// <summary>
 	/// debug only!
 	/// </summary>
-	public static ControllerButtonState GetState(string Key) {
+	public static ControllerButtonState GetState(VRDevice Key) {
 		if(!ButtonStates.ContainsKey(Key)) return null;
 		return ButtonStates[Key];
 	}
@@ -165,7 +171,7 @@ public class VRTK_Devices {
 	/// <summary>
 	/// Gets the position of this device
 	/// </summary>
-	public static Vector3 Position(string Key) {
+	public static Vector3 Position(VRDevice Key) {
 		if(!Transforms.ContainsKey(Key)) return Vector3.zero;
 		return Transforms[Key].position;
 	}
@@ -173,7 +179,7 @@ public class VRTK_Devices {
 	/// <summary>
 	/// Gets the forward vector of this device
 	/// </summary>
-	public static Vector3 Forward(string Key) {
+	public static Vector3 Forward(VRDevice Key) {
 		if(!Transforms.ContainsKey(Key)) return Vector3.zero;
 		return Transforms[Key].forward;
 	}
@@ -181,15 +187,28 @@ public class VRTK_Devices {
 	/// <summary>
 	/// Gets the transform for this device
 	/// </summary>
-	public static Transform Transform(string Key) {
+	public static Transform Transform(VRDevice Key) {
 		if(!Transforms.ContainsKey(Key)) return null;
 		return Transforms[Key];
 	}
 
+	public static Vector3 Velocity(VRDevice Key) {
+		if(!Transforms.ContainsKey(Key)) return Vector3.zero;
+		if(Key == VRDevice.HMD) return VRTK_DeviceFinder.GetHeadsetVelocity();
+		else return VRTK_DeviceFinder.GetControllerVelocity(VRTK_ControllerReference.GetControllerReference(Transforms[Key].gameObject));
+	}
+
+	public static Vector3 AngularVelocity(VRDevice Key) {
+		if(!Transforms.ContainsKey(Key)) return Vector3.zero;
+		if(Key == VRDevice.HMD) return VRTK_DeviceFinder.GetHeadsetAngularVelocity();
+		else return VRTK_DeviceFinder.GetControllerAngularVelocity(VRTK_ControllerReference.GetControllerReference(Transforms[Key].gameObject));
+	}
+
+
 	/// <summary>
 	/// This will be true if the trigger is squeezed about half way in
 	/// </summary>
-	public static bool TriggerPressed(string Key) {
+	public static bool TriggerPressed(VRDevice Key) {
 		if(!Transforms.ContainsKey(Key)) return false;
 
 		return ControllerEvents[Key].triggerPressed;
@@ -198,7 +217,7 @@ public class VRTK_Devices {
 	/// <summary>
 	/// This will be true if the trigger is squeezed a small amount.
 	/// </summary>
-	public static bool TriggerTouched (string Key) {
+	public static bool TriggerTouched (VRDevice Key) {
 		if(!Transforms.ContainsKey(Key)) return false;
 
 		return ControllerEvents[Key].triggerTouched ;
@@ -207,7 +226,7 @@ public class VRTK_Devices {
 	/// <summary>
 	/// This will be true if the trigger is squeezed a small amount more from any previous squeeze on the trigger
 	/// </summary>
-	public static bool TriggerHairlinePressed (string Key) {
+	public static bool TriggerHairlinePressed (VRDevice Key) {
 		if(!Transforms.ContainsKey(Key)) return false;
 
 		return ControllerEvents[Key].triggerHairlinePressed ;
@@ -216,7 +235,7 @@ public class VRTK_Devices {
 	/// <summary>
 	/// This will be true if the trigger is squeezed all the way down
 	/// </summary>
-	public static bool TriggerClicked (string Key) {
+	public static bool TriggerClicked (VRDevice Key) {
 		if(!Transforms.ContainsKey(Key)) return false;
 
 		return ControllerEvents[Key].triggerClicked ;
@@ -225,7 +244,7 @@ public class VRTK_Devices {
 	/// <summary>
 	/// This will be true if the trigger has been squeezed more or less
 	/// </summary>
-	public static bool TriggerAxisChanged (string Key) {
+	public static bool TriggerAxisChanged (VRDevice Key) {
 		if(!Transforms.ContainsKey(Key)) return false;
 
 		return ControllerEvents[Key].triggerAxisChanged ;
@@ -234,7 +253,7 @@ public class VRTK_Devices {
 	/// <summary>
 	/// This will be true if the grip is squeezed about half way in
 	/// </summary>
-	public static bool GripPressed (string Key) {
+	public static bool GripPressed (VRDevice Key) {
 		if(!Transforms.ContainsKey(Key)) return false;
 
 		return ControllerEvents[Key].gripPressed ;
@@ -243,7 +262,7 @@ public class VRTK_Devices {
 	/// <summary>
 	/// This will be true if the grip is touched
 	/// </summary>
-	public static bool GripTouched (string Key) {
+	public static bool GripTouched (VRDevice Key) {
 		if(!Transforms.ContainsKey(Key)) return false;
 
 		return ControllerEvents[Key].gripTouched ;
@@ -252,7 +271,7 @@ public class VRTK_Devices {
 	/// <summary>
 	/// his will be true if the grip is squeezed a small amount more from any previous squeeze on the grip
 	/// </summary>
-	public static bool GripHairlinePressed (string Key) {
+	public static bool GripHairlinePressed (VRDevice Key) {
 		if(!Transforms.ContainsKey(Key)) return false;
 
 		return ControllerEvents[Key].gripHairlinePressed ;
@@ -261,7 +280,7 @@ public class VRTK_Devices {
 	/// <summary>
 	/// This will be true if the grip is squeezed all the way down
 	/// </summary>
-	public static bool GripClicked (string Key) {
+	public static bool GripClicked (VRDevice Key) {
 		if(!Transforms.ContainsKey(Key)) return false;
 
 		return ControllerEvents[Key].gripClicked ;
@@ -270,7 +289,7 @@ public class VRTK_Devices {
 	/// <summary>
 	/// This will be true if the grip has been squeezed more or less
 	/// </summary>
-	public static bool GripAxisChanged (string Key) {
+	public static bool GripAxisChanged (VRDevice Key) {
 		if(!Transforms.ContainsKey(Key)) return false;
 
 		return ControllerEvents[Key].triggerPressed;
@@ -279,7 +298,7 @@ public class VRTK_Devices {
 	/// <summary>
 	/// This will be true if the touchpad is held down
 	/// </summary>
-	public static bool TouchpadPressed (string Key) {
+	public static bool TouchpadPressed (VRDevice Key) {
 		if(!Transforms.ContainsKey(Key)) return false;
 
 		return ControllerEvents[Key].touchpadPressed;
@@ -288,7 +307,7 @@ public class VRTK_Devices {
 	/// <summary>
 	/// This will be true if the touchpad is being touched
 	/// </summary>
-	public static bool TouchpadTouched (string Key) {
+	public static bool TouchpadTouched (VRDevice Key) {
 		if(!Transforms.ContainsKey(Key)) return false;
 
 		return ControllerEvents[Key].touchpadTouched ;
@@ -297,7 +316,7 @@ public class VRTK_Devices {
 	/// <summary>
 	/// This will be true if the touchpad touch position has changed
 	/// </summary>
-	public static bool TouchpadAxisChanged  (string Key) {
+	public static bool TouchpadAxisChanged  (VRDevice Key) {
 		if(!Transforms.ContainsKey(Key)) return false;
 
 		return ControllerEvents[Key].touchpadAxisChanged ;
@@ -306,7 +325,7 @@ public class VRTK_Devices {
 	/// <summary>
 	/// This will be true if button one is held down
 	/// </summary>
-	public static bool ButtonOnePressed  (string Key) {
+	public static bool ButtonOnePressed  (VRDevice Key) {
 		if(!Transforms.ContainsKey(Key)) return false;
 
 		return ControllerEvents[Key].buttonOnePressed ;
@@ -315,7 +334,7 @@ public class VRTK_Devices {
 	/// <summary>
 	/// This will be true if button one is being touched
 	/// </summary>
-	public static bool ButtonOneTouched (string Key) {
+	public static bool ButtonOneTouched (VRDevice Key) {
 		if(!Transforms.ContainsKey(Key)) return false;
 
 		return ControllerEvents[Key].buttonOneTouched ;
@@ -324,7 +343,7 @@ public class VRTK_Devices {
 	/// <summary>
 	/// This will be true if button two is held down
 	/// </summary>
-	public static bool ButtonTwoPressed (string Key) {
+	public static bool ButtonTwoPressed (VRDevice Key) {
 		if(!Transforms.ContainsKey(Key)) return false;
 
 		return ControllerEvents[Key].buttonTwoPressed ;
@@ -333,7 +352,7 @@ public class VRTK_Devices {
 	/// <summary>
 	/// This will be true if button two is being touched
 	/// </summary>
-	public static bool ButtonTwoTouched (string Key) {
+	public static bool ButtonTwoTouched (VRDevice Key) {
 		if(!Transforms.ContainsKey(Key)) return false;
 
 		return ControllerEvents[Key].buttonTwoTouched ;
@@ -342,7 +361,7 @@ public class VRTK_Devices {
 	/// <summary>
 	/// This will be true if start menu is held down
 	/// </summary>
-	public static bool StartMenuPressed (string Key) {
+	public static bool StartMenuPressed (VRDevice Key) {
 		if(!Transforms.ContainsKey(Key)) return false;
 
 		return ControllerEvents[Key].startMenuPressed ;
@@ -351,7 +370,7 @@ public class VRTK_Devices {
 	/// <summary>
 	/// Adds a device to the device list
 	/// </summary>
-	public static void AddDevice(string Key, Transform Target) {
+	public static void AddDevice(VRDevice Key, Transform Target) {
 		if(Transforms.ContainsKey(Key)) return;
 		Transforms.Add(Key, Target);
 	}
@@ -359,7 +378,7 @@ public class VRTK_Devices {
 	/// <summary>
 	/// Add a controller with a ControllerEvents component to the device list
 	/// </summary>
-	public static void AddDevice(string Key, Transform Target, VRTK_ControllerEvents TargetControllerEvents) {
+	public static void AddDevice(VRDevice Key, Transform Target, VRTK_ControllerEvents TargetControllerEvents) {
 		if(Transforms.ContainsKey(Key) || ControllerEvents.ContainsKey(Key)) return;
 
 		Transforms.Add(Key, Target);
@@ -378,7 +397,7 @@ public class VRTK_Devices {
 		ButtonStates.Add(Key, new ControllerButtonState());
 	}
 
-	public static void DebugButtonState(string Key) {
+	public static void DebugButtonState(VRDevice Key) {
 		if(!ButtonStates.ContainsKey(Key)) return;
 
 		string DebugString = "Button State for " + Key + " at frame " + Time.frameCount;
@@ -390,7 +409,7 @@ public class VRTK_Devices {
 	public static void HandleEvent(string eventName, object caller, ControllerInteractionEventArgs e) {
 		VRTK_ControllerEvents CallingCE = caller as VRTK_ControllerEvents;
 		if(CallingCE != null) {
-			string Key = CallingCE.gameObject.GetComponent<VRTK_Device>().Key;
+			VRDevice Key = CallingCE.gameObject.GetComponent<VRTK_Device>().Key;
 			//Debug.Log(eventName + " called on " + Key);
 
 			if(eventName == "TriggerPressed") ButtonStates[Key].TriggerPressDown = Time.frameCount;
@@ -445,59 +464,59 @@ public class VRTK_Devices {
 	}
 
 	//you know what takes ages to meticulously copy-paste?
-	public static bool TriggerPressDown(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].TriggerPressDown; }
-	public static bool TriggerPressUp(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].TriggerPressUp; }
-	public static bool TriggerTouchDown(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].TriggerTouchDown; }
-	public static bool TriggerTouchUp(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].TriggerTouchUp; }
-	public static bool TriggerHairlineDown(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].TriggerHairlineDown; }
-	public static bool TriggerHairlineUp(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].TriggerHairlineUp; }
-	public static bool TriggerClickDown(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].TriggerClickDown; }
-	public static bool TriggerClickUp(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].TriggerClickUp; }
+	public static bool TriggerPressDown(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].TriggerPressDown; }
+	public static bool TriggerPressUp(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].TriggerPressUp; }
+	public static bool TriggerTouchDown(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].TriggerTouchDown; }
+	public static bool TriggerTouchUp(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].TriggerTouchUp; }
+	public static bool TriggerHairlineDown(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].TriggerHairlineDown; }
+	public static bool TriggerHairlineUp(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].TriggerHairlineUp; }
+	public static bool TriggerClickDown(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].TriggerClickDown; }
+	public static bool TriggerClickUp(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].TriggerClickUp; }
 
-	public static bool GripPressDown(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].GripPressDown; }
-	public static bool GripPressUp(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].GripPressUp; }
-	public static bool GripTouchDown(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].GripTouchDown; }
-	public static bool GripTouchUp(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].GripTouchUp; }
-	public static bool GripHairlineDown(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].GripHairlineDown; }
-	public static bool GripHairlineUp(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].GripHairlineUp; }
-	public static bool GripClickDown(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].GripClickDown; }
-	public static bool GripClickUp(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].GripClickUp; }
+	public static bool GripPressDown(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].GripPressDown; }
+	public static bool GripPressUp(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].GripPressUp; }
+	public static bool GripTouchDown(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].GripTouchDown; }
+	public static bool GripTouchUp(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].GripTouchUp; }
+	public static bool GripHairlineDown(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].GripHairlineDown; }
+	public static bool GripHairlineUp(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].GripHairlineUp; }
+	public static bool GripClickDown(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].GripClickDown; }
+	public static bool GripClickUp(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].GripClickUp; }
 
-	public static bool TouchpadPressDown(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].TouchpadPressDown; }
-	public static bool TouchpadPressUp(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].TouchpadPressUp; }
-	public static bool TouchpadTouchDown(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].TouchpadTouchDown; }
-	public static bool TouchpadTouchUp(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].TouchpadTouchUp; }
+	public static bool TouchpadPressDown(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].TouchpadPressDown; }
+	public static bool TouchpadPressUp(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].TouchpadPressUp; }
+	public static bool TouchpadTouchDown(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].TouchpadTouchDown; }
+	public static bool TouchpadTouchUp(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].TouchpadTouchUp; }
 
-	public static bool ButtonOneTouchDown(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].ButtonOneTouchDown; }
-	public static bool ButtonOneTouchUp(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].ButtonOneTouchUp; }
-	public static bool ButtonOneClickDown(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].ButtonOneClickDown; }
-	public static bool ButtonOneClickUp(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].ButtonOneClickUp; }
+	public static bool ButtonOneTouchDown(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].ButtonOneTouchDown; }
+	public static bool ButtonOneTouchUp(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].ButtonOneTouchUp; }
+	public static bool ButtonOneClickDown(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].ButtonOneClickDown; }
+	public static bool ButtonOneClickUp(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].ButtonOneClickUp; }
 
-	public static bool ButtonTwoTouchDown(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].ButtonTwoTouchDown; }
-	public static bool ButtonTwoTouchUp(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].ButtonTwoTouchUp; }
-	public static bool ButtonTwoClickDown(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].ButtonTwoClickDown; }
-	public static bool ButtonTwoClickUp(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].ButtonTwoClickUp; }
+	public static bool ButtonTwoTouchDown(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].ButtonTwoTouchDown; }
+	public static bool ButtonTwoTouchUp(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].ButtonTwoTouchUp; }
+	public static bool ButtonTwoClickDown(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].ButtonTwoClickDown; }
+	public static bool ButtonTwoClickUp(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].ButtonTwoClickUp; }
 
-	public static bool StartButtonClickDown(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].StartButtonClickDown; }
-	public static bool StartButtonClickUp(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].StartButtonClickUp; }
+	public static bool StartButtonClickDown(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].StartButtonClickDown; }
+	public static bool StartButtonClickUp(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].StartButtonClickUp; }
 
-	public static bool ControllerEnabled(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].ControllerEnabled; }
-	public static bool ControllerDisabled(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].ControllerDisabled; }
+	public static bool ControllerEnabled(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].ControllerEnabled; }
+	public static bool ControllerDisabled(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].ControllerDisabled; }
 
-	public static bool ControllerVisible(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].ControllerVisible; }
-	public static bool ControllerHidden(string Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].ControllerHidden; }
+	public static bool ControllerVisible(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].ControllerVisible; }
+	public static bool ControllerHidden(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return false; } return (Time.frameCount-1) == ButtonStates[Key].ControllerHidden; }
 
-	public static int ControllerIndex(string Key) { if(!ButtonStates.ContainsKey(Key)) { return 0; } return ButtonStates[Key].ControllerIndex; }
+	public static int ControllerIndex(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return 0; } return ButtonStates[Key].ControllerIndex; }
 
-	public static float TriggerAxis(string Key) { if(!ButtonStates.ContainsKey(Key)) { return 0; } return ButtonStates[Key].TriggerAxis; }
-	public static float GripAxis(string Key) { if(!ButtonStates.ContainsKey(Key)) { return 0; } return ButtonStates[Key].GripAxis; }
-	public static Vector2 TouchpadAxis(string Key) { if(!ButtonStates.ContainsKey(Key)) { return Vector2.zero; } return ButtonStates[Key].TouchpadAxis; }
-	public static float TouchpadAngle(string Key) { if(!ButtonStates.ContainsKey(Key)) { return 0; } return ButtonStates[Key].TouchpadAngle; }
+	public static float TriggerAxis(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return 0; } return ButtonStates[Key].TriggerAxis; }
+	public static float GripAxis(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return 0; } return ButtonStates[Key].GripAxis; }
+	public static Vector2 TouchpadAxis(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return Vector2.zero; } return ButtonStates[Key].TouchpadAxis; }
+	public static float TouchpadAngle(VRDevice Key) { if(!ButtonStates.ContainsKey(Key)) { return 0; } return ButtonStates[Key].TouchpadAngle; }
 
 	/// <summary>
 	/// Removes this device from the device list
 	/// </summary>
-	public static void RemoveDevice(string Key) {
+	public static void RemoveDevice(VRDevice Key) {
 		if(Transforms.ContainsKey(Key)) Transforms.Remove(Key);
 
 		if(ControllerEvents.ContainsKey(Key)) ControllerEvents.Remove(Key);

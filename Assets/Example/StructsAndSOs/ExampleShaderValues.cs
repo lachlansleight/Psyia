@@ -15,13 +15,25 @@ public class ExampleShaderValues : ShaderValues {
 	public Vector4 RightController;
 
 	[ComputeValue]
+	public Vector3 LeftVelocity;
+
+	[ComputeValue]
+	public Vector3 RightVelocity;
+
+	[ComputeValue]
 	public Vector4 Headset;
 
 	[ComputeValue]
 	public Vector4 SpawnPosition;
 
 	[ComputeValue]
-	public float SpawnVelocity;
+	public Vector3 SpawnVelocity;
+
+	[ComputeValue]
+	public float SpawnVelocityScatter;
+
+	[ComputeValue]
+	public float SpawnInheritVelocity;
 
 	[ComputeValue]
 	public Vector4 LastSpawnPosition;
@@ -46,4 +58,22 @@ public class ExampleShaderValues : ShaderValues {
 
 	[ComputeValue]
 	public float DeltaTime;
+
+	[ComputeValue] [ShaderValue]
+	public Vector3 FieldStartPos;
+
+	[ComputeValue] [ShaderValue]
+	public Vector3 FieldEndPos;
+
+	[ComputeValue] [ShaderValue]
+	public Vector3 FieldCount;
+
+	[ComputeValue]
+	public float FieldDamping;
+
+	[ComputeValue]
+	public float ControllerForce;
+
+	[ComputeValue]
+	public float ControllerRadius;
 }
