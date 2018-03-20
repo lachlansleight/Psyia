@@ -105,7 +105,7 @@ public class TestFieldParticlesCPU : ComputeDispatcherCPU {
 
 		VRTools.VRDebug.DrawLine(ThisParticle.pos, forceField[FinalIndex].pos, ThisParticle.color, true, 0.001f);
 
-		Vector3 FieldForce = forceField[FinalIndex].force;
+		Vector3 FieldForce = forceField[FinalIndex].instantForce + forceField[FinalIndex].attenuatingForce;
 
 		//And we get a damping force
 		Vector3 DampingForce = -1.0f * ThisParticle.velocity * Damping;

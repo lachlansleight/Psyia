@@ -1,0 +1,56 @@
+﻿// We need to manually mark what our kernel names are
+#pragma kernel UpdateForceField
+
+//let's give ourselves a million threads - 10 * 10 * 10 * 10 * 10 * 10
+#define thread_group_x 8
+#define thread_group_y 8
+#define thread_group_z 8
+#define thread_x 8
+#define thread_y 8
+#define thread_z 8
+
+float FieldDamping;
+
+struct FieldStruct {
+	float4 pos;
+	float4 instantForce;
+	float4 attenuatingForce;
+};
+
+RWStructuredBuffer<FieldStruct> ForceField;
+
+float3 rotVec(float3 input, float3 eulers) {
+	float3x3 rotX = float3x3(
+		1, 0, 0,
+		0, cos(eulers.x), -sin(eulers.x),
+		0, sin(eulers.x), cos(eulers.x)
+		);
+	float3x3 rotY = float3x3(
+		cos(eulers.y), 0, sin(eulers.y),
+		0, 1, 0,
+		-sin(eulers.y), 0, cos(eulers.y)
+		);
+	float3x3 rotZ = float3x3(
+		cos(eulers.z), -sin(eulers.z), 0,
+		sin(eulers.z), cos(eulers.z), 0,
+		0, 0, 1
+		);
+
+	float3x3 rotXYZ = mul(rotX, mul(rotY, rotZ));
+	return mul(rotXYZ, input);
+}
+
+
+[numthreads(8,8,8)]
+void UpdateForceField(uint3 dtid : SV_DispatchThreadID)
+{
+	int id = dtid.x + (dtid.y * thread_group_x * thread_x) + (dtid.z * thread_group_x * thread_y * thread_group_y * thread_z);
+	FieldStruct ThisFieldPoint = ForceField[id];
+
+	float3 DampingForce = ThisFieldPoint.attenuatingForce.xyz * FieldDamping * -1;
+
+	ThisFieldPoint.attenuatingForce += float4(DampingForce, 0);
+
+	//And finally, push the updated particle to the buffer
+	ForceField[id] = ThisFieldPoint;
+}

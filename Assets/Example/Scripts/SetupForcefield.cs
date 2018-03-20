@@ -6,6 +6,8 @@ using Foliar.Compute;
 public class SetupForcefield : MonoBehaviour {
 
 	public ExampleShaderValues Values;
+	public ComputeParameterSetter SetupSetter;
+	public ComputeDispatcher FieldSetupShader;
 	public GpuBuffer FieldBuffer;
 
 	// Use this for initialization
@@ -22,22 +24,20 @@ public class SetupForcefield : MonoBehaviour {
 	void SetupData() {
 		FieldStruct[] Forcefield = new FieldStruct[FieldBuffer.Count];
 		for(int i = 0; i < Forcefield.Length; i++) {
-			Forcefield[i].pos = Vector3.zero;
-			Forcefield[i].force = Vector3.zero;
+			Forcefield[i].pos = Vector4.zero;
+			Forcefield[i].instantForce = Vector4.zero;
+			Forcefield[i].attenuatingForce = Vector4.zero;
 		}
 		FieldBuffer.SetData(Forcefield);
+
+		SetupSetter.ApplyNow();
+
+		FieldSetupShader.Dispatch();
 	}
 
 	private void Update() {
 		if(VRTK_Devices.ButtonTwoPressed(VRDevice.Left) || VRTK_Devices.ButtonTwoPressed(VRDevice.Right)) {
-			StartCoroutine(ResetField());
+			FieldSetupShader.Dispatch();
 		}
-	}
-
-	IEnumerator ResetField() {
-		float StoredValue = Values.FieldDamping;
-		Values.FieldDamping = 1f;
-		yield return null;
-		Values.FieldDamping = StoredValue;
 	}
 }

@@ -456,7 +456,7 @@ public class VRTK_Devices {
 			
 			if(eventName == "ControllerIndexChanged") ButtonStates[Key].ControllerIndex = (int)e.controllerReference.index;
 
-			if(eventName == "TriggerAxisChanged") ButtonStates[Key].TriggerAxis = e.buttonPressure;
+			if(eventName == "TriggerAxisChanged") ButtonStates[Key].TriggerAxis = Mathf.InverseLerp(0.05f, 1f, e.buttonPressure);
 			if(eventName == "GripAxisChanged") ButtonStates[Key].GripAxis = e.buttonPressure;
 			if(eventName == "TouchpadAxisChanged") ButtonStates[Key].TouchpadAngle = e.touchpadAngle;
 			if(eventName == "TouchpadAxisChanged") ButtonStates[Key].TouchpadAxis = e.touchpadAxis;

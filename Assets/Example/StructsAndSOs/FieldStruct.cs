@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
 public struct FieldStruct {
-	public Vector3 pos;
-	public Vector3 force;
+	public Vector4 pos;
+	public Vector4 instantForce;
+	public Vector4 attenuatingForce;
 }

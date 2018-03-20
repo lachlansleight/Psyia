@@ -15,6 +15,12 @@ public class ExampleShaderValues : ShaderValues {
 	public Vector4 RightController;
 
 	[ComputeValue]
+	public Vector3 LeftEulers;
+	
+	[ComputeValue]
+	public Vector3 RightEulers;
+
+	[ComputeValue]
 	public Vector3 LeftVelocity;
 
 	[ComputeValue]
@@ -56,7 +62,7 @@ public class ExampleShaderValues : ShaderValues {
 	[ComputeValue]
 	public float Time;
 
-	[ComputeValue]
+	[ComputeValue] [ShaderValue]
 	public float DeltaTime;
 
 	[ComputeValue] [ShaderValue]
@@ -71,9 +77,27 @@ public class ExampleShaderValues : ShaderValues {
 	[ComputeValue]
 	public float FieldDamping;
 
+	[ShaderValue]
+	public float FieldDisplayTime;
+
+	[ComputeValue]
+	public float ThresholdFieldChange;
+
 	[ComputeValue]
 	public float ControllerForce;
 
 	[ComputeValue]
 	public float ControllerRadius;
+
+	[ComputeValue]
+	public float VortexStrength;
+
+	[ComputeValue]
+	public float AttractionStrength;
+
+	[ComputeValue]
+	public float ControllerInstant;
+
+	[ComputeValue]
+	public float ControllerAttenuating;
 }

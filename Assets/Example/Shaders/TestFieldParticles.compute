@@ -45,8 +45,9 @@ struct DistanceData {
 };
 
 struct FieldStruct {
-	float3 pos;
-	float3 force;
+	float4 pos;
+	float4 instantForce;
+	float4 attenuatingForce;
 };
 
 RWStructuredBuffer<ParticleData> outputBuffer;
@@ -83,7 +84,7 @@ void ParticleFunction(uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
 		return;
 	}
 
-	float3 FieldIndexVector = ThisParticle.pos;
+	float3 FieldIndexVector = ThisParticle.pos.xyz;
 	FieldIndexVector += ((FieldEndPos - FieldStartPos) / FieldCount) * 0.5;
 	FieldIndexVector /= (FieldEndPos - FieldStartPos);
 	FieldIndexVector += float3(0.5, 0, 0.5);
@@ -92,7 +93,7 @@ void ParticleFunction(uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
 	 
 	int FinalIndex = (int)(FieldIndexVector.x * FieldCount.y * FieldCount.z + FieldIndexVector.y * FieldCount.z + FieldIndexVector.z);
 
-	float3 FieldForce = forceField[FinalIndex].force;
+	float3 FieldForce = forceField[FinalIndex].instantForce.xyz + forceField[FinalIndex].attenuatingForce.xyz;
 
 	//And we get a damping force
 	float3 DampingForce = -1.0 * ThisParticle.velocity * Damping;

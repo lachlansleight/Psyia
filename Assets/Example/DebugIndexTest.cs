@@ -16,6 +16,8 @@ public class DebugIndexTest : MonoBehaviour {
 
 	public int Choice = 0;
 
+	[Range(0f, 1f)] public float axis;
+
 	// Use this for initialization
 	void Start () {
 		StartCoroutine(GetField());
@@ -24,11 +26,13 @@ public class DebugIndexTest : MonoBehaviour {
 	IEnumerator GetField() {
 		yield return new WaitForSeconds(0.5f);
 		Field = ForceField.GetData<FieldStruct>();
-		HasData = true;
+		//HasData = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		axis = VRTK_Devices.TriggerAxis(VRDevice.Right);
+
 		if(!HasData) return;
 
 		Vector3 Position = VRTK_Devices.Position(VRDevice.Right);

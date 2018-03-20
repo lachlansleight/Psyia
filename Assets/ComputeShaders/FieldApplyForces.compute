@@ -1,0 +1,127 @@
+﻿// We need to manually mark what our kernel names are
+#pragma kernel UpdateForceField
+
+//let's give ourselves a million threads - 10 * 10 * 10 * 10 * 10 * 10
+#define thread_group_x 8
+#define thread_group_y 8
+#define thread_group_z 8
+#define thread_x 8
+#define thread_y 8
+#define thread_z 8
+
+//controller positions
+float4 LeftController;
+float3 LeftEulers;
+float3 LeftVelocity;
+float4 RightController;
+float3 RightEulers;
+float3 RightVelocity;
+
+float ControllerForce;
+float ControllerRadius;
+
+float ControllerAttenuating;
+float ControllerInstant;
+
+float VortexStrength;
+float AttractionStrength;
+
+struct FieldStruct {
+	float4 pos;
+	float4 instantForce;
+	float4 attenuatingForce;
+};
+
+RWStructuredBuffer<FieldStruct> ForceField;
+
+float3 rotVec(float3 input, float3 eulers) {
+	float3x3 rotX = float3x3(
+		1, 0, 0,
+		0, cos(eulers.x), -sin(eulers.x),
+		0, sin(eulers.x), cos(eulers.x)
+		);
+	float3x3 rotY = float3x3(
+		cos(eulers.y), 0, sin(eulers.y),
+		0, 1, 0,
+		-sin(eulers.y), 0, cos(eulers.y)
+		);
+	float3x3 rotZ = float3x3(
+		cos(eulers.z), -sin(eulers.z), 0,
+		sin(eulers.z), cos(eulers.z), 0,
+		0, 0, 1
+		);
+
+	float3x3 rotXYZ = mul(rotX, mul(rotY, rotZ));
+	return mul(rotXYZ, input);
+}
+
+float HyperbolicAttenuation(float Length, float FalloffRadius) {
+	return saturate((2. / ((Length / FalloffRadius) + 1)) - 1);
+}
+
+float3 GetExponentialAttractionField(float3 TargetPos, float3 CenterPos, float3 CenterRot, out float Attenuation) {
+	float3 Disp = CenterPos - TargetPos;
+	//Disp = rotVec(Disp, CenterRot);
+	float3 FieldVector;
+
+	//field equation here
+	Attenuation = HyperbolicAttenuation(length(Disp), ControllerRadius);
+	FieldVector = normalize(Disp) * Attenuation;
+
+	return FieldVector;
+}
+
+float3 GetVortexField(float3 TargetPos, float3 CenterPos, float3 CenterRot, out float Attenuation) {
+	float3 Disp = CenterPos - TargetPos;
+	//Disp = rotVec(Disp, CenterRot);
+
+	float3 FieldVector;
+
+	//field equation here
+	Attenuation = HyperbolicAttenuation(length(Disp), ControllerRadius);
+
+	float2 VortexVector2D = float2(cos(atan2(Disp.z, Disp.x)), sin(atan2(Disp.z, Disp.x)));
+
+	float3 VortexVector = float3(VortexVector2D.x, 0, VortexVector2D.y) * Attenuation;
+
+	VortexVector = rotVec(VortexVector, CenterRot);
+
+	//return VortexVector;
+
+	float3 AttractVector = normalize(Disp) * Attenuation;
+
+	if (length((VortexVector + AttractVector) > 0)) {
+		VortexVector = normalize(VortexVector) * (VortexStrength / (VortexStrength + AttractionStrength));
+		AttractVector = normalize(AttractVector) * (AttractionStrength / (VortexStrength + AttractionStrength));
+	}
+
+	FieldVector = VortexVector + AttractVector;
+
+	return FieldVector;
+}
+
+
+[numthreads(8,8,8)]
+void UpdateForceField(uint3 dtid : SV_DispatchThreadID)
+{
+	int id = dtid.x + (dtid.y * thread_group_x * thread_x) + (dtid.z * thread_group_x * thread_y * thread_group_y * thread_z);
+	FieldStruct ThisFieldPoint = ForceField[id];
+
+	float LeftAttenuation;
+	float RightAttenuation;
+
+	//TODO: make this take an array of instant and attenuating force sources rather than hardcoding left and right controllers as instant forces
+
+	float3 LeftForce = GetVortexField(ThisFieldPoint.pos.xyz, LeftController.xyz, LeftEulers, LeftAttenuation) * ControllerForce * LeftController.w;
+	float3 RightForce = GetVortexField(ThisFieldPoint.pos.xyz, RightController.xyz, RightEulers, RightAttenuation) * ControllerForce * RightController.w;
+
+	ThisFieldPoint.instantForce = float4(0, 0, 0, 0);
+	ThisFieldPoint.instantForce += float4(LeftForce, 0) * saturate(ControllerInstant);
+	ThisFieldPoint.instantForce += float4(RightForce, 0) * saturate(ControllerInstant);
+
+	ThisFieldPoint.attenuatingForce += float4(LeftForce, 0) * saturate(ControllerAttenuating);
+	ThisFieldPoint.attenuatingForce += float4(RightForce, 0) * saturate(ControllerAttenuating);
+
+	//And finally, push the updated particle to the buffer
+	ForceField[id] = ThisFieldPoint;
+}

@@ -2,7 +2,8 @@
 {
 	Properties
 	{
-		_Color("Color", Color) = (1, 1, 1, 1)
+		_FieldColor("Color", Color) = (1, 1, 1, 1)
+		_MinAlpha("Minimum Alpha", Float) = 0.01
 		_LineLength("Line Length", float) = 1
 	}
 
@@ -27,9 +28,10 @@
 
 #define TAM 36
 
-		struct FieldStruct {
-		float3 pos;
-		float3 force;
+	struct FieldStruct {
+		float4 pos;
+		float4 instantForce;
+		float4 attenuatingForce;
 };
 
 		StructuredBuffer<FieldStruct> inputBuffer;
@@ -37,6 +39,8 @@
 	float3 FieldCount;
 	float3 FieldStartPos;
 	float3 FieldEndPos;
+
+	float FieldDisplayTime;
 
 	struct vIn // Into the vertex shader
 	{
@@ -57,7 +61,8 @@
 		float4 col : COLOR0;
 	};
 
-	float4	_Color;
+	float4	_FieldColor;
+	float _MinAlpha;
 	float _LineLength;
 	// ----------------------------------------------------
 	gIn myVertexShader(uint id : SV_VertexID)
@@ -65,11 +70,11 @@
 		gIn o; // Out here, into geometry shader
 			   // Passing on color to next shader (using .r/.g there as tile coordinate)
 		float idF = (float)id;
-		float3 FieldPos = inputBuffer[id].pos;
+		float3 FieldPos = inputBuffer[id].pos.xyz;
 
 		o.pos = UnityObjectToClipPos(FieldPos);
-		o.posB = UnityObjectToClipPos(FieldPos + inputBuffer[id].force * _LineLength);
-		o.col = _Color;
+		o.posB = UnityObjectToClipPos(FieldPos + (inputBuffer[id].instantForce + inputBuffer[id].attenuatingForce).xyz * _LineLength);
+		o.col = _FieldColor;
 
 		return o;
 	}
@@ -99,7 +104,9 @@
 	float4 myFragmentShader(v2f IN) : COLOR
 	{
 		//return float4(1.0,0.0,0.0,1.0);
-		return IN.col * _Color;
+		float4 col = IN.col;
+		col.a = max(col.a, _MinAlpha);
+		return col;
 	}
 
 		ENDCG
