@@ -34,6 +34,7 @@ void EmitFunction() {
 	CurrentParticle.age = 0;
 	CurrentParticle.isAlive = 1;
 	CurrentParticle.pos = lerp(LastSpawnPosition, SpawnPosition, rand(float2(newIndex - 250.125, newIndex + 250.125)));
+	CurrentParticle.pos += float3(rand(Time), rand(Time + 135.332), rand(Time - 135.332)) * 0.01;
 
 	float3 RandomDirection = float3(
 		rand(float2(newIndex, newIndex)),

@@ -100,4 +100,16 @@ public class ExampleShaderValues : ShaderValues {
 
 	[ComputeValue]
 	public float ControllerAttenuating;
+
+	[ComputeValue]
+	public float NoiseAnimationSpeed;
+
+	[ComputeValue]
+	public float NoiseScale;
+
+	[ComputeValue]
+	public float NoiseStrength;
+
+	[ComputeValue]
+	public float NoiseAmount;
 }

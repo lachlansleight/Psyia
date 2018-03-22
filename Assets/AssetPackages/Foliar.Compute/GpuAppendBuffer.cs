@@ -18,15 +18,22 @@ namespace Foliar.Compute {
 				_ArgsBuffer = value;
 			}
 		}
+
+		private int FrameOfLastCurrentCountRetreive;
+		private int LastCurrentCount = -1;
+
 		public int CurrentCount {
 			get {
-				int[] args = new int[]{ 0, 1, 0, 0 };
-				ArgsBuffer.SetData(args);
- 
-				ComputeBuffer.CopyCount(base.Buffer, ArgsBuffer, 0);
-				ArgsBuffer.GetData(args);
- 
-				return args[0];
+				if(LastCurrentCount == -1) {
+					int[] args = new int[]{ 0, 1, 0, 0 };
+					ArgsBuffer.SetData(args);
+
+					ComputeBuffer.CopyCount(base.Buffer, ArgsBuffer, 0);
+					ArgsBuffer.GetData(args);
+
+					LastCurrentCount = args[0];	
+				}
+				return LastCurrentCount;
 			}
 		}
 
@@ -63,6 +70,21 @@ namespace Foliar.Compute {
 			base.OnDestroy();
 
 			if(_ArgsBuffer != null) _ArgsBuffer.Release();
+		}
+
+		void Update() {
+			StartCoroutine(GetCount());
+		}
+
+		IEnumerator GetCount() {
+			yield return new WaitForEndOfFrame();
+			int[] args = new int[]{ 0, 1, 0, 0 };
+			ArgsBuffer.SetData(args);
+
+			ComputeBuffer.CopyCount(base.Buffer, ArgsBuffer, 0);
+			ArgsBuffer.GetData(args);
+
+			LastCurrentCount = args[0];
 		}
 
 	}
