@@ -8,6 +8,8 @@ namespace Foliar.Compute {
 	[CustomEditor(typeof(GpuAppendBuffer))]
 	public class GPUAppendBufferInspector : GpuBufferInspector {
 
+		public int LastRecordedCount;
+
 		public override void OnInspectorGUI() {
 			GpuAppendBuffer myTarget = (GpuAppendBuffer)target;
 
@@ -15,7 +17,10 @@ namespace Foliar.Compute {
 
 			if(myTarget.Buffer != null) {
 				EditorGUILayout.Space();
-				EditorGUILayout.IntField("Current count", myTarget.CurrentCount);
+				EditorGUILayout.IntField("Current count", LastRecordedCount);
+				if(GUILayout.Button("Update current count display")) {
+					LastRecordedCount = myTarget.CurrentCount;
+				}
 			}
 			
 		}

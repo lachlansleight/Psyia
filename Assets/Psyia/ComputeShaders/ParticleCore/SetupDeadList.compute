@@ -1,0 +1,9 @@
+﻿//Initialises our dead list
+#pragma kernel SetupDeadList
+
+AppendStructuredBuffer<uint> DeadList;
+
+[numthreads(1024,1,1)]
+void SetupDeadList(uint3 id : SV_DispatchThreadID) {
+	DeadList.Append(id.x); 
+}

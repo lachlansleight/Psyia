@@ -177,6 +177,22 @@ public class VRTK_Devices {
 	}
 
 	/// <summary>
+	/// Gets the position of this device
+	/// </summary>
+	public static Quaternion Rotation(VRDevice Key) {
+		if(!Transforms.ContainsKey(Key)) return Quaternion.identity;
+		return Transforms[Key].rotation;
+	}
+
+	/// <summary>
+	/// Gets the position of this device
+	/// </summary>
+	public static Vector3 EulerAngles(VRDevice Key) {
+		if(!Transforms.ContainsKey(Key)) return Vector3.zero;
+		return Transforms[Key].eulerAngles;
+	}
+
+	/// <summary>
 	/// Gets the forward vector of this device
 	/// </summary>
 	public static Vector3 Forward(VRDevice Key) {

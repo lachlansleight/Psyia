@@ -1,0 +1,50 @@
+﻿//Responsible for changing the particle colours
+//At the moment - this is just based on velocity direction
+
+#pragma kernel ColorParticles
+
+//includes
+#include "Assets/Psyia/ComputeShaders/Includes/Structs.hlsl"
+
+//define thread group sizes
+#define thread_group_x 1024
+#define thread_group_y 1
+#define thread_group_z 1
+#define thread_x 1024
+#define thread_y 1
+#define thread_z 1
+
+RWStructuredBuffer<ParticleData> ParticleBuffer;
+
+ float Lifespan;
+
+[numthreads(1024, 1, 1)]
+void ColorParticles(uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
+{
+	//get particle for this thread
+	int id = tid.x + thread_group_x * gid.x;
+	ParticleData ThisParticle = ParticleBuffer[id];
+
+	//if dead, set alpha to zero and close thread
+	if (ThisParticle.IsAlive == 0) {
+		ThisParticle.Color.a = 0;
+		ParticleBuffer[id] = ThisParticle;
+		return;
+	}
+
+	//if moving
+	if (length(ThisParticle.Velocity) > 0) {
+		//turn velocity direction into color
+		float4 col = float4(normalize(ThisParticle.Velocity), 1.0) + float4(1.0, 1.0, 1.0, 1.0);
+		col *= 0.5;
+		if (length(col) > 0.8) { col.x = 1.0 - col.x; }
+
+		//fade alpha out over 0.5 seconds
+		if(Lifespan > 0) {
+			col.a = saturate(Lifespan - ThisParticle.Age - 0.5);
+		}
+		ThisParticle.Color = lerp(ThisParticle.Color, col, 0.1);
+	}
+	
+	ParticleBuffer[id] = ThisParticle;
+}

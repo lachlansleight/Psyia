@@ -1,0 +1,201 @@
+fileFormatVersion: 2
+guid: 6b9645653e2b8a14891ba5155c499f1e
+timeCreated: 1510724234
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: ButtonTemp
+    100002: ButtonTemp_001
+    100004: ButtonTempB
+    100006: ButtonTempB_001
+    100008: ButtonTempB_002
+    100010: ButtonTempB_003
+    100012: ButtonTempB_004
+    100014: ButtonTempB_005
+    100016: ButtonTempB_006
+    100018: ButtonTempB_007
+    100020: ButtonTempB_008
+    100022: ButtonTempB_009
+    100024: ButtonTempB_010
+    100026: Cylinder
+    100028: Cylinder_001
+    100030: Cylinder_002
+    100032: Cylinder_003
+    100034: //RootNode
+    100036: Plane
+    100038: Plane_001
+    100040: Plane_002
+    100042: Plane_003
+    100044: Plane_004
+    100046: Plane_005
+    400000: ButtonTemp
+    400002: ButtonTemp_001
+    400004: ButtonTempB
+    400006: ButtonTempB_001
+    400008: ButtonTempB_002
+    400010: ButtonTempB_003
+    400012: ButtonTempB_004
+    400014: ButtonTempB_005
+    400016: ButtonTempB_006
+    400018: ButtonTempB_007
+    400020: ButtonTempB_008
+    400022: ButtonTempB_009
+    400024: ButtonTempB_010
+    400026: Cylinder
+    400028: Cylinder_001
+    400030: Cylinder_002
+    400032: Cylinder_003
+    400034: //RootNode
+    400036: Plane
+    400038: Plane_001
+    400040: Plane_002
+    400042: Plane_003
+    400044: Plane_004
+    400046: Plane_005
+    2300000: ButtonTemp
+    2300002: ButtonTemp_001
+    2300004: ButtonTempB
+    2300006: ButtonTempB_001
+    2300008: ButtonTempB_002
+    2300010: ButtonTempB_003
+    2300012: ButtonTempB_004
+    2300014: ButtonTempB_005
+    2300016: ButtonTempB_006
+    2300018: ButtonTempB_007
+    2300020: ButtonTempB_008
+    2300022: ButtonTempB_009
+    2300024: ButtonTempB_010
+    2300026: Cylinder
+    2300028: Cylinder_001
+    2300030: Cylinder_002
+    2300032: Cylinder_003
+    2300034: Plane
+    2300036: Plane_001
+    2300038: Plane_002
+    2300040: Plane_003
+    2300042: Plane_004
+    2300044: Plane_005
+    3300000: ButtonTemp
+    3300002: ButtonTemp_001
+    3300004: ButtonTempB
+    3300006: ButtonTempB_001
+    3300008: ButtonTempB_002
+    3300010: ButtonTempB_003
+    3300012: ButtonTempB_004
+    3300014: ButtonTempB_005
+    3300016: ButtonTempB_006
+    3300018: ButtonTempB_007
+    3300020: ButtonTempB_008
+    3300022: ButtonTempB_009
+    3300024: ButtonTempB_010
+    3300026: Cylinder
+    3300028: Cylinder_001
+    3300030: Cylinder_002
+    3300032: Cylinder_003
+    3300034: Plane
+    3300036: Plane_001
+    3300038: Plane_002
+    3300040: Plane_003
+    3300042: Plane_004
+    3300044: Plane_005
+    4300000: Plane_005
+    4300002: Plane_004
+    4300004: ButtonTempB_010
+    4300006: ButtonTempB_009
+    4300008: ButtonTempB_008
+    4300010: ButtonTempB_007
+    4300012: ButtonTempB_006
+    4300014: ButtonTempB_005
+    4300016: ButtonTempB_004
+    4300018: ButtonTempB_003
+    4300020: ButtonTempB_002
+    4300022: ButtonTemp_001
+    4300024: ButtonTempB_001
+    4300026: ButtonTempB
+    4300028: ButtonTemp
+    4300030: Plane_003
+    4300032: Plane_002
+    4300034: Plane_001
+    4300036: Cylinder_003
+    4300038: Cylinder_002
+    4300040: Cylinder_001
+    4300042: Cylinder
+    4300044: Plane
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

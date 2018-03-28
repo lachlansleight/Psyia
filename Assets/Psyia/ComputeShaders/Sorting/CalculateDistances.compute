@@ -1,0 +1,35 @@
+﻿//Responsible for determining each particle's distance to the headset
+
+#pragma kernel CalculateDistances
+
+//Includes
+#include "Assets/Psyia/ComputeShaders/Includes/Structs.hlsl"
+
+//define thread group sizes
+#define thread_group_x 1024
+#define thread_group_y 1
+#define thread_group_z 1
+#define thread_x 1024
+#define thread_y 1
+#define thread_z 1
+
+float3 HeadsetPosition;
+
+RWStructuredBuffer<ParticleData> ParticleBuffer;
+RWStructuredBuffer<DistanceData> DistanceBuffer;
+
+[numthreads(1024, 1, 1)]
+void CalculateDistances(uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
+{
+	//get current distance item ID
+	int id = tid.x + thread_group_x * gid.x;
+	DistanceData CurrentDistance = DistanceBuffer[id];
+
+	//Get particle from distance ID
+	ParticleData CurrentParticle = ParticleBuffer[CurrentDistance.Index];
+
+	//Determine new distance
+	CurrentDistance.Distance = length(HeadsetPosition - CurrentParticle.Position);
+
+	DistanceBuffer[id] = CurrentDistance;
+}
