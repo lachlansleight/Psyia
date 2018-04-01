@@ -42,6 +42,57 @@ public class ForcesMirror : MonoBehaviour {
 
 			LinearForce = RotateVector(LinearForce, ForceRotation);
 			return LinearForce;
+		} else if(ForceShape == 3) { //Dipole
+			//Displacement = new Vector3(Displacement.x, Displacement.z, Displacement.y);
+			Vector3 spherical = new Vector3(
+				Displacement.magnitude, //rho
+				Mathf.Atan2(Displacement.z, Displacement.x), //theta
+				Mathf.Atan2(Mathf.Sqrt(Displacement.x * Displacement.x + Displacement.z * Displacement.z), Displacement.y) //phi
+			);
+			Vector2 ThetaSpace = new Vector2(spherical.x * Mathf.Sin(spherical.z), spherical.x * Mathf.Cos(spherical.z));
+			//ThetaSpace = new Vector2(Displacement.x, Displacement.z);
+			//float gradient = -1f * ((ThetaSpace.x - (((ThetaSpace.x * ThetaSpace.x) + (ThetaSpace.y * ThetaSpace.y)) / (2f * ThetaSpace.x))) / ThetaSpace.y);
+			float gradient = (1f - 2f * Mathf.Cos(spherical.z) * Mathf.Cos(spherical.z)) / Mathf.Sin(2f * spherical.z);
+			Vector2 Direction = new Vector2(1f, gradient);
+			Direction *= (ThetaSpace.x < 0) != (ThetaSpace.y < 0) ? 1 : -1;
+			Direction.Normalize();
+			
+			Vector3 Direction3D = new Vector3(Direction.x, Direction.y, 0);
+			Direction3D = RotateVector(Direction3D, new Vector3(0f, spherical.y, 0f));
+
+			Vector3 Force = new Vector3(
+				Direction.x * Mathf.Cos(spherical.z),
+				Direction.x * Mathf.Sin(spherical.z),
+				Direction.y
+			);
+
+			//Force = new Vector3(Direction.x, Direction.y, 0f);
+
+			//Force = new Vector3(gradient, 0f, 0f);
+
+			//Force = new Vector3(Direction.x, 0f, Direction.y);
+			
+			//Force = new Vector3(ThetaSpace.x, ThetaSpace.y, 0);
+
+			//check theta
+			//Force = new Vector3(Mathf.Cos(spherical.y), 0f, Mathf.Sin(spherical.y));
+
+			//float ThetaRadius = Mathf.Sqrt(Displacement.x * Displacement.x + Displacement.z * Displacement.z);
+			//Force = new Vector3(ThetaRadius * Mathf.Cos(spherical.y), spherical.x * Mathf.Cos(spherical.z), ThetaRadius * Mathf.Sin(spherical.y));
+
+			//check phi
+			//Force = new Vector3(Mathf.Cos(spherical.z), 0f, Mathf.Sin(spherical.z));
+
+			/*
+			Vector3 Force = new Vector3(
+				Mathf.Cos(spherical.z),
+				Mathf.Sin(spherical.z),
+				0
+			);*/
+
+			Force.Normalize();
+
+			return Force;
 		}
 
 		return new Vector3(0, 0, 0);

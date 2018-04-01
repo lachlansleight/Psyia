@@ -14,7 +14,8 @@ public class PsyiaForce : ScriptableObject {
     public enum ForceShape {
         Radial,
         Orbital,
-        Linear
+        Linear,
+        Dipole
     }
 
     public float Strength;
