@@ -38,10 +38,13 @@ namespace Foliar.Compute {
 					else if(p.FieldType == typeof(float[]))
 						TargetShader.SetMatrixArray(p.Name, (Matrix4x4[])p.GetValue(shaderValues));
 
-					else if(p.FieldType == typeof(Texture)) {
-						if(Attribute.IsDefined(p, typeof(ComputeKernel))) {
-							string KernelName = ((ComputeKernel)Attribute.GetCustomAttribute(p, typeof(ComputeKernel))).Name;
-							TargetShader.SetTexture(TargetShader.FindKernel(KernelName), p.Name, (Texture)p.GetValue(shaderValues));
+					else if(p.FieldType == typeof(Texture) || p.FieldType == typeof(Texture2D) || p.FieldType == typeof(RenderTexture)) {
+						if(Attribute.IsDefined(p, typeof(ComputeTexture))) {
+							string ShaderName = ((ComputeTexture)Attribute.GetCustomAttribute(p, typeof(ComputeTexture))).ShaderName;
+							string KernelName = ((ComputeTexture)Attribute.GetCustomAttribute(p, typeof(ComputeTexture))).KernelName;
+							if(ShaderName == TargetShader.name) {
+								TargetShader.SetTexture(TargetShader.FindKernel(KernelName), p.Name, (Texture)p.GetValue(shaderValues));
+							}
 						}
 					}
 					else if(p.FieldType == typeof(Color))

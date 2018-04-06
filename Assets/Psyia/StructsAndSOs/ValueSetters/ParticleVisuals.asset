@@ -14,5 +14,5 @@ MonoBehaviour:
   ParticleMaterial: {fileID: 2100000, guid: dfc959315cdd2b74c9780ca99950df04, type: 2}
   _Image: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
   _Color: {r: 1, g: 1, b: 1, a: 1}
-  _PointSize: 0.07086614
+  _PointSize: 0.26
   _LineLength: 0.014173227

@@ -1,0 +1,72 @@
+﻿//Responsible for changing the particle colours
+//At the moment - this is just based on velocity direction
+
+#pragma kernel ColorParticles
+
+//includes
+#include "Assets/Psyia/ComputeShaders/Includes/Structs.hlsl"
+
+//define thread group sizes
+#define thread_group_x 1024
+#define thread_group_y 1
+#define thread_group_z 1
+#define thread_x 1024
+#define thread_y 1
+#define thread_z 1
+
+RWStructuredBuffer<ParticleData> ParticleBuffer;
+
+float Lifespan;
+
+int BlendMode; //0 = add, 1 = multiply
+int LutWidth;
+Texture2D XLut;
+Texture2D YLut;
+Texture2D ZLut;
+
+[numthreads(1024, 1, 1)]
+void ColorParticles(uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
+{
+	//get particle for this thread
+	int id = tid.x + thread_group_x * gid.x;
+	ParticleData ThisParticle = ParticleBuffer[id];
+
+	//if dead, set alpha to zero and close thread
+	if (ThisParticle.IsAlive == 0) {
+		ThisParticle.Color.a = 0;
+		ParticleBuffer[id] = ThisParticle;
+		return;
+	}
+
+	//if moving
+	float3 colVel = float3(0,0,0);
+	float colA = 1.0;
+	if (length(ThisParticle.Velocity) > 0) {
+		//turn velocity direction into color
+		colVel = float3(normalize(ThisParticle.Velocity)) + float3(1.0, 1.0, 1.0);
+		colVel *= 0.5;
+
+		//fade alpha out over 0.5 seconds
+		if(Lifespan > 0) {
+			colA = saturate(Lifespan - ThisParticle.Age - 0.5);
+		}
+	}
+
+	int LWMO = LutWidth - 1;
+	int2 xIndex = int2(colVel.x * LWMO, 0);
+	int2 yIndex = int2(colVel.y * LWMO, 0);
+	int2 zIndex = int2(colVel.z * LWMO, 0);
+
+	float4 xCol = XLut[xIndex];
+	float4 yCol = YLut[yIndex];
+	float4 zCol = ZLut[zIndex];
+
+	float3 addCol = (xCol + yCol + zCol).xyz * saturate(sign((BlendMode * -2) + 1));
+	float3 multCol = (xCol * yCol * zCol).xyz * saturate(sign((BlendMode * 2) - 1));
+
+	colVel = addCol + multCol;
+
+	ThisParticle.Color = lerp(ThisParticle.Color, float4(colVel, colA), 0.1);
+	
+	ParticleBuffer[id] = ThisParticle;
+}

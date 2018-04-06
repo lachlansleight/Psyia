@@ -44,7 +44,7 @@ public class ForcesMirror : MonoBehaviour {
 			return LinearForce;
 		} else if(ForceShape == 3) { //Dipole
 			//Displacement = new Vector3(Displacement.x, Displacement.z, Displacement.y);
-			Vector3 spherical = new Vector3(
+			/*Vector3 spherical = new Vector3(
 				Displacement.magnitude, //rho
 				Mathf.Atan2(Displacement.z, Displacement.x), //theta
 				Mathf.Atan2(Mathf.Sqrt(Displacement.x * Displacement.x + Displacement.z * Displacement.z), Displacement.y) //phi
@@ -82,15 +82,16 @@ public class ForcesMirror : MonoBehaviour {
 
 			//check phi
 			//Force = new Vector3(Mathf.Cos(spherical.z), 0f, Mathf.Sin(spherical.z));
-
-			/*
-			Vector3 Force = new Vector3(
-				Mathf.Cos(spherical.z),
-				Mathf.Sin(spherical.z),
-				0
-			);*/
+			
 
 			Force.Normalize();
+			*/
+
+			float Separation = 0.001f;
+			Vector3 SeparationOffset = Separation * 0.5f * RotateVector(new Vector3(0, 0, 1), ForceRotation);
+			Vector3 AttractForce = Vector3.Normalize(Displacement + SeparationOffset) / Vector3.SqrMagnitude(Displacement + SeparationOffset);
+			Vector3 RepelForce = -Vector3.Normalize(Displacement - SeparationOffset) / Vector3.SqrMagnitude(Displacement + SeparationOffset);
+			Vector3 Force = Vector3.Normalize(AttractForce + RepelForce);
 
 			return Force;
 		}

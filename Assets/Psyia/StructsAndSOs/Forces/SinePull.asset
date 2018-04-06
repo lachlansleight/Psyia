@@ -11,10 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1463f41ec783a534db4168fb2297c8c0, type: 3}
   m_Name: SinePull
   m_EditorClassIdentifier: 
-  Strength: 5
+  Shape: 2
+  Strength: 1
   AttenuationMode: 4
   AttenuationDistance: 0.1
-  Shape: 0
   Position: {x: 0, y: 0, z: 0}
   Rotation: {x: 0, y: 0, z: 0}
   Padding: {x: 0, y: 0}

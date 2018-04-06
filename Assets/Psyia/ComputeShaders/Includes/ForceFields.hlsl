@@ -55,56 +55,19 @@ float3 GetDirectionAtDisplacement(int ForceShape, float3 ForceRotation, float3 D
         LinearForce = RotateVector(LinearForce, ForceRotation);
         return LinearForce;
     } else if(ForceShape == 3) { //Dipole
-        //Displacement = float3(Displacement.x, Displacement.z, Displacement.y);
-        float3 spherical = float3(
-            length(Displacement), //rho
-            atan2(Displacement.z, Displacement.x), //theta
-            atan2(sqrt(Displacement.x * Displacement.x + Displacement.z * Displacement.z), Displacement.y) //phi
-        );
-        float2 ThetaSpace = float2(spherical.x * sin(spherical.z), spherical.x * cos(spherical.z));
-        //ThetaSpace = float2(Displacement.x, Displacement.z);
-        //float gradient = -1f * ((ThetaSpace.x - (((ThetaSpace.x * ThetaSpace.x) + (ThetaSpace.y * ThetaSpace.y)) / (2f * ThetaSpace.x))) / ThetaSpace.y);
-        float gradient = (1. - 2. * cos(spherical.z) * cos(spherical.z)) / sin(2. * spherical.z);
-        float2 Direction = float2(1., gradient);
-        Direction *= (ThetaSpace.x < 0) != (ThetaSpace.y < 0) ? 1. : -1.;
-        Direction = normalize(Direction);
-        
-        float3 Direction3D = float3(Direction.x, Direction.y, 0);
-        Direction3D = RotateVector(Direction3D, float3(0, spherical.y, 0));
+        float Separation = 0.001;
+        float3 SeparationOffset = Separation * 0.5 * RotateVector(float3(0, 0, 1), ForceRotation);
 
-        float3 Force = float3(
-            Direction.x * cos(spherical.z),
-            Direction.x * sin(spherical.z),
-            Direction.y
-        );
+        float3 AttractDisplacement = Displacement + SeparationOffset;
+        float3 RepelDisplacement = Displacement - SeparationOffset;
 
-        //Force = float3(Direction.x, Direction.y, 0f);
+        float AttractDisplacementLength = length(AttractDisplacement);
+        float RepelDisplacementLength = length(RepelDisplacement);
 
-        //Force = float3(gradient, 0f, 0f);
+        float3 AttractForce = normalize(AttractDisplacement) / (AttractDisplacementLength * AttractDisplacementLength);
+        float3 RepelForce = -1. * normalize(RepelDisplacement) / (RepelDisplacementLength * RepelDisplacementLength);
 
-        //Force = float3(Direction.x, 0f, Direction.y);
-        
-        //Force = float3(ThetaSpace.x, ThetaSpace.y, 0);
-
-        //check theta
-        //Force = float3(cos(spherical.y), 0f, sin(spherical.y));
-
-        //float ThetaRadius = sqrt(Displacement.x * Displacement.x + Displacement.z * Displacement.z);
-        //Force = float3(ThetaRadius * cos(spherical.y), spherical.x * cos(spherical.z), ThetaRadius * sin(spherical.y));
-
-        //check phi
-        //Force = float3(cos(spherical.z), 0f, sin(spherical.z));
-
-        /*
-        float3 Force = float3(
-            cos(spherical.z),
-            sin(spherical.z),
-            0
-        );*/
-
-
-
-        return normalize(Force);
+        return normalize(AttractForce + RepelForce);
     }
 
     return float3(0, 0, 0);

@@ -17,6 +17,7 @@ public class ControllerForce : MonoBehaviour {
 	void Update () {
 		transform.position = VRTK_Devices.Position(TargetDevice);
 		transform.eulerAngles = VRTK_Devices.EulerAngles(TargetDevice);
-		MyForceSource.StrengthModifier = Mathf.Lerp(MinForce, MaxForce, VRTK_Devices.TriggerAxis(TargetDevice));
+		if(MyForceSource != null)
+			MyForceSource.StrengthModifier = Mathf.Lerp(MinForce, MaxForce, VRTK_Devices.TriggerAxis(TargetDevice));
 	}
 }

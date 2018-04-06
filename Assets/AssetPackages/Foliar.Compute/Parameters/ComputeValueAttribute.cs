@@ -1,21 +1,23 @@
 ﻿namespace Foliar.Compute {
 
-	[System.AttributeUsage(System.AttributeTargets.All, Inherited = false, AllowMultiple = true)]
-	sealed class ComputeValue : System.Attribute {
+	[System.AttributeUsage(System.AttributeTargets.All, Inherited = true, AllowMultiple = true)]
+	class ComputeValue : System.Attribute {
 
 		public ComputeValue() {
 	
 		}
 	}
 
-	
-	[System.AttributeUsage(System.AttributeTargets.All, Inherited = false, AllowMultiple = true)]
-	sealed class ComputeKernel : System.Attribute {
 
-		public readonly string Name;
+	[ComputeValue]
+	class ComputeTexture : ComputeValue {
 
-		public ComputeKernel(string name) {
-			Name = name;
+		public readonly string ShaderName;
+		public readonly string KernelName;
+
+		public ComputeTexture(string shaderName, string kernelName) {
+			ShaderName = shaderName;
+			KernelName = kernelName;
 		}
 	}
 

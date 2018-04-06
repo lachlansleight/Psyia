@@ -18,10 +18,10 @@ public class PsyiaForce : ScriptableObject {
         Dipole
     }
 
+    public ForceShape Shape;
     public float Strength;
     public ForceAttenuationMode AttenuationMode;
     [Tooltip("The distance at which the force equals zero")] public float AttenuationDistance;
-    public ForceShape Shape;
     
     public Vector3 Position;
     public Vector3 Rotation;

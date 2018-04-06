@@ -5,6 +5,7 @@ using Foliar.Compute;
 
 public class StartSpawner : MonoBehaviour {
 
+	public bool DoSpawn = true;
 	public int SpawnCount;
 
 	public Vector3 SpawnCenterPosition;
@@ -18,18 +19,13 @@ public class StartSpawner : MonoBehaviour {
 	}
 
 	public void Spawn() {
+		if(!DoSpawn) return;
+
 		if(SpawnCount < 0) {
-			SpawnCount = DeadList.CurrentCount;
+			SpawnCount = ((DeadList.CurrentCount) / 1024) + SpawnCount;
 		}
 
-		if(SpawnCount % 1024 != 0) {
-			SpawnCount -= SpawnCount % 1024;
-		}
-
-		if(SpawnCount < 1024) {
-			SpawnCount = 0;
-			return;
-		}
+		if(SpawnCount < 1) return;
 
 		SpawnDispatcher.Shader.SetFloat("SpawnRadius", SpawnRadius);
 		SpawnDispatcher.Shader.SetFloat("SpawnVelocityScatter", 0.001f);
@@ -41,7 +37,7 @@ public class StartSpawner : MonoBehaviour {
 			SpawnCount = DeadList.CurrentCount;
 		}
 
-		SpawnDispatcher.Dispatch(1024, SpawnCount / 1024, 1);
+		SpawnDispatcher.Dispatch(1024, SpawnCount, 1);
 	}
 	
 	IEnumerator SpawnAfterFrame() {
