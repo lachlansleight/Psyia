@@ -16,6 +16,6 @@ MonoBehaviour:
   ParticleMass: 0.5
   Lifespan: 0
   LutWidth: 128
-  XLut: {fileID: 2800000, guid: 5aaaf3b8f511d2043b7bd7c6b3c75ab7, type: 3}
-  YLut: {fileID: 2800000, guid: 6ae9c36fcbd34874dbb75ed07a746784, type: 3}
+  XLut: {fileID: 2800000, guid: 7c871c0c242239f4c96941324c7478f4, type: 3}
+  YLut: {fileID: 2800000, guid: 5aaaf3b8f511d2043b7bd7c6b3c75ab7, type: 3}
   ZLut: {fileID: 2800000, guid: 8a745e2b4adce4047911df14df57b5d9, type: 3}
