@@ -76,4 +76,18 @@ public class ParticleEmitter : MonoBehaviour {
 			}
 		}
 	}
+
+	public void Emit(Vector3 Position, int Amount) { Emit(Position, Vector3.zero, Amount); }
+	public void Emit(Vector3 Position, Vector3 Velocity, int Amount) {
+		Emitter.Shader.SetVector("SpawnPosition", Position);
+		Emitter.Shader.SetVector("SpawnVelocity", Velocity);
+		Emitter.Shader.SetVector("LastSpawnPosition", Position);
+		Emitter.Shader.SetVector("LastSpawnVelocity", Velocity);
+
+		float AppendBufferCount = AppendBuffer.CurrentCount;
+		int NumberToEmit = (int)Mathf.Min(Amount, AppendBufferCount);
+		Emitter.Dispatch(NumberToEmit, 1, 1);
+	}
+
+
 }

@@ -67,7 +67,7 @@ void SimulateParticles(uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
 	ExternalForce *= ForceMultiplier;
 
 	//Get damping force
-	float3 DampingForce = -1.0 * ThisParticle.Velocity * Damping;
+	float3 DampingForce = -1.0 * ThisParticle.Velocity * ParticleMass * Damping;
 
 	//Apply all forces
 	ThisParticle.Velocity += (ExternalForce / ParticleMass) * DeltaTime;

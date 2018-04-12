@@ -514,6 +514,7 @@ GameObject:
   - component: {fileID: 370296227}
   - component: {fileID: 370296229}
   - component: {fileID: 370296228}
+  - component: {fileID: 370296230}
   m_Layer: 0
   m_Name: ColorDispatcherLut
   m_TagString: Untagged
@@ -546,7 +547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetShader: {fileID: 7200000, guid: f1ddf4159f99aa648a6caa7ba4d961b9, type: 3}
-  shaderValues: {fileID: 11400000, guid: 763e717987d59534ca37f96a7206c2e0, type: 2}
+  shaderValues: {fileID: 11400000, guid: b04fcaa4184dbe842963e58cc778d55e, type: 2}
 --- !u!114 &370296229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -569,6 +570,19 @@ MonoBehaviour:
   ThreadGroupsX: 1024
   ThreadGroupsY: 1
   ThreadGroupsZ: 1
+--- !u!114 &370296230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 370296226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c744166d9d79b954599fcbc5b613999c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetShader: {fileID: 7200000, guid: f1ddf4159f99aa648a6caa7ba4d961b9, type: 3}
+  shaderValues: {fileID: 11400000, guid: 763e717987d59534ca37f96a7206c2e0, type: 2}
 --- !u!1 &390529775
 GameObject:
   m_ObjectHideFlags: 0
