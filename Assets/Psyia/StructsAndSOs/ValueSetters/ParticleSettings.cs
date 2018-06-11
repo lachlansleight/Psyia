@@ -9,4 +9,5 @@ public class ParticleSettings : ShaderValues {
     [ComputeValue] public float ForceMultiplier;
     [ComputeValue] public float ParticleMass;
     [ComputeValue] public float Lifespan;
+    [ComputeValue] public float Y;
 }

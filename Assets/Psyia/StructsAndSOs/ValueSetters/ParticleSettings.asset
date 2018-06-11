@@ -11,7 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98d123c73f4b6054b8552a0f8554367e, type: 3}
   m_Name: ParticleSettings
   m_EditorClassIdentifier: 
-  Damping: 0.3
+  Damping: 0.95
   ForceMultiplier: 1
-  ParticleMass: 0.5
+  ParticleMass: 0.2
   Lifespan: 0
+  Y: 0.2
