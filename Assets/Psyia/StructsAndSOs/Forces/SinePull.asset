@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1463f41ec783a534db4168fb2297c8c0, type: 3}
   m_Name: SinePull
   m_EditorClassIdentifier: 
-  Shape: 2
+  Shape: 0
   Strength: 1
   AttenuationMode: 4
   AttenuationDistance: 0.1

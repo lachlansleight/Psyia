@@ -8,11 +8,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98d123c73f4b6054b8552a0f8554367e, type: 3}
-  m_Name: ParticleSettings_FollowForce
+  m_Script: {fileID: 11500000, guid: 01a070bf937f03742b70264341f21090, type: 3}
+  m_Name: RightPosition_z
   m_EditorClassIdentifier: 
-  Damping: 0.73
-  ForceMultiplier: 1
-  ParticleMass: 0.205
-  Lifespan: 0
-  Y: 0.15
