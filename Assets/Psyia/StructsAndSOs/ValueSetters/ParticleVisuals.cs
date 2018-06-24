@@ -11,4 +11,8 @@ public class ParticleVisuals : ShaderValues {
     [ShaderValue] public Color _Color;
 	[ShaderValue] public float _PointSize;
     [ShaderValue] public float _LineLength;
+    [ComputeValue] public int LutWidth;
+    [ComputeTexture("ColorParticlesTexLookup", "ColorParticles")] public Texture2D XLut;
+    [ComputeTexture("ColorParticlesTexLookup", "ColorParticles")] public Texture2D YLut;
+    [ComputeTexture("ColorParticlesTexLookup", "ColorParticles")] public Texture2D ZLut;
 }

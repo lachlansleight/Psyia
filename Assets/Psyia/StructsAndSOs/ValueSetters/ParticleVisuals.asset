@@ -16,3 +16,7 @@ MonoBehaviour:
   _Color: {r: 1, g: 1, b: 1, a: 1}
   _PointSize: 0.26
   _LineLength: 0.014173227
+  LutWidth: 128
+  XLut: {fileID: 2800000, guid: 302155dd1ad49574aabd975c7f66e040, type: 3}
+  YLut: {fileID: 2800000, guid: a3bee01bf45c3474d8af3b259ca939b3, type: 3}
+  ZLut: {fileID: 2800000, guid: 1651f981ce9436a4bab7e3be21c0af61, type: 3}
