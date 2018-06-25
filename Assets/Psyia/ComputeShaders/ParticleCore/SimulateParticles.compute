@@ -19,9 +19,6 @@ float Damping;
 float ForceMultiplier;
 float ParticleMass;
 
-//Force Parameters
-int ForceCount;
-
 //time parameters
 float Lifespan;
 float Time;
@@ -59,18 +56,23 @@ void SimulateParticles(uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
 	}
 
 	//sum all external forces
+	uint ForceCount = 0;
+	uint ForceStride = 0;
+	ForceBuffer.GetDimensions(ForceCount, ForceStride);
+
 	float3 ExternalForce = float3(0,0,0);
-	for(int i = 0; i < ForceCount; i++) {
+	for(uint i = 0; i < ForceCount; i++) {
 		ForceData CurrentForce = ForceBuffer[i];
-		ExternalForce += GetForceAtPoint(CurrentForce, ThisParticle.Position);
+		float3 NewForce = GetForceAtPoint(CurrentForce, ThisParticle.Position);
+		ExternalForce += NewForce;
 	}
 	ExternalForce *= ForceMultiplier;
 
-	//Get damping force
-	float3 DampingForce = -1.0 * ThisParticle.Velocity * ParticleMass * Damping;
-
-	//Apply all forces
+	//Apply forces
 	ThisParticle.Velocity += (ExternalForce / ParticleMass) * DeltaTime;
+
+	//Damping
+	float3 DampingForce = -1.0 * ThisParticle.Velocity * Damping;
 	ThisParticle.Velocity += (DampingForce / ParticleMass) * DeltaTime;
 
 	//And we update position

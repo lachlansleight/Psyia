@@ -6,13 +6,13 @@ using Foliar.Compute;
 public class ParticleBufferSetup : BufferSetup {
 
 	protected override void CreateData() {
-		ComputeStruct[] Data = new ComputeStruct[Count];
+		ParticleData[] Data = new ParticleData[Count];
 		for(int i = 0; i < Data.Length; i++) {
-			Data[i].pos = Random.insideUnitSphere * 0.1f + new Vector3(0, 1, 0);
-			Data[i].velocity = Vector3.zero;
-			Data[i].color = Color.Lerp(Color.red, Color.blue, Random.Range(0f, 1f));
-			Data[i].color.a = 1f;
-			Data[i].isAlive = 0;
+			Data[i].Position = Random.insideUnitSphere * 0.1f + new Vector3(0, 1, 0);
+			Data[i].Velocity = Vector3.zero;
+			Data[i].Color = Color.Lerp(Color.red, Color.blue, Random.Range(0f, 1f));
+			Data[i].Color.w = 1f;
+			Data[i].IsAlive = 0;
 		}
 
 		MyGpuBuffer.SetData(Data);

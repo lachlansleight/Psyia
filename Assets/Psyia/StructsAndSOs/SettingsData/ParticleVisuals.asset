@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7a850bdd57240e4ca726a0806e07e6e, type: 3}
   m_Name: ParticleVisuals
   m_EditorClassIdentifier: 
-  ParticleMaterial: {fileID: 2100000, guid: dfc959315cdd2b74c9780ca99950df04, type: 2}
+  ParticleMaterial: {fileID: 2100000, guid: 6f810f16e4ad7674280792ecf1f57024, type: 2}
   _Image: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
   _Color: {r: 1, g: 1, b: 1, a: 1}
   _PointSize: 0.26

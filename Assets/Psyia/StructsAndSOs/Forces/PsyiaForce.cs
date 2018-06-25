@@ -51,4 +51,18 @@ public class PsyiaForce : ScriptableObject {
 
         return MyForceData;
     }
+
+    public static ForceData EmptyForceData {
+        get {
+            ForceData EmptyData = new ForceData();
+            EmptyData.Strength = 0;
+            EmptyData.AttenuationMode = 0;
+            EmptyData.AttenuationDistance = 1;
+            EmptyData.Shape = 0;
+            EmptyData.Position = Vector3.zero;
+            EmptyData.Rotation = Vector3.zero;
+            EmptyData.Padding = Vector2.zero;
+            return EmptyData;
+        }
+    }
 }

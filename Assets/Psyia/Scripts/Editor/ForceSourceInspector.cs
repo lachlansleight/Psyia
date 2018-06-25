@@ -15,6 +15,9 @@ public class ForceSourceInspector : Editor {
 
 		myTarget.Force = (PsyiaForce)EditorGUILayout.ObjectField("Force", myTarget.Force, typeof(PsyiaForce), false);
 		if(myTarget.Force != null) {
+			myTarget.UseTransformPosition = EditorGUILayout.Toggle("Use Transform Position", myTarget.UseTransformPosition);
+			myTarget.UseTransformRotation = EditorGUILayout.Toggle("Use Transform Rotation", myTarget.UseTransformRotation);
+			myTarget.UseStrengthModifier = EditorGUILayout.Toggle("Use Strength Modifier", myTarget.UseStrengthModifier);
 			myTarget.StrengthModifier = EditorGUILayout.FloatField("Strength Modifier", myTarget.StrengthModifier);
 
 			EditorGUILayout.LabelField("Force Asset Settings", EditorStyles.boldLabel);

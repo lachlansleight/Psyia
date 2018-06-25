@@ -12,8 +12,6 @@ public class ForceManager : MonoBehaviour {
 			return _Instance;
 		}
 	}
-
-	public ComputeShader SimulateShader;
 	public GpuBuffer ForceBuffer;
 
 	private List<ForceSource> _Sources;
@@ -56,7 +54,6 @@ public class ForceManager : MonoBehaviour {
 
 	void UpdateCount() {
 		ForceBuffer.SetCount(Sources.Count);
-		SimulateShader.SetInt("ForceCount", Sources.Count);
 	}
 
 	void SetData() {
@@ -67,7 +64,7 @@ public class ForceManager : MonoBehaviour {
 		for(int i = OutputData.Length - 1; i >= 0; i--) {
 			if(Sources[i] == null) RemoveSource(i);
 
-			OutputData[i] = Sources[i].Force.GetForceData(Sources[i].transform.position, Sources[i].transform.eulerAngles, Sources[i].gameObject.activeSelf ? Sources[i].StrengthModifier : 0);
+			OutputData[i] = Sources[i].gameObject.activeSelf ? Sources[i].GetForceData() : PsyiaForce.EmptyForceData;
 		}
 		ForceBuffer.SetData(OutputData);
 	}

@@ -6,6 +6,13 @@ namespace Foliar.Compute {
 
 	public class DispatchQueue : MonoBehaviour {
 
+		public bool RunOnUpdate = true;
+		public bool RunOnAwake = false;
+
+		void Awake() {
+			if(RunOnAwake) RunQueue();
+		}
+
 		void Start () {
 			for(int i = 0; i < transform.childCount; i++) {
 				EnforceNoAutoDispatch(i);
@@ -13,6 +20,10 @@ namespace Foliar.Compute {
 		}
 	
 		void Update () {
+			if(RunOnUpdate) RunQueue();
+		}
+
+		public void RunQueue() {
 			for(int i = 0; i < transform.childCount; i++) {
 				EnforceNoAutoDispatch(i);
 
