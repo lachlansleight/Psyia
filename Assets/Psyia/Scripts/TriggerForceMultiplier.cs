@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(ForceSource))]
-public class ControllerForce : MonoBehaviour {
+public class TriggerForceMultiplier : MonoBehaviour {
 
 	public VRDevice TargetDevice;
 	public float MinForce;
@@ -15,8 +15,6 @@ public class ControllerForce : MonoBehaviour {
 	}
 	
 	void Update () {
-		transform.position = VRTK_Devices.Position(TargetDevice);
-		transform.eulerAngles = VRTK_Devices.EulerAngles(TargetDevice);
 		if(MyForceSource != null)
 			MyForceSource.StrengthModifier = Mathf.Lerp(MinForce, MaxForce, VRTK_Devices.TriggerAxis(TargetDevice));
 	}

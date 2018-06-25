@@ -11,11 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98d123c73f4b6054b8552a0f8554367e, type: 3}
   m_Name: ParticleSettings
   m_EditorClassIdentifier: 
-  Damping: 1
-  NoiseDamping: 1
+  Damping: 0.4
+  NoiseDamping: 0.4
   TurbulenceViscosity: 0.001
   ForceMultiplier: 1
   ParticleMass: 0.2
-  NoiseAmount: 0.25
+  NoiseAmount: 1
   Lifespan: 0
   Y: 0.2
