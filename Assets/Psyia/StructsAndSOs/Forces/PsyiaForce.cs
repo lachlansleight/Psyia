@@ -9,7 +9,9 @@ public class PsyiaForce : ScriptableObject {
         Linear,
         Hyperbolic,
         HyperbolicSquared,
-        Sine
+        Sine,
+        HyperbolicSoftened,
+        HyperbolicSquaredSoftened
     }
     public enum ForceShape {
         Radial,

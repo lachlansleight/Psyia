@@ -18,13 +18,13 @@ public class Controller : MonoBehaviour {
 
 	public Transform spinner;
 	public Transform sphere;
-	public Material sphereMat;
+	Material sphereMat;
 
 	float spinnerRot = 0f;
 
 	// Use this for initialization
 	void Start () {
-		sphereMat = sphere.GetComponent<Renderer>().sharedMaterial;
+		sphereMat = sphere.transform.GetChild(0).GetComponent<Renderer>().sharedMaterial;
 	}
 	
 	// Update is called once per frame

@@ -164,7 +164,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &102121275
 Transform:
   m_ObjectHideFlags: 0
@@ -202,7 +202,6 @@ MonoBehaviour:
   maxSphereCol: {r: 1, g: 1, b: 1, a: 1}
   spinner: {fileID: 1115016286}
   sphere: {fileID: 1717630399}
-  sphereMat: {fileID: 2100000, guid: 29bc796bcce1cc84a86de1f6a57a7dd0, type: 2}
 --- !u!1 &118187327
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,7 +735,7 @@ MonoBehaviour:
     SetBuffer: {fileID: 0}
     MainBuffer: {fileID: 1403266525}
   BufferToCount: 0
-  RenderMaterial: {fileID: 2100000, guid: 6f810f16e4ad7674280792ecf1f57024, type: 2}
+  RenderMaterial: {fileID: 2100000, guid: 2d0826a3538ae394a80e4defc8837c2c, type: 2}
   AvailableMaterials:
   - {fileID: 2100000, guid: dfc959315cdd2b74c9780ca99950df04, type: 2}
   - {fileID: 2100000, guid: 6f810f16e4ad7674280792ecf1f57024, type: 2}
@@ -860,7 +859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DoSpawn: 1
-  SpawnOffset: 0
+  SpawnOffset: -1024
   SpawnCenterPosition: {x: 0, y: 1.2, z: -1}
   SpawnRadius: 1
   DeadList: {fileID: 731968179}
@@ -1876,7 +1875,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1428054145}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38769b89ae1e726409f8921b3e7fe878, type: 3}
   m_Name: 
@@ -1906,7 +1905,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1428054145}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c1896cbc09770e418f92e8b84eb8a48, type: 3}
   m_Name: 
@@ -2301,7 +2300,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1665568075
 Transform:
   m_ObjectHideFlags: 0
@@ -2339,7 +2338,6 @@ MonoBehaviour:
   maxSphereCol: {r: 1, g: 1, b: 1, a: 1}
   spinner: {fileID: 1689154777}
   sphere: {fileID: 188860622}
-  sphereMat: {fileID: 2100000, guid: 740152de3f061dd40819f3560f351a3e, type: 2}
 --- !u!1 &1673099271
 GameObject:
   m_ObjectHideFlags: 0
@@ -2537,7 +2535,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1726264157}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38769b89ae1e726409f8921b3e7fe878, type: 3}
   m_Name: 
@@ -2567,7 +2565,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1726264157}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c1896cbc09770e418f92e8b84eb8a48, type: 3}
   m_Name: 
