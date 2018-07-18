@@ -11,10 +11,6 @@ namespace Foliar.Compute {
 		public int Count;
 		protected GpuBuffer MyGpuBuffer;
 
-		protected virtual void Awake () {
-			Setup();
-		}
-
 		public virtual void Setup() {
 			MyGpuBuffer = GetComponent<GpuBuffer>();
 			System.Type ParsedType = System.Type.GetType(DataType);

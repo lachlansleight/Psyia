@@ -15,7 +15,7 @@ MonoBehaviour:
   NoiseDamping: 0.4
   TurbulenceViscosity: 0.001
   ForceMultiplier: 1
-  ParticleMass: 3.5
+  ParticleMass: 1
   NoiseAmount: 1
   Lifespan: 0
   Y: 0.2

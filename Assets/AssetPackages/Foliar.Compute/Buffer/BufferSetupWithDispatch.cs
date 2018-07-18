@@ -11,10 +11,6 @@ namespace Foliar.Compute {
 		public int ThreadGroupsY;
 		public int ThreadGroupsZ;
 
-		protected override void Awake() {
-			base.Awake();
-		}
-
 		protected override void CreateData() {
 			Dispatcher.Dispatch(ThreadGroupsX, ThreadGroupsY, ThreadGroupsZ);
 		}
