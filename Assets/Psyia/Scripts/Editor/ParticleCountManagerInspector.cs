@@ -18,10 +18,14 @@ public class ParticleCountManagerInspector : Editor {
 		myTarget.DeadList = (BufferSetupWithDispatch)EditorGUILayout.ObjectField("Dead List", myTarget.DeadList, typeof(BufferSetupWithDispatch), true);
 
 		if(myTarget.ParticleBuffer != null) {
-			if((myTarget.ParticleCountFactor * 1024) != myTarget.ParticleBuffer.Count) {
-				if(GUILayout.Button("Apply Particle Count")) {
-					myTarget.ApplyParticleCount();
+			if(Application.isPlaying) {
+				if((myTarget.ParticleCountFactor * 1024) != myTarget.ParticleBuffer.Count) {
+					if(GUILayout.Button("Apply Particle Count")) {
+						myTarget.ApplyParticleCount();
+					}
 				}
+			} else {
+				myTarget.ApplyParticleCount();
 			}
 		}
 	}

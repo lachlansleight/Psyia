@@ -11,7 +11,8 @@ namespace Psyia {
 		public enum PsyiaEmitterMode {
 			Time,
 			Start,
-			Distance
+			Distance,
+			Manual
 		}
 
 		private PsyiaEmitterMode _Mode;
@@ -81,6 +82,11 @@ namespace Psyia {
 			}
 		}
 
+		public void Emit(int Count) {
+			MainEmitter.Emit(LastPosition, transform.position, LastVelocity * InheritVelocity, Velocity * InheritVelocity, Count);
+			TimeSinceLastEmit = 0;
+			DistanceSinceLastEmit = 0;
+		}
 	}
 
 }

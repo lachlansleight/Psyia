@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PsyiaForce.asset", menuName = "ScriptableObjects/PsyiaForce", order = 1)]
-public class PsyiaForce : ScriptableObject {
-    public enum ForceAttenuationMode {
+public class PsyiaForce : MonoBehaviour {
+
+	public enum ForceAttenuationMode {
         Infinite,
         Linear,
         Hyperbolic,
@@ -24,9 +24,6 @@ public class PsyiaForce : ScriptableObject {
     public float Strength;
     public ForceAttenuationMode AttenuationMode;
     [Tooltip("The distance at which the force equals zero")] public float AttenuationDistance;
-    
-    public Vector3 Position;
-    public Vector3 Rotation;
 
     public Vector2 Padding;
 
@@ -36,19 +33,8 @@ public class PsyiaForce : ScriptableObject {
         MyForceData.AttenuationMode = (int)AttenuationMode;
         MyForceData.AttenuationDistance = AttenuationDistance;
         MyForceData.Shape = (int)Shape;
-        MyForceData.Position = Position;
-        MyForceData.Rotation = Rotation;
-        MyForceData.Padding = Padding;
-
-        return MyForceData;
-    }
-    public ForceData GetForceData(Vector3 CustomPosition, Vector3 CustomRotation, float StrengthModifier) {
-        MyForceData.Strength = Strength * StrengthModifier;
-        MyForceData.AttenuationMode = (int)AttenuationMode;
-        MyForceData.AttenuationDistance = AttenuationDistance;
-        MyForceData.Shape = (int)Shape;
-        MyForceData.Position = CustomPosition;
-        MyForceData.Rotation = CustomRotation;
+        MyForceData.Position = transform.position;
+        MyForceData.Rotation = transform.eulerAngles;
         MyForceData.Padding = Padding;
 
         return MyForceData;
@@ -67,4 +53,8 @@ public class PsyiaForce : ScriptableObject {
             return EmptyData;
         }
     }
+
+	void Start() {
+		ForceManager.Instance.AddSource(this);
+	}
 }

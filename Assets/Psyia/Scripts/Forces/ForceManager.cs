@@ -14,10 +14,10 @@ public class ForceManager : MonoBehaviour {
 	}
 	public GpuBuffer ForceBuffer;
 
-	private List<ForceSource> _Sources;
-	private List<ForceSource> Sources {
+	private List<PsyiaForce> _Sources;
+	private List<PsyiaForce> Sources {
 		get {
-			if(_Sources == null) _Sources = new List<ForceSource>();
+			if(_Sources == null) _Sources = new List<PsyiaForce>();
 			return _Sources;
 		} set {
 			_Sources = value;
@@ -36,7 +36,7 @@ public class ForceManager : MonoBehaviour {
 		SetData();
 	}
 
-	public void AddSource(ForceSource NewSource) {
+	public void AddSource(PsyiaForce NewSource) {
 		if(Sources.Contains(NewSource)) return;
 
 		Sources.Add(NewSource);
