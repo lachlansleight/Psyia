@@ -14,8 +14,8 @@ public class ParticleCountManagerInspector : Editor {
 		EditorGUILayout.LabelField("Final count: " + (myTarget.ParticleCountFactor * 1024));
 
 		myTarget.ParticleBuffer = (BufferSetup)EditorGUILayout.ObjectField("Particle Buffer", myTarget.ParticleBuffer, typeof(BufferSetup), true);
-		myTarget.DistanceBuffer = (BufferSetup)EditorGUILayout.ObjectField("Particle Buffer", myTarget.DistanceBuffer, typeof(BufferSetup), true);
-		myTarget.DeadList = (BufferSetupWithDispatch)EditorGUILayout.ObjectField("Particle Buffer", myTarget.DeadList, typeof(BufferSetupWithDispatch), true);
+		myTarget.DistanceBuffer = (BufferSetup)EditorGUILayout.ObjectField("Distance Buffer", myTarget.DistanceBuffer, typeof(BufferSetup), true);
+		myTarget.DeadList = (BufferSetupWithDispatch)EditorGUILayout.ObjectField("Dead List", myTarget.DeadList, typeof(BufferSetupWithDispatch), true);
 		myTarget.Spawner = (StartSpawner)EditorGUILayout.ObjectField("Spawner", myTarget.Spawner, typeof(StartSpawner), true);
 
 		if(myTarget.ParticleBuffer != null) {
