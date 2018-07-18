@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using Foliar.Compute;
+using UCTK;
 
 [CustomEditor(typeof(ParticleCountManager))]
 public class ParticleCountManagerInspector : Editor {
@@ -16,7 +16,6 @@ public class ParticleCountManagerInspector : Editor {
 		myTarget.ParticleBuffer = (BufferSetup)EditorGUILayout.ObjectField("Particle Buffer", myTarget.ParticleBuffer, typeof(BufferSetup), true);
 		myTarget.DistanceBuffer = (BufferSetup)EditorGUILayout.ObjectField("Distance Buffer", myTarget.DistanceBuffer, typeof(BufferSetup), true);
 		myTarget.DeadList = (BufferSetupWithDispatch)EditorGUILayout.ObjectField("Dead List", myTarget.DeadList, typeof(BufferSetupWithDispatch), true);
-		myTarget.Spawner = (StartSpawner)EditorGUILayout.ObjectField("Spawner", myTarget.Spawner, typeof(StartSpawner), true);
 
 		if(myTarget.ParticleBuffer != null) {
 			if((myTarget.ParticleCountFactor * 1024) != myTarget.ParticleBuffer.Count) {

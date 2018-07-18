@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Foliar.Compute;
+using UCTK;
 
 [CreateAssetMenu(fileName = "ParticleSettings.asset", menuName = "ScriptableObjects/ParticleSettings", order = 1)]
 public class ParticleSettings : ShaderValues {

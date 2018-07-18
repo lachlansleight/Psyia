@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Foliar.Compute;
+using UCTK;
 
 public class ParticleBufferSetup : BufferSetup {
 

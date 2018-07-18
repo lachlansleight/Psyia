@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Foliar.Compute;
+using UCTK;
 
 [CreateAssetMenu(fileName = "EmissionSettings.asset", menuName = "ScriptableObjects/EmissionSettings", order = 1)]
 public class EmissionSettings : ShaderValues {
