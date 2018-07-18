@@ -6,14 +6,17 @@ public class UpdateTime : MonoBehaviour {
 
 	public TimeData Data;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+	public ComputeShader[] ComputeShaders;
+	public Material[] Materials;
 	
-	// Update is called once per frame
 	void Update () {
-		Data.Time = Time.time;
-		Data.DeltaTime = Time.deltaTime;
+		foreach(ComputeShader cs in ComputeShaders) {
+			cs.SetFloat("Time", Time.time);
+			cs.SetFloat("DeltaTime", Time.deltaTime);
+		}
+		foreach(Material m in Materials) {
+			m.SetFloat("Time", Time.time);
+			m.SetFloat("DeltaTime", Time.deltaTime);
+		}
 	}
 }
