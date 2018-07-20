@@ -68,12 +68,17 @@ void SimulateParticles(uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
 	}
 	ExternalForce *= ForceMultiplier;
 
+	float NonZeroMass = ParticleMass;
+	if(NonZeroMass == 0) {
+		NonZeroMass = 0.000001;
+	}
+
 	//Apply forces
-	ThisParticle.Velocity += (ExternalForce / ParticleMass) * DeltaTime;
+	ThisParticle.Velocity += (ExternalForce / NonZeroMass) * DeltaTime;
 
 	//Damping
 	float3 DampingForce = -1.0 * ThisParticle.Velocity * Damping;
-	ThisParticle.Velocity += (DampingForce / ParticleMass) * DeltaTime;
+	ThisParticle.Velocity += (DampingForce / NonZeroMass) * DeltaTime;
 
 	//And we update position
 	ThisParticle.Position += ThisParticle.Velocity * DeltaTime;

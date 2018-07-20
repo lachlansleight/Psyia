@@ -32,6 +32,8 @@ namespace Psyia {
 				EditorGUILayout.PropertyField(DistanceProperty, new GUIContent("Attenuation Period"));
 			} else if(AttenuationProperty.enumValueIndex != 0) {
 				EditorGUILayout.PropertyField(DistanceProperty, new GUIContent("Attenuation Distance"));
+			} else if(AttenuationProperty.enumValueIndex > 4) {
+				EditorGUILayout.PropertyField(DistanceProperty, new GUIContent("Attenuation Softening Distance"));
 			}
 
 			serializedObject.ApplyModifiedProperties();

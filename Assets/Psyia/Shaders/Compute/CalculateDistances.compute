@@ -13,7 +13,7 @@
 #define thread_y 1
 #define thread_z 1
 
-float3 HeadsetPosition;
+float3 CameraPosition;
 
 RWStructuredBuffer<ParticleData> ParticleBuffer;
 RWStructuredBuffer<DistanceData> DistanceBuffer;
@@ -29,7 +29,7 @@ void CalculateDistances(uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
 	ParticleData CurrentParticle = ParticleBuffer[CurrentDistance.Index];
 
 	//Determine new distance
-	CurrentDistance.Distance = length(HeadsetPosition - CurrentParticle.Position);
+	CurrentDistance.Distance = length(CameraPosition - CurrentParticle.Position);
 
 	DistanceBuffer[id] = CurrentDistance;
 }

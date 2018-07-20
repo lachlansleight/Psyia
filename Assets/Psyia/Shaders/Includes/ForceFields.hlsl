@@ -21,6 +21,9 @@ float3 RotateVector(float3 input, float3 eulers) {
 }
 
 float GetAttenuation(int AttenuationMode, float AttenuationDistance, float Distance) {
+    if(AttenuationDistance == 0 && AttenuationMode != 0) {
+        return 0;
+    }
     if(AttenuationMode == 0) { //Constant
         return 1.;
     }

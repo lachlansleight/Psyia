@@ -1,4 +1,4 @@
-﻿Shader "Psyia/ParticleLines"
+﻿Shader "Psyia/Lines"
 {
 	Properties
 	{

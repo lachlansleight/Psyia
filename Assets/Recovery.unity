@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 7946447}
   - component: {fileID: 7946446}
   m_Layer: 0
-  m_Name: CenterAttract (2)
+  m_Name: ExampleForce3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -260,7 +260,7 @@ MonoBehaviour:
   Shape: 3
   Strength: 1
   AttenuationMode: 0
-  AttenuationDistance: 5
+  AttenuationDistance: 0.5
   Padding: {x: 0, y: 0}
 --- !u!1 &91769844
 GameObject:
@@ -402,6 +402,7 @@ Transform:
   m_Children:
   - {fileID: 1806458669}
   - {fileID: 1271094397}
+  - {fileID: 1121464509}
   m_Father: {fileID: 586059312}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -664,7 +665,7 @@ MonoBehaviour:
     SetBuffer: {fileID: 1403266525}
     MainBuffer: {fileID: 1403266525}
   BufferToCount: 0
-  RenderMaterial: {fileID: 2100000, guid: dfc959315cdd2b74c9780ca99950df04, type: 2}
+  RenderMaterial: {fileID: 2100000, guid: 2d0826a3538ae394a80e4defc8837c2c, type: 2}
 --- !u!1 &401772318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1031,7 +1032,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Increasing: 1
-  SortIterationsPerFrame: 20
+  SortIterationsPerFrame: 100
   DistanceBuffer: {fileID: 1403266525}
   SortShader: {fileID: 498242977}
 --- !u!114 &1012267750
@@ -1104,8 +1105,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 981252e7b8713544bb50bf0b84b01e55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Mode: 1
   StartEmitCount: 1000
-  EmitOverTime: 10000
+  EmitOverTime: 100000
   EmitOverDistance: 10
   Settings:
     EmissionRadius: 0.02
@@ -1123,7 +1125,7 @@ GameObject:
   - component: {fileID: 1055427664}
   - component: {fileID: 1055427663}
   m_Layer: 0
-  m_Name: CenterAttract
+  m_Name: ExampleForce1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1156,7 +1158,7 @@ MonoBehaviour:
   Shape: 3
   Strength: 1
   AttenuationMode: 0
-  AttenuationDistance: 5
+  AttenuationDistance: 0.5
   Padding: {x: 0, y: 0}
 --- !u!23 &1055427663
 MeshRenderer:
@@ -1241,7 +1243,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Renderer: {fileID: 390529777}
-  ChromaY: 1
+  ChromaY: 0
+--- !u!1 &1121464508
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1121464509}
+  - component: {fileID: 1121464510}
+  m_Layer: 0
+  m_Name: UpdateCameraPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1121464509
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1121464508}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 142879333}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1121464510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1121464508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05bed31081048bd46850ddc740f4385c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DistanceShader: {fileID: 7200000, guid: ee9c8460eccdc624ebd14baaf30daff9, type: 3}
 --- !u!1 &1242484552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1254,7 +1297,7 @@ GameObject:
   - component: {fileID: 1242484555}
   - component: {fileID: 1242484554}
   m_Layer: 0
-  m_Name: CenterAttract (1)
+  m_Name: ExampleForce2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1329,7 +1372,7 @@ MonoBehaviour:
   Shape: 3
   Strength: 1
   AttenuationMode: 0
-  AttenuationDistance: 5
+  AttenuationDistance: 0.5
   Padding: {x: 0, y: 0}
 --- !u!1 &1271094396
 GameObject:
@@ -1617,7 +1660,7 @@ GameObject:
   - component: {fileID: 1601939073}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1678,12 +1721,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1601939072}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.8706348, y: -2.2188106, z: 3.7917087}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 2027154168}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1610050343
 GameObject:
@@ -1995,6 +2038,35 @@ MonoBehaviour:
   ThreadGroupsX: 1024
   ThreadGroupsY: 1
   ThreadGroupsZ: 1
+--- !u!1 &2027154167
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2027154168}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2027154168
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2027154167}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.8706348, y: -2.2188106, z: 3.7917087}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1601939076}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2048058533
 GameObject:
   m_ObjectHideFlags: 0

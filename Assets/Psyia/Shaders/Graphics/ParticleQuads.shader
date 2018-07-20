@@ -1,4 +1,4 @@
-﻿Shader "Psyia/ParticleQuads"
+﻿Shader "Psyia/Quads"
 {
 	Properties
 	{

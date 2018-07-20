@@ -16,7 +16,7 @@ namespace Psyia {
 
 			EditorGUILayout.LabelField("Global Settings", EditorStyles.boldLabel);
 			myTarget.Global.MaxParticleCount = EditorGUILayout.IntSlider("Max Particle Count (1000s)", myTarget.Global.MaxParticleCount, 1, 1000);
-			myTarget.Global.DefaultParticleSize = EditorGUILayout.FloatField("Default Particle Size", myTarget.Global.DefaultParticleSize);
+			//myTarget.Global.DefaultParticleSize = EditorGUILayout.FloatField("Default Particle Size", myTarget.Global.DefaultParticleSize);
 			myTarget.Global.ParticleLifetime = EditorGUILayout.FloatField("Particle Lifetime", myTarget.Global.ParticleLifetime);
 			EditorGUILayout.Space();
 
@@ -35,6 +35,7 @@ namespace Psyia {
 			if(NewParticleMat != myTarget.Renderer.ParticleMaterial) {
 				Debug.Log("Setting particle material");
 				myTarget.Renderer.ParticleMaterial = NewParticleMat;
+				matEditor = (MaterialEditor)CreateEditor(myTarget.Renderer.ParticleMaterial);
 			}
 			myTarget.Renderer.ChromaY = EditorGUILayout.Slider("Chroma Y", myTarget.Renderer.ChromaY, 0f, 1f);
 			

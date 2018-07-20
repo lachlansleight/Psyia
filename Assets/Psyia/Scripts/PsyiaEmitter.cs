@@ -36,6 +36,7 @@ namespace Psyia {
 			Manual
 		}
 
+		[SerializeField]
 		private PsyiaEmitterMode _Mode;
 		public PsyiaEmitterMode Mode {
 			get {

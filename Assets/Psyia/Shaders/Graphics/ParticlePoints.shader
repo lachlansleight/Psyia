@@ -1,4 +1,4 @@
-﻿Shader "Psyia/ParticlePoints"
+﻿Shader "Psyia/Points"
 {
 
 	Properties{
