@@ -171,7 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxParticleCount: 304
   DefaultParticleSize: 0.01
-  ParticleLifetime: 5
+  ParticleLifetime: 60
   CountManager: {fileID: 6828404}
 --- !u!1 &7946444
 GameObject:
