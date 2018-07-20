@@ -13,6 +13,8 @@ public class ParticleBufferSetup : BufferSetup {
 			Data[i].Color = Color.Lerp(Color.red, Color.blue, Random.Range(0f, 1f));
 			Data[i].Color.w = 1f;
 			Data[i].IsAlive = 0;
+			Data[i].Size = 1f;
+			Data[i].Padding = Vector3.zero;
 		}
 
 		MyGpuBuffer.SetData(Data);

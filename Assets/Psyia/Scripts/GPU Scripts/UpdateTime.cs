@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class UpdateTime : MonoBehaviour {
 
-	public TimeData Data;
-
 	public ComputeShader[] ComputeShaders;
 	public Material[] Materials;
 	

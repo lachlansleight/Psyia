@@ -24,8 +24,6 @@ public class ParticleCountManagerInspector : Editor {
 						myTarget.ApplyParticleCount();
 					}
 				}
-			} else {
-				myTarget.ApplyParticleCount();
 			}
 		}
 	}

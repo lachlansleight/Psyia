@@ -14,6 +14,8 @@ struct ParticleData {
 	float4 Color;
 	int IsAlive;
 	float Age;
+    float Size;
+    float3 Padding;
 };
 
 struct DistanceData {

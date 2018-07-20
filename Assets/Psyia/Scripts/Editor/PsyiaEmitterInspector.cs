@@ -21,7 +21,9 @@ namespace Psyia {
 				myTarget.EmitOverDistance = EditorGUILayout.FloatField("Emit Over Distance", Mathf.Max(0f, myTarget.EmitOverDistance));
 			}
 
-			myTarget.InheritVelocity = EditorGUILayout.Slider("Inherit Velocity", myTarget.InheritVelocity, 0f, 1f);
+			myTarget.Settings.InheritVelocity = EditorGUILayout.Slider("Inherit Velocity", myTarget.Settings.InheritVelocity, 0f, 1f);
+			myTarget.Settings.EmissionRadius = EditorGUILayout.FloatField("Emission Radius", myTarget.Settings.EmissionRadius);
+			myTarget.Settings.EmissionVelocity = EditorGUILayout.FloatField("Emission Velocity", myTarget.Settings.EmissionVelocity);
 		}
 	}
 

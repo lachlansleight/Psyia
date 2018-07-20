@@ -2,11 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Psyia {
+public class PsyiaInternalGravityForce : MonoBehaviour {
 
-	public class PsyiaForce {
-
-		
-	}
 
 }

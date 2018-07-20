@@ -5,20 +5,7 @@ using UnityEngine;
 namespace Psyia {
 	public class PsyiaSystem : MonoBehaviour {
 
-		[System.Serializable]
-		public class GlobalSettings {
-			[Range(1, 1024)]
-			public int MaxParticleCount = 10;
-			public float DefaultParticleSize = 0.01f;
-			public Color DefaultParticleColor = Color.white;
-			public float DefaultParticleLifetime = 5f;
-		}
-
-		[System.Serializable]
-		public class EmissionSettings {
-			public List<PsyiaEmitter> Emitters = new List<PsyiaEmitter>();
-		}
-
+		/*
 		[System.Serializable]
 		public class SizeOverLifetimeSettings {
 			public enum AnimationMode {
@@ -43,35 +30,44 @@ namespace Psyia {
 			public Color EndColor = Color.white;
 			public Gradient ColorGradient = new Gradient();
 		}
+		*/
 
-		[System.Serializable]
-		public class PhysicsSettings {
-			[Range(0.01f, 10f)]
-			public float ParticleMass = 1f;
-			[Range(0f, 1f)]
-			public float ParticleDrag;
-			public List<PsyiaForce> Forces = new List<PsyiaForce>();
-		}
-
-		[System.Serializable]
-		public class RenderingSettings {
-			public Material ParticleMaterial;
-			public enum PsyiaSortMode {
-				None,
-				BackToFront,
-				OldToYoung,
-				YoungToOld
+		private GlobalManager _Global;
+		public GlobalManager Global {
+			get {
+				if(_Global == null) {
+					_Global = GetComponentInChildren<GlobalManager>();
+				}
+				return _Global;
 			}
-			public PsyiaSortMode SortMode = PsyiaSortMode.None;
-			[Range(0f, 1f)]
-			public float GlobalAlphaMultiplier = 1f;
+		}
+		private EmissionManager _Emission;
+		public EmissionManager Emission {
+			get {
+				if(_Emission == null) {
+					_Emission = GetComponentInChildren<EmissionManager>();
+				}
+				return _Emission;
+			}
 		}
 
-		public GlobalSettings Global;
-		public EmissionSettings Emission;
-		public SizeOverLifetimeSettings SizeOverLifetime;
-		public ColorOverLifetimeSettings ColorOverLifetime;
-		public PhysicsSettings Physics;
-		public RenderingSettings Rendering;
+		private PhysicsManager _Physics;
+		public PhysicsManager Physics {
+			get {
+				if(_Physics == null) {
+					_Physics = GetComponentInChildren<PhysicsManager>();
+				}
+				return _Physics;
+			}
+		}
+		private RenderingManager _Renderer;
+		public RenderingManager Renderer {
+			get {
+				if(_Renderer == null) {
+					_Renderer = GetComponentInChildren<RenderingManager>();
+				}
+				return _Renderer;
+			}
+		}
 	}
 }

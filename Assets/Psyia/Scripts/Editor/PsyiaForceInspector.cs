@@ -3,25 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(PsyiaForce))]
-public class PsyiaForceInspector : Editor {
-	
+namespace Psyia {
+	[CustomEditor(typeof(PsyiaForce))]
+	[CanEditMultipleObjects]
+	public class PsyiaForceInspector : Editor {
+		
+		SerializedProperty ShapeProperty;
+		SerializedProperty StrengthProperty;
+		SerializedProperty AttenuationProperty;
+		SerializedProperty DistanceProperty;
 
-	void OnEnable() {
-	}
+		void OnEnable() {
+			ShapeProperty = serializedObject.FindProperty("Shape");
+			StrengthProperty = serializedObject.FindProperty("Strength");
+			AttenuationProperty = serializedObject.FindProperty("AttenuationMode");
+			DistanceProperty = serializedObject.FindProperty("AttenuationDistance");
+		}
 
-	public override void OnInspectorGUI() {
-		PsyiaForce myTarget = (PsyiaForce)target;
+		public override void OnInspectorGUI() {
+			serializedObject.Update();
 
-		myTarget.Shape = (PsyiaForce.ForceShape)EditorGUILayout.EnumPopup("Force Shape", myTarget.Shape);
-		myTarget.Strength = EditorGUILayout.FloatField("Strength", myTarget.Strength);
-		myTarget.AttenuationMode = (PsyiaForce.ForceAttenuationMode)EditorGUILayout.EnumPopup("Attenuation Mode", myTarget.AttenuationMode);
-		if(myTarget.AttenuationMode == PsyiaForce.ForceAttenuationMode.Sine) {
-			myTarget.AttenuationDistance = EditorGUILayout.FloatField("Attenuation Period", myTarget.AttenuationDistance);
-		} else if(myTarget.AttenuationMode == PsyiaForce.ForceAttenuationMode.Infinite) {
+			PsyiaForce myTarget = (PsyiaForce)target;
 
-		} else {
-			myTarget.AttenuationDistance = EditorGUILayout.FloatField("Attenuation Distance", myTarget.AttenuationDistance);
+			EditorGUILayout.PropertyField(ShapeProperty, new GUIContent("Force Shape"));
+			EditorGUILayout.PropertyField(StrengthProperty, new GUIContent("Force Strength (N)"));
+			EditorGUILayout.PropertyField(AttenuationProperty, new GUIContent("Attenuation Mode"));
+			if(AttenuationProperty.enumValueIndex == 4) {
+				EditorGUILayout.PropertyField(DistanceProperty, new GUIContent("Attenuation Period"));
+			} else if(AttenuationProperty.enumValueIndex != 0) {
+				EditorGUILayout.PropertyField(DistanceProperty, new GUIContent("Attenuation Distance"));
+			}
+
+			serializedObject.ApplyModifiedProperties();
 		}
 	}
 }

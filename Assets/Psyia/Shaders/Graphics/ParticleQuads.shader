@@ -73,7 +73,7 @@
 		o.col = ParticleBuffer[vId].Color;
 		float rotation = (float)vId / 1024.0;
 		o.pos = float4(ParticleBuffer[vId].Position, rotation);
-		o.nor = float3(1, 1, 1) * _PointSize;
+		o.nor = float3(1, 1, 1) * _PointSize * ParticleBuffer[vId].Size;
 		return o;
 	}
 
