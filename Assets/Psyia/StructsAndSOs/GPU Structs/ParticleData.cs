@@ -6,4 +6,6 @@ public struct ParticleData {
 	public Vector4 Color;
 	public int IsAlive;
 	public float Age;
+	public float Size;
+	public Vector3 Padding;
 }

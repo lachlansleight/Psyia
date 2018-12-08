@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: ParticleQuads
-  m_Shader: {fileID: 4800000, guid: 317ea937681fc8542874286e1d893cca, type: 3}
+  m_Name: ParticleDiamonds
+  m_Shader: {fileID: 4800000, guid: 67c8d4c5e1a6b5448b0caec83b4ba0fd, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -66,11 +66,13 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _LineLength: 0.2
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _PointSize: 0.22
+    - _ShadowStrength: 0.2
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1

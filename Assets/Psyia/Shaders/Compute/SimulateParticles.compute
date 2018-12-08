@@ -1,0 +1,88 @@
+﻿//Does the main particle simulation step
+
+#pragma kernel SimulateParticles
+
+//Includes
+#include "../Includes/Structs.hlsl"
+#include "../Includes/ForceFields.hlsl"
+
+//define thread group sizes
+#define thread_group_x 1024
+#define thread_group_y 1
+#define thread_group_z 1
+#define thread_x 1024
+#define thread_y 1
+#define thread_z 1
+
+//Physics Parameters:
+float Damping;
+float ForceMultiplier;
+float ParticleMass;
+
+//time parameters
+float Lifespan;
+float Time;
+float DeltaTime;
+
+RWStructuredBuffer<ParticleData> ParticleBuffer;
+AppendStructuredBuffer<uint> DeadList;
+RWStructuredBuffer<ForceData> ForceBuffer;
+
+float InverseLerp(float a, float b, float t) {
+	return saturate((t - a) / (b - a));
+}
+
+[numthreads(1024, 1, 1)]
+void SimulateParticles(uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
+{
+	//Get current particle from thread
+	int id = tid.x + thread_group_x * gid.x;
+	ParticleData ThisParticle = ParticleBuffer[id];
+
+	//If we're not alive, just make sure it's not visible and continue
+	if (ThisParticle.IsAlive == 0) {
+		ThisParticle.Position = float3(0, -10000, 0);
+		ParticleBuffer[id] = ThisParticle;
+		return;
+	}
+
+	//Increase age, die if too old
+	ThisParticle.Age += DeltaTime;
+	if (ThisParticle.Age > Lifespan && Lifespan > 0) {
+		DeadList.Append(id);
+		ThisParticle.IsAlive = false;
+		ParticleBuffer[id] = ThisParticle;
+		return;
+	}
+
+	//sum all external forces
+	uint ForceCount = 0;
+	uint ForceStride = 0;
+	ForceBuffer.GetDimensions(ForceCount, ForceStride);
+
+	float3 ExternalForce = float3(0,0,0);
+	for(uint i = 0; i < ForceCount; i++) {
+		ForceData CurrentForce = ForceBuffer[i];
+		float3 NewForce = GetForceAtPoint(CurrentForce, ThisParticle.Position);
+		ExternalForce += NewForce;
+	}
+	ExternalForce *= ForceMultiplier;
+
+	float NonZeroMass = ParticleMass;
+	if(NonZeroMass == 0) {
+		NonZeroMass = 0.000001;
+	}
+
+	//Apply forces
+	ThisParticle.Velocity += (ExternalForce / NonZeroMass) * DeltaTime;
+
+	//Damping
+	float3 DampingForce = -1.0 * ThisParticle.Velocity * Damping;
+	ThisParticle.Velocity += (DampingForce / NonZeroMass) * DeltaTime;
+
+	//And we update position
+	ThisParticle.Position += ThisParticle.Velocity * DeltaTime;
+
+	//And finally, push the updated particle to the buffer
+	ParticleBuffer[id] = ThisParticle;
+}

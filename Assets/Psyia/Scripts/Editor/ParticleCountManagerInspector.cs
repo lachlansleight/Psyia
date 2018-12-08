@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using Foliar.Compute;
+using UCTK;
 
 [CustomEditor(typeof(ParticleCountManager))]
 public class ParticleCountManagerInspector : Editor {
@@ -14,14 +14,15 @@ public class ParticleCountManagerInspector : Editor {
 		EditorGUILayout.LabelField("Final count: " + (myTarget.ParticleCountFactor * 1024));
 
 		myTarget.ParticleBuffer = (BufferSetup)EditorGUILayout.ObjectField("Particle Buffer", myTarget.ParticleBuffer, typeof(BufferSetup), true);
-		myTarget.DistanceBuffer = (BufferSetup)EditorGUILayout.ObjectField("Particle Buffer", myTarget.DistanceBuffer, typeof(BufferSetup), true);
-		myTarget.DeadList = (BufferSetupWithDispatch)EditorGUILayout.ObjectField("Particle Buffer", myTarget.DeadList, typeof(BufferSetupWithDispatch), true);
-		myTarget.Spawner = (StartSpawner)EditorGUILayout.ObjectField("Spawner", myTarget.Spawner, typeof(StartSpawner), true);
+		myTarget.DistanceBuffer = (BufferSetup)EditorGUILayout.ObjectField("Distance Buffer", myTarget.DistanceBuffer, typeof(BufferSetup), true);
+		myTarget.DeadList = (BufferSetupWithDispatch)EditorGUILayout.ObjectField("Dead List", myTarget.DeadList, typeof(BufferSetupWithDispatch), true);
 
 		if(myTarget.ParticleBuffer != null) {
-			if((myTarget.ParticleCountFactor * 1024) != myTarget.ParticleBuffer.Count) {
-				if(GUILayout.Button("Apply Particle Count")) {
-					myTarget.ApplyParticleCount();
+			if(Application.isPlaying) {
+				if((myTarget.ParticleCountFactor * 1024) != myTarget.ParticleBuffer.Count) {
+					if(GUILayout.Button("Apply Particle Count")) {
+						myTarget.ApplyParticleCount();
+					}
 				}
 			}
 		}
