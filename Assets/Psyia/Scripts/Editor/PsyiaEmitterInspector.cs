@@ -1,4 +1,28 @@
-﻿using System.Collections;
+﻿/*
+
+Copyright (c) 2018 Lachlan Sleight
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -19,9 +43,9 @@ namespace Psyia {
 
 		void OnEnable() {
 			ModeProperty = serializedObject.FindProperty("_Mode");
-			StartEmitCountProperty = serializedObject.FindProperty("StartEmitCount");
-			EmitOverTimeProperty = serializedObject.FindProperty("EmitOverTime");
-			EmitOverDistanceProperty = serializedObject.FindProperty("EmitOverDistance");
+			StartEmitCountProperty = serializedObject.FindProperty("_StartEmitCount");
+			EmitOverTimeProperty = serializedObject.FindProperty("_EmitOverTime");
+			EmitOverDistanceProperty = serializedObject.FindProperty("_EmitOverDistance");
 
 			SettingsProperty = serializedObject.FindProperty("Settings");
 		}
@@ -66,14 +90,24 @@ namespace Psyia {
 	}
 
 	[CustomPropertyDrawer(typeof(PsyiaEmitter.EmitterSettings))]
-	public class EmissionSettingsDrawer : PropertyDrawer {
+	public class EmitterSettingsDrawer : PropertyDrawer {
 		public override void OnGUI(Rect position, SerializedProperty property, GUIContent label) {
 			EditorGUI.BeginProperty(position, label, property);
 			
 			EditorGUILayout.LabelField("Emitted Particle Settings", EditorStyles.boldLabel);
 			EditorGUILayout.PropertyField(property.FindPropertyRelative("InheritVelocity"), new GUIContent("Inherit Velocity"));
 			EditorGUILayout.PropertyField(property.FindPropertyRelative("EmissionRadius"), new GUIContent("Emission Radius"));
-			EditorGUILayout.PropertyField(property.FindPropertyRelative("EmissionVelocity"), new GUIContent("Emission Velocity"));
+			EditorGUILayout.Slider(property.FindPropertyRelative("EmissionRadiusShell"), 0f, 1f, new GUIContent("Radius Shell"));
+			EditorGUILayout.Slider(property.FindPropertyRelative("EmissionArcSize"), 0f, 1f, new GUIContent("Arc Size"));
+			EditorGUILayout.BeginHorizontal();
+				EditorGUILayout.PropertyField(property.FindPropertyRelative("MinSpawnVelocity"), new GUIContent("Min Emission Speed"));
+				EditorGUILayout.PropertyField(property.FindPropertyRelative("MaxSpawnVelocity"), new GUIContent("Max Emission Speed"));
+			EditorGUILayout.EndHorizontal();
+			EditorGUILayout.Slider(property.FindPropertyRelative("RandomiseDirection"), 0f, 1f, new GUIContent("Randomise Direction"));
+			EditorGUILayout.BeginHorizontal();
+				EditorGUILayout.PropertyField(property.FindPropertyRelative("MinSpawnMass"), new GUIContent("Min Spawn Mass"));
+				EditorGUILayout.PropertyField(property.FindPropertyRelative("MaxSpawnMass"), new GUIContent("Max Spawn Mass"));
+			EditorGUILayout.EndHorizontal();
 			/*
 			// Draw label
 			position = EditorGUI.PrefixLabel(position, GUIUtility.GetControlID(FocusType.Passive), label);

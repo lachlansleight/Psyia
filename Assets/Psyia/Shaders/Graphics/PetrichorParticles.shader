@@ -1,6 +1,7 @@
 ﻿/*
 
 Copyright (c) 2018 Lachlan Sleight
+Modified 2018 by Lachlan Sleight for PernicketySplit
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -24,7 +25,7 @@ SOFTWARE.
 
 
 
-Shader "Psyia/Quads"
+Shader "Psyia/Petrichor"
 {
 	Properties
 	{
@@ -32,6 +33,9 @@ Shader "Psyia/Quads"
 		_PointSize("Point Size", Float) = 1.0
 		_Image("Image", 2D) = "white" {}
 		_Y ("Chroma Y", Range(-0.5, 1.5)) = 0.7
+		_rIndex ("R Index", Int) = 0
+		_gIndex ("G Index", Int) = 1
+		_bIndex ("B Index", Int) = 2
 	}
 
 		SubShader
@@ -43,12 +47,13 @@ Shader "Psyia/Quads"
 		Tags{ "Queue" = "Transparent" }
 		ZWrite Off
 		Cull Off
-		Blend SrcAlpha OneMinusSrcAlpha
+		Blend One One
 
 		CGPROGRAM
 
 #pragma only_renderers d3d11
 #pragma target 4.0
+#pragma multi_compile_instancing
 
 #include "UnityCG.cginc"
 #include "../Includes/Structs.hlsl"
@@ -71,6 +76,11 @@ Shader "Psyia/Quads"
 	}
 
 	float _Y;
+	uint _rIndex;
+	uint _gIndex;
+	uint _bIndex;
+	uniform float4x4 SystemMatrix;
+	uniform float4x4 InverseSystemMatrix;
 
 	float3 GetRgbFromYCbCr(float Cb, float Cr) {
 		float y = _Y * 255;
@@ -83,7 +93,8 @@ Shader "Psyia/Quads"
 		float g = ((255. / 219.) * (y - 16)) - ((255. / 112.) * 0.886 * (0.114 / 0.587) * (cb - 128)) - ((255. / 112.) * 0.701 * (0.299 / 0.587) * (cr - 128));
 		float b = ((255. / 129.) * (y - 16)) + ((255. / 112.) * 0.866 * (cb - 128));
 
-		return float3(r, g, b) / 255;
+		float3 final = float3(r, g, b);
+		return float3(final[_rIndex % 3], final[_gIndex % 3], final[_bIndex % 3]) / 255;
 	}
 
 	float3 GetRgbFromVelocity(float3 velocity) {
@@ -104,11 +115,18 @@ Shader "Psyia/Quads"
 		return GetRgbFromYCbCr(ThetaMap, PhiMap);
 	}
 
+	struct vIn
+	{
+		uint id : SV_VertexID;
+		UNITY_VERTEX_INPUT_INSTANCE_ID
+	};
+
 	struct gIn // OUT vertex shader, IN geometry shader
 	{
 		float4 pos : SV_POSITION;
 		float4 col : COLOR0;
 		float3 nor : NORMAL;
+		UNITY_VERTEX_INPUT_INSTANCE_ID
 	};
 
 	struct v2f // OUT geometry shader, IN fragment shader 
@@ -116,6 +134,7 @@ Shader "Psyia/Quads"
 		float4 pos		 : SV_POSITION;
 		float2 uv : TEXCOORD0;
 		float4 col : COLOR0;
+		UNITY_VERTEX_OUTPUT_STEREO
 	};
 
 	float4	_Color;
@@ -126,14 +145,17 @@ Shader "Psyia/Quads"
 	SamplerState sampler_Image;
 
 	// ----------------------------------------------------
-	gIn myVertexShader(uint id : SV_VertexID)
+	gIn myVertexShader(vIn v)
 	{
 		gIn o;
-		uint vId = DistanceBuffer[id].Index;
+		UNITY_SETUP_INSTANCE_ID(v);
+		UNITY_TRANSFER_INSTANCE_ID(v, o);
+
+		uint vId = DistanceBuffer[v.id].Index;
 		//o.col = lerp(float4(1, 0, 0, 1), float4(0, 0, 1, 1), saturate(DistanceBuffer[id].distance));
 		o.col = ParticleBuffer[vId].Color * float4(GetRgbFromVelocity(ParticleBuffer[vId].Velocity), 1.0);
 		float rotation = (float)vId / 1024.0;
-		o.pos = float4(ParticleBuffer[vId].Position, rotation);
+		o.pos = float4(mul(SystemMatrix, float4(ParticleBuffer[vId].Position, 1)).xyz, rotation);
 		o.nor = float3(1, 1, 1) * _PointSize * ParticleBuffer[vId].Size;
 		return o;
 	}
@@ -167,6 +189,8 @@ Shader "Psyia/Quads"
 	// Using "point" type as input, not "triangle"
 	void myGeometryShader(point gIn vert[1], inout TriangleStream<v2f> triStream)
 	{
+		UNITY_SETUP_INSTANCE_ID(vert[0]);
+
 		float2 sz = float2(0.5 * vert[0].nor.x, 0.5 * vert[0].nor.y) * _PointSize;
 		//float2 sz = float2(0.005, 0.005);
 
@@ -194,33 +218,23 @@ Shader "Psyia/Quads"
 			float2(1, 1)
 		};
 
+		/*
 		uv[0] = RotateUV(uv[0], rotation);
 		uv[1] = RotateUV(uv[1], rotation);
 		uv[2] = RotateUV(uv[2], rotation);
 		uv[3] = RotateUV(uv[3], rotation);
+		*/
 
+		v2f pIn[TAM];
+		int i;
 
-		v2f pIn;
-
-		pIn.pos = mul(UNITY_MATRIX_VP, vc[0]);
-		pIn.uv = uv[0];
-		pIn.col = vert[0].col;
-		triStream.Append(pIn);
-
-		pIn.pos = mul(UNITY_MATRIX_VP, vc[1]);
-		pIn.uv = uv[1];
-		pIn.col = vert[0].col;
-		triStream.Append(pIn);
-
-		pIn.pos = mul(UNITY_MATRIX_VP, vc[2]);
-		pIn.uv = uv[2];
-		pIn.col = vert[0].col;
-		triStream.Append(pIn);
-
-		pIn.pos = mul(UNITY_MATRIX_VP, vc[3]);
-		pIn.uv = uv[3];
-		pIn.col = vert[0].col;
-		triStream.Append(pIn);
+		for(i=0;i<TAM;i++) {
+			pIn[i].pos = mul(UNITY_MATRIX_VP, vc[i]);
+			pIn[i].uv = uv[i];
+			pIn[i].col = vert[0].col;
+			UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(pIn[i]);
+			triStream.Append(pIn[i]);
+		}
 	}
 
 	// ----------------------------------------------------
@@ -228,7 +242,11 @@ Shader "Psyia/Quads"
 	{
 		float4 texCol = _Image.Sample(sampler_Image, IN.uv);
 		float4 col = IN.col * _Color;
-		col.a = texCol.r * texCol.a * col.a;
+		//alpha blended
+		//col.a = texCol.r * texCol.a * col.a;
+
+		//additive
+		col *= texCol.r * texCol.a * col.a;
 		return col;
 	}
 

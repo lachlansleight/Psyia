@@ -4,7 +4,7 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: ParticleDiamonds
   m_Shader: {fileID: 4800000, guid: 67c8d4c5e1a6b5448b0caec83b4ba0fd, type: 3}
@@ -72,7 +72,7 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _PointSize: 0.22
-    - _ShadowStrength: 0.2
+    - _ShadowStrength: 0.9
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
