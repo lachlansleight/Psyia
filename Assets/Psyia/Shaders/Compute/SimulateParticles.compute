@@ -101,8 +101,10 @@ void SimulateParticles(uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
 		ForceData CurrentForce = ForceBuffer[i];
 		//add SystemMatrix to CurrentForce position
 		float3 NewForce = mul(InverseSystemRotation, float4(GetForceAtPoint(CurrentForce, mul(SystemMatrix, float4(ThisParticle.Position, 1)).xyz), 1.0)).xyz;
+		//NewForce = GetForceAtPoint(CurrentForce, ThisParticle.Position);
 		ExternalForce += NewForce;
 	}
+	
 	ExternalForce *= ForceMultiplier;
 
 	float NonZeroMass = ParticleMinimumMass + ThisParticle.Mass;

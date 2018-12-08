@@ -38,6 +38,7 @@ namespace Psyia {
 		SerializedProperty StartEmitCountProperty;
 		SerializedProperty EmitOverTimeProperty;
 		SerializedProperty EmitOverDistanceProperty;
+		SerializedProperty EmissionMultiplierProperty;
 
 		SerializedProperty SettingsProperty;
 
@@ -46,6 +47,7 @@ namespace Psyia {
 			StartEmitCountProperty = serializedObject.FindProperty("_StartEmitCount");
 			EmitOverTimeProperty = serializedObject.FindProperty("_EmitOverTime");
 			EmitOverDistanceProperty = serializedObject.FindProperty("_EmitOverDistance");
+			EmissionMultiplierProperty = serializedObject.FindProperty("_EmissionMultiplier");
 
 			SettingsProperty = serializedObject.FindProperty("Settings");
 		}
@@ -66,6 +68,8 @@ namespace Psyia {
 			} else if(ModeProperty.enumValueIndex == 3) {
 				EditorGUILayout.LabelField("Call Emit() on this object to emit particles");
 			}
+
+			EditorGUILayout.PropertyField(EmissionMultiplierProperty, new GUIContent("Emission Count Multiplier"));
 
 			EditorGUILayout.PropertyField(SettingsProperty, new GUIContent("Emitted Particle Settings"));
 

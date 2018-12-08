@@ -177,7 +177,7 @@ namespace Psyia {
 
 			LastVelocity = Velocity;
 			Velocity = (transform.position - LastTransform.GetPosition()) / Time.deltaTime;
-			LastTransform = GetCurrentMatrix();
+			//LastTransform = GetCurrentMatrix();
 		}
 
 		int GetParticleEmitCount() {
@@ -192,6 +192,7 @@ namespace Psyia {
 
 		public void Emit(int Count) {
 			MainEmitter.Emit(GetCurrentMatrix(), LastTransform, LastVelocity, Velocity, Count, Settings);
+			LastTransform = GetCurrentMatrix();
 			TimeSinceLastEmit = 0;
 			DistanceSinceLastEmit = 0;
 		}

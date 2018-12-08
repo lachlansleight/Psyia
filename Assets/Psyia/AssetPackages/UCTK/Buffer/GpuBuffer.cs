@@ -133,5 +133,16 @@ namespace UCTK {
 			if(_Buffer != null) _Buffer.Release();
 		}
 
+		public virtual string DumpData<T>()
+		{
+			var output = "Dump of buffer with type " + DataType;
+			var data = GetData<T>();
+			for (var i = 0; i < data.Length; i++) {
+				output += "\n[" + i + "] " + data[i].ToString();
+			}
+
+			return output;
+		}
+
 	}
 }

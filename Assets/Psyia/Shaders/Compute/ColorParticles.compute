@@ -81,7 +81,9 @@ void ColorParticles(uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
 	}
 
 	//YPbPr / YCbCr
-	/*
+	
+	float4 col = float4(0,0,0,0);
+	
 	if(length(ThisParticle.Velocity) > 0) {
 		float3 VelocityDirection = normalize(ThisParticle.Velocity);
 		float theta = atan(VelocityDirection.z / VelocityDirection.x);
@@ -97,13 +99,10 @@ void ColorParticles(uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
 			PhiMap = PhiMap * -1;
 		}
 
-		float3 NewCol = GetRGBFromYCbCr(ThetaMap, PhiMap);
-
-		
+		col = float4(GetRGBFromYCbCr(ThetaMap, PhiMap), 1);
 	}
-	*/
+	
 
-	float4 col = float4(ThisParticle.Color.xyz, 1.0);
 	if(Lifespan > 0) {
 		col.a = saturate(Lifespan - ThisParticle.Age - 0.5);
 	}

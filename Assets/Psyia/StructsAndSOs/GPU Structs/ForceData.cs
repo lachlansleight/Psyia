@@ -23,7 +23,7 @@ SOFTWARE.
 */
 
 
-
+using Psyia;
 using UnityEngine;
 
 public struct ForceData {
@@ -34,4 +34,11 @@ public struct ForceData {
 	public Vector3 Position;
 	public Vector3 Rotation;
 	public Vector2 Padding;
+
+	public override string ToString()
+	{
+		return ((PsyiaForce.ForceShape)Shape).ToString() + " " +
+		       ((PsyiaForce.ForceAttenuationMode)AttenuationMode).ToString() + ", " +
+		       Strength + "N, " + AttenuationDistance + "m";
+	}
 }
