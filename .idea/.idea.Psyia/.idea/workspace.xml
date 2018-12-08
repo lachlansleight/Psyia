@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="140a6c05-64ff-46f0-b2c6-b112526fc446" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Materials/Ground.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AppContent/Materials/Ground.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scenes/StarLab.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AppContent/Scenes/StarLab.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Psyia/ExampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Psyia/ExampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Materials/ParticleQuads.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Psyia/Materials/ParticleQuads.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/LightOff.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/LightOff.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/LightOff.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/LightOff.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/LightOn.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/LightOn.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/LightOn.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/LightOn.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/ParticleBlur.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/ParticleBlur.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/ParticleBlur.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/ParticleBlur.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/ParticleCircle.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/ParticleCircle.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/ParticleCircle.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/ParticleCircle.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/ParticleKitty.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/ParticleKitty.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/ParticleKitty.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/ParticleKitty.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/ParticleSmoke.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/ParticleSmoke.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/ParticleSmoke.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/ParticleSmoke.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/ParticleSpark.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/ParticleSpark.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/ParticleSpark.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/ParticleSpark.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/ParticleSquare.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/ParticleSquare.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/ParticleSquare.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/ParticleSquare.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/Skybox0.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/Skybox0.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/Skybox0.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/Skybox0.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/Skybox1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/Skybox1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/Skybox1.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/Skybox1.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/Skybox2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/Skybox2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/Skybox2.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/Skybox2.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/Skybox3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/Skybox3.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/Skybox3.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/Skybox3.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/Skybox4.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/Skybox4.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/Skybox4.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Materials/Skybox4.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Scripts.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Scripts/ExampleParticles.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Scripts/ExampleParticles.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Scripts/Lights.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Scripts/Lights.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Scripts/SkyboxSetter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Scripts/SkyboxSetter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Scripts/TestSpawner.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Scripts/TestSpawner.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Textures.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Textures.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Textures/Kitty.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Textures/Kitty.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Textures/WhiteCircle.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Textures/WhiteCircle.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Textures/WhiteSquare.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Textures/WhiteSquare.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Textures/magic_05.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Textures/magic_05.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/Textures/smoke_04.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/Textures/smoke_04.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/XrpExample.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/XrpExample.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/XrpExample.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/XrpExample.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/XrpParticleExample.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/XrpParticleExample.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Example/XrpParticleExample.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Example/XrpParticleExample.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Prefabs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Button.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Button.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Button.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Button.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Dial.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Dial.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Dial.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Dial.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Enum Slider.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Enum Slider.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Enum Slider.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Enum Slider.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Int Dial.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Int Dial.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Int Dial.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Int Dial.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Int Slider.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Int Slider.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Int Slider.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Int Slider.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Panel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Panel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Panel.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Panel.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Slider.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Slider.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Slider.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Slider.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Toggle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Toggle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Toggle.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Toggle.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Audio.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Audio.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Audio/ui_scifi_hightech_back.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Audio/ui_scifi_hightech_back.wav.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Audio/ui_scifi_hightech_close.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Audio/ui_scifi_hightech_close.wav.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Audio/ui_scifi_hightech_confirm.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Audio/ui_scifi_hightech_confirm.wav.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Audio/ui_scifi_hightech_error.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Audio/ui_scifi_hightech_error.wav.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Audio/ui_scifi_hightech_open.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Audio/ui_scifi_hightech_open.wav.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/ActiveElement.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/ActiveElement.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/ActiveElement.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/ActiveElement.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/DarkGrey.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/DarkGrey.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/DarkGrey.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/DarkGrey.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/FadePanel.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/FadePanel.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/FadePanel.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/FadePanel.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/Glass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/Glass.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/Glass.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/Glass.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/LightGrey.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/LightGrey.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/LightGrey.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/LightGrey.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/Line.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/Line.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/Line.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/Line.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/PointerIndicator.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/PointerIndicator.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/PointerIndicator.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/PointerIndicator.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Models.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Models.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Models/Disc.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Models/Disc.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Models/Ring.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Models/Ring.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Models/RingSegment.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Models/RingSegment.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Models/RoundCube.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Models/RoundCube.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Shaders.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Shaders.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Shaders/UnlitTransparentColor.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Shaders/UnlitTransparentColor.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Textures.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Textures.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Textures/Circle.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Resources/Textures/Circle.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Scripts.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpButton.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpButton.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpCanvasAlphaCopier.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpCanvasAlphaCopier.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpControlGeometry.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpControlGeometry.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpCopyMaterialColor.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpCopyMaterialColor.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpDial.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpDial.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpIntDialGeometry.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpIntDialGeometry.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpPanelGeometry.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpPanelGeometry.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpToggle.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpToggle.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Psyia/Scripts/Forces/ForceManager.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="278">
+              <caret line="32" column="36" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="36" />
+              <folding>
+                <marker date="1544267958800" expanded="true" signature="0:1066" ph="/* Copyright (c) 2018 Lachlan Sleight ... */" />
+                <marker date="1544267958800" expanded="false" signature="1074:1158" ph="..." />
+                <marker date="1544267958800" expanded="true" signature="1176:2589" ph="{...}" />
+                <marker date="1544267958800" expanded="true" signature="1221:2587" ph="{...}" />
+                <marker date="1544267958800" expanded="true" signature="1329:1462" ph="{...}" />
+                <marker date="1544267958800" expanded="true" signature="1338:1425" ph="{...}" />
+                <marker date="1544267958800" expanded="true" signature="1430:1458" ph="{...}" />
+                <marker date="1544267958800" expanded="true" signature="1517:1701" ph="{...}" />
+                <marker date="1544267958800" expanded="true" signature="1625:1682" ph="{...}" />
+                <marker date="1544267958800" expanded="true" signature="1749:1844" ph="{...}" />
+                <marker date="1544267958800" expanded="true" signature="1880:1972" ph="{...}" />
+                <marker date="1544267958800" expanded="true" signature="2023:2122" ph="{...}" />
+                <marker date="1544267958800" expanded="true" signature="2145:2190" ph="{...}" />
+                <marker date="1544267958800" expanded="true" signature="2209:2584" ph="{...}" />
+                <marker date="1544267958800" expanded="true" signature="2383:2544" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Buffer/GpuBuffer.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="18" selection-start-column="18" selection-end-column="18" />
+              <folding>
+                <marker date="1544267958784" expanded="true" signature="35:3718" ph="{...}" />
+                <marker date="1544267958784" expanded="true" signature="39:128" ph="/// Component for managing StructuredBuffer shader objects ... " />
+                <marker date="1544267958784" expanded="true" signature="169:3716" ph="{...}" />
+                <marker date="1544267958784" expanded="true" signature="174:349" ph="/// Reference to the Buffer Setup component responsible for initializing this buffer ... " />
+                <marker date="1544267958784" expanded="true" signature="387:457" ph="/// Stride of buffer data struct type ... " />
+                <marker date="1544267958784" expanded="true" signature="478:565" ph="{...}" />
+                <marker date="1544267958784" expanded="true" signature="487:561" ph="{...}" />
+                <marker date="1544267958784" expanded="true" signature="568:629" ph="/// Type of buffer data type ... " />
+                <marker date="1544267958784" expanded="true" signature="755:817" ph="/// The actual compute buffer ... " />
+                <marker date="1544267958784" expanded="true" signature="848:1003" ph="{...}" />
+                <marker date="1544267958784" expanded="true" signature="857:959" ph="{...}" />
+                <marker date="1544267958784" expanded="true" signature="972:999" ph="{...}" />
+                <marker date="1544267958784" expanded="true" signature="1007:1096" ph="/// The size of the compute buffer ... " />
+                <marker date="1544267958784" expanded="true" signature="1116:1160" ph="{...}" />
+                <marker date="1544267958784" expanded="true" signature="1125:1156" ph="{...}" />
+                <marker date="1544267958784" expanded="true" signature="1184:1413" ph="{...}" />
+                <marker date="1544267958784" expanded="true" signature="1213:1384" ph="{...}" />
+                <marker date="1544267958784" expanded="true" signature="1290:1379" ph="{...}" />
+                <marker date="1544267958784" expanded="true" signature="1417:1721" ph="/// Initializes a compute buffer, releasing and disposing it first if necessary. ... " />
+                <marker date="1544267958784" expanded="true" signature="1813:1985" ph="{...}" />
+                <marker date="1544267958784" expanded="true" signature="1837:1865" ph="{...}" />
+                <marker date="1544267958784" expanded="true" signature="1989:2070" ph="/// Sets buffer count (does not initialise data) ... " />
+                <marker date="1544267958784" expanded="true" signature="2116:2418" ph="{...}" />
+                <marker date="1544267958784" expanded="true" signature="2142:2263" ph="{...}" />
+                <marker date="1544267958784" expanded="true" signature="2422:2480" ph="/// Sets buffer data type ... " />
+                <marker date="1544267958784" expanded="true" signature="2529:2554" ph="{...}" />
+                <marker date="1544267958784" expanded="true" signature="2558:2618" ph="/// Set compute buffer data ... " />
+                <marker date="1544267958784" expanded="true" signature="2662:3019" ph="{...}" />
+                <marker date="1544267958784" expanded="true" signature="2688:2718" ph="{...}" />
+                <marker date="1544267958784" expanded="true" signature="2748:2778" ph="{...}" />
+                <marker date="1544267958784" expanded="true" signature="2814:2990" ph="{...}" />
+                <marker date="1544267958784" expanded="true" signature="3023:3089" ph="/// Gets compute data as an array ... " />
+                <marker date="1544267958784" expanded="true" signature="3124:3375" ph="{...}" />
+                <marker date="1544267958784" expanded="true" signature="3155:3284" ph="{...}" />
+                <marker date="1544267958784" expanded="true" signature="3414:3461" ph="{...}" />
+                <marker date="1544267958784" expanded="true" signature="3500:3712" ph="{...}" />
+                <marker date="1544267958784" expanded="true" signature="3630:3689" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpEnumSlider.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="928">
+              <caret line="58" column="12" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
+              <folding>
+                <marker date="1544062537813" expanded="true" signature="33:3748" ph="{...}" />
+                <marker date="1544062537813" expanded="true" signature="76:3746" ph="{...}" />
+                <marker date="1544062537813" expanded="true" signature="461:588" ph="{...}" />
+                <marker date="1544062537813" expanded="true" signature="622:751" ph="{...}" />
+                <marker date="1544062537813" expanded="true" signature="653:747" ph="{...}" />
+                <marker date="1544062537813" expanded="true" signature="784:911" ph="{...}" />
+                <marker date="1544062537813" expanded="true" signature="947:1808" ph="{...}" />
+                <marker date="1544062537813" expanded="true" signature="1844:2312" ph="{...}" />
+                <marker date="1544062537813" expanded="true" signature="2175:2308" ph="{...}" />
+                <marker date="1544062537813" expanded="true" signature="2386:2460" ph="{...}" />
+                <marker date="1544062537813" expanded="true" signature="2497:3592" ph="{...}" />
+                <marker date="1544062537813" expanded="true" signature="3455:3588" ph="{...}" />
+                <marker date="1544062537813" expanded="true" signature="3635:3740" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Psyia/Shaders/Compute/SimulateParticles.compute">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="966">
+              <caret line="103" column="10" selection-start-line="103" selection-start-column="10" selection-end-line="103" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Psyia/Shaders/Compute/ColorParticles.compute">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="45" column="1" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Psyia/Scripts/GPU Scripts/UpdateGlobalMatrix.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="384">
+              <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
+              <folding>
+                <marker date="1544267958809" expanded="false" signature="6:78" ph="..." />
+                <marker date="1544267958809" expanded="true" signature="96:1231" ph="{...}" />
+                <marker date="1544267958809" expanded="true" signature="148:1228" ph="{...}" />
+                <marker date="1544267958809" expanded="true" signature="388:1225" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Psyia/Shaders/Includes/ForceFields.hlsl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-554" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Editor/GPUBufferInspector.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="384">
+              <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Psyia/Scripts/Editor/PsyiaEmitterInspector.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="49" column="91" selection-start-line="49" selection-start-column="91" selection-end-line="49" selection-end-column="91" />
+              <folding>
+                <marker date="1544267958795" expanded="true" signature="0:1066" ph="/* Copyright (c) 2018 Lachlan Sleight ... */" />
+                <marker date="1544267958795" expanded="false" signature="1074:1177" ph="..." />
+                <marker date="1544267958795" expanded="true" signature="1195:6608" ph="{...}" />
+                <marker date="1544267958795" expanded="true" signature="1307:4003" ph="{...}" />
+                <marker date="1544267958795" expanded="true" signature="1588:2037" ph="{...}" />
+                <marker date="1544267958795" expanded="true" signature="2079:4000" ph="{...}" />
+                <marker date="1544267958795" expanded="true" signature="2284:2385" ph="{...}" />
+                <marker date="1544267958795" expanded="true" signature="2428:2531" ph="{...}" />
+                <marker date="1544267958795" expanded="true" signature="2574:2680" ph="{...}" />
+                <marker date="1544267958795" expanded="true" signature="2723:2809" ph="{...}" />
+                <marker date="1544267958795" expanded="true" signature="3020:3948" ph="/* if(myTarget.Mode == PsyiaEmitter.PsyiaEmitterMode.Start) { ... */" />
+                <marker date="1544267958795" expanded="true" signature="4120:6605" ph="{...}" />
+                <marker date="1544267958795" expanded="true" signature="4213:6602" ph="{...}" />
+                <marker date="1544267958795" expanded="true" signature="5588:6569" ph="/* Draw label ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Psyia/Shaders/Compute/EmitParticles.compute">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1228">
+              <caret line="117" column="50" selection-start-line="117" selection-start-column="31" selection-end-line="117" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Psyia/Scripts/ScriptableObjects/ParticleSettings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Psyia/Shaders/Compute/SimulateParticles.compute" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SteamVR/Editor/SteamVR_Update.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Editor/GPUBufferInspector.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Buffer/GpuAppendBuffer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpEnumSlider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Psyia/Scripts/Editor/PsyiaEmitterInspector.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Psyia/StructsAndSOs/GPU Structs/ForceData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Psyia/Shaders/Includes/ForceFields.hlsl" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SteamVR/Plugins/openvr_api.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Psyia/Shaders/Compute/ColorParticles.compute" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Psyia/Scripts/GPU Scripts/ParticleBufferSetup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Psyia/Scripts/GPU Scripts/UpdateTime.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Psyia/Scripts/Forces/ForceManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Psyia/Scripts/PsyiaEmitter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Psyia/Scripts/Forces/PsyiaForce.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Psyia/Shaders/Compute/CalculateDistances.compute" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Buffer/GpuBuffer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Psyia/Scripts/GPU Scripts/UpdateGlobalMatrix.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Psyia/Shaders/Compute/EmitParticles.compute" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="UnityExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="SolutionExplorer">
+        <option name="show-all-files" value="false" />
+      </pane>
+      <pane id="UnityExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="Psyia" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="Psyia" type="1045f7f1:UnityExplorerNode" />
+              <item name="AssetPackages" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="Psyia" type="1045f7f1:UnityExplorerNode" />
+              <item name="AssetPackages" type="1045f7f1:UnityExplorerNode" />
+              <item name="UCTK" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="Psyia" type="1045f7f1:UnityExplorerNode" />
+              <item name="AssetPackages" type="1045f7f1:UnityExplorerNode" />
+              <item name="UCTK" type="1045f7f1:UnityExplorerNode" />
+              <item name="Editor" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="Psyia" type="1045f7f1:UnityExplorerNode" />
+              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="Psyia" type="1045f7f1:UnityExplorerNode" />
+              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
+              <item name="Forces" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="Psyia" type="1045f7f1:UnityExplorerNode" />
+              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
+              <item name="GPU Scripts" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="Psyia" type="1045f7f1:UnityExplorerNode" />
+              <item name="Shaders" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="Psyia" type="1045f7f1:UnityExplorerNode" />
+              <item name="Shaders" type="1045f7f1:UnityExplorerNode" />
+              <item name="Compute" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="Psyia" type="1045f7f1:UnityExplorerNode" />
+              <item name="Shaders" type="1045f7f1:UnityExplorerNode" />
+              <item name="Includes" type="1045f7f1:UnityExplorerNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-hidden-items" value="false" />
+      </pane>
+      <pane id="FileSystemExplorer" />
+    </panes>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Attach to Unity Editor.Attach to Unity Editor" />
+      <item itemvalue="Attach to Unity Editor.Attach to Unity Editor &amp; Play" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="140a6c05-64ff-46f0-b2c6-b112526fc446" name="Default Changelist" comment="" />
+      <created>1544255339212</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1544255339212</updated>
+      <workItem from="1544255340805" duration="4296000" />
+      <workItem from="1544265036777" duration="3167000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="802" y="529" width="2060" height="1501" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="NuGet" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Unity" order="10" />
+      <window_info anchor="bottom" id="Unit Tests" order="11" />
+      <window_info anchor="bottom" id="Terminal" order="12" />
+      <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Errors In Solution" order="3" />
+    </layout>
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+</project>

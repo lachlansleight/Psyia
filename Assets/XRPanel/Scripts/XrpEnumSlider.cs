@@ -53,22 +53,6 @@ namespace XRP
 				0f,
 				0f
 			);
-
-			return;
-			//find shortest side - that side x 0.05 = width of border geometry and width of padding
-			var shortest = Mathf.Min(transform.localScale.x, transform.localScale.y);
-			var gapX = 0.05f * shortest / transform.localScale.x;
-			var gapY = 0.05f * shortest / transform.localScale.y;
-
-			var maxSize = 1f - (gapX * 2f);
-			var xScale = Mathf.Lerp(0f, maxSize, sliderLerpValue);
-			var yScale = 1f - (gapY * 2f);
-
-			xScale *= 1f / (MaxValue - MinValue);
-
-			_sliderGeometry.localScale = new Vector3(xScale, yScale, 1.5f);
-
-			_sliderGeometry.localPosition = new Vector3(Mathf.Lerp(-maxSize / 2f, 0f, sliderLerpValue), 0f, 0f);
 		}
 
 		public override void StopPress()

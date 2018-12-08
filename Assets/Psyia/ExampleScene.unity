@@ -146,7 +146,7 @@ Transform:
   - {fileID: 1145665218}
   - {fileID: 798326177}
   m_Father: {fileID: 179871605}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &137111430
 GameObject:
@@ -174,7 +174,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &179871603
 GameObject:
@@ -216,14 +216,13 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1827905560}
   - {fileID: 620701362}
   - {fileID: 380945158}
   - {fileID: 1030287910}
   - {fileID: 840463841}
   - {fileID: 32601971}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &298462409
 GameObject:
@@ -274,13 +273,13 @@ MonoBehaviour:
   TargetBuffers:
   - Name: ParticleBuffer
     SetBuffer: {fileID: 0}
-    MainBuffer: {fileID: 1637365224}
+    MainBuffer: {fileID: 0}
   - Name: DeadList
     SetBuffer: {fileID: 0}
-    MainBuffer: {fileID: 1991219547}
+    MainBuffer: {fileID: 0}
   - Name: ForceBuffer
     SetBuffer: {fileID: 0}
-    MainBuffer: {fileID: 1866704765}
+    MainBuffer: {fileID: 0}
   TargetTextures: []
   KernelName: SimulateParticles
   ThreadGroupsX: 1024
@@ -410,7 +409,7 @@ MonoBehaviour:
   TargetBuffers:
   - Name: ParticleBuffer
     SetBuffer: {fileID: 0}
-    MainBuffer: {fileID: 1637365224}
+    MainBuffer: {fileID: 0}
   TargetTextures: []
   KernelName: ColorParticles
   ThreadGroupsX: 1024
@@ -446,7 +445,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 179871605}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &380945159
 MonoBehaviour:
@@ -460,7 +459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd81c69293a9c154282b5c810847ccfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AppendBuffer: {fileID: 1991219547}
+  AppendBuffer: {fileID: 0}
   Emitter: {fileID: 918769444}
 --- !u!114 &380945160
 MonoBehaviour:
@@ -521,7 +520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Increasing: 1
   SortIterationsPerFrame: 100
-  DistanceBuffer: {fileID: 1825871794}
+  DistanceBuffer: {fileID: 0}
   SortShader: {fileID: 2097184484}
 --- !u!114 &416519861
 MonoBehaviour:
@@ -650,9 +649,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParticleCountFactor: 512
-  ParticleBuffer: {fileID: 1637365225}
-  DistanceBuffer: {fileID: 1825871795}
-  DeadList: {fileID: 1991219548}
+  ParticleBuffer: {fileID: 0}
+  DistanceBuffer: {fileID: 0}
+  DeadList: {fileID: 0}
 --- !u!4 &620701362
 Transform:
   m_ObjectHideFlags: 0
@@ -665,7 +664,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 179871605}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &798326176
 GameObject:
@@ -744,11 +743,11 @@ MonoBehaviour:
   Topology: 5
   InputBuffers:
   - Name: ParticleBuffer
-    SetBuffer: {fileID: 1637365224}
-    MainBuffer: {fileID: 1637365224}
+    SetBuffer: {fileID: 0}
+    MainBuffer: {fileID: 0}
   - Name: DistanceBuffer
-    SetBuffer: {fileID: 1825871794}
-    MainBuffer: {fileID: 1825871794}
+    SetBuffer: {fileID: 0}
+    MainBuffer: {fileID: 0}
   BufferToCount: 0
   RenderMaterial: {fileID: 2100000, guid: 291420a951b639b489a794904470b95a, type: 2}
 --- !u!1 &828130260
@@ -843,7 +842,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 179871605}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &893265351
 GameObject:
@@ -945,10 +944,10 @@ MonoBehaviour:
   TargetBuffers:
   - Name: ParticleBuffer
     SetBuffer: {fileID: 0}
-    MainBuffer: {fileID: 1637365224}
+    MainBuffer: {fileID: 0}
   - Name: DistanceBuffer
     SetBuffer: {fileID: 0}
-    MainBuffer: {fileID: 1825871794}
+    MainBuffer: {fileID: 0}
   TargetTextures: []
   KernelName: CalculateDistances
   ThreadGroupsX: 1024
@@ -1003,10 +1002,10 @@ MonoBehaviour:
   TargetBuffers:
   - Name: ParticleBuffer
     SetBuffer: {fileID: 0}
-    MainBuffer: {fileID: 1637365224}
+    MainBuffer: {fileID: 0}
   - Name: DeadList
     SetBuffer: {fileID: 0}
-    MainBuffer: {fileID: 1991219547}
+    MainBuffer: {fileID: 0}
   TargetTextures: []
   KernelName: EmitParticles
   ThreadGroupsX: 1
@@ -1103,8 +1102,8 @@ Transform:
   m_LocalPosition: {x: 0.947, y: 0, z: 0}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children: []
-  m_Father: {fileID: 1827905560}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &942698861
 GameObject:
@@ -1197,8 +1196,8 @@ Transform:
   m_LocalPosition: {x: -1.264, y: -0.922, z: 1.369}
   m_LocalScale: {x: 0.049999997, y: 0.049999997, z: 0.049999997}
   m_Children: []
-  m_Father: {fileID: 1827905560}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1030287907
 GameObject:
@@ -1246,7 +1245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e72dd8f2c80e87e499a2cf213673b901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ForceBuffer: {fileID: 1866704765}
+  ForceBuffer: {fileID: 0}
   CurrentForces: []
 --- !u!4 &1030287910
 Transform:
@@ -1261,7 +1260,7 @@ Transform:
   m_Children:
   - {fileID: 1160084119}
   m_Father: {fileID: 179871605}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1070010058
 GameObject:
@@ -1420,11 +1419,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1637365226}
-  - {fileID: 1825871796}
-  - {fileID: 1991219549}
-  - {fileID: 1866704767}
+  m_Children: []
   m_Father: {fileID: 32601971}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1439,7 +1434,7 @@ GameObject:
   - component: {fileID: 1194542461}
   - component: {fileID: 1194542462}
   m_Layer: 0
-  m_Name: UpdateCameraPosition (1)
+  m_Name: UpdateGlobalMatrix
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1567,8 +1562,8 @@ Transform:
   m_LocalPosition: {x: -1.264, y: 0.56, z: -1.535}
   m_LocalScale: {x: 0.049999997, y: 0.049999997, z: 0.049999997}
   m_Children: []
-  m_Father: {fileID: 1827905560}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1317026888
 GameObject:
@@ -1702,8 +1697,8 @@ MonoBehaviour:
   Shader: {fileID: 7200000, guid: d455d4125b4f6d94bb6b338699ad7158, type: 3}
   TargetBuffers:
   - Name: DeadList
-    SetBuffer: {fileID: 1991219547}
-    MainBuffer: {fileID: 1991219547}
+    SetBuffer: {fileID: 0}
+    MainBuffer: {fileID: 0}
   TargetTextures: []
   KernelName: SetupDeadList
   ThreadGroupsX: 1024
@@ -1858,75 +1853,31 @@ Transform:
 --- !u!1 &1637365223
 GameObject:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4799785139746198, guid: 313d98257bf0b8b4c9e6434146dd1f1d, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4799785139746198, guid: 313d98257bf0b8b4c9e6434146dd1f1d, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4799785139746198, guid: 313d98257bf0b8b4c9e6434146dd1f1d, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4799785139746198, guid: 313d98257bf0b8b4c9e6434146dd1f1d, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4799785139746198, guid: 313d98257bf0b8b4c9e6434146dd1f1d, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4799785139746198, guid: 313d98257bf0b8b4c9e6434146dd1f1d, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4799785139746198, guid: 313d98257bf0b8b4c9e6434146dd1f1d, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4799785139746198, guid: 313d98257bf0b8b4c9e6434146dd1f1d, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114742742659665160, guid: 313d98257bf0b8b4c9e6434146dd1f1d,
-        type: 2}
-      propertyPath: _Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114742742659665160, guid: 313d98257bf0b8b4c9e6434146dd1f1d,
-        type: 2}
-      propertyPath: EmitOverTime
-      value: 50000
-      objectReference: {fileID: 0}
-    - target: {fileID: 114235743925818200, guid: 313d98257bf0b8b4c9e6434146dd1f1d,
-        type: 2}
-      propertyPath: RenderMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: dfc959315cdd2b74c9780ca99950df04, type: 2}
-    - target: {fileID: 114336396663811614, guid: 313d98257bf0b8b4c9e6434146dd1f1d,
-        type: 2}
-      propertyPath: Shape
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114742742659665160, guid: 313d98257bf0b8b4c9e6434146dd1f1d,
-        type: 2}
-      propertyPath: Settings.EmissionRadius
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 114652218000510378, guid: 313d98257bf0b8b4c9e6434146dd1f1d,
-        type: 2}
-      propertyPath: ParticleLifetime
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 313d98257bf0b8b4c9e6434146dd1f1d, type: 2}
-  m_IsPrefabParent: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1637365224}
+  m_Layer: 0
+  m_Name: 
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1637365224
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1637365223}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2027154167
 GameObject:
   m_ObjectHideFlags: 0
@@ -1954,7 +1905,7 @@ Transform:
   m_Children:
   - {fileID: 1601939076}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2097184482
 GameObject:
@@ -2005,7 +1956,7 @@ MonoBehaviour:
   TargetBuffers:
   - Name: DistanceBuffer
     SetBuffer: {fileID: 0}
-    MainBuffer: {fileID: 1825871794}
+    MainBuffer: {fileID: 0}
   TargetTextures: []
   KernelName: SortParticles
   ThreadGroupsX: 1024
