@@ -166,6 +166,42 @@
             <e p="SteamVR_Utils.cs" t="Include" />
           </e>
         </e>
+        <e p="XRPanel" t="Include">
+          <e p="Example" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="ExampleParticles.cs" t="Include" />
+              <e p="Lights.cs" t="Include" />
+              <e p="SkyboxSetter.cs" t="Include" />
+              <e p="TestSpawner.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Resources" t="Include">
+            <e p="Shaders" t="Include">
+              <e p="UnlitTransparentColor.shader" t="Include" />
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="EnumsAndClasses.cs" t="Include" />
+            <e p="OneShotter.cs" t="Include" />
+            <e p="XrpButton.cs" t="Include" />
+            <e p="XrpCanvasAlphaCopier.cs" t="Include" />
+            <e p="XrpControl.cs" t="Include" />
+            <e p="XrpControlGeometry.cs" t="Include" />
+            <e p="XrpCopyMaterialColor.cs" t="Include" />
+            <e p="XrpDial.cs" t="Include" />
+            <e p="XrpEnumSlider.cs" t="Include" />
+            <e p="XrpEnumSliderGeometry.cs" t="Include" />
+            <e p="XrpIntDial.cs" t="Include" />
+            <e p="XrpIntDialGeometry.cs" t="Include" />
+            <e p="XrpIntSlider.cs" t="Include" />
+            <e p="XrpIntSliderGeometry.cs" t="Include" />
+            <e p="XrpPanel.cs" t="Include" />
+            <e p="XrpPanelGeometry.cs" t="Include" />
+            <e p="XrpPointer.cs" t="Include" />
+            <e p="XrpSlider.cs" t="Include" />
+            <e p="XrpToggle.cs" t="Include" />
+          </e>
+        </e>
       </e>
       <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
