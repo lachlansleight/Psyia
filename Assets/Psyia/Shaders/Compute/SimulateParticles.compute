@@ -1,4 +1,30 @@
-﻿//Does the main particle simulation step
+﻿/*
+
+Copyright (c) 2018 Lachlan Sleight
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+*/
+
+
+
+//Does the main particle simulation step
 
 #pragma kernel SimulateParticles
 
@@ -17,12 +43,15 @@
 //Physics Parameters:
 float Damping;
 float ForceMultiplier;
-float ParticleMass;
+float ParticleMinimumMass;
 
 //time parameters
 float Lifespan;
 float Time;
 float DeltaTime;
+
+float4x4 InverseSystemMatrix;
+float4x4 SystemMatrix;
 
 RWStructuredBuffer<ParticleData> ParticleBuffer;
 AppendStructuredBuffer<uint> DeadList;
@@ -41,7 +70,7 @@ void SimulateParticles(uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
 
 	//If we're not alive, just make sure it's not visible and continue
 	if (ThisParticle.IsAlive == 0) {
-		ThisParticle.Position = float3(0, -10000, 0);
+		ThisParticle.Position = float3(0, -100000, 0);
 		ParticleBuffer[id] = ThisParticle;
 		return;
 	}
@@ -60,16 +89,26 @@ void SimulateParticles(uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
 	uint ForceStride = 0;
 	ForceBuffer.GetDimensions(ForceCount, ForceStride);
 
+	float4x4 InverseSystemRotation = {
+		InverseSystemMatrix[0][0], InverseSystemMatrix[0][1], InverseSystemMatrix[0][2], 0,
+		InverseSystemMatrix[1][0], InverseSystemMatrix[1][1], InverseSystemMatrix[1][2], 0,
+		InverseSystemMatrix[2][0], InverseSystemMatrix[2][1], InverseSystemMatrix[2][2], 0,
+		0, 0, 0, 1
+	};
+
 	float3 ExternalForce = float3(0,0,0);
 	for(uint i = 0; i < ForceCount; i++) {
 		ForceData CurrentForce = ForceBuffer[i];
-		float3 NewForce = GetForceAtPoint(CurrentForce, ThisParticle.Position);
+		//add SystemMatrix to CurrentForce position
+		float3 NewForce = mul(InverseSystemRotation, float4(GetForceAtPoint(CurrentForce, mul(SystemMatrix, float4(ThisParticle.Position, 1)).xyz), 1.0)).xyz;
+		//NewForce = GetForceAtPoint(CurrentForce, ThisParticle.Position);
 		ExternalForce += NewForce;
 	}
+	
 	ExternalForce *= ForceMultiplier;
 
-	float NonZeroMass = ParticleMass;
-	if(NonZeroMass == 0) {
+	float NonZeroMass = ParticleMinimumMass + ThisParticle.Mass;
+	if(NonZeroMass <= 0) {
 		NonZeroMass = 0.000001;
 	}
 

@@ -1276,7 +1276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3154cfa061094de4588b10fa03d3a9d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ParticleMass: 1
+  ParticleMinimumMass: 0.01
   ParticleDrag: 0.1
   ForceMultiplier: 1
   Forces: {fileID: 114435686463800602}
@@ -1661,8 +1661,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ComputeShaders:
-  - {fileID: 7200000, guid: 6ec9b1b696560ed4c9409beab34fd4bc, type: 3}
-  - {fileID: 7200000, guid: 4de17e8979292264388596b00523adae, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   Materials: []
 --- !u!114 &114632852740425144
 MonoBehaviour:
@@ -1703,6 +1703,7 @@ MonoBehaviour:
   MaxParticleCount: 304
   DefaultParticleSize: 0.01
   ParticleLifetime: 60
+  SimulationSpace: 1
   CountManager: {fileID: 114505911845504826}
 --- !u!114 &114655572849592378
 MonoBehaviour:
@@ -1765,13 +1766,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Mode: 1
-  StartEmitCount: 300000
-  EmitOverTime: 10
-  EmitOverDistance: 10
+  _StartEmitCount: 0
+  _EmitOverTime: 0
+  _EmitOverDistance: 0
+  _EmissionMultiplier: 0
   Settings:
     EmissionRadius: 0.02
-    EmissionVelocity: 0.05
+    EmissionRadiusShell: 1
+    EmissionArcSize: 1
+    MinSpawnVelocity: 0.15
+    MaxSpawnVelocity: 0.2
+    MinSpawnMass: 0.05
+    MaxSpawnMass: 0.15
     InheritVelocity: 0.05
+    RandomiseDirection: 0
 --- !u!114 &114791672713264616
 MonoBehaviour:
   m_ObjectHideFlags: 1

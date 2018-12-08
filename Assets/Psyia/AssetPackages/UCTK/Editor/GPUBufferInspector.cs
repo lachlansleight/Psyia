@@ -20,6 +20,13 @@ namespace UCTK {
 				else EditorGUILayout.LabelField("No type");
 				EditorGUILayout.IntField("Buffer stride", myTarget.Stride);
 				EditorGUILayout.IntField("Buffer count", myTarget.Count);
+
+				if (GUILayout.Button("Dump Data")) {
+					var method = typeof(GpuBuffer).GetMethod("DumpData");
+					var typeMethod = method.MakeGenericMethod(new[] {myTarget.DataType});
+					var dump = typeMethod.Invoke(myTarget, new object[] { });
+					Debug.Log(dump);
+				}
 			}
 			
 			

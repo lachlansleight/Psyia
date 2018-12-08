@@ -1,4 +1,30 @@
-﻿//Responsible for taking particles from the DeadList and making them come alive!
+﻿/*
+
+Copyright (c) 2018 Lachlan Sleight
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+*/
+
+
+
+//Responsible for taking particles from the DeadList and making them come alive!
 
 #pragma kernel EmitParticles
 
@@ -8,17 +34,27 @@
 RWStructuredBuffer<ParticleData> ParticleBuffer;
 ConsumeStructuredBuffer<uint> DeadList;
 
-float3 SpawnPosition;
-float3 LastSpawnPosition;
-
 float3 SpawnVelocity;
 float3 LastSpawnVelocity;
 
 float SpawnRadius;
-float SpawnVelocityScatter;
+float SpawnRadiusShell;
+float SpawnArcSize;
+
+float MinSpawnVelocity;
+float MaxSpawnVelocity;
 float SpawnInheritVelocity;
+float MinSpawnMass;
+float MaxSpawnMass;
 
 float Time;
+
+float RandomiseDirection;
+float4x4 SpawnTransform;
+float4x4 LastSpawnTransform;
+
+float4x4 SystemMatrix;
+float4x4 InverseSystemMatrix;
 
 //returns random from 0 to 1
 float rand(float n1, float n2) {
@@ -44,26 +80,49 @@ void EmitParticles() {
 	CurrentParticle.IsAlive = 1;
 	
 	float3 seed = float3(newIndex * 0.01 + Time, newIndex * 0.01 + Time * 0.38762, newIndex * 0.01 + Time * 1.5863);
+	float PositionLerpFactor = rand(seed.x, seed.y);
 
 	//Spawn randomly along line from last controller position to current controller position
-	float PositionLerpFactor = rand(seed.x, seed.y);
-	CurrentParticle.Position = lerp(LastSpawnPosition, SpawnPosition, PositionLerpFactor);
+	float3 SpawnCenterPosition = lerp(mul(LastSpawnTransform, float4(0,0,0,1)).xyz, mul(SpawnTransform, float4(0,0,0,1)).xyz, PositionLerpFactor);
 
 	//Also lerp velocity linearly between two points
 	float3 SpawnVelocityLerped = lerp(LastSpawnVelocity, SpawnVelocity, PositionLerpFactor);
 	float3 InheritedSpawnVelocity = (SpawnVelocityLerped * SpawnInheritVelocity);
 
-	//Add a small spherical offset to spawn in small sphere
-	float3 SpawnPositionOffset = normalize(randVec(seed.x) - float3(0.5, 0.5, 0.5));
-	CurrentParticle.Position += SpawnPositionOffset * SpawnRadius * rand(seed.x, seed.z);
+	float4x4 LastSpawnRotation = {
+		LastSpawnTransform[0][0], LastSpawnTransform[0][1], LastSpawnTransform[0][2], 0,
+		LastSpawnTransform[1][0], LastSpawnTransform[1][1], LastSpawnTransform[1][2], 0,
+		LastSpawnTransform[2][0], LastSpawnTransform[2][1], LastSpawnTransform[2][2], 0,
+		0, 0, 0, 1
+	};
+	float4x4 SpawnRotation = {
+		SpawnTransform[0][0], SpawnTransform[0][1], SpawnTransform[0][2], 0,
+		SpawnTransform[1][0], SpawnTransform[1][1], SpawnTransform[1][2], 0,
+		SpawnTransform[2][0], SpawnTransform[2][1], SpawnTransform[2][2], 0,
+		0, 0, 0, 1
+	};
 
-	//Create random initial velocity
-	float3 SpawnScatterVelocityDirection = normalize(randVec(seed.y) - float3(0.5, 0.5, 0.5));
-	float SpawnScatterVelocityStrength = rand(seed.x, seed.y) * SpawnVelocityScatter;
-	float3 SpawnScatterVelocity = SpawnScatterVelocityDirection * SpawnScatterVelocityStrength;
+	//Add a small spherical offset to spawn in small sphere
+	float SphereOffsetDistance = lerp(SpawnRadius * (1.0 - SpawnRadiusShell), SpawnRadius, rand(seed.x, seed.z));
+	float SphereAngleT = 3.1415926535 * 2.0 * (rand(seed.y, frac(seed.z / 3.324)) - 0.5) * SpawnArcSize;
+	float SphereAngleP = 3.1415926535 * (rand(seed.x, frac(seed.y / 3.324)) - 0.5);
+	float3 SphereOffset = normalize(float3(sin(SphereAngleT) * cos(SphereAngleP), sin(SphereAngleT) * sin(SphereAngleP), cos(SphereAngleT)));
+	float3 FinalSphereOffset = normalize(lerp(mul(LastSpawnRotation, float4(SphereOffset,1)), mul(SpawnRotation, float4(SphereOffset,1)), PositionLerpFactor).xyz) * SphereOffsetDistance;
+
+	float3 ForwardDirection = normalize(lerp(mul(LastSpawnRotation, float4(0,0,1,1)), mul(SpawnRotation, float4(0,0,1,1)), PositionLerpFactor).xyz);
+	float3 SpawnVelocityDirection = lerp(ForwardDirection, normalize(randVec(seed.y) - float3(0.5, 0.5, 0.5)), RandomiseDirection);	
+	float SpawnVelocityStrength = lerp(MinSpawnVelocity, MaxSpawnVelocity, rand(seed.x, seed.y));
+	float3 FinalSpawnVelocity = SpawnVelocityDirection * SpawnVelocityStrength;
+
+	//Apply position
+	CurrentParticle.Position = SpawnCenterPosition + FinalSphereOffset;
 
 	//Apply velocity
-	CurrentParticle.Velocity = SpawnScatterVelocity + InheritedSpawnVelocity;
+	CurrentParticle.Velocity = FinalSpawnVelocity + InheritedSpawnVelocity;
+
+	CurrentParticle.Mass = lerp(MinSpawnMass, MaxSpawnMass, rand(seed.y + Time, seed.x * 0.0152));
+
+	CurrentParticle.Color = float4(1,1,1,1);
 
 	ParticleBuffer[newIndex] = CurrentParticle;
 }

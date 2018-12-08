@@ -74,6 +74,7 @@
               <e p="ParticleBufferSetup.cs" t="Include" />
               <e p="ParticleCountManager.cs" t="Include" />
               <e p="PsyiaCoreParticleEmitter.cs" t="Include" />
+              <e p="UpdateGlobalMatrix.cs" t="Include" />
               <e p="UpdateMainCameraPosition.cs" t="Include" />
               <e p="UpdateTime.cs" t="Include" />
             </e>
@@ -100,6 +101,7 @@
               <e p="ParticleLines.shader" t="Include" />
               <e p="ParticlePoints.shader" t="Include" />
               <e p="ParticleQuads.shader" t="Include" />
+              <e p="PetrichorParticles.shader" t="Include" />
             </e>
             <e p="Includes" t="Include">
               <e p="ForceFields.hlsl" t="Include" />
