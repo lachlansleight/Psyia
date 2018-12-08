@@ -7,6 +7,11 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="AppContent" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="VisualSettings.cs" t="Include" />
+          </e>
+        </e>
         <e p="Psyia" t="Include">
           <e p="AssetPackages" t="Include">
             <e p="ShaderNoise" t="Include">
@@ -167,14 +172,6 @@
           </e>
         </e>
         <e p="XRPanel" t="Include">
-          <e p="Example" t="Include">
-            <e p="Scripts" t="Include">
-              <e p="ExampleParticles.cs" t="Include" />
-              <e p="Lights.cs" t="Include" />
-              <e p="SkyboxSetter.cs" t="Include" />
-              <e p="TestSpawner.cs" t="Include" />
-            </e>
-          </e>
           <e p="Resources" t="Include">
             <e p="Shaders" t="Include">
               <e p="UnlitTransparentColor.shader" t="Include" />

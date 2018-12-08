@@ -4,7 +4,7 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: ParticleLines
   m_Shader: {fileID: 4800000, guid: fb36a253a8779f04bb6cf7071d3b36be, type: 3}
@@ -66,7 +66,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _LineLength: 0.014173227
+    - _LineLength: 0.035676833
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
