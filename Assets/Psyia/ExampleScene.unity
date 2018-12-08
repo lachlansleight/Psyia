@@ -233,6 +233,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114742742659665160, guid: 313d98257bf0b8b4c9e6434146dd1f1d,
+        type: 2}
+      propertyPath: _Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114742742659665160, guid: 313d98257bf0b8b4c9e6434146dd1f1d,
+        type: 2}
+      propertyPath: EmitOverTime
+      value: 50000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114235743925818200, guid: 313d98257bf0b8b4c9e6434146dd1f1d,
+        type: 2}
+      propertyPath: RenderMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: dfc959315cdd2b74c9780ca99950df04, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 313d98257bf0b8b4c9e6434146dd1f1d, type: 2}
   m_IsPrefabParent: 0
