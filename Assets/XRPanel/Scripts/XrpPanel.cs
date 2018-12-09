@@ -21,7 +21,7 @@ namespace XRP
 
 		public void Awake()
 		{
-			_controls = transform.GetComponentsInChildren<XrpControl>();
+			_controls = transform.GetComponentsInChildren<XrpControl>(true);
 			foreach (var control in _controls) control.Panel = this;
 			_hoverCandidates = new float[_controls.Length];
 			_touchCandidates = new int[_controls.Length];
@@ -35,6 +35,8 @@ namespace XRP
 			
 			for (var i = 0; i < _pointers.Length; i++) {
 				for (var j = 0; j < _controls.Length; j++) {
+					if (!_controls[j].gameObject.activeInHierarchy) continue;
+					
 					var displacement = _controls[j].GetDistance(_pointers[i].transform.position);
 
 					if(_hoverCandidates[j] < 0) _hoverCandidates[j] = displacement.magnitude <= HoverDistance ? displacement.magnitude : -1f;
@@ -46,6 +48,8 @@ namespace XRP
 			}
 			
 			for (var i = 0; i < _controls.Length; i++) {
+				if (!_controls[i].gameObject.activeInHierarchy) continue;
+				
 				var state = _controls[i].CurrentState;
 				
 				if (_touchCandidates[i] >= 0) {
