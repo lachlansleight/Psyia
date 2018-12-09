@@ -34,12 +34,14 @@ namespace Psyia {
 		
 		SerializedProperty ShapeProperty;
 		SerializedProperty StrengthProperty;
+		SerializedProperty StrengthMultiplierProperty;
 		SerializedProperty AttenuationProperty;
 		SerializedProperty DistanceProperty;
 
 		void OnEnable() {
 			ShapeProperty = serializedObject.FindProperty("Shape");
 			StrengthProperty = serializedObject.FindProperty("Strength");
+			StrengthMultiplierProperty = serializedObject.FindProperty("StrengthMultiplier");
 			AttenuationProperty = serializedObject.FindProperty("AttenuationMode");
 			DistanceProperty = serializedObject.FindProperty("AttenuationDistance");
 		}
@@ -51,13 +53,14 @@ namespace Psyia {
 
 			EditorGUILayout.PropertyField(ShapeProperty, new GUIContent("Force Shape"));
 			EditorGUILayout.PropertyField(StrengthProperty, new GUIContent("Force Strength (N)"));
+			EditorGUILayout.PropertyField(StrengthMultiplierProperty, new GUIContent("Force Multiplier"));
 			EditorGUILayout.PropertyField(AttenuationProperty, new GUIContent("Attenuation Mode"));
 			if(AttenuationProperty.enumValueIndex == 4) {
 				EditorGUILayout.PropertyField(DistanceProperty, new GUIContent("Attenuation Period"));
-			} else if(AttenuationProperty.enumValueIndex != 0) {
-				EditorGUILayout.PropertyField(DistanceProperty, new GUIContent("Attenuation Distance"));
 			} else if(AttenuationProperty.enumValueIndex > 4) {
 				EditorGUILayout.PropertyField(DistanceProperty, new GUIContent("Attenuation Softening Distance"));
+			} else if(AttenuationProperty.enumValueIndex != 0) {
+				EditorGUILayout.PropertyField(DistanceProperty, new GUIContent("Attenuation Distance"));
 			}
 
 			serializedObject.ApplyModifiedProperties();
