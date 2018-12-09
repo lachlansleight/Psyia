@@ -7,9 +7,12 @@ using Valve.VR;
 [RequireComponent(typeof(PsyiaEmitter))]
 public class ControllerSpawn : MonoBehaviour {
 
-	public SteamVR_Action_Pose PoseAction;
 	public SteamVR_Action_Single SpawnParticlesAction;
 	public SteamVR_Input_Sources Hand;
+
+	public AnimationCurve SpawnMultiplier = AnimationCurve.Linear(0f, 0f, 1f, 1f);
+	public AnimationCurve MinSpawnVelocity = AnimationCurve.Linear(0f, 0f, 1f, 1f);
+	public AnimationCurve MaxSpawnVelocity = AnimationCurve.Linear(0f, 0f, 1f, 1f);
 	
 	[Range(0f, 1f)] public float Value;
 
@@ -20,39 +23,23 @@ public class ControllerSpawn : MonoBehaviour {
 		_psyiaEmitter = GetComponent<PsyiaEmitter>();
 	}
 	
-	// Use this for initialization
 	public void OnEnable ()
 	{
 		SpawnParticlesAction.AddOnChangeListener(OnAxisValueChanged, Hand);
-		PoseAction.AddOnChangeListener(OnPoseChanged, Hand);
 	}
 
 	public void OnDisable()
 	{
 		SpawnParticlesAction.RemoveOnChangeListener(OnAxisValueChanged, Hand);
 	}
-	
-	// Update is called once per frame
-	public void Update ()
-	{
-		//LeftValue = SteamVR_Input._default.inActions.ApplyForce.GetAxis(SteamVR_Input_Sources.LeftHand);
-	}
 
 	private void OnAxisValueChanged(SteamVR_Action_In actionIn)
 	{
 		if (!(actionIn is SteamVR_Action_Single)) return;
 		var asSingle = (SteamVR_Action_Single) actionIn;
-		Value = Mathf.InverseLerp(0.2f, 1f, asSingle.GetAxis(Hand));
+		Value = SpawnMultiplier.Evaluate(asSingle.GetAxis(Hand));
 		_psyiaEmitter.EmissionMultiplier = Value;
-		_psyiaEmitter.Settings.MinSpawnVelocity = Mathf.Lerp(0f, 0.005f, Value);
-		_psyiaEmitter.Settings.MaxSpawnVelocity = Mathf.Lerp(0f, 0.001f, Value);
-	}
-
-	private void OnPoseChanged(SteamVR_Action_In actionIn)
-	{
-		if (!(actionIn is SteamVR_Action_Pose)) return;
-		var asPose = (SteamVR_Action_Pose) actionIn;
-		transform.position = asPose.GetLocalPosition(Hand);
-		transform.rotation = Quaternion.Inverse(asPose.GetLocalRotation(Hand));
+		_psyiaEmitter.Settings.MinSpawnVelocity = MinSpawnVelocity.Evaluate(Value);
+		_psyiaEmitter.Settings.MaxSpawnVelocity = MaxSpawnVelocity.Evaluate(Value);
 	}
 }
