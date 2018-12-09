@@ -109,7 +109,9 @@ namespace Psyia {
         void OnDestroy() 
         {
             //we do not remove the basic internal gravity force because there must be always at least one force in the compute buffer
-            if(GetComponent<PsyiaInternalGravityForce>() == null) Manager.RemoveSource(this);
+            var grav = GetComponent<PsyiaInternalGravityForce>();
+            if(Manager == null) return;
+            if(grav == null) Manager.RemoveSource(this);
         }
     }
 

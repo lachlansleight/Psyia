@@ -31,7 +31,6 @@ Shader "Psyia/Quads"
 		_Color("Color", Color) = (1, 1, 1, 1)
 		_PointSize("Point Size", Float) = 1.0
 		_Image("Image", 2D) = "white" {}
-		_Y ("Chroma Y", Range(-0.5, 1.5)) = 0.7
 	}
 
 		SubShader
@@ -70,40 +69,6 @@ Shader "Psyia/Quads"
 		return float4(finalPos,1);
 	}
 
-	float _Y;
-
-	float3 GetRgbFromYCbCr(float Cb, float Cr) {
-		float y = _Y * 255;
-		float cb = Cb * 255;
-		float cr = Cr * 255;
-
-		float ScaleFactor = 255./129.;
-
-		float r = ((255. / 219.) * (y - 16)) + ((255. / 112.) * 0.701 * (cr - 128));
-		float g = ((255. / 219.) * (y - 16)) - ((255. / 112.) * 0.886 * (0.114 / 0.587) * (cb - 128)) - ((255. / 112.) * 0.701 * (0.299 / 0.587) * (cr - 128));
-		float b = ((255. / 129.) * (y - 16)) + ((255. / 112.) * 0.866 * (cb - 128));
-
-		return float3(r, g, b) / 255;
-	}
-
-	float3 GetRgbFromVelocity(float3 velocity) {
-		float3 VelocityDirection = normalize(velocity);
-		float theta = atan(VelocityDirection.z / VelocityDirection.x);
-		float phi = atan(VelocityDirection.y / length(VelocityDirection.xz));
-
-		float ThetaMap = (theta / 1.5707963) % 1.0;
-		float PhiMap = (phi / 1.5707963) % 1.0;
-
-		if(ThetaMap < 0) {
-			ThetaMap = ThetaMap * -1;
-		}
-		if(PhiMap < 0) {
-			PhiMap = PhiMap * -1;
-		}
-
-		return GetRgbFromYCbCr(ThetaMap, PhiMap);
-	}
-
 	struct gIn // OUT vertex shader, IN geometry shader
 	{
 		float4 pos : SV_POSITION;
@@ -131,7 +96,7 @@ Shader "Psyia/Quads"
 		gIn o;
 		uint vId = DistanceBuffer[id].Index;
 		//o.col = lerp(float4(1, 0, 0, 1), float4(0, 0, 1, 1), saturate(DistanceBuffer[id].distance));
-		o.col = ParticleBuffer[vId].Color * float4(GetRgbFromVelocity(ParticleBuffer[vId].Velocity), 1.0);
+		o.col = ParticleBuffer[vId].Color;
 		float rotation = (float)vId / 1024.0;
 		o.pos = float4(ParticleBuffer[vId].Position, rotation);
 		o.nor = float3(1, 1, 1) * _PointSize * ParticleBuffer[vId].Size;

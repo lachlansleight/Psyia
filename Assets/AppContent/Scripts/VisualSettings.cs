@@ -12,15 +12,20 @@ public class VisualSettings : MonoBehaviour
 
 	public Material[] ParticleMaterials;
 	public Texture2D[] ParticleTextures;
+	public Texture2D[] ColorTextures;
 	public ComputeRenderer TargetRenderer;
-	public ComputeShader ColourShader;
+	public ComputeShader ColorShader;
+
+	public Color[] _debugColors;
+	[Range(0f, 1f)] public float DebugValue;
 	
 	public void Start () {
 		
 	}
 	
-	public void Update () {
-		
+	public void Update ()
+	{
+		ColorShader.SetFloat("DebugValue", DebugValue);
 	}
 
 	public void SetParticleForm(int formSelection)
@@ -55,17 +60,45 @@ public class VisualSettings : MonoBehaviour
 		TargetRenderer.RenderMaterial = ParticleMaterials[formSelection];
 	}
 
-	public void SetParticleColour(int colourSelection)
+	public void SetParticleColor(int colorSelection)
 	{
-		if (colourSelection < 0) colourSelection = 0;
-		if (colourSelection > 5) colourSelection = 5;
+		if (colorSelection < 0) colorSelection = 0;
+		if (colorSelection > 5) colorSelection = 5;
+
+		if (colorSelection > 1) {
+			var xColorMin = ColorTextures[colorSelection].GetPixel(32, 32);
+			var xColorMax = ColorTextures[colorSelection].GetPixel(96, 64);
+			var yColorMin = ColorTextures[colorSelection].GetPixel(32, 64);
+			var yColorMax = ColorTextures[colorSelection].GetPixel(96, 96);
+			var zColorMin = ColorTextures[colorSelection].GetPixel(32, 96);
+			var zColorMax = ColorTextures[colorSelection].GetPixel(96, 32);
+
+			_debugColors = new []
+			{
+				xColorMin,
+				xColorMax,
+				yColorMin,
+				yColorMax,
+				zColorMin,
+				zColorMax
+			};
+
+			ColorShader.SetVector("xColorMin", xColorMin);
+			ColorShader.SetVector("xColorMax", xColorMax);
+			ColorShader.SetVector("yColorMin", yColorMin);
+			ColorShader.SetVector("yColorMax", yColorMax);
+			ColorShader.SetVector("zColorMin", zColorMin);
+			ColorShader.SetVector("zColorMax", zColorMax);
+		}
 		
-		ColourShader.SetFloat("ColourMode", colourSelection);
+		ColorShader.SetInt("ColorMode", colorSelection);
 	}
 
 	public void SetLineLength(float lineLength)
 	{
-		TargetRenderer.RenderMaterial.SetFloat("_LineLength", lineLength);
+		foreach(var m in ParticleMaterials) {
+			m.SetFloat("_LineLength", lineLength);
+		}
 	}
 
 	public void SetParticleShape(int shapeSelection)
@@ -73,11 +106,15 @@ public class VisualSettings : MonoBehaviour
 		if (shapeSelection < 0) shapeSelection = 0;
 		if (shapeSelection >= ParticleTextures.Length) shapeSelection = ParticleTextures.Length - 1;
 		
-		TargetRenderer.RenderMaterial.SetTexture("_Image", ParticleTextures[shapeSelection]);
+		foreach(var m in ParticleMaterials) {
+			m.SetTexture("_Image", ParticleTextures[shapeSelection]);
+		}
 	}
 
 	public void SetParticleSize(float sizeSelection)
 	{
-		TargetRenderer.RenderMaterial.SetFloat("_PointSize", sizeSelection);
+		foreach(var m in ParticleMaterials) {
+			m.SetFloat("_PointSize", sizeSelection);
+		}
 	}
 }
