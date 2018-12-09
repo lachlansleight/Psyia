@@ -9,6 +9,8 @@
       <e p="Assets" t="Include">
         <e p="AppContent" t="Include">
           <e p="Scripts" t="Include">
+            <e p="ControllerForce.cs" t="Include" />
+            <e p="ControllerSpawn.cs" t="Include" />
             <e p="VisualSettings.cs" t="Include" />
           </e>
         </e>
@@ -127,8 +129,69 @@
             <e p="SteamVR_Editor.cs" t="Include" />
             <e p="SteamVR_Preferences.cs" t="Include" />
             <e p="SteamVR_RenderModelEditor.cs" t="Include" />
+            <e p="SteamVR_Settings.cs" t="Include" />
             <e p="SteamVR_SkyboxEditor.cs" t="Include" />
+            <e p="SteamVR_UnitySettingsWindow.cs" t="Include" />
             <e p="SteamVR_Update.cs" t="Include" />
+            <e p="SteamVR_UpdateModeEditor.cs" t="Include" />
+          </e>
+          <e p="Extras" t="Include">
+            <e p="SteamVR_GazeTracker.cs" t="Include" />
+            <e p="SteamVR_TestThrow.cs" t="Include" />
+            <e p="SteamVR_TestTrackedCamera.cs" t="Include" />
+          </e>
+          <e p="Input" t="Include">
+            <e p="Editor" t="Include">
+              <e p="SteamVR_CopyExampleInputFiles.cs" t="Include" />
+              <e p="SteamVR_Input_Action_Boolean_PropertyEditor.cs" t="Include" />
+              <e p="SteamVR_Input_Action_GenericPropertyEditor.cs" t="Include" />
+              <e p="SteamVR_Input_Action_In_PropertyEditor.cs" t="Include" />
+              <e p="SteamVR_Input_Action_Out_PropertyEditor.cs" t="Include" />
+              <e p="SteamVR_Input_Action_Pose_PropertyEditor.cs" t="Include" />
+              <e p="SteamVR_Input_Action_PropertyEditor.cs" t="Include" />
+              <e p="SteamVR_Input_Action_Single_PropertyEditor.cs" t="Include" />
+              <e p="SteamVR_Input_Action_Skeleton_PropertyEditor.cs" t="Include" />
+              <e p="SteamVR_Input_Action_Vector2_PropertyEditor.cs" t="Include" />
+              <e p="SteamVR_Input_Action_Vector3_PropertyEditor.cs" t="Include" />
+              <e p="SteamVR_Input_Action_Vibration_PropertyEditor.cs" t="Include" />
+              <e p="SteamVR_Input_ActionSetPropertyEditor.cs" t="Include" />
+              <e p="SteamVR_Input_EditorWindow.cs" t="Include" />
+              <e p="SteamVR_Input_Generator.cs" t="Include" />
+              <e p="SteamVR_Input_LiveWindow.cs" t="Include" />
+              <e p="SteamVR_Input_PostProcessBuild.cs" t="Include" />
+            </e>
+            <e p="SteamVR_Action.cs" t="Include" />
+            <e p="SteamVR_Action_Boolean.cs" t="Include" />
+            <e p="SteamVR_Action_In.cs" t="Include" />
+            <e p="SteamVR_Action_List.cs" t="Include" />
+            <e p="SteamVR_Action_Out.cs" t="Include" />
+            <e p="SteamVR_Action_Pose.cs" t="Include" />
+            <e p="SteamVR_Action_Single.cs" t="Include" />
+            <e p="SteamVR_Action_Skeleton.cs" t="Include" />
+            <e p="SteamVR_Action_Vector2.cs" t="Include" />
+            <e p="SteamVR_Action_Vector3.cs" t="Include" />
+            <e p="SteamVR_Action_Vibration.cs" t="Include" />
+            <e p="SteamVR_ActionDirections.cs" t="Include" />
+            <e p="SteamVR_ActionSet.cs" t="Include" />
+            <e p="SteamVR_ActivateActionSetOnLoad.cs" t="Include" />
+            <e p="SteamVR_Behaviour_Boolean.cs" t="Include" />
+            <e p="SteamVR_Behaviour_Pose.cs" t="Include" />
+            <e p="SteamVR_Behaviour_Single.cs" t="Include" />
+            <e p="SteamVR_Behaviour_Skeleton.cs" t="Include" />
+            <e p="SteamVR_Behaviour_SkeletonCustom.cs" t="Include" />
+            <e p="SteamVR_Behaviour_Vector2.cs" t="Include" />
+            <e p="SteamVR_Behaviour_Vector3.cs" t="Include" />
+            <e p="SteamVR_DefaultAction.cs" t="Include" />
+            <e p="SteamVR_DefaultActionSet.cs" t="Include" />
+            <e p="SteamVR_Input.cs" t="Include" />
+            <e p="SteamVR_Input_ActionFile.cs" t="Include" />
+            <e p="SteamVR_Input_ActionScopes.cs" t="Include" />
+            <e p="SteamVR_Input_ActionSetUsages.cs" t="Include" />
+            <e p="SteamVR_Input_Generator_Names.cs" t="Include" />
+            <e p="SteamVR_Input_References.cs" t="Include" />
+            <e p="SteamVR_Input_Source.cs" t="Include" />
+            <e p="SteamVR_Input_Sources.cs" t="Include" />
+            <e p="SteamVR_UpdateModes.cs" t="Include" />
           </e>
           <e p="Plugins" t="Include">
             <e p="openvr_api.cs" t="Include" />
@@ -143,17 +206,16 @@
           </e>
           <e p="Scripts" t="Include">
             <e p="SteamVR.cs" t="Include" />
+            <e p="SteamVR_Behaviour.cs" t="Include" />
             <e p="SteamVR_Camera.cs" t="Include" />
             <e p="SteamVR_CameraFlip.cs" t="Include" />
             <e p="SteamVR_CameraMask.cs" t="Include" />
-            <e p="SteamVR_Controller.cs" t="Include" />
-            <e p="SteamVR_ControllerManager.cs" t="Include" />
             <e p="SteamVR_Ears.cs" t="Include" />
+            <e p="SteamVR_EnumEqualityComparer.cs" t="Include" />
             <e p="SteamVR_Events.cs" t="Include" />
             <e p="SteamVR_ExternalCamera.cs" t="Include" />
             <e p="SteamVR_Fade.cs" t="Include" />
             <e p="SteamVR_Frustum.cs" t="Include" />
-            <e p="SteamVR_GameView.cs" t="Include" />
             <e p="SteamVR_IK.cs" t="Include" />
             <e p="SteamVR_LoadLevel.cs" t="Include" />
             <e p="SteamVR_Menu.cs" t="Include" />
@@ -161,15 +223,23 @@
             <e p="SteamVR_PlayArea.cs" t="Include" />
             <e p="SteamVR_Render.cs" t="Include" />
             <e p="SteamVR_RenderModel.cs" t="Include" />
+            <e p="SteamVR_RingBuffer.cs" t="Include" />
+            <e p="SteamVR_Settings.cs" t="Include" />
             <e p="SteamVR_Skybox.cs" t="Include" />
             <e p="SteamVR_SphericalProjection.cs" t="Include" />
-            <e p="SteamVR_Stats.cs" t="Include" />
-            <e p="SteamVR_TestController.cs" t="Include" />
             <e p="SteamVR_TrackedCamera.cs" t="Include" />
             <e p="SteamVR_TrackedObject.cs" t="Include" />
-            <e p="SteamVR_UpdatePoses.cs" t="Include" />
             <e p="SteamVR_Utils.cs" t="Include" />
           </e>
+        </e>
+        <e p="SteamVR_Input" t="Include">
+          <e p="ActionObjects" t="Include">
+            <e p="SteamVR_Input_ActionSet_Psyia.cs" t="Include" />
+            <e p="SteamVR_Input_ActionSet_Psyia_In.cs" t="Include" />
+            <e p="SteamVR_Input_ActionSet_Psyia_Out.cs" t="Include" />
+          </e>
+          <e p="SteamVR_Input_Actions.cs" t="Include" />
+          <e p="SteamVR_Input_ActionSets.cs" t="Include" />
         </e>
         <e p="XRPanel" t="Include">
           <e p="Resources" t="Include">

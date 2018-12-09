@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b121957ea41545b43bacf0b1a12adc7e, type: 3}
+  m_Name: SteamVR_Input_ActionSet_Psyia_In
+  m_EditorClassIdentifier: 
+  actionSet: {fileID: 0}
+  listDirection: 0
+  actions:
+  - {fileID: 11400000, guid: 089ebc004540f8547afd592c2c220cd5, type: 2}
+  - {fileID: 11400000, guid: 1afaf14f9db7b6c41846ac9e5ce6be6f, type: 2}
+  - {fileID: 11400000, guid: e676643cb5218514285e92d623906d84, type: 2}
+  - {fileID: 11400000, guid: b94bf94d63cf4414f8b91a7096bff1f7, type: 2}
+  - {fileID: 11400000, guid: 7bd89071f60bdd14bb16455298a88655, type: 2}
+  ApplyForce: {fileID: 11400000, guid: 089ebc004540f8547afd592c2c220cd5, type: 2}
+  Pose: {fileID: 11400000, guid: 1afaf14f9db7b6c41846ac9e5ce6be6f, type: 2}
+  SkeletonRightHand: {fileID: 11400000, guid: e676643cb5218514285e92d623906d84, type: 2}
+  SkeletonLeftHand: {fileID: 11400000, guid: b94bf94d63cf4414f8b91a7096bff1f7, type: 2}
+  SpawnParticles: {fileID: 11400000, guid: 7bd89071f60bdd14bb16455298a88655, type: 2}
