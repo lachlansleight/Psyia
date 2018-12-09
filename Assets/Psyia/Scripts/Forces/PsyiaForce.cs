@@ -47,6 +47,7 @@ namespace Psyia {
 
         public ForceShape Shape;
         public float Strength;
+        [HideInInspector] public float StrengthMultiplier = 1f;
         public ForceAttenuationMode AttenuationMode;
         [Tooltip("The distance at which the force equals zero")] public float AttenuationDistance;
 
@@ -75,7 +76,7 @@ namespace Psyia {
 
         private ForceData MyForceData;
         public ForceData GetForceData() {
-            MyForceData.Strength = Strength;
+            MyForceData.Strength = Strength * StrengthMultiplier;
             MyForceData.AttenuationMode = (int)AttenuationMode;
             MyForceData.AttenuationDistance = AttenuationDistance;
             MyForceData.Shape = (int)Shape;
@@ -100,11 +101,13 @@ namespace Psyia {
             }
         }
 
-        void Start() {
+        void Start() 
+        {
             Manager.AddSource(this);
         }
 
-        void OnDestroy() {
+        void OnDestroy() 
+        {
             //we do not remove the basic internal gravity force because there must be always at least one force in the compute buffer
             if(GetComponent<PsyiaInternalGravityForce>() == null) Manager.RemoveSource(this);
         }
