@@ -96,8 +96,8 @@ namespace Psyia {
 		[SerializeField]
 		private float _EmissionMultiplier;
 		public float EmissionMultiplier { 
-			get { return _EmissionMultiplier; } 
-			set { _EmissionMultiplier = 1f; } 
+			get { return _EmissionMultiplier; }
+			set { _EmissionMultiplier = value; }
 		}
 
 		private float DistanceSinceLastEmit = 0f;
@@ -106,6 +106,7 @@ namespace Psyia {
 		private Matrix4x4 LastTransform;
 		private Vector3 LastVelocity = Vector3.zero;
 		private Vector3 Velocity = Vector3.zero;
+		private Vector3 PositionLastFrame = Vector3.zero;
 
 		Matrix4x4 GetCurrentMatrix() {
 			return Matrix4x4.TRS(transform.position, transform.rotation, transform.localScale);
@@ -157,6 +158,7 @@ namespace Psyia {
 		void Start() {
 			LastTransform = GetCurrentMatrix();
 			LastVelocity = Velocity = Vector3.zero;
+			PositionLastFrame = transform.position;
 			if(Mode == PsyiaEmitterMode.Start) {
 				Emit(StartEmitCount);
 			}
@@ -171,13 +173,13 @@ namespace Psyia {
 				TimeSinceLastEmit = 0f;
 				DistanceSinceLastEmit = 0f;
 			} else {
-				DistanceSinceLastEmit += (transform.position - LastTransform.GetPosition()).magnitude;
+				DistanceSinceLastEmit += (transform.position - (Vector3)LastTransform.GetColumn(3)).magnitude;
 				TimeSinceLastEmit += Time.deltaTime;
 			}
 
 			LastVelocity = Velocity;
-			Velocity = (transform.position - LastTransform.GetPosition()) / Time.deltaTime;
-			//LastTransform = GetCurrentMatrix();
+			Velocity = (transform.position - PositionLastFrame) / Time.deltaTime;
+			PositionLastFrame = transform.position;
 		}
 
 		int GetParticleEmitCount() {
@@ -190,11 +192,19 @@ namespace Psyia {
 			}
 		}
 
-		public void Emit(int Count) {
+		public void Emit(int Count)
+		{
+			if (TimeSinceLastEmit > Time.deltaTime * 3f) UpdateTransform();
+			
 			MainEmitter.Emit(GetCurrentMatrix(), LastTransform, LastVelocity, Velocity, Count, Settings);
-			LastTransform = GetCurrentMatrix();
 			TimeSinceLastEmit = 0;
 			DistanceSinceLastEmit = 0;
+			UpdateTransform();
+		}
+
+		public void UpdateTransform()
+		{
+			LastTransform = GetCurrentMatrix();
 		}
 	}
 
