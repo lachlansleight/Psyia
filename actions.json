@@ -13,13 +13,13 @@
       "name": "/actions/Psyia/in/SkeletonRightHand",
       "type": "skeleton",
       "skeleton": "/skeleton/hand/right",
-      "requirement": "mandatory"
+      "requirement": "optional"
     },
     {
       "name": "/actions/Psyia/in/SkeletonLeftHand",
       "type": "skeleton",
       "skeleton": "/skeleton/hand/left",
-      "requirement": "mandatory"
+      "requirement": "optional"
     },
     {
       "name": "/actions/Psyia/in/SpawnParticles",
@@ -78,7 +78,7 @@
       "/actions/Psyia/in/Pose": "Controller Pose",
       "/actions/Psyia/in/SkeletonRightHand": "Right Hand Skeleton",
       "/actions/Psyia/in/SkeletonLeftHand": "Left Hand Skeleton",
-      "/actions/Psyia/out/Haptic": "Knuckles Haptics",
+      "/actions/Psyia/out/Haptic": "Haptics",
       "/actions/Psyia/in/SpawnParticles": "Spawn Particles"
     }
   ]
