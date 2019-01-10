@@ -34,9 +34,9 @@ namespace Psyia {
             Linear,
             Hyperbolic,
             HyperbolicSquared,
-            Sine,
             HyperbolicSoftened,
-            HyperbolicSquaredSoftened
+            HyperbolicSquaredSoftened,
+            Sine
         }
         public enum ForceShape {
             Radial,

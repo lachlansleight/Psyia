@@ -63,14 +63,14 @@ float GetAttenuation(int AttenuationMode, float AttenuationDistance, float Dista
         float PreCalcDistance = (Distance / AttenuationDistance) + 1;
         return saturate((1. / 3.) * (4. / (PreCalcDistance * PreCalcDistance) - 1.));
     }
-    if(AttenuationMode == 4) { //sine
-        return sin(6.2831853 * (Distance / AttenuationDistance) + 1.570796);
-    }
-    if(AttenuationMode == 5) { //hyperbolic softened
+    if(AttenuationMode == 4) { //hyperbolic softened
         return 1.0 / (Distance + AttenuationDistance);
     }
-    if(AttenuationMode == 6) { //hyperbolic squared softened
+    if(AttenuationMode == 5) { //hyperbolic squared softened
         return 1.0 / (Distance * Distance + AttenuationDistance);
+    }
+    if(AttenuationMode == 6) { //sine
+        return sin(6.2831853 * (Distance / AttenuationDistance) + 1.570796);
     }
 
     return 0;
