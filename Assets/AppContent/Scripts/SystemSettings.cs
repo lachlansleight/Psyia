@@ -18,6 +18,12 @@ public class SystemSettings : MonoBehaviour
 	public void Start()
 	{
 		ApplyButton.SetActive(false);
+		//StartCoroutine(ApplyParticleCountAfterFrame());
+	}
+
+	private IEnumerator ApplyParticleCountAfterFrame()
+	{
+		yield return new WaitForSeconds(2f);
 		CountManager.ParticleCountFactor = (int)CountSlider.CurrentValue;
 		CountManager.ApplyParticleCount();
 	}

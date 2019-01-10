@@ -39,7 +39,7 @@ public class ControllerSpawn : MonoBehaviour {
 		var asBoolean = (SteamVR_Action_Boolean) actionIn;
 		Value = SpawnMultiplier.Evaluate(asBoolean.GetState(Hand) ? 1f : 0f);
 		_psyiaEmitter.EmissionMultiplier = Value;
-		_psyiaEmitter.Settings.MinSpawnVelocity = MinSpawnVelocity.Evaluate(Value);
-		_psyiaEmitter.Settings.MaxSpawnVelocity = MaxSpawnVelocity.Evaluate(Value);
+		//_psyiaEmitter.Settings.MinSpawnVelocity = MinSpawnVelocity.Evaluate(Value);
+		//_psyiaEmitter.Settings.MaxSpawnVelocity = MaxSpawnVelocity.Evaluate(Value);
 	}
 }
