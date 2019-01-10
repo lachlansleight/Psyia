@@ -25,7 +25,7 @@ namespace Valve.VR
         
         public static SteamVR_Action_Skeleton @__actions_Psyia_in_SkeletonLeftHand;
         
-        public static SteamVR_Action_Single @__actions_Psyia_in_SpawnParticles;
+        public static SteamVR_Action_Boolean @__actions_Psyia_in_SpawnParticles;
         
         public static SteamVR_Action_Vibration @__actions_Psyia_out_Haptic;
         
@@ -45,7 +45,7 @@ namespace Valve.VR
             Valve.VR.SteamVR_Input.@__actions_Psyia_in_Pose = ((SteamVR_Action_Pose)(SteamVR_Input_References.GetAction("__actions_Psyia_in_Pose")));
             Valve.VR.SteamVR_Input.@__actions_Psyia_in_SkeletonRightHand = ((SteamVR_Action_Skeleton)(SteamVR_Input_References.GetAction("__actions_Psyia_in_SkeletonRightHand")));
             Valve.VR.SteamVR_Input.@__actions_Psyia_in_SkeletonLeftHand = ((SteamVR_Action_Skeleton)(SteamVR_Input_References.GetAction("__actions_Psyia_in_SkeletonLeftHand")));
-            Valve.VR.SteamVR_Input.@__actions_Psyia_in_SpawnParticles = ((SteamVR_Action_Single)(SteamVR_Input_References.GetAction("__actions_Psyia_in_SpawnParticles")));
+            Valve.VR.SteamVR_Input.@__actions_Psyia_in_SpawnParticles = ((SteamVR_Action_Boolean)(SteamVR_Input_References.GetAction("__actions_Psyia_in_SpawnParticles")));
             Valve.VR.SteamVR_Input.@__actions_Psyia_out_Haptic = ((SteamVR_Action_Vibration)(SteamVR_Input_References.GetAction("__actions_Psyia_out_Haptic")));
             Valve.VR.SteamVR_Input.actions = new Valve.VR.SteamVR_Action[] {
                     Valve.VR.SteamVR_Input.@__actions_Psyia_in_ApplyForce,
@@ -66,10 +66,10 @@ namespace Valve.VR
                     Valve.VR.SteamVR_Input.@__actions_Psyia_out_Haptic};
             Valve.VR.SteamVR_Input.actionsPose = new Valve.VR.SteamVR_Action_Pose[] {
                     Valve.VR.SteamVR_Input.@__actions_Psyia_in_Pose};
-            Valve.VR.SteamVR_Input.actionsBoolean = new Valve.VR.SteamVR_Action_Boolean[0];
-            Valve.VR.SteamVR_Input.actionsSingle = new Valve.VR.SteamVR_Action_Single[] {
-                    Valve.VR.SteamVR_Input.@__actions_Psyia_in_ApplyForce,
+            Valve.VR.SteamVR_Input.actionsBoolean = new Valve.VR.SteamVR_Action_Boolean[] {
                     Valve.VR.SteamVR_Input.@__actions_Psyia_in_SpawnParticles};
+            Valve.VR.SteamVR_Input.actionsSingle = new Valve.VR.SteamVR_Action_Single[] {
+                    Valve.VR.SteamVR_Input.@__actions_Psyia_in_ApplyForce};
             Valve.VR.SteamVR_Input.actionsVector2 = new Valve.VR.SteamVR_Action_Vector2[0];
             Valve.VR.SteamVR_Input.actionsVector3 = new Valve.VR.SteamVR_Action_Vector3[0];
             Valve.VR.SteamVR_Input.actionsSkeleton = new Valve.VR.SteamVR_Action_Skeleton[] {

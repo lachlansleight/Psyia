@@ -25,6 +25,6 @@ namespace Valve.VR
         
         public Valve.VR.SteamVR_Action_Skeleton SkeletonLeftHand;
         
-        public Valve.VR.SteamVR_Action_Single SpawnParticles;
+        public Valve.VR.SteamVR_Action_Boolean SpawnParticles;
     }
 }

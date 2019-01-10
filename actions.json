@@ -23,7 +23,7 @@
     },
     {
       "name": "/actions/Psyia/in/SpawnParticles",
-      "type": "vector1",
+      "type": "boolean",
       "requirement": "mandatory"
     },
     {

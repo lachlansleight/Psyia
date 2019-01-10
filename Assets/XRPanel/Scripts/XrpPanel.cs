@@ -34,15 +34,20 @@ namespace XRP
 		{
 			
 			for (var i = 0; i < _pointers.Length; i++) {
+				_pointers[i].Hovering = false;
 				for (var j = 0; j < _controls.Length; j++) {
 					if (!_controls[j].gameObject.activeInHierarchy) continue;
 					
-					var displacement = _controls[j].GetDistance(_pointers[i].transform.position);
+					var displacement = _controls[j].GetDistance(_pointers[i].transform.position).magnitude;
 
-					if(_hoverCandidates[j] < 0) _hoverCandidates[j] = displacement.magnitude <= HoverDistance ? displacement.magnitude : -1f;
-					else if (displacement.magnitude < _hoverCandidates[j]) _hoverCandidates[j] = displacement.magnitude;
+					if (displacement < _pointers[i].HoverDistance) {
+						_pointers[i].Hovering = true;
+					}
+					
+					if(_hoverCandidates[j] < 0) _hoverCandidates[j] = displacement <= HoverDistance ? displacement : -1f;
+					else if (displacement < _hoverCandidates[j]) _hoverCandidates[j] = displacement;
 
-					if(_touchCandidates[j] < 0) _touchCandidates[j] = displacement.magnitude <= TouchDistance ? i : -1;
+					if(_touchCandidates[j] < 0) _touchCandidates[j] = displacement <= TouchDistance ? i : -1;
 
 				}
 			}
