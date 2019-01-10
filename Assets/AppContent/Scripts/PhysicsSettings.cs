@@ -17,4 +17,10 @@ public class PhysicsSettings : MonoBehaviour
 	{
 		PhysicsManager.ParticleDrag = value;
 	}
+
+	public void SetFloorCollision(bool value)
+	{
+		//TODO: Add floor collision
+		//PhysicsManager.FloorCollision = value;
+	}
 }

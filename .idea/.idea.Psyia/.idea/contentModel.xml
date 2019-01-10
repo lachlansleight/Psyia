@@ -9,12 +9,31 @@
       <e p="Assets" t="Include">
         <e p="AppContent" t="Include">
           <e p="Scripts" t="Include">
+            <e p="AudioSettings.cs" t="Include" />
             <e p="ControllerForce.cs" t="Include" />
             <e p="ControllerPose.cs" t="Include" />
             <e p="ControllerSpawn.cs" t="Include" />
             <e p="PhysicsSettings.cs" t="Include" />
+            <e p="SystemSettings.cs" t="Include" />
             <e p="UiPages.cs" t="Include" />
             <e p="VisualSettings.cs" t="Include" />
+          </e>
+        </e>
+        <e p="AudioVisualisation" t="Include">
+          <e p="AudioBarsUI.cs" t="Include" />
+          <e p="AudioBins.cs" t="Include" />
+          <e p="AudioData.cs" t="Include" />
+          <e p="AudioMaster.cs" t="Include" />
+          <e p="SoundCapture.cs" t="Include" />
+          <e p="VisiTest.cs" t="Include" />
+          <e p="Visualization" t="Include">
+            <e p="BasicSpectrumProvider.cs" t="Include" />
+            <e p="GradientCalculator.cs" t="Include" />
+            <e p="ISpectrumProvider.cs" t="Include" />
+            <e p="LineSpectrum.cs" t="Include" />
+            <e p="ScalingStrategy.cs" t="Include" />
+            <e p="SpectrumBase.cs" t="Include" />
+            <e p="VoicePrint3DSpectrum.cs" t="Include" />
           </e>
         </e>
         <e p="Psyia" t="Include">
@@ -243,6 +262,9 @@
           </e>
           <e p="SteamVR_Input_Actions.cs" t="Include" />
           <e p="SteamVR_Input_ActionSets.cs" t="Include" />
+        </e>
+        <e p="UISketch" t="Include">
+          <e p="UnlitVC.shader" t="Include" />
         </e>
         <e p="XRPanel" t="Include">
           <e p="Resources" t="Include">
