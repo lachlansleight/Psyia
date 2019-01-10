@@ -9,7 +9,9 @@ public class PsyiaUiSwitch : MonoBehaviour
 	public bool ShowingControllerSettings = false;
 
 	public Transform ControllerSettings;
+	public Transform[] ControllerSettingsPanels;
 	public Transform MixedSettings;
+	public Transform[] MixedSettingsPanels;
 
 	private float _currentValue;
 
@@ -21,15 +23,21 @@ public class PsyiaUiSwitch : MonoBehaviour
 	public void Update()
 	{
 		_currentValue = Mathf.Lerp(_currentValue, ShowingControllerSettings ? 1f : 0f, LerpTime);
-
-		ControllerSettings.localPosition = new Vector3(0f, 0f, Mathf.Lerp(-0.4f, 0f, _currentValue));
+		
+		//ControllerSettings.localPosition = new Vector3(0f, 0f, Mathf.Lerp(-0.4f, 0f, _currentValue));
 		ControllerSettings.rotation = Quaternion.Euler(0f, Mathf.Lerp(0f, 180f, _currentValue), 0f);
-		ControllerSettings.localScale = Vector3.one * Mathf.Lerp(0f, 1f, _currentValue);
 		ControllerSettings.gameObject.SetActive(_currentValue > 0.01f);
 
-		MixedSettings.localPosition = new Vector3(0f, 0f, Mathf.Lerp(0f, -0.4f, _currentValue));
+		foreach (var t in ControllerSettingsPanels) {
+			t.localScale = new Vector3(1f, Mathf.Lerp(0f, 1f, _currentValue), 1f);
+		}
+
+		//MixedSettings.localPosition = new Vector3(0f, 0f, Mathf.Lerp(0f, -0.4f, _currentValue));
 		MixedSettings.rotation = Quaternion.Euler(0f, Mathf.Lerp(-180f, 0f, _currentValue), 0f);
-		MixedSettings.localScale = Vector3.one * Mathf.Lerp(1f, 0f, _currentValue);
 		MixedSettings.gameObject.SetActive(_currentValue < 0.99f);
+		
+		foreach (var t in MixedSettingsPanels) {
+			t.localScale = new Vector3(1f, Mathf.Lerp(1f, 0f, _currentValue), 1f);
+		}
 	}
 }

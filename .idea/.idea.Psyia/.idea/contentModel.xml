@@ -124,6 +124,7 @@
               <e p="CalculateDistances.compute" t="Include" />
               <e p="ColorParticles.compute" t="Include" />
               <e p="EmitParticles.compute" t="Include" />
+              <e p="KillParticles.compute" t="Include" />
               <e p="SetupDeadList.compute" t="Include" />
               <e p="SimulateParticles.compute" t="Include" />
               <e p="SortParticles.compute" t="Include" />
