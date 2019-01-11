@@ -212,6 +212,11 @@ namespace XRP
 		private void CheckForPress()
 		{
 			var pointerPos = ActivePointer.transform.position;
+			
+			//make sure pointer is going in the correct direction
+			var pointerDirection = (ActivePointer.transform.position - ActivePointer.LastPosition);
+			if (Vector3.Dot(pointerDirection, transform.forward) > 0f) return;
+			
 			var localPos = transform.InverseTransformPoint(pointerPos);
 			if (localPos.z < -Panel.PressThresholdDistance) {
 				StartPress();
