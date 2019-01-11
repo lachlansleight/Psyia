@@ -63,7 +63,6 @@ public class SystemSettings : MonoBehaviour
 
 	public void SetBloom(bool value)
 	{
-		//TODO: Add bloom
 		Bloom bloomLayer;
 		if (PostVolume.profile.TryGetSettings(out bloomLayer)) {
 			bloomLayer.enabled.value = value;
