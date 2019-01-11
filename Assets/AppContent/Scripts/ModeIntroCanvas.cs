@@ -38,12 +38,12 @@ public class ModeIntroCanvas : MonoBehaviour
 		transform.rotation = Quaternion.LookRotation(transform.position - Target.position, Vector3.up);
 	}
 
-	public void Fade(float target, float fadeTime)
+	public void Fade(float target, float fadeTime, bool disableAtEnd = false)
 	{
-		StartCoroutine(FadeRoutine(CanvasGroup.alpha, target, fadeTime));
+		StartCoroutine(FadeRoutine(CanvasGroup.alpha, target, fadeTime, disableAtEnd));
 	}
 
-	public IEnumerator FadeRoutine(float from, float to, float duration)
+	public IEnumerator FadeRoutine(float from, float to, float duration, bool disableAtEnd = false)
 	{
 		for (var i = 0f; i <= 1f; i += Time.deltaTime / duration) {
 			CanvasGroup.alpha = Mathf.Lerp(from, to, i);
@@ -51,5 +51,7 @@ public class ModeIntroCanvas : MonoBehaviour
 		}
 
 		CanvasGroup.alpha = to;
+
+		if (disableAtEnd) gameObject.SetActive(false);
 	}
 }

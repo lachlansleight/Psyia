@@ -8,6 +8,25 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="AppContent" t="Include">
+          <e p="Audio" t="Include">
+            <e p="AudioVisualisation" t="Include">
+              <e p="AudioBarsUI.cs" t="Include" />
+              <e p="AudioBins.cs" t="Include" />
+              <e p="AudioData.cs" t="Include" />
+              <e p="AudioMaster.cs" t="Include" />
+              <e p="SoundCapture.cs" t="Include" />
+              <e p="VisiTest.cs" t="Include" />
+              <e p="Visualization" t="Include">
+                <e p="BasicSpectrumProvider.cs" t="Include" />
+                <e p="GradientCalculator.cs" t="Include" />
+                <e p="ISpectrumProvider.cs" t="Include" />
+                <e p="LineSpectrum.cs" t="Include" />
+                <e p="ScalingStrategy.cs" t="Include" />
+                <e p="SpectrumBase.cs" t="Include" />
+                <e p="VoicePrint3DSpectrum.cs" t="Include" />
+              </e>
+            </e>
+          </e>
           <e p="Scripts" t="Include">
             <e p="AudioSettings.cs" t="Include" />
             <e p="ControllerForce.cs" t="Include" />
@@ -30,23 +49,6 @@
             <e p="VisualSettings.cs" t="Include" />
           </e>
           <e p="TouchSphere.shader" t="Include" />
-        </e>
-        <e p="AudioVisualisation" t="Include">
-          <e p="AudioBarsUI.cs" t="Include" />
-          <e p="AudioBins.cs" t="Include" />
-          <e p="AudioData.cs" t="Include" />
-          <e p="AudioMaster.cs" t="Include" />
-          <e p="SoundCapture.cs" t="Include" />
-          <e p="VisiTest.cs" t="Include" />
-          <e p="Visualization" t="Include">
-            <e p="BasicSpectrumProvider.cs" t="Include" />
-            <e p="GradientCalculator.cs" t="Include" />
-            <e p="ISpectrumProvider.cs" t="Include" />
-            <e p="LineSpectrum.cs" t="Include" />
-            <e p="ScalingStrategy.cs" t="Include" />
-            <e p="SpectrumBase.cs" t="Include" />
-            <e p="VoicePrint3DSpectrum.cs" t="Include" />
-          </e>
         </e>
         <e p="Psyia" t="Include">
           <e p="AssetPackages" t="Include">
