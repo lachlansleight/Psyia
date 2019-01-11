@@ -11,6 +11,7 @@
           <e p="Scripts" t="Include">
             <e p="AudioSettings.cs" t="Include" />
             <e p="ControllerForce.cs" t="Include" />
+            <e p="ControllerHaptics.cs" t="Include" />
             <e p="ControllerPose.cs" t="Include" />
             <e p="ControllerSettings.cs" t="Include" />
             <e p="ControllerSpawn.cs" t="Include" />
