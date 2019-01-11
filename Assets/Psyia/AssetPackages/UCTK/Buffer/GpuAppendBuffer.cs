@@ -46,6 +46,15 @@ namespace UCTK {
 		}
 
 		/// <summary>
+		/// Marks the current buffer count to dirty to force a re-fetch of the args buffer
+		/// This MUST be done after every dispatch if you want an accurate CurrentCount value!
+		/// </summary>
+		public void SetCurrentCountDirty()
+		{
+			LastCurrentCount = -1;
+		}
+
+		/// <summary>
 		/// Gets compute data as an array
 		/// </summary>
 		public override T[] GetData<T>() {

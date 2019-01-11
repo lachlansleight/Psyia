@@ -32,6 +32,7 @@ namespace Psyia {
 
 		public GpuAppendBuffer AppendBuffer;
 		public ComputeDispatcher Emitter;
+		
 
 		public void Emit(Vector3 Position, int Amount) { Emit(Position, Vector3.zero, Amount); }
 		public void Emit(Vector3 Position, Vector3 Velocity, int Amount) {
@@ -70,6 +71,10 @@ namespace Psyia {
 			if(NumberToEmit > 0) {
 				Emitter.Dispatch(NumberToEmit, 1, 1);
 			}
+			
+			//Unfortunately, this line does what we want but it's so expensive we just can't call it every frame
+			//Takes literally 30ms to complete
+			//AppendBuffer.SetCurrentCountDirty();
 		}
 	}
 }
