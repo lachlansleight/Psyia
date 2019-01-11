@@ -39,6 +39,7 @@ public class SystemSettings : MonoBehaviour
 		CountManager.ParticleCountFactor = _storedCount;
 		CountManager.ApplyParticleCount();
 		StartEmitter.Emit(Mathf.Min(StartEmitter.StartEmitCount, CountManager.ParticleCountFactor * 1024));
+		ApplyButton.SetActive(false);
 	}
 
 	public void SetAntialiasing(int value)
