@@ -7,15 +7,15 @@ using UnityEngine;
 public class ControllerSettings : MonoBehaviour
 {
 	[Header("Controllers")]
+	public PsyiaController LeftController;
 	public PsyiaForce LeftForce;
 	public PsyiaEmitter LeftEmitter;
 	public ControllerSymmetry LeftSymmetry;
-	public Transform LeftControllerOffset;
 	[Space(10)]
+	public PsyiaController RightController;
 	public PsyiaForce RightForce;
 	public PsyiaEmitter RightEmitter;
 	public ControllerSymmetry RightSymmetry;
-	public Transform RightControllerOffset;
 	
 	[Header("Panels")]
 	public GameObject[] LeftPanels;
@@ -48,6 +48,13 @@ public class ControllerSettings : MonoBehaviour
 		RightDistanceSlider.SetActive(mode > 0 && mode < 4 );
 		RightSofteningFactorSlider.SetActive(mode > 3 && mode < 6);
 		RightWavelengthSlider.SetActive(mode == 6);
+
+		var output = "Connected joysticks:";
+		foreach (var s in Input.GetJoystickNames()) {
+			output += "\n" + s;
+		}
+		
+		Debug.Log(output);
 	}
 
 	public void SetSymmetry(int value)
@@ -64,13 +71,12 @@ public class ControllerSettings : MonoBehaviour
 
 	public void SetControllerModels(bool value)
 	{
-		//TODO: Add and make toggleable controller models
+		LeftController.ShowFullModel = RightController.ShowFullModel = value;
 	}
 
 	public void SetControllerDistance(float value)
 	{
-		LeftControllerOffset.localPosition = new Vector3(0f, 0f, 0.05f + value);
-		RightControllerOffset.localPosition = new Vector3(0f, 0f, 0.05f + value);
+		LeftController.ControllerDistance = RightController.ControllerDistance = value;
 	}
 
 	public void SetControllerHaptics(bool value)
@@ -197,8 +203,6 @@ public class ControllerSettings : MonoBehaviour
 		RightDistanceSlider.SetActive(mode > 0 && mode < 4 );
 		RightSofteningFactorSlider.SetActive(mode > 3 && mode < 6);
 		RightWavelengthSlider.SetActive(mode == 6);
-
-		Debug.Log(mode);
 		
 		XRP.XrpSlider slider = null;
 		if (RightDistanceSlider.activeSelf) 

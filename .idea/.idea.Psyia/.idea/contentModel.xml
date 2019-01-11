@@ -16,6 +16,7 @@
             <e p="ControllerSpawn.cs" t="Include" />
             <e p="ControllerSymmetry.cs" t="Include" />
             <e p="PhysicsSettings.cs" t="Include" />
+            <e p="PsyiaController.cs" t="Include" />
             <e p="PsyiaMusic.cs" t="Include" />
             <e p="PsyiaUiSwitch.cs" t="Include" />
             <e p="SystemSettings.cs" t="Include" />
@@ -125,7 +126,6 @@
               <e p="CalculateDistances.compute" t="Include" />
               <e p="ColorParticles.compute" t="Include" />
               <e p="EmitParticles.compute" t="Include" />
-              <e p="KillParticles.compute" t="Include" />
               <e p="SetupDeadList.compute" t="Include" />
               <e p="SimulateParticles.compute" t="Include" />
               <e p="SortParticles.compute" t="Include" />
