@@ -17,15 +17,19 @@
             <e p="ControllerSpawn.cs" t="Include" />
             <e p="ControllerSymmetry.cs" t="Include" />
             <e p="MenuToggler.cs" t="Include" />
+            <e p="ModeChoreography.cs" t="Include" />
+            <e p="ModeIntroCanvas.cs" t="Include" />
             <e p="MusicDisplay.cs" t="Include" />
             <e p="PhysicsSettings.cs" t="Include" />
             <e p="PsyiaController.cs" t="Include" />
             <e p="PsyiaMusic.cs" t="Include" />
             <e p="PsyiaUiSwitch.cs" t="Include" />
             <e p="SystemSettings.cs" t="Include" />
+            <e p="TouchSphere.cs" t="Include" />
             <e p="UiPages.cs" t="Include" />
             <e p="VisualSettings.cs" t="Include" />
           </e>
+          <e p="TouchSphere.shader" t="Include" />
         </e>
         <e p="AudioVisualisation" t="Include">
           <e p="AudioBarsUI.cs" t="Include" />
