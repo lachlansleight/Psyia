@@ -53,7 +53,14 @@ namespace Psyia {
 			ColorShader.SetFloat("Y", Value);
 		}
 
-		void Update() {
+		public void SetFloorCollision(bool Value)
+		{
+			SimulateShader.SetInt("FloorCollision", Value ? 1 : 0);
+		}
+
+		void Update()
+		{
+			SetFloorCollision(Physics.FloorCollision);
 			SetDamping(Physics.ParticleDrag);
 			SetForceMultiplier(Physics.ForceMultiplier);
 			SetMass(Physics.ParticleMinimumMass);

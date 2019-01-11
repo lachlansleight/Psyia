@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 public class AudioData : MonoBehaviour
 {
@@ -23,13 +25,18 @@ public class AudioData : MonoBehaviour
 
 	[Range(0f, 10f)]public float globalMult = 1f;
 
+	[Range(0f, 1f)] public float TwoSecondAverage = 0f;
+	private List<float> _averageList;
+	private float _twoSecondSum = 0;
+
 	public float[] fft;
 
 	public float maxSeenVolume = 0.0000001f;
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start ()
+	{
+		_averageList = new List<float>();
 	}
 	
 	// Update is called once per frame
@@ -71,6 +78,16 @@ public class AudioData : MonoBehaviour
 			bassVol /= maxSeenVolume;
 			midVol /= maxSeenVolume;
 			trebleVol /= maxSeenVolume;
+
+	        _averageList.Add(avgVol);
+	        _twoSecondSum += avgVol;
+
+	        if (_averageList.Count > 2f * 90f) {
+		        _twoSecondSum -= _averageList[0];
+		        _averageList.RemoveAt(0);
+	        }
+
+	        TwoSecondAverage = _twoSecondSum / _averageList.Count;
 
 			for(int i = 0; i < fft.Length; i++) {
 				fft[i] = capture.barData[i] / maxSeenVolume;

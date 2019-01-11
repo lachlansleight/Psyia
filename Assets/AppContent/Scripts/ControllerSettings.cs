@@ -11,11 +11,13 @@ public class ControllerSettings : MonoBehaviour
 	public PsyiaForce LeftForce;
 	public PsyiaEmitter LeftEmitter;
 	public ControllerSymmetry LeftSymmetry;
+	public ControllerHaptics LeftHaptics;
 	[Space(10)]
 	public PsyiaController RightController;
 	public PsyiaForce RightForce;
 	public PsyiaEmitter RightEmitter;
 	public ControllerSymmetry RightSymmetry;
+	public ControllerHaptics RightHaptics;
 	
 	[Header("Panels")]
 	public GameObject[] LeftPanels;
@@ -81,7 +83,7 @@ public class ControllerSettings : MonoBehaviour
 
 	public void SetControllerHaptics(bool value)
 	{
-		//TODO: Implement controller haptics and make toggleable
+		LeftHaptics.enabled = RightHaptics.enabled = value;
 	}
 
 	public void SetLeftForceShape(int value)

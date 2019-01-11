@@ -16,6 +16,7 @@
             <e p="ControllerSettings.cs" t="Include" />
             <e p="ControllerSpawn.cs" t="Include" />
             <e p="ControllerSymmetry.cs" t="Include" />
+            <e p="MusicDisplay.cs" t="Include" />
             <e p="PhysicsSettings.cs" t="Include" />
             <e p="PsyiaController.cs" t="Include" />
             <e p="PsyiaMusic.cs" t="Include" />

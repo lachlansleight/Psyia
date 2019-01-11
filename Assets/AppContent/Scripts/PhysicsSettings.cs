@@ -20,7 +20,6 @@ public class PhysicsSettings : MonoBehaviour
 
 	public void SetFloorCollision(bool value)
 	{
-		//TODO: Add floor collision
-		//PhysicsManager.FloorCollision = value;
+		PhysicsManager.FloorCollision = value;
 	}
 }

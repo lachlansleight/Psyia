@@ -34,6 +34,7 @@ namespace Psyia {
 		[Range(0f, 1f)]
 		public float ParticleDrag;
 		public float ForceMultiplier = 1f;
+		public bool FloorCollision = false;
 		
 		public ForceManager Forces;
 	}

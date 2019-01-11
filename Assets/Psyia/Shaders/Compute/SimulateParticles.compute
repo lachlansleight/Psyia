@@ -44,6 +44,7 @@ SOFTWARE.
 float Damping;
 float ForceMultiplier;
 float ParticleMinimumMass;
+int FloorCollision;
 
 //time parameters
 float Lifespan;
@@ -121,6 +122,13 @@ void SimulateParticles(uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
 
 	//And we update position
 	ThisParticle.Position += ThisParticle.Velocity * DeltaTime;
+	
+	if(FloorCollision > 0) {
+        if(ThisParticle.Position.y < 0) {
+            ThisParticle.Position = float3(ThisParticle.Position.x, -ThisParticle.Position.y, ThisParticle.Position.z);
+            ThisParticle.Velocity = 0.5 * float3(ThisParticle.Velocity.x, -ThisParticle.Velocity.y, ThisParticle.Velocity.z);
+        }
+	}
 
 	//And finally, push the updated particle to the buffer
 	ParticleBuffer[id] = ThisParticle;

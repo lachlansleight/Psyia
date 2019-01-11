@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+guid: cf21efef70451b140903c844d88874bc
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Verlag
+  fontNames:
+  - Verlag
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 6a3059a165d0f414cbb41eee174911c2, type: 3}
+  - {fileID: 12800000, guid: 5c1f51f152dbeb640924a4158a711000, type: 3}
+  - {fileID: 12800000, guid: a4205a62400fb8b41a809883416a129b, type: 3}
+  - {fileID: 12800000, guid: bffdca33a750df84684bb3e7f03007c9, type: 3}
+  - {fileID: 12800000, guid: 5eadd495543273640be84bfafa8e0784, type: 3}
+  - {fileID: 12800000, guid: 273a79a75c74eae4fbd37ea5d42ae76d, type: 3}
+  - {fileID: 12800000, guid: 73dd6d9ec7644bb4fba4c754aafa0d52, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Runtime.Remoting.Messaging;
 
 public class PsyiaMusic : MonoBehaviour {
 
@@ -10,6 +11,7 @@ public class PsyiaMusic : MonoBehaviour {
 	public string[] ClipNames;
 	public AudioClip[] Clips;
 	public int CurrentTrack = 2;
+	public bool IsPlaying = false;
 
 	public bool HasBeenStopped = false;
 
@@ -23,6 +25,7 @@ public class PsyiaMusic : MonoBehaviour {
 
 	public void Start () {
 		_mySource = GetComponent<AudioSource>();
+		_mySource.clip = Clips[CurrentTrack];
 	}
 	
 	public void Update () {
@@ -36,6 +39,17 @@ public class PsyiaMusic : MonoBehaviour {
 			if(Loop) _mySource.Play();
 			else NextTrack();
 		}
+
+		IsPlaying = _mySource.isPlaying;
+	}
+
+	public string GetCurrentSongName()
+	{
+		for (var i = 0; i < Clips.Length; i++) {
+			if (Clips[i] == _mySource.clip) return ClipNames[i];
+		}
+
+		return "Unknown song";
 	}
 
 	public void NextTrack() {
@@ -46,7 +60,13 @@ public class PsyiaMusic : MonoBehaviour {
 		_mySource.Play();
 	}
 
-	public void PreviousTrack() {
+	public void PreviousTrack()
+	{
+		if (_mySource.time > 3f) {
+			_mySource.time = 0f;
+			return;
+		}
+		
 		CurrentTrack--;
 		if(CurrentTrack < 0) CurrentTrack = Clips.Length - 1;
 		_mySource.Stop();
@@ -55,12 +75,16 @@ public class PsyiaMusic : MonoBehaviour {
 	}
 
 	public void PlayPause() {
+		if (!_initialized) {
+			PlayFirstClip();
+			return;
+		}
 		if(HasBeenStopped) {
 			HasBeenStopped = false;
-			_mySource.Play();
+			_mySource.UnPause();
 		} else {
 			HasBeenStopped = true;
-			_mySource.Stop();
+			_mySource.Pause();
 		}
 	}
 
