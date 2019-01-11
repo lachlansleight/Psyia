@@ -59,8 +59,8 @@ public class VisualSettings : MonoBehaviour
 				throw new System.FormatException("Unexpected value for formSelection : " + formSelection);
 		}
 
+		MainQueue.transform.GetChild(2).gameObject.SetActive(formSelection != 2);
 		MainQueue.transform.GetChild(3).gameObject.SetActive(formSelection != 2);
-		MainQueue.transform.GetChild(4).gameObject.SetActive(formSelection != 2);
 		
 		TargetRenderer.RenderMaterial = ParticleMaterials[formSelection];
 	}
