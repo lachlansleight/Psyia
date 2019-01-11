@@ -180,7 +180,7 @@ Shader "Psyia/Diamonds"
 				} else {
 					for (i=0;i<TAM;i++) { 
 						v[i].pos = vert[0].pos + vc[i]; 
-						v[i].col = vert[0].col * _Color;
+						v[i].col = vert[0].col;
 					}
 				}
 				
@@ -203,7 +203,7 @@ Shader "Psyia/Diamonds"
 			float4 myFragmentShader(v2f IN) : COLOR
 			{
 				//return float4(1.0,0.0,0.0,1.0);
-				return IN.col;
+				return IN.col * _Color;
 			}
  
 			ENDCG
