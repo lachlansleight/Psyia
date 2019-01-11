@@ -7,6 +7,7 @@ public class PhysicsSettings : MonoBehaviour
 {
 
 	public PhysicsManager PhysicsManager;
+	public GameObject FloorVisuals;
 
 	public void SetMass(float value)
 	{
@@ -21,5 +22,6 @@ public class PhysicsSettings : MonoBehaviour
 	public void SetFloorCollision(bool value)
 	{
 		PhysicsManager.FloorCollision = value;
+		FloorVisuals.SetActive(value);
 	}
 }
