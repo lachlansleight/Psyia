@@ -42,13 +42,14 @@ public class PsyiaController : MonoBehaviour
 	// Update is called once per frame
 	public void Update () {
 
-		if(ControllerDistance < 0.05f) {
+		if(ControllerDistance <= 0f) {
 			transform.position = SourceTransform.position + SourceTransform.forward * 0.03f;
 			transform.rotation = SourceTransform.rotation;
 		} else {
 			var slerpyPos = Vector3.Slerp(transform.position - SourceTransform.position, SourceTransform.forward * (ControllerDistance + 0.03f), Mathf.Lerp(0.2f, 0.02f, Mathf.InverseLerp(0.05f, 2f, ControllerDistance)));
 			transform.position = slerpyPos + SourceTransform.position;
-			transform.rotation = SourceTransform.rotation;
+			//transform.rotation = SourceTransform.rotation;
+			transform.rotation = Quaternion.LookRotation(GetDirectionToMidpoint());
 		}
 
 		//no matter whether we're on the menu or not, the base should be enabled/disabled regardless
@@ -80,5 +81,30 @@ public class PsyiaController : MonoBehaviour
 			//glow
 			sphereMat.SetColor("_EmissionColor", Color.Lerp(minSphereCol, maxSphereCol, Mathf.Clamp01(value)));
 		}
+	}
+
+	public Vector3 GetMidPoint()
+	{
+		return QuadraticBezier(
+			SourceTransform.position,
+			SourceTransform.position + SourceTransform.forward * ControllerDistance * 0.5f,
+			transform.position - transform.forward * 0.04388f,
+			0.5f
+		);
+	}
+	
+	public Vector3 GetDirectionToMidpoint ()
+	{
+		var p0 = SourceTransform.position;
+		var p1 = SourceTransform.position + SourceTransform.forward * ControllerDistance * 0.5f;
+		var p2 = transform.position - transform.forward * 0.04388f;
+		var t = 0.5f;
+		
+		return 2f * (1f - t) * (p1 - p0) + 2f * t * (p2 - p1);
+	}
+	
+	private Vector3 QuadraticBezier(Vector3 a, Vector3 b, Vector3 c, float t)
+	{
+		return Vector3.Lerp(Vector3.Lerp(a, b, t), Vector3.Lerp(b, c, t), t);
 	}
 }
