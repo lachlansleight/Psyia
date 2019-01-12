@@ -7,10 +7,10 @@ using XRP;
 
 public class SystemSettings : MonoBehaviour
 {
-	public ParticleCountManager CountManager;
+	public PsyiaSettingsApplicator SettingsApplicator;
+	
 	public XrpSlider CountSlider;
 	public GameObject ApplyButton;
-	public PostProcessVolume PostVolume;
 	public PsyiaEmitter StartEmitter;
 
 	private int _storedCount;
@@ -18,7 +18,7 @@ public class SystemSettings : MonoBehaviour
 	public void Start()
 	{
 		ApplyButton.SetActive(false);
-		StartCoroutine(ApplyParticleCountAfterFrame());
+		//StartCoroutine(ApplyParticleCountAfterFrame());
 	}
 
 	private IEnumerator ApplyParticleCountAfterFrame()
@@ -32,13 +32,13 @@ public class SystemSettings : MonoBehaviour
 	{
 		_storedCount = Mathf.FloorToInt(value);
 		ApplyButton.SetActive(true);
+		SettingsApplicator.SetMaxParticleCount((int)value);
 	}
 
 	public void ApplyParticleCount()
 	{
-		CountManager.ParticleCountFactor = _storedCount;
-		CountManager.ApplyParticleCount();
-		StartEmitter.Emit(Mathf.Min(StartEmitter.StartEmitCount, CountManager.ParticleCountFactor * 1024));
+		SettingsApplicator.ApplyParticleCount();
+		StartEmitter.Emit(Mathf.Min(StartEmitter.StartEmitCount, _storedCount * 1024));
 		ApplyButton.SetActive(false);
 	}
 
@@ -46,16 +46,16 @@ public class SystemSettings : MonoBehaviour
 	{
 		switch (value) {
 			case 0:
-				QualitySettings.antiAliasing = 0;
+				SettingsApplicator.SetAntialiasing(0);
 				break;
 			case 1:
-				QualitySettings.antiAliasing = 2;
+				SettingsApplicator.SetAntialiasing(2);
 				break;
 			case 2:
-				QualitySettings.antiAliasing = 4;
+				SettingsApplicator.SetAntialiasing(4);
 				break;
 			case 3:
-				QualitySettings.antiAliasing = 8;
+				SettingsApplicator.SetAntialiasing(8);
 				break;
 			default:
 				throw new System.FormatException("Unexpected value '" + value + "' for SetAntialiasing!");
@@ -64,12 +64,7 @@ public class SystemSettings : MonoBehaviour
 
 	public void SetBloom(bool value)
 	{
-		Bloom bloomLayer;
-		if (PostVolume.profile.TryGetSettings(out bloomLayer)) {
-			bloomLayer.enabled.value = value;
-		} else {
-			Debug.Log("No bloom found");
-		}
+		SettingsApplicator.SetBloom(value);
 	}
 	
 

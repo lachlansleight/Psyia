@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class ControllerSettings : MonoBehaviour
 {
+	public PsyiaSettingsApplicator SettingsApplicator;
+	
 	[Header("Controllers")]
 	public PsyiaController LeftController;
 	public PsyiaForce LeftForce;
@@ -51,18 +53,19 @@ public class ControllerSettings : MonoBehaviour
 		RightSofteningFactorSlider.SetActive(mode > 3 && mode < 6);
 		RightWavelengthSlider.SetActive(mode == 6);
 
+		#if UNITY_EDITOR
+		//TODO: Add knuckles support
 		var output = "Connected joysticks:";
 		foreach (var s in Input.GetJoystickNames()) {
 			output += "\n" + s;
 		}
-		
 		Debug.Log(output);
+		#endif
 	}
 
 	public void SetSymmetry(int value)
 	{
-		LeftSymmetry.enabled = value == 2;
-		RightSymmetry.enabled = value == 0;
+		SettingsApplicator.SetSymmetry(value);
 		
 		LeftSymmetryReporter.SetActive(LeftSymmetry.enabled);
 		RightSymmetryReporter.SetActive(RightSymmetry.enabled);
@@ -73,221 +76,126 @@ public class ControllerSettings : MonoBehaviour
 
 	public void SetControllerModels(bool value)
 	{
-		LeftController.ShowFullModel = RightController.ShowFullModel = value;
+		SettingsApplicator.SetControllerModels(value);
 	}
 
 	public void SetControllerDistance(float value)
 	{
-		LeftController.ControllerDistance = RightController.ControllerDistance = value;
+		SettingsApplicator.SetControllerDistance(value);
 	}
 
 	public void SetControllerHaptics(bool value)
 	{
-		LeftHaptics.enabled = RightHaptics.enabled = value;
+		SettingsApplicator.SetControllerHaptics(value);
 	}
 
 	public void SetLeftForceShape(int value)
 	{
-		switch (value) {
-			case 0:
-				LeftForce.Shape = PsyiaForce.ForceShape.Radial;
-				break;
-			case 1:
-				LeftForce.Shape = PsyiaForce.ForceShape.Orbital;
-				break;
-			case 2:
-				LeftForce.Shape = PsyiaForce.ForceShape.Dipole;
-				break;
-			case 3:
-				LeftForce.Shape = PsyiaForce.ForceShape.Linear;
-				break;
-			default:
-				throw new System.FormatException("Unexpected value '" + value + "' for SetLeftForceShape");
-		}
+		SettingsApplicator.SetLeftForceShape(value);
 	}
 	
 	public void SetRightForceShape(int value)
 	{
-		switch (value) {
-			case 0:
-				RightForce.Shape = PsyiaForce.ForceShape.Radial;
-				break;
-			case 1:
-				RightForce.Shape = PsyiaForce.ForceShape.Orbital;
-				break;
-			case 2:
-				RightForce.Shape = PsyiaForce.ForceShape.Dipole;
-				break;
-			case 3:
-				RightForce.Shape = PsyiaForce.ForceShape.Linear;
-				break;
-			default:
-				throw new System.FormatException("Unexpected value '" + value + "' for SetRightForceShape");
-		}
+		SettingsApplicator.SetRightForceShape(value);
 	}
 
 	public void SetLeftForceAttenuationMode(int value)
 	{
-		switch (value) {
-			case 0:
-				LeftForce.AttenuationMode = PsyiaForce.ForceAttenuationMode.Infinite;
-				break;
-			case 1:
-				LeftForce.AttenuationMode = PsyiaForce.ForceAttenuationMode.Linear;
-				break;
-			case 2:
-				LeftForce.AttenuationMode = PsyiaForce.ForceAttenuationMode.Hyperbolic;
-				break;
-			case 3:
-				LeftForce.AttenuationMode = PsyiaForce.ForceAttenuationMode.HyperbolicSquared;
-				break;
-			case 4:
-				LeftForce.AttenuationMode = PsyiaForce.ForceAttenuationMode.HyperbolicSoftened;
-				break;
-			case 5:
-				LeftForce.AttenuationMode = PsyiaForce.ForceAttenuationMode.HyperbolicSquaredSoftened;
-				break;
-			case 6:
-				LeftForce.AttenuationMode = PsyiaForce.ForceAttenuationMode.Sine;
-				break;
-			default:
-				throw new System.FormatException("Unexpected value '" + value + "' for SetLeftForceAttenuationMode");
-		}
-
-		var mode = (int) LeftForce.AttenuationMode;
-		LeftDistanceSlider.SetActive(mode > 0 && mode < 4 );
-		LeftSofteningFactorSlider.SetActive(mode > 3 && mode < 6);
-		LeftWavelengthSlider.SetActive(mode == 6);
-
-		XRP.XrpSlider slider = null;
-		if (LeftDistanceSlider.activeSelf) 
-			slider = LeftDistanceSlider.GetComponent<XRP.XrpSlider>();
-		else if (LeftSofteningFactorSlider.activeSelf) 
-			slider = LeftSofteningFactorSlider.GetComponent<XRP.XrpSlider>();
-		else if (LeftWavelengthSlider.activeSelf) 
-			slider = LeftWavelengthSlider.GetComponent<XRP.XrpSlider>();
-		
-		
-		if(slider != null)
-			slider.OnValueChangedEvent.Invoke(slider.CurrentValue);
-			
+		SettingsApplicator.SetLeftForceAttenuationMode(value);	
 	}
 	
 	public void SetRightForceAttenuationMode(int value)
 	{
-		switch (value) {
-			case 0:
-				RightForce.AttenuationMode = PsyiaForce.ForceAttenuationMode.Infinite;
-				break;
-			case 1:
-				RightForce.AttenuationMode = PsyiaForce.ForceAttenuationMode.Linear;
-				break;
-			case 2:
-				RightForce.AttenuationMode = PsyiaForce.ForceAttenuationMode.Hyperbolic;
-				break;
-			case 3:
-				RightForce.AttenuationMode = PsyiaForce.ForceAttenuationMode.HyperbolicSquared;
-				break;
-			case 4:
-				RightForce.AttenuationMode = PsyiaForce.ForceAttenuationMode.HyperbolicSoftened;
-				break;
-			case 5:
-				RightForce.AttenuationMode = PsyiaForce.ForceAttenuationMode.HyperbolicSquaredSoftened;
-				break;
-			case 6:
-				RightForce.AttenuationMode = PsyiaForce.ForceAttenuationMode.Sine;
-				break;
-			default:
-				throw new System.FormatException("Unexpected value '" + value + "' for SetRightForceAttenuationMode");
-		}
-
-		var mode = (int) RightForce.AttenuationMode;
-		RightDistanceSlider.SetActive(mode > 0 && mode < 4 );
-		RightSofteningFactorSlider.SetActive(mode > 3 && mode < 6);
-		RightWavelengthSlider.SetActive(mode == 6);
-		
-		XRP.XrpSlider slider = null;
-		if (RightDistanceSlider.activeSelf) 
-			slider = RightDistanceSlider.GetComponent<XRP.XrpSlider>();
-		else if (RightSofteningFactorSlider.activeSelf) 
-			slider = RightSofteningFactorSlider.GetComponent<XRP.XrpSlider>();
-		else if (RightWavelengthSlider.activeSelf) 
-			slider = RightWavelengthSlider.GetComponent<XRP.XrpSlider>();
-		
-		
-		if(slider != null)
-			slider.OnValueChangedEvent.Invoke(slider.CurrentValue);
+		SettingsApplicator.SetRightForceAttenuationMode(value);
 	}
 
 	public void SetLeftForceStrength(float value)
 	{
-		LeftForce.Strength = value;
+		SettingsApplicator.SetLeftForceStrength(value);
 	}
 
 	public void SetRightForceStrength(float value)
 	{
-		RightForce.Strength = value;
+		SettingsApplicator.SetRightForceStrength(value);
 	}
 
 	public void SetLeftForceAttenuationDistance(float value)
 	{
-		LeftForce.AttenuationDistance = value;
+		SettingsApplicator.SetLeftForceAttenuationDistance(value);
 	}
 
 	public void SetRightForceAttenuationDistance(float value)
 	{
-		RightForce.AttenuationDistance = value;
+		SettingsApplicator.SetRightForceAttenuationDistance(value);
+	}
+	
+	public void SetLeftForceAttenuationSofteningFactor(float value)
+	{
+		SettingsApplicator.SetLeftForceAttenuationSofteningFactor(value);
+	}
+
+	public void SetRightForceAttenuationSofteningFactor(float value)
+	{
+		SettingsApplicator.SetRightForceAttenuationDistance(value);
+	}
+	
+	public void SetLeftForceAttenuationWavelength(float value)
+	{
+		SettingsApplicator.SetLeftForceAttenuationWavelength(value);
+	}
+
+	public void SetRightForceAttenuationWavelength(float value)
+	{
+		SettingsApplicator.SetRightForceAttenuationWavelength(value);
 	}
 
 	public void SetLeftEmissionCount(float value)
 	{
-		LeftEmitter.EmitOverTime = value;
+		SettingsApplicator.SetLeftEmitterCount(Mathf.FloorToInt(value));
 	}
 
 	public void SetRightEmissionCount(float value)
 	{
-		RightEmitter.EmitOverTime = value;
+		SettingsApplicator.SetRightEmitterCount(Mathf.FloorToInt(value));
 	}
 
 	public void SetLeftEmissionRadius(float value)
 	{
-		LeftEmitter.Settings.EmissionRadius = value;
+		SettingsApplicator.SetLeftEmitterRadius(value);
 	}
 
 	public void SetRightEmissionRadius(float value)
 	{
-		RightEmitter.Settings.EmissionRadius = value;
+		SettingsApplicator.SetRightEmitterRadius(value);
 	}
 
 	public void SetLeftEmissionVelocity(float value)
 	{
-		LeftEmitter.Settings.MinSpawnVelocity = value * 0.5f;
-		LeftEmitter.Settings.MaxSpawnVelocity = value * 1.5f;
+		SettingsApplicator.SetLeftEmitterVelocity(value);
 	}
 
 	public void SetRightEmissionVelocity(float value)
 	{
-		RightEmitter.Settings.MinSpawnVelocity = value * 0.5f;
-		RightEmitter.Settings.MaxSpawnVelocity = value * 1.5f;
+		SettingsApplicator.SetRightEmitterVelocity(value);
 	}
 
 	public void SetLeftEmissionVelocitySpread(float value)
 	{
-		LeftEmitter.Settings.RandomiseDirection = value;
+		SettingsApplicator.SetLeftEmitterVelocitySpread(value);
 	}
 	
 	public void SetRightEmissionVelocitySpread(float value)
 	{
-		RightEmitter.Settings.RandomiseDirection = value;
+		SettingsApplicator.SetRightEmitterVelocitySpread(value);
 	}
 
 	public void SetLeftEmissionInheritVelocity(float value)
 	{
-		LeftEmitter.Settings.InheritVelocity = value;
+		SettingsApplicator.SetLeftEmitterInheritVelocity(value);
 	}
 	
 	public void SetRightEmissionInheritVelocity(float value)
 	{
-		RightEmitter.Settings.InheritVelocity = value;
+		SettingsApplicator.SetRightEmitterInheritVelocity(value);
 	}
 }

@@ -43,7 +43,11 @@
             <e p="PhysicsSettings.cs" t="Include" />
             <e p="PsyiaController.cs" t="Include" />
             <e p="PsyiaMusic.cs" t="Include" />
+            <e p="PsyiaSandbox.cs" t="Include" />
+            <e p="PsyiaSettings.cs" t="Include" />
+            <e p="PsyiaSettingsApplicator.cs" t="Include" />
             <e p="PsyiaUiSwitch.cs" t="Include" />
+            <e p="SimpleJSON.cs" t="Include" />
             <e p="SystemSettings.cs" t="Include" />
             <e p="TouchSphere.cs" t="Include" />
             <e p="UiPages.cs" t="Include" />

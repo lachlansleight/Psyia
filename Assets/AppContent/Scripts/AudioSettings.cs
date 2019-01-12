@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class AudioSettings : MonoBehaviour
 {
+	public PsyiaSettingsApplicator SettingsApplicator;
 	public PsyiaMusic Music;
 
 	public void SetLoop(bool value)
 	{
-		Music.Loop = value;
+		SettingsApplicator.SetLoop(value);
 	}
 
 	public void SetSlowWithTime(bool value)
 	{
-		//TODO: Implement this
-		//Music.SlowWithTime = value;
+		SettingsApplicator.SetSlowWithTime(value);
 	}
 
 	public void NextTrack()
@@ -34,18 +34,16 @@ public class AudioSettings : MonoBehaviour
 
 	public void SetVolume(float value)
 	{
-		Music.Volume = value;
+		SettingsApplicator.SetVolume(value);
 	}
 
 	public void SetVisualAudioreactivityStrength(float value)
 	{
-		//TODO: Implement this
-		//PsyiaSystem.VisualReactivityStrength = value;
+		SettingsApplicator.SetVisualAudioreactivity(value);
 	}
 	
 	public void SetPhysicsAudioreactivityStrength(float value)
 	{
-		//TODO: Implement this
-		//PsyiaSystem.PhysicsReactivityStrength = value;
+		SettingsApplicator.SetPhysicsAudioreactivity(value);
 	}
 }

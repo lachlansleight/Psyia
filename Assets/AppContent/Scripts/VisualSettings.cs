@@ -5,35 +5,17 @@ using UnityEngine;
 
 public class VisualSettings : MonoBehaviour
 {
-
-	public DispatchQueue MainQueue;
+	public PsyiaSettingsApplicator SettingsApplicator;
 	
 	public GameObject LineLength;
 	public GameObject ParticleShape;
 	public GameObject ParticleSize;
 
-	public Material[] ParticleMaterials;
-	public Texture2D[] ParticleTextures;
-	public Texture2D[] ColorTextures;
-	public ComputeRenderer TargetRenderer;
-	public ComputeShader ColorShader;
-
-	public Color[] _debugColors;
-	[Range(0f, 1f)] public float DebugValue;
-	
-	public void Start () {
-		
-	}
-	
-	public void Update ()
-	{
-		ColorShader.SetFloat("DebugValue", DebugValue);
-	}
-
 	public void SetParticleForm(int formSelection)
 	{
 		if (formSelection < 0) formSelection = 0;
-		if (formSelection >= ParticleMaterials.Length) formSelection = ParticleMaterials.Length - 1;
+		if (formSelection >= SettingsApplicator.ParticleMaterials.Length) 
+			formSelection = SettingsApplicator.ParticleMaterials.Length - 1;
 		switch (formSelection) {
 			case 0:
 				LineLength.SetActive(false);
@@ -59,10 +41,7 @@ public class VisualSettings : MonoBehaviour
 				throw new System.FormatException("Unexpected value for formSelection : " + formSelection);
 		}
 
-		MainQueue.transform.GetChild(2).gameObject.SetActive(formSelection != 2);
-		MainQueue.transform.GetChild(3).gameObject.SetActive(formSelection != 2);
-		
-		TargetRenderer.RenderMaterial = ParticleMaterials[formSelection];
+		SettingsApplicator.SetParticleForm(formSelection);
 	}
 
 	public void SetParticleColor(int colorSelection)
@@ -70,56 +49,25 @@ public class VisualSettings : MonoBehaviour
 		if (colorSelection < 0) colorSelection = 0;
 		if (colorSelection > 5) colorSelection = 5;
 
-		if (colorSelection > 1) {
-			var xColorMin = ColorTextures[colorSelection].GetPixel(32, 32);
-			var xColorMax = ColorTextures[colorSelection].GetPixel(96, 64);
-			var yColorMin = ColorTextures[colorSelection].GetPixel(32, 64);
-			var yColorMax = ColorTextures[colorSelection].GetPixel(96, 96);
-			var zColorMin = ColorTextures[colorSelection].GetPixel(32, 96);
-			var zColorMax = ColorTextures[colorSelection].GetPixel(96, 32);
-
-			_debugColors = new []
-			{
-				xColorMin,
-				xColorMax,
-				yColorMin,
-				yColorMax,
-				zColorMin,
-				zColorMax
-			};
-
-			ColorShader.SetVector("xColorMin", xColorMin);
-			ColorShader.SetVector("xColorMax", xColorMax);
-			ColorShader.SetVector("yColorMin", yColorMin);
-			ColorShader.SetVector("yColorMax", yColorMax);
-			ColorShader.SetVector("zColorMin", zColorMin);
-			ColorShader.SetVector("zColorMax", zColorMax);
-		}
-		
-		ColorShader.SetInt("ColorMode", colorSelection);
+		SettingsApplicator.SetParticleColor(colorSelection);
 	}
 
 	public void SetLineLength(float lineLength)
 	{
-		foreach(var m in ParticleMaterials) {
-			m.SetFloat("_LineLength", lineLength);
-		}
+		SettingsApplicator.SetLineLength(lineLength);
 	}
 
 	public void SetParticleShape(int shapeSelection)
 	{
 		if (shapeSelection < 0) shapeSelection = 0;
-		if (shapeSelection >= ParticleTextures.Length) shapeSelection = ParticleTextures.Length - 1;
-		
-		foreach(var m in ParticleMaterials) {
-			m.SetTexture("_Image", ParticleTextures[shapeSelection]);
-		}
+		if (shapeSelection >= SettingsApplicator.ParticleTextures.Length) 
+			shapeSelection = SettingsApplicator.ParticleTextures.Length - 1;
+
+		SettingsApplicator.SetParticleShape(shapeSelection);
 	}
 
 	public void SetParticleSize(float sizeSelection)
 	{
-		foreach(var m in ParticleMaterials) {
-			m.SetFloat("_PointSize", sizeSelection);
-		}
+		SettingsApplicator.SetParticleSize(sizeSelection);
 	}
 }

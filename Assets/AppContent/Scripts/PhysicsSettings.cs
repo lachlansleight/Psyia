@@ -6,22 +6,20 @@ using UnityEngine;
 public class PhysicsSettings : MonoBehaviour
 {
 
-	public PhysicsManager PhysicsManager;
-	public GameObject FloorVisuals;
+	public PsyiaSettingsApplicator SettingsApplicator;
 
 	public void SetMass(float value)
 	{
-		PhysicsManager.ParticleMinimumMass = value;
+		SettingsApplicator.SetParticleMass(value);
 	}
 
 	public void SetDamping(float value)
 	{
-		PhysicsManager.ParticleDrag = value;
+		SettingsApplicator.SetParticleDamping(value);
 	}
 
 	public void SetFloorCollision(bool value)
 	{
-		PhysicsManager.FloorCollision = value;
-		FloorVisuals.SetActive(value);
+		SettingsApplicator.SetFloorCollision(value);
 	}
 }
