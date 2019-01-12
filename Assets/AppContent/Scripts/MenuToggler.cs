@@ -12,6 +12,7 @@ public class MenuToggler : MonoBehaviour
 	public Transform MenuObject;
 	public Transform MenuHeight;
 	public Transform HMDObject;
+	public float HeightOffset = -0.39f;
 
 	private bool _targetValue;
 	private float _currentValue;
@@ -48,6 +49,6 @@ public class MenuToggler : MonoBehaviour
 		var forward = HMDObject.forward;
 		forward.y = 0f;
 		MenuObject.rotation = Quaternion.LookRotation(forward, Vector3.up); 
-		MenuHeight.localPosition = new Vector3(0f, HMDObject.position.y - 0.54f, 0f);
+		MenuHeight.localPosition = new Vector3(0f, HMDObject.position.y + HeightOffset, 0f);
 	}
 }

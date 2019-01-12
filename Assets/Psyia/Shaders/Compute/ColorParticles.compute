@@ -94,10 +94,13 @@ void ColorParticles(uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
 	float3 col = float3(1,1,1);
 	float3 VelocityZeroOne = (normalize(ThisParticle.Velocity) + float3(1.0, 1.0, 1.0)) * 0.5;
 	
+	//float3 VelocityZeroOne = float3(ThisParticle.Velocity
+	
 	if(ColorMode == 0) {
 	    if (length(ThisParticle.Velocity) > 0) {
             col = VelocityZeroOne;
-            if (length(col) > 0.8) { col.x = 1.0 - col.x; }
+            //if (length(col) > 1.5) { col.x = 1.0 - col.x; }
+            //if(length(col) < 0.2) { col.x = 1.0 - col.x; }
         }
 	} else if(ColorMode == 1) {
 	    if (length(ThisParticle.Velocity) > 0) {

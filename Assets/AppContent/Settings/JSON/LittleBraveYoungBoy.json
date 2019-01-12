@@ -1,20 +1,20 @@
 {
     "System" : {
-        "MaxParticleCount" : 181,
-        "Antialiasing" : 2,
+        "MaxParticleCount" : 222,
+        "Antialiasing" : 4,
         "Bloom" : true
     },
     "Visual" : {
-        "ParticleForm" : 2,
-        "ParticleColor" : 5,
-        "ParticleSize" : 0.0740685686469078,
+        "ParticleForm" : 1,
+        "ParticleColor" : 0,
+        "ParticleSize" : 0.0195258148014545,
         "LineLength" : 0.00499999988824129,
-        "ParticleShape" : 2
+        "ParticleShape" : 4
     },
     "Physics" : {
-        "ParticleMass" : 0.0500000007450581,
-        "ParticleDamping" : 0.0298182144761086,
-        "FloorCollision" : true
+        "ParticleMass" : 0.0513748675584793,
+        "ParticleDamping" : 0.149869859218597,
+        "FloorCollision" : false
     },
     "Audio" : {
         "VisualsAudioreactivity" : 0.5,
@@ -26,7 +26,7 @@
     "Controller" : {
         "ControllerSymmetry" : 2,
         "ControllerModels" : true,
-        "ControllerDistance" : 1.01477873325348,
+        "ControllerDistance" : 0,
         "ControllerHaptics" : true
     },
     "ForceLeft" : {
@@ -39,9 +39,9 @@
     },
     "ForceRight" : {
         "ForceShape" : 0,
-        "ForceAttenuation" : 4,
-        "ForceStrength" : 0.376812964677811,
-        "AttenuationDistance" : 0.200000002980232,
+        "ForceAttenuation" : 5,
+        "ForceStrength" : 0.0864073634147644,
+        "AttenuationDistance" : 0.0925034284591675,
         "SofteningFactor" : 0.200000002980232,
         "Wavelength" : 0.200000002980232
     },
