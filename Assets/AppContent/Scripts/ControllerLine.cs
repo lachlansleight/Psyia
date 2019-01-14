@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR;
 
 public class ControllerLine : MonoBehaviour
 {
@@ -23,7 +24,10 @@ public class ControllerLine : MonoBehaviour
 			return;
 		}
 
-		if (!Controller.gameObject.activeSelf) return;
+		if (!Controller.gameObject.activeSelf || !Controller.enabled) {
+			_lineRenderer.positionCount = 0;
+			return;
+		}
 
 		_lineRenderer.positionCount = PointCount;
 
