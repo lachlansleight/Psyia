@@ -32,6 +32,8 @@ namespace UCTK {
 		//TODO: Prevent this disastrous situation! Can I check whether the AppendBuffer is in use and return last value if so?
 		public int CurrentCount {
 			get {
+				//return 0;
+				//return Count;
 				if(LastCurrentCount == -1) {
 					int[] args = new int[]{ 0, 1, 0, 0 };
 					ArgsBuffer.SetData(args);
@@ -47,7 +49,8 @@ namespace UCTK {
 
 		/// <summary>
 		/// Marks the current buffer count to dirty to force a re-fetch of the args buffer
-		/// This MUST be done after every dispatch if you want an accurate CurrentCount value!
+		/// This MUST be done after every dispatch resulting in an append/consume.
+		/// Otherwise you get an outdated CurrentCount value!
 		/// </summary>
 		public void SetCurrentCountDirty()
 		{

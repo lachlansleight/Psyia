@@ -7,6 +7,7 @@
     "Visual" : {
         "ParticleForm" : 1,
         "ParticleColor" : 0,
+        "ParticleColorAmount" : 1.0,
         "ParticleSize" : 0.0195258148014545,
         "LineLength" : 0.00499999988824129,
         "ParticleShape" : 4

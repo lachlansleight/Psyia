@@ -29,12 +29,18 @@ public class ControllerSettings : MonoBehaviour
 
 	[Header("Sliders")]
 	public GameObject LeftDistanceSlider;
+	public GameObject LeftDistanceButton;
 	public GameObject LeftSofteningFactorSlider;
+	public GameObject LeftSofteningFactorButton;
 	public GameObject LeftWavelengthSlider;
+	public GameObject LeftWavelengthButton;
 	[Space(10)]
 	public GameObject RightDistanceSlider;
+	public GameObject RightDistanceButton;
 	public GameObject RightSofteningFactorSlider;
+	public GameObject RightSofteningFactorButton;
 	public GameObject RightWavelengthSlider;
+	public GameObject RightWavelengthButton;
 	
 	public void Start()
 	{
@@ -45,13 +51,19 @@ public class ControllerSettings : MonoBehaviour
 		
 		var mode = (int) LeftForce.AttenuationMode;
 		LeftDistanceSlider.SetActive(mode > 0 && mode < 4 );
+		LeftDistanceButton.SetActive(LeftDistanceSlider.activeSelf);
 		LeftSofteningFactorSlider.SetActive(mode > 3 && mode < 6);
+		LeftSofteningFactorButton.SetActive(LeftSofteningFactorSlider.activeSelf);
 		LeftWavelengthSlider.SetActive(mode == 6);
+		LeftWavelengthButton.SetActive(LeftWavelengthSlider.activeSelf);
 		
 		mode = (int) RightForce.AttenuationMode;
 		RightDistanceSlider.SetActive(mode > 0 && mode < 4 );
+		RightDistanceButton.SetActive(RightDistanceSlider.activeSelf);
 		RightSofteningFactorSlider.SetActive(mode > 3 && mode < 6);
+		RightSofteningFactorButton.SetActive(RightSofteningFactorSlider.activeSelf);
 		RightWavelengthSlider.SetActive(mode == 6);
+		RightWavelengthButton.SetActive(RightWavelengthSlider.activeSelf);
 
 		#if UNITY_EDITOR
 		//TODO: Add knuckles support

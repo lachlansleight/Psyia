@@ -28,9 +28,11 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 	[Header("Physics Objects")]
 	public PhysicsManager PhysicsManager;
 	public GameObject FloorVisuals;
+	public TimeSlower TimeSlower;
 
 	[Header("Audio Objects")]
 	public PsyiaMusic Music;
+	public VisualisationStrengthSetter VisualisationStrengthSetter;
 
 	[Header("Controller Objects")]
 	public PsyiaController LeftController;
@@ -65,10 +67,23 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 	}
 	public void SetAntialiasing(int newValue, bool skipChangeCheck = false)
 	{
-		if (CurrentSettings.System.Antialiasing == newValue && !skipChangeCheck) return;
+		if ((int)CurrentSettings.System.Antialiasing == newValue && !skipChangeCheck) return;
 		
-		CurrentSettings.System.Antialiasing = newValue;
-		QualitySettings.antiAliasing = CurrentSettings.System.Antialiasing;
+		CurrentSettings.System.Antialiasing = (PsyiasSystemSettings.AntialiasingLevel)newValue;
+		switch (CurrentSettings.System.Antialiasing) {
+			case PsyiasSystemSettings.AntialiasingLevel.None:
+				QualitySettings.antiAliasing = 0;
+				break;
+			case PsyiasSystemSettings.AntialiasingLevel.TwoTimes:
+				QualitySettings.antiAliasing = 2;
+				break;
+			case PsyiasSystemSettings.AntialiasingLevel.FourTimes:
+				QualitySettings.antiAliasing = 4;
+				break;
+			case PsyiasSystemSettings.AntialiasingLevel.EightTimes:
+				QualitySettings.antiAliasing = 8;
+				break;
+		}
 	}
 	public void SetBloom(bool newValue, bool skipChangeCheck = false)
 	{
@@ -110,6 +125,15 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 		ColorShader.SetInt("ColorMode", (int) CurrentSettings.Visual.ParticleColor);
 	}
 
+	public void SetParticleColorAmount(float newValue, bool skipChangeCheck = false)
+	{
+		if (CurrentSettings.Visual.ParticleColorAmount == newValue && !skipChangeCheck) return;
+
+		CurrentSettings.Visual.ParticleColorAmount = newValue;
+
+		ColorShader.SetFloat("ColorAmount", CurrentSettings.Visual.ParticleColorAmount);
+	}
+
 	
 	public void SetParticleSize(float newValue, bool skipChangeCheck = false)
 	{
@@ -148,6 +172,13 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 		CurrentSettings.Physics.ParticleDamping = newValue;
 		PhysicsManager.ParticleDrag = CurrentSettings.Physics.ParticleDamping;
 	}
+	public void SetTimeSpeed(float newValue, bool skipChangeCheck = false)
+	{
+		if(CurrentSettings.Physics.TimeSpeed == newValue && !skipChangeCheck) return;
+		
+		CurrentSettings.Physics.TimeSpeed = newValue;
+		TimeSlower.TimeScaleMultiplier = CurrentSettings.Physics.TimeSpeed;
+	}
 	public void SetFloorCollision(bool newValue, bool skipChangeCheck = false)
 	{
 		if(CurrentSettings.Physics.FloorCollision == newValue && !skipChangeCheck) return;
@@ -162,16 +193,14 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 		if(CurrentSettings.Audio.VisualsAudioreactivity == newValue && !skipChangeCheck) return;
 		
 		CurrentSettings.Audio.VisualsAudioreactivity = newValue;
-		//TODO: Implement this
-		//PsyiaSystem.VisualReactivityStrength = Settings.Audio.VisualAudioreactivity;
+		VisualisationStrengthSetter.SetVisualStrength(CurrentSettings.Audio.VisualsAudioreactivity);
 	}
 	public void SetPhysicsAudioreactivity(float newValue, bool skipChangeCheck = false)
 	{
 		if(CurrentSettings.Audio.PhysicsAudioreactivity == newValue && !skipChangeCheck) return;
 		
 		CurrentSettings.Audio.PhysicsAudioreactivity = newValue;
-		//TODO: Implement this
-		//PsyiaSystem.PhysicsReactivityStrength = Settings.Audio.PhysicsAudioreactivity;
+		VisualisationStrengthSetter.SetPhysicsStrength(CurrentSettings.Audio.PhysicsAudioreactivity);
 	}
 	public void SetVolume(float newValue, bool skipChangeCheck = false)
 	{
@@ -192,8 +221,7 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 		if(CurrentSettings.Audio.SlowWithTime == newValue && !skipChangeCheck) return;
 		
 		CurrentSettings.Audio.SlowWithTime = newValue;
-		//TODO: Implement this
-		Music.SlowWithTime = CurrentSettings.Audio.SlowWithTime;
+		TimeSlower.SlowsWithTime = CurrentSettings.Audio.SlowWithTime;
 	}
 
 	public void SetSymmetry(int newValue, bool skipChangeCheck = false)
@@ -404,7 +432,7 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 	public void ApplySettings()
 	{
 		SetMaxParticleCount(CurrentSettings.System.MaxParticleCount, false);
-		SetAntialiasing(CurrentSettings.System.Antialiasing, true);
+		SetAntialiasing((int)CurrentSettings.System.Antialiasing, true);
 		SetBloom(CurrentSettings.System.Bloom, true);
 
 		SetParticleForm((int)CurrentSettings.Visual.ParticleForm, true);
@@ -458,7 +486,7 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 	public void ApplyDefaultSettings()
 	{
 		SetMaxParticleCount(DefaultSettings.System.MaxParticleCount, false);
-		SetAntialiasing(DefaultSettings.System.Antialiasing, true);
+		SetAntialiasing((int)DefaultSettings.System.Antialiasing, true);
 		SetBloom(DefaultSettings.System.Bloom, true);
 
 		SetParticleForm((int)DefaultSettings.Visual.ParticleForm, true);
@@ -514,7 +542,7 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 		DefaultSettings = newSettings;
 
 		SetMaxParticleCount(DefaultSettings.System.MaxParticleCount, false);
-		SetAntialiasing(DefaultSettings.System.Antialiasing, true);
+		SetAntialiasing((int)DefaultSettings.System.Antialiasing, true);
 		SetBloom(DefaultSettings.System.Bloom, true);
 
 		SetParticleForm((int)DefaultSettings.Visual.ParticleForm, true);
@@ -581,7 +609,8 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 		sw.Close();
 		sw.Dispose();
 	}
-
+	#endif
+	
 	[ContextMenu("Apply Json Settings")]
 	public void ApplyTestJson()
 	{
@@ -590,7 +619,6 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 		ApplyParticleCount();
 		//ResetEmitter.Emit(ResetEmitter.StartEmitCount);
 	}
-	#endif
 
 	private Color[] GetColorSelection(Texture2D texture)
 	{

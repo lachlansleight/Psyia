@@ -8,7 +8,7 @@ namespace XRP
 	public class XrpToggle : XrpControl
 	{
 
-		public bool Toggled = false;
+		public bool CurrentValue = false;
 
 		public BoolDelegate OnValueChanged;
 		public UnityBoolEvent OnValueChangedEvent;
@@ -25,8 +25,8 @@ namespace XRP
 		public override void Start()
 		{
 			if (ThrowEventOnStart) {
-				OnValueChangedEvent.Invoke(Toggled);
-				OnValueChanged?.Invoke(Toggled);
+				OnValueChangedEvent.Invoke(CurrentValue);
+				OnValueChanged?.Invoke(CurrentValue);
 			}
 		}
 		
@@ -34,7 +34,7 @@ namespace XRP
 		{
 			base.Update();
 
-			var newScale = Vector3.one * Mathf.Lerp(_main.localScale.x, Toggled ? 0.8f : 0.1f, 0.1f);
+			var newScale = Vector3.one * Mathf.Lerp(_main.localScale.x, CurrentValue ? 0.8f : 0.1f, 0.1f);
 			newScale.y = 0.04f;
 			_main.localScale = newScale;
 			
@@ -60,14 +60,20 @@ namespace XRP
 
 		private void Toggle()
 		{
-			Toggled = !Toggled;
-			OnValueChanged?.Invoke(Toggled);
-			OnValueChangedEvent.Invoke(Toggled);
+			CurrentValue = !CurrentValue;
+			OnValueChanged?.Invoke(CurrentValue);
+			OnValueChangedEvent.Invoke(CurrentValue);
 			
 			PopFadePanel();
 			
 			CurrentState = State.Disabled;
 			AudioSource.PlayClipAtPoint(Panel.PressClip, transform.position, 0.3f);
+		}
+		
+		public void Bang()
+		{
+			OnValueChangedEvent.Invoke(CurrentValue);
+			OnValueChanged?.Invoke(CurrentValue);
 		}
 	}
 

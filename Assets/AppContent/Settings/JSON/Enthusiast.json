@@ -7,6 +7,7 @@
     "Visual" : {
         "ParticleForm" : 3,
         "ParticleColor" : 3,
+        "ParticleColorAmount" : 1.0,
         "ParticleSize" : 0.0769601315259933,
         "LineLength" : 0.0244442597031593,
         "ParticleShape" : 3
@@ -14,6 +15,7 @@
     "Physics" : {
         "ParticleMass" : 0,
         "ParticleDamping" : 0.15254271030426,
+        "TimeSpeed" : 0.75,
         "FloorCollision" : false
     },
     "Audio" : {
@@ -26,7 +28,7 @@
     "Controller" : {
         "ControllerSymmetry" : 2,
         "ControllerModels" : true,
-        "ControllerDistance" : 1.46715307235718,
+        "ControllerDistance" : 1.0,
         "ControllerHaptics" : true
     },
     "ForceLeft" : {

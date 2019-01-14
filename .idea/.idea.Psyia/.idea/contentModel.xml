@@ -14,6 +14,7 @@
               <e p="AudioBins.cs" t="Include" />
               <e p="AudioData.cs" t="Include" />
               <e p="AudioMaster.cs" t="Include" />
+              <e p="AudioreactivityTest.cs" t="Include" />
               <e p="SoundCapture.cs" t="Include" />
               <e p="VisiTest.cs" t="Include" />
               <e p="Visualization" t="Include">
@@ -29,6 +30,7 @@
           </e>
           <e p="Scripts" t="Include">
             <e p="AudioSettings.cs" t="Include" />
+            <e p="AudioVisualisationButton.cs" t="Include" />
             <e p="ControllerForce.cs" t="Include" />
             <e p="ControllerHaptics.cs" t="Include" />
             <e p="ControllerLine.cs" t="Include" />
@@ -42,15 +44,20 @@
             <e p="MusicDisplay.cs" t="Include" />
             <e p="PhysicsSettings.cs" t="Include" />
             <e p="PsyiaController.cs" t="Include" />
+            <e p="PsyiaJsonUiSetter.cs" t="Include" />
             <e p="PsyiaMusic.cs" t="Include" />
             <e p="PsyiaSandbox.cs" t="Include" />
             <e p="PsyiaSettings.cs" t="Include" />
             <e p="PsyiaSettingsApplicator.cs" t="Include" />
             <e p="PsyiaUiSwitch.cs" t="Include" />
+            <e p="Rotator.cs" t="Include" />
             <e p="SimpleJSON.cs" t="Include" />
+            <e p="SliderAudioHook.cs" t="Include" />
             <e p="SystemSettings.cs" t="Include" />
+            <e p="TimeSlower.cs" t="Include" />
             <e p="TouchSphere.cs" t="Include" />
             <e p="UiPages.cs" t="Include" />
+            <e p="VisualisationStrengthSetter.cs" t="Include" />
             <e p="VisualSettings.cs" t="Include" />
           </e>
           <e p="TouchSphere.shader" t="Include" />

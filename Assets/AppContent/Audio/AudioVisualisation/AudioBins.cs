@@ -68,7 +68,7 @@ public class AudioBins : MonoBehaviour {
 	void Update () {
 		AudioSample newSample = new global::AudioSample();
 		newSample.time = Time.time;
-		newSample.level = audioInput.avgVol;
+		newSample.level = audioInput.InstantLevel;
 
 		values.Insert(0, newSample);
 

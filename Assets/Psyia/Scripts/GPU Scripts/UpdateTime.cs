@@ -30,15 +30,21 @@ public class UpdateTime : MonoBehaviour {
 
 	public ComputeShader[] ComputeShaders;
 	public Material[] Materials;
+
+	public float TimeScale = 1f;
+	private float _time;
 	
-	void Update () {
-		foreach(ComputeShader cs in ComputeShaders) {
-			cs.SetFloat("Time", Time.time);
-			cs.SetFloat("DeltaTime", Time.deltaTime);
+	public void Update ()
+	{
+		_time += Time.deltaTime * TimeScale;
+		
+		foreach(var cs in ComputeShaders) {
+			cs.SetFloat("Time", _time);
+			cs.SetFloat("DeltaTime", Time.deltaTime * TimeScale);
 		}
-		foreach(Material m in Materials) {
-			m.SetFloat("Time", Time.time);
-			m.SetFloat("DeltaTime", Time.deltaTime);
+		foreach(var m in Materials) {
+			m.SetFloat("Time", _time);
+			m.SetFloat("DeltaTime", Time.deltaTime * TimeScale);
 		}
 	}
 }

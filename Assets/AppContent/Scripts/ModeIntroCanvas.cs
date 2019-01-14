@@ -26,6 +26,9 @@ public class ModeIntroCanvas : MonoBehaviour
 	{
 		transform.position = Vector3.Slerp(transform.position - Target.position, Target.forward * Distance, LerpSpeed);
 		transform.position += Target.position;
+		var v = transform.position;
+		v.y = 1.2f;
+		transform.position = v;
 
 		transform.rotation = Quaternion.LookRotation(transform.position - Target.position, Vector3.up);
 	}

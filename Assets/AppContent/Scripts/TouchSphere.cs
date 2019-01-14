@@ -11,6 +11,7 @@ public class TouchSphere : MonoBehaviour
 	public Transform LookTarget;
 	public Transform[] Interactors;
 	public Color Color = Color.red;
+	public ParticleSystem[] ParticleSystems;
 
 	[Header("Animation")]
 	public float MaxSpeedMultiplier = 5f;
@@ -85,10 +86,18 @@ public class TouchSphere : MonoBehaviour
 		
 		for (var i = 0f; i < 1f; i += Time.deltaTime / duration) {
 			transform.localScale = Vector3.one * Mathf.Lerp(from, to, LerpCubic(i));
+			foreach (var ps in ParticleSystems) {
+				var em = ps.emission;
+				em.rateOverTimeMultiplier = (transform.localScale.x / _defaultScale);
+			}
 			yield return null;
 		}
 
 		transform.localScale = Vector3.one * to;
+		foreach (var ps in ParticleSystems) {
+			var em = ps.emission;
+			em.rateOverTimeMultiplier = (transform.localScale.x / _defaultScale);
+		}
 
 		if (disableAtEnd) gameObject.SetActive(false);
 	}

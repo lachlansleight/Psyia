@@ -19,11 +19,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b94bf94d63cf4414f8b91a7096bff1f7, type: 2}
   - {fileID: 11400000, guid: 7bd89071f60bdd14bb16455298a88655, type: 2}
   - {fileID: 11400000, guid: 8eabe0cd44ccdb34e91bd9913f0464a6, type: 2}
+  - {fileID: 11400000, guid: a2530e3fcb48f8b4fb10e6bbf5327d99, type: 2}
   - {fileID: 11400000, guid: c0684ebffd5dfac4e9f8ae0801dcabae, type: 2}
   nonVisualInActions:
   - {fileID: 11400000, guid: 089ebc004540f8547afd592c2c220cd5, type: 2}
   - {fileID: 11400000, guid: 7bd89071f60bdd14bb16455298a88655, type: 2}
   - {fileID: 11400000, guid: 8eabe0cd44ccdb34e91bd9913f0464a6, type: 2}
+  - {fileID: 11400000, guid: a2530e3fcb48f8b4fb10e6bbf5327d99, type: 2}
   visualActions:
   - {fileID: 11400000, guid: 1afaf14f9db7b6c41846ac9e5ce6be6f, type: 2}
   - {fileID: 11400000, guid: e676643cb5218514285e92d623906d84, type: 2}

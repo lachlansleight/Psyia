@@ -28,5 +28,7 @@ namespace Valve.VR
         public Valve.VR.SteamVR_Action_Boolean SpawnParticles;
         
         public Valve.VR.SteamVR_Action_Boolean ToggleMenu;
+        
+        public Valve.VR.SteamVR_Action_Boolean SlowTime;
     }
 }

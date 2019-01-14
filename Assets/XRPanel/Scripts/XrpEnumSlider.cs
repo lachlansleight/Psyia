@@ -120,5 +120,11 @@ namespace XRP
 			return 16f * t * t * t * t * t + 1f;
 		}
 		
+		public void Bang()
+		{
+			OnValueChangedEvent.Invoke(CurrentValue);
+			OnValueChanged?.Invoke(CurrentValue);
+		}
+		
 	}
 }

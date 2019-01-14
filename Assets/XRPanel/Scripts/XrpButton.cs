@@ -66,6 +66,12 @@ namespace XRP
 			CurrentState = State.Disabled;
 			AudioSource.PlayClipAtPoint(Panel.PressClip, transform.position, 0.3f);
 		}
+
+		public void Bang()
+		{
+			OnClickEvent.Invoke();
+			OnClick?.Invoke();
+		}
 	}
 
 }

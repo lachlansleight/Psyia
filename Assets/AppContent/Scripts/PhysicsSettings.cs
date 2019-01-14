@@ -22,4 +22,9 @@ public class PhysicsSettings : MonoBehaviour
 	{
 		SettingsApplicator.SetFloorCollision(value);
 	}
+
+	public void SetTimeSpeed(float value)
+	{
+		SettingsApplicator.SetTimeSpeed(value);
+	}
 }

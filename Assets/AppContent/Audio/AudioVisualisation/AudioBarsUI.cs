@@ -47,7 +47,7 @@ public class AudioBarsUI : MonoBehaviour {
 				float iT = (float) i / (float) bars.Length;
 				bars[i].offsetMin = new Vector2(iT * totalWidth - (totalWidth * 0.5f) + (barGap * 0.5f), 0f);
 				bars[i].offsetMax = new Vector2(iT * totalWidth - (totalWidth * 0.5f) + barWidth - (barGap * 0.5f),
-					Mathf.Clamp((audioData.fft[i] * totalHeight * 0.3f - totalHeight), -totalHeight, 0f));
+					Mathf.Clamp((audioData.Fft[i] * totalHeight * 0.3f - totalHeight), -totalHeight, 0f));
 			} catch(System.IndexOutOfRangeException e)
 			{
 				//all good

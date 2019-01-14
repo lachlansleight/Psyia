@@ -8,8 +8,10 @@ public class VisualSettings : MonoBehaviour
 	public PsyiaSettingsApplicator SettingsApplicator;
 	
 	public GameObject LineLength;
+	public GameObject LineLengthButton;
 	public GameObject ParticleShape;
 	public GameObject ParticleSize;
+	public GameObject ParticleSizeButton;
 
 	public void SetParticleForm(int formSelection)
 	{
@@ -41,6 +43,9 @@ public class VisualSettings : MonoBehaviour
 				throw new System.FormatException("Unexpected value for formSelection : " + formSelection);
 		}
 
+		LineLengthButton.SetActive(LineLength.activeSelf);
+		ParticleSizeButton.SetActive(ParticleSize.activeSelf);
+
 		SettingsApplicator.SetParticleForm(formSelection);
 	}
 
@@ -50,6 +55,11 @@ public class VisualSettings : MonoBehaviour
 		if (colorSelection > 5) colorSelection = 5;
 
 		SettingsApplicator.SetParticleColor(colorSelection);
+	}
+
+	public void SetParticleColorAmount(float value)
+	{
+		SettingsApplicator.SetParticleColorAmount(value);
 	}
 
 	public void SetLineLength(float lineLength)

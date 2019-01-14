@@ -23,6 +23,10 @@ public class PsyiaMusic : MonoBehaviour {
 
 	private AudioSource _mySource;
 
+	private float _targetPitch;
+	private float _currentPitch;
+	public float PitchLerpTime = 0.1f;
+
 	public void Start () {
 		_mySource = GetComponent<AudioSource>();
 		_mySource.clip = Clips[CurrentTrack];
@@ -40,7 +44,15 @@ public class PsyiaMusic : MonoBehaviour {
 			else NextTrack();
 		}
 
+		_currentPitch = Mathf.Lerp(_currentPitch, _targetPitch, PitchLerpTime);
+		_mySource.pitch = _currentPitch;
+		
 		IsPlaying = _mySource.isPlaying;
+	}
+
+	public void SetPitch(float value)
+	{
+		_targetPitch = value;
 	}
 
 	public string GetCurrentSongName()

@@ -32,6 +32,8 @@ namespace Psyia {
 
 		public GpuAppendBuffer AppendBuffer;
 		public ComputeDispatcher Emitter;
+
+		private int _currentCount;
 		
 
 		public void Emit(Vector3 Position, int Amount) { Emit(Position, Vector3.zero, Amount); }
@@ -66,8 +68,7 @@ namespace Psyia {
 			
 			Emitter.Shader.SetFloat("RandomiseDirection", Settings.RandomiseDirection);
 
-			float AppendBufferCount = AppendBuffer.CurrentCount;
-			int NumberToEmit = (int)Mathf.Min(Amount, AppendBufferCount);
+			int NumberToEmit = Mathf.Min(Amount, _currentCount);
 			if(NumberToEmit > 0) {
 				Emitter.Dispatch(NumberToEmit, 1, 1);
 			}
@@ -75,6 +76,11 @@ namespace Psyia {
 			//Unfortunately, this line does what we want but it's so expensive we just can't call it every frame
 			//Takes literally 30ms to complete
 			//AppendBuffer.SetCurrentCountDirty();
+		}
+
+		public void LateUpdate()
+		{
+			_currentCount = AppendBuffer.CurrentCount;
 		}
 	}
 }

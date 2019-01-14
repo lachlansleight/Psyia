@@ -30,6 +30,7 @@ public class ModeChoreography : MonoBehaviour
 	public ComputeRenderer PsyiaRenderer;
 
 	public PsyiaSettingsApplicator SettingsApplicator;
+	public PsyiaJsonUiSetter UiSettingsApplicator;
 
 	public ModeIntroCanvas IntroCanvas;
 
@@ -39,11 +40,12 @@ public class ModeChoreography : MonoBehaviour
 
 	public Transform LeftController;
 	public Transform RightController;
+	public GameObject LeftControllerBase;
+	public GameObject RightControllerBase;
 	public ControllerHaptics LeftHaptics;
 	public ControllerHaptics RightHaptics;
-	
-	public SteamVR_Action_Boolean ToggleMenuAction;
-	public SteamVR_Input_Sources Hand;
+
+	public MenuToggler MenuToggler;
 	
 	public void Awake()
 	{
@@ -53,35 +55,10 @@ public class ModeChoreography : MonoBehaviour
 
 		LeftController.gameObject.SetActive(false);
 		RightController.gameObject.SetActive(false);
+		MenuToggler.SetTargetValue(false);
+		MenuToggler.AllowMenuToggle = false;
 		
-
 		PsyiaRenderer.enabled = false;
-	}
-	
-	public void OnEnable ()
-	{
-		ToggleMenuAction.AddOnChangeListener(OnAxisValueChanged, Hand);
-	}
-
-	public void OnDisable()
-	{
-		ToggleMenuAction.RemoveOnChangeListener(OnAxisValueChanged, Hand);
-	}
-
-	public void Update()
-	{
-		
-	}
-	
-	private void OnAxisValueChanged(SteamVR_Action_In actionIn)
-	{
-		if (!(actionIn is SteamVR_Action_Boolean)) return;
-		var asBoolean = (SteamVR_Action_Boolean) actionIn;
-		var pressDown = asBoolean.GetStateDown(Hand);
-		
-		if (!pressDown) return;
-		StopAllCoroutines();
-		StartCoroutine(ResetEverything());
 	}
 
 	public void SetMode(TouchSphere sourceSphere)
@@ -112,6 +89,10 @@ public class ModeChoreography : MonoBehaviour
 		LeftHaptics.enabled = false;
 		RightHaptics.enabled = false;
 		PsyiaRenderer.enabled = false;
+		MenuToggler.SetTargetValue(false);
+		MenuToggler.AllowMenuToggle = false;
+		LeftControllerBase.SetActive(true);
+		RightControllerBase.SetActive(true);
 		
 		foreach (var m in Modes) {
 			m.TouchSphere.gameObject.SetActive(true);
@@ -152,6 +133,7 @@ public class ModeChoreography : MonoBehaviour
 		RightController.gameObject.SetActive(true);
 		LeftHaptics.enabled = true;
 		RightHaptics.enabled = true;
+		MenuToggler.AllowMenuToggle = true;
 
 		for (var i = 0f; i < 1f; i += Time.deltaTime / 0.5f) {
 			var iL = 0f;
@@ -166,6 +148,7 @@ public class ModeChoreography : MonoBehaviour
 		RightController.localScale = Vector3.one;
 
 		SettingsApplicator.TestJson = targetMode.PresetJson;
+		UiSettingsApplicator.LoadFromJson(targetMode.PresetJson.text);
 		SettingsApplicator.ApplyTestJson();
 		PsyiaRenderer.RenderMaterial.color = DefaultPsyiaColor;
 		PsyiaRenderer.enabled = true;
@@ -209,12 +192,23 @@ public class ModeChoreography : MonoBehaviour
 		RightController.localScale = Vector3.zero;
 		LeftController.gameObject.SetActive(false);
 		RightController.gameObject.SetActive(false);
+		LeftControllerBase.SetActive(true);
+		RightControllerBase.SetActive(true);
 		LeftHaptics.enabled = false;
 		RightHaptics.enabled = false;
+		
+		MenuToggler.AllowMenuToggle = false;
+		MenuToggler.SetTargetValue(false);
 
 		foreach (var m in Modes) {
 			m.TouchSphere.gameObject.SetActive(true);
 			m.TouchSphere.LerpToScale(1f, 0.3f);
 		}
+	}
+
+	public void ReturnToMenu()
+	{
+		StopAllCoroutines();
+		StartCoroutine(ResetEverything());
 	}
 }

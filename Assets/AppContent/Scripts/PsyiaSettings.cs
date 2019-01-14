@@ -37,7 +37,7 @@ public class PsyiaSettings : ScriptableObject
 		System = new PsyiasSystemSettings
 		{
 			MaxParticleCount = jsonObject["System"]["MaxParticleCount"].AsInt,
-			Antialiasing = jsonObject["System"]["Antialiasing"].AsInt,
+			Antialiasing = (PsyiasSystemSettings.AntialiasingLevel)jsonObject["System"]["Antialiasing"].AsInt,
 			Bloom = jsonObject["System"]["Bloom"].AsBool
 		};
 
@@ -45,6 +45,7 @@ public class PsyiaSettings : ScriptableObject
 		{
 			ParticleForm = (PsyiaVisualSettings.Form) jsonObject["Visual"]["ParticleForm"].AsInt,
 			ParticleColor = (PsyiaVisualSettings.Color) jsonObject["Visual"]["ParticleColor"].AsInt,
+			ParticleColorAmount = jsonObject["Visual"]["ParticleColorAmount"].AsFloat,
 			ParticleSize = jsonObject["Visual"]["ParticleSize"].AsFloat,
 			LineLength = jsonObject["Visual"]["LineLength"].AsFloat,
 			ParticleShape = (PsyiaVisualSettings.Shape) jsonObject["Visual"]["ParticleShape"].AsInt
@@ -115,7 +116,6 @@ public class PsyiaSettings : ScriptableObject
 
 	public string GetSettingsJson()
 	{
-		//TODO: Implement PsyiaSettings.GetSettingsJson
 		var settingsObject = new JSONObject();
 		settingsObject.Add("System", System.GetJsonObject());
 		settingsObject.Add("Visual", Visual.GetJsonObject());
@@ -133,8 +133,16 @@ public class PsyiaSettings : ScriptableObject
 [System.Serializable]
 public class PsyiasSystemSettings
 {
+	public enum AntialiasingLevel
+	{
+		None,
+		TwoTimes,
+		FourTimes,
+		EightTimes
+	}
+	
 	public int MaxParticleCount;
-	public int Antialiasing;
+	public AntialiasingLevel Antialiasing;
 	public bool Bloom;
 	
 	public PsyiasSystemSettings() { }
@@ -151,7 +159,7 @@ public class PsyiasSystemSettings
 		var outputObject = new JSONObject();
 		
 		outputObject.Add("MaxParticleCount", MaxParticleCount);
-		outputObject.Add("Antialiasing", Antialiasing);
+		outputObject.Add("Antialiasing", (int)Antialiasing);
 		outputObject.Add("Bloom", Bloom);
 		
 		return outputObject;
@@ -191,6 +199,7 @@ public class PsyiaVisualSettings
 
 	public Form ParticleForm;
 	public Color ParticleColor;
+	public float ParticleColorAmount;
 	public float ParticleSize;
 	public float LineLength;
 	public Shape ParticleShape;
@@ -200,6 +209,7 @@ public class PsyiaVisualSettings
 	{
 		ParticleForm = copyTarget.ParticleForm;
 		ParticleColor = copyTarget.ParticleColor;
+		ParticleColorAmount = copyTarget.ParticleColorAmount;
 		ParticleSize = copyTarget.ParticleSize;
 		LineLength = copyTarget.LineLength;
 		ParticleShape = copyTarget.ParticleShape;
@@ -210,6 +220,7 @@ public class PsyiaVisualSettings
 		var outputObject = new JSONObject();
 		outputObject.Add("ParticleForm", (int)ParticleForm);
 		outputObject.Add("ParticleColor", (int)ParticleColor);
+		outputObject.Add("ParticleColorAmount", ParticleColorAmount);
 		outputObject.Add("ParticleSize", ParticleSize);
 		outputObject.Add("LineLength", LineLength);
 		outputObject.Add("ParticleShape", (int)ParticleShape);
@@ -222,6 +233,7 @@ public class PsyiaPhysicsSettings
 {
 	public float ParticleMass;
 	public float ParticleDamping;
+	public float TimeSpeed;
 	public bool FloorCollision;
 	
 	public PsyiaPhysicsSettings() { }
@@ -229,6 +241,7 @@ public class PsyiaPhysicsSettings
 	{
 		ParticleMass = copyTarget.ParticleMass;
 		ParticleDamping = copyTarget.ParticleDamping;
+		TimeSpeed = copyTarget.TimeSpeed;
 		FloorCollision = copyTarget.FloorCollision;
 	}
 	
@@ -237,6 +250,7 @@ public class PsyiaPhysicsSettings
 		var outputObject = new JSONObject();
 		outputObject.Add("ParticleMass", ParticleMass);
 		outputObject.Add("ParticleDamping", ParticleDamping);
+		outputObject.Add("TimeSpeed", TimeSpeed);
 		outputObject.Add("FloorCollision", FloorCollision);
 		return outputObject;
 	}

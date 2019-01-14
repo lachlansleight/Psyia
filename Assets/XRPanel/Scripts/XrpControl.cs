@@ -64,12 +64,19 @@ namespace XRP
 			if (_debugRenderer != null) ShowDebugColor();
 
 			_pointerIndicatorCurrentSize = Mathf.Lerp(_pointerIndicatorCurrentSize, _pointerIndicatorTargetSize, 0.1f);
-			_pointerIndicator.localScale = _pointerIndicatorCurrentSize * new Vector3(
-				1f / transform.lossyScale.x,
-				1f / transform.lossyScale.y,
-				1f / transform.lossyScale.z
-			);
-			
+			var newSize = _pointerIndicatorCurrentSize * new Vector3(
+				 1f / transform.lossyScale.x,
+				 1f / transform.lossyScale.y,
+				 1f / transform.lossyScale.z
+			 );
+			if (float.IsNaN(newSize.x) || float.IsNaN(newSize.y) || float.IsNaN(newSize.z)) {
+				_pointerIndicator.localScale = Vector3.zero;
+			} else if (float.IsInfinity(newSize.x) || float.IsInfinity(newSize.y) || float.IsInfinity(newSize.z)) {
+				_pointerIndicator.localScale = Vector3.zero;
+			} else {
+				_pointerIndicator.localScale = newSize;
+			}
+
 			if (ActivePointer == null) return;
 			
 			if (CurrentState != State.Press && CurrentState != State.Disabled) CheckForPress();

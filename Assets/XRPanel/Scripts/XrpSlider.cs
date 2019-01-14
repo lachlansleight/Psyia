@@ -81,5 +81,11 @@ namespace XRP
 				OnValueChangedEvent.Invoke(CurrentValue);
 			}
 		}
+		
+		public void Bang()
+		{
+			OnValueChangedEvent.Invoke(CurrentValue);
+			OnValueChanged?.Invoke(CurrentValue);
+		}
 	}
 }

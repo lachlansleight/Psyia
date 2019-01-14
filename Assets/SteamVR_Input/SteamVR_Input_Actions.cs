@@ -29,6 +29,8 @@ namespace Valve.VR
         
         public static SteamVR_Action_Boolean @__actions_Psyia_in_ToggleMenu;
         
+        public static SteamVR_Action_Boolean @__actions_Psyia_in_SlowTime;
+        
         public static SteamVR_Action_Vibration @__actions_Psyia_out_Haptic;
         
         public static void Dynamic_InitializeActions()
@@ -39,6 +41,7 @@ namespace Valve.VR
             SteamVR_Input.@__actions_Psyia_in_SkeletonLeftHand.Initialize();
             SteamVR_Input.@__actions_Psyia_in_SpawnParticles.Initialize();
             SteamVR_Input.@__actions_Psyia_in_ToggleMenu.Initialize();
+            SteamVR_Input.@__actions_Psyia_in_SlowTime.Initialize();
             SteamVR_Input.@__actions_Psyia_out_Haptic.Initialize();
         }
         
@@ -50,6 +53,7 @@ namespace Valve.VR
             Valve.VR.SteamVR_Input.@__actions_Psyia_in_SkeletonLeftHand = ((SteamVR_Action_Skeleton)(SteamVR_Input_References.GetAction("__actions_Psyia_in_SkeletonLeftHand")));
             Valve.VR.SteamVR_Input.@__actions_Psyia_in_SpawnParticles = ((SteamVR_Action_Boolean)(SteamVR_Input_References.GetAction("__actions_Psyia_in_SpawnParticles")));
             Valve.VR.SteamVR_Input.@__actions_Psyia_in_ToggleMenu = ((SteamVR_Action_Boolean)(SteamVR_Input_References.GetAction("__actions_Psyia_in_ToggleMenu")));
+            Valve.VR.SteamVR_Input.@__actions_Psyia_in_SlowTime = ((SteamVR_Action_Boolean)(SteamVR_Input_References.GetAction("__actions_Psyia_in_SlowTime")));
             Valve.VR.SteamVR_Input.@__actions_Psyia_out_Haptic = ((SteamVR_Action_Vibration)(SteamVR_Input_References.GetAction("__actions_Psyia_out_Haptic")));
             Valve.VR.SteamVR_Input.actions = new Valve.VR.SteamVR_Action[] {
                     Valve.VR.SteamVR_Input.@__actions_Psyia_in_ApplyForce,
@@ -58,6 +62,7 @@ namespace Valve.VR
                     Valve.VR.SteamVR_Input.@__actions_Psyia_in_SkeletonLeftHand,
                     Valve.VR.SteamVR_Input.@__actions_Psyia_in_SpawnParticles,
                     Valve.VR.SteamVR_Input.@__actions_Psyia_in_ToggleMenu,
+                    Valve.VR.SteamVR_Input.@__actions_Psyia_in_SlowTime,
                     Valve.VR.SteamVR_Input.@__actions_Psyia_out_Haptic};
             Valve.VR.SteamVR_Input.actionsIn = new Valve.VR.SteamVR_Action_In[] {
                     Valve.VR.SteamVR_Input.@__actions_Psyia_in_ApplyForce,
@@ -65,7 +70,8 @@ namespace Valve.VR
                     Valve.VR.SteamVR_Input.@__actions_Psyia_in_SkeletonRightHand,
                     Valve.VR.SteamVR_Input.@__actions_Psyia_in_SkeletonLeftHand,
                     Valve.VR.SteamVR_Input.@__actions_Psyia_in_SpawnParticles,
-                    Valve.VR.SteamVR_Input.@__actions_Psyia_in_ToggleMenu};
+                    Valve.VR.SteamVR_Input.@__actions_Psyia_in_ToggleMenu,
+                    Valve.VR.SteamVR_Input.@__actions_Psyia_in_SlowTime};
             Valve.VR.SteamVR_Input.actionsOut = new Valve.VR.SteamVR_Action_Out[] {
                     Valve.VR.SteamVR_Input.@__actions_Psyia_out_Haptic};
             Valve.VR.SteamVR_Input.actionsVibration = new Valve.VR.SteamVR_Action_Vibration[] {
@@ -74,7 +80,8 @@ namespace Valve.VR
                     Valve.VR.SteamVR_Input.@__actions_Psyia_in_Pose};
             Valve.VR.SteamVR_Input.actionsBoolean = new Valve.VR.SteamVR_Action_Boolean[] {
                     Valve.VR.SteamVR_Input.@__actions_Psyia_in_SpawnParticles,
-                    Valve.VR.SteamVR_Input.@__actions_Psyia_in_ToggleMenu};
+                    Valve.VR.SteamVR_Input.@__actions_Psyia_in_ToggleMenu,
+                    Valve.VR.SteamVR_Input.@__actions_Psyia_in_SlowTime};
             Valve.VR.SteamVR_Input.actionsSingle = new Valve.VR.SteamVR_Action_Single[] {
                     Valve.VR.SteamVR_Input.@__actions_Psyia_in_ApplyForce};
             Valve.VR.SteamVR_Input.actionsVector2 = new Valve.VR.SteamVR_Action_Vector2[0];
@@ -85,7 +92,8 @@ namespace Valve.VR
             Valve.VR.SteamVR_Input.actionsNonPoseNonSkeletonIn = new Valve.VR.SteamVR_Action_In[] {
                     Valve.VR.SteamVR_Input.@__actions_Psyia_in_ApplyForce,
                     Valve.VR.SteamVR_Input.@__actions_Psyia_in_SpawnParticles,
-                    Valve.VR.SteamVR_Input.@__actions_Psyia_in_ToggleMenu};
+                    Valve.VR.SteamVR_Input.@__actions_Psyia_in_ToggleMenu,
+                    Valve.VR.SteamVR_Input.@__actions_Psyia_in_SlowTime};
         }
     }
 }
