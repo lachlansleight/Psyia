@@ -1,0 +1,62 @@
+{
+    "System" : {
+        "MaxParticleCount" : 474,
+        "Antialiasing" : 2,
+        "Bloom" : true
+    },
+    "Visual" : {
+        "ParticleForm" : 2,
+        "ParticleColor" : 4,
+        "ParticleSize" : 0.033708143979311,
+        "LineLength" : 0.0399999991059303,
+        "ParticleShape" : 4
+    },
+    "Physics" : {
+        "ParticleMass" : 0.5,
+        "ParticleDamping" : 0.25,
+        "FloorCollision" : false
+    },
+    "Audio" : {
+        "VisualsAudioreactivity" : 0.5,
+        "PhysicsAudioreactivity" : 0.5,
+        "Volume" : 1,
+        "Loop" : false,
+        "SlowWithTime" : true
+    },
+    "Controller" : {
+        "ControllerSymmetry" : 2,
+        "ControllerModels" : false,
+        "ControllerDistance" : 0,
+        "ControllerHaptics" : true
+    },
+    "ForceLeft" : {
+        "ForceShape" : 3,
+        "ForceAttenuation" : 4,
+        "ForceStrength" : 0.100000001490116,
+        "AttenuationDistance" : 5,
+        "SofteningFactor" : 0.200000002980232,
+        "Wavelength" : 0.200000002980232
+    },
+    "ForceRight" : {
+        "ForceShape" : 0,
+        "ForceAttenuation" : 5,
+        "ForceStrength" : 0.0299794226884842,
+        "AttenuationDistance" : 0.0588831305503845,
+        "SofteningFactor" : 0.200000002980232,
+        "Wavelength" : 0.200000002980232
+    },
+    "EmitterLeft" : {
+        "EmitterCount" : 2000,
+        "EmitterRadius" : 0.00999999977648258,
+        "EmitterVelocity" : 0.00499999988824129,
+        "VelocitySpread" : 1,
+        "InheritVelocity" : 0.0500000007450581
+    },
+    "EmitterRight" : {
+        "EmitterCount" : 2000,
+        "EmitterRadius" : 0.00999999977648258,
+        "EmitterVelocity" : 0.00499999988824129,
+        "VelocitySpread" : 1,
+        "InheritVelocity" : 0.0500000007450581
+    }
+}
