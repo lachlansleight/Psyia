@@ -588,7 +588,7 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 		CurrentSettings.CopyValuesFrom(TestJson.text);
 		ApplySettings();
 		ApplyParticleCount();
-		ResetEmitter.Emit(ResetEmitter.StartEmitCount);
+		//ResetEmitter.Emit(ResetEmitter.StartEmitCount);
 	}
 	#endif
 

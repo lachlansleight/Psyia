@@ -17,8 +17,7 @@ public class ModeChoreography : MonoBehaviour
 		public string ArtistName;
 		public string Tip;
 		public PsyiaEmitter Emitter;
-		//TODO: Implement this
-		//public SystemPreset Preset;
+		public TextAsset PresetJson;
 	}
 
 	[Header("Fader")]
@@ -29,6 +28,8 @@ public class ModeChoreography : MonoBehaviour
 	public Color DefaultPsyiaColor = new Color(1f, 1f, 1f, 0.25f);
 
 	public ComputeRenderer PsyiaRenderer;
+
+	public PsyiaSettingsApplicator SettingsApplicator;
 
 	public ModeIntroCanvas IntroCanvas;
 
@@ -163,10 +164,9 @@ public class ModeChoreography : MonoBehaviour
 
 		LeftController.localScale = Vector3.one;
 		RightController.localScale = Vector3.one;
-		
-		//TODO: Implement this
-		//SetSystemVariables(targetMode.Preset);
-		//ResetSystem
+
+		SettingsApplicator.TestJson = targetMode.PresetJson;
+		SettingsApplicator.ApplyTestJson();
 		PsyiaRenderer.RenderMaterial.color = DefaultPsyiaColor;
 		PsyiaRenderer.enabled = true;
 		targetMode.Emitter.Emit(targetMode.Emitter.StartEmitCount);
