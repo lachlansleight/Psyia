@@ -4,32 +4,33 @@ using System.Runtime.Remoting.Messaging;
 
 public class PsyiaMusic : MonoBehaviour {
 
-	
-	
-	public float MinSpeed = 0.5f;
-	public bool SlowWithTime = false;
+	[Header("Required")]
 	public string[] ClipNames;
 	public AudioClip[] Clips;
-	public int CurrentTrack = 2;
-	public bool IsPlaying = false;
-
-	public bool HasBeenStopped = false;
-
-	public bool Loop = false;
-
+	
+	[Header("Properties")]
 	public float Volume = 1f;
-
-	private bool _initialized = false;
-
+	public int DefaultTrack = 2;
+	public float PitchLerpTime = 0.1f;
+	public bool Loop = false;
+	public bool AutoPlay = true;
+	
+	
+	[Header("Status")]
+	public int CurrentTrack = 2;
+	public float TimeInTrack;
+	public bool IsPlaying = false;
+	public bool HasBeenStopped = false;
+	public bool PlayingOneOff = false;
+	
 	private AudioSource _mySource;
-
+	private bool _initialized = false;
 	private float _targetPitch;
 	private float _currentPitch;
-	public float PitchLerpTime = 0.1f;
 
 	public void Start () {
 		_mySource = GetComponent<AudioSource>();
-		_mySource.clip = Clips[CurrentTrack];
+		_mySource.clip = Clips[DefaultTrack];
 	}
 	
 	public void Update () {
@@ -39,17 +40,25 @@ public class PsyiaMusic : MonoBehaviour {
 		_mySource.volume = Volume;
 		
 		//when the track ends, go to the next one (or loop this one)
-		if(!_mySource.isPlaying && !HasBeenStopped && _initialized) {
+		if(!_mySource.isPlaying && !HasBeenStopped && _initialized && AutoPlay) {
 			if(Loop) _mySource.Play();
 			else NextTrack();
 		}
 
 		_currentPitch = Mathf.Lerp(_currentPitch, _targetPitch, PitchLerpTime);
 		_mySource.pitch = _currentPitch;
+
+		TimeInTrack = _mySource.time;
 		
 		IsPlaying = _mySource.isPlaying;
 	}
 
+	public void SetClip(AudioClip clip)
+	{
+		_mySource.clip = clip;
+		PlayingOneOff = System.Array.IndexOf(Clips, clip) == -1;
+	}
+	
 	public void SetPitch(float value)
 	{
 		_targetPitch = value;
@@ -66,6 +75,10 @@ public class PsyiaMusic : MonoBehaviour {
 
 	public void NextTrack() {
 		CurrentTrack++;
+		if (PlayingOneOff) {
+			CurrentTrack = Random.Range(0, Clips.Length);
+			PlayingOneOff = false;
+		}
 		if(CurrentTrack >= Clips.Length) CurrentTrack = 0;
 		_mySource.Stop();
 		_mySource.clip = Clips[CurrentTrack];
@@ -88,7 +101,7 @@ public class PsyiaMusic : MonoBehaviour {
 
 	public void PlayPause() {
 		if (!_initialized) {
-			PlayFirstClip();
+			PlaySetClip();
 			return;
 		}
 		if(HasBeenStopped) {
@@ -100,9 +113,30 @@ public class PsyiaMusic : MonoBehaviour {
 		}
 	}
 
+	public void Pause()
+	{
+		HasBeenStopped = true;
+		_mySource.Pause();
+	}
+
+	public void Reset()
+	{
+		_mySource.clip = Clips[DefaultTrack];
+		_mySource.Stop();
+		HasBeenStopped = false;
+		_initialized = false;
+		PlayingOneOff = false;
+	}
+
 	public void PlayFirstClip() {
 
 		_mySource.clip = Clips[CurrentTrack];
+		_mySource.Play();
+		_initialized = true;
+	}
+
+	public void PlaySetClip()
+	{
 		_mySource.Play();
 		_initialized = true;
 	}

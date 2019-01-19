@@ -24,28 +24,51 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 	public Texture2D[] ColorTextures;
 	public ComputeRenderer TargetRenderer;
 	public ComputeShader ColorShader;
+	public SliderAudioHook ParticleColorAmountVis;
+	public SliderAudioHook ParticleSizeVis;
+	public SliderAudioHook LineLengthVis;
 
 	[Header("Physics Objects")]
 	public PhysicsManager PhysicsManager;
 	public GameObject FloorVisuals;
 	public TimeSlower TimeSlower;
+	public SliderAudioHook ParticleMassVis;
+	public SliderAudioHook ParticleDampingVis;
+	public SliderAudioHook TimeSpeedVis;
 
 	[Header("Audio Objects")]
 	public PsyiaMusic Music;
 	public VisualisationStrengthSetter VisualisationStrengthSetter;
 
 	[Header("Controller Objects")]
+	public SliderAudioHook ControllerDistanceVis;
 	public PsyiaController LeftController;
 	public PsyiaForce LeftForce;
 	public PsyiaEmitter LeftEmitter;
 	public ControllerSymmetry LeftSymmetry;
 	public ControllerHaptics LeftHaptics;
+	public SliderAudioHook LeftForceStrengthVis;
+	public SliderAudioHook LeftForceAttenuationDistanceVis;
+	public SliderAudioHook LeftForceSofteningFactorVis;
+	public SliderAudioHook LeftForceWavelengthVis;
+	public SliderAudioHook LeftEmitterRadiusVis;
+	public SliderAudioHook LeftEmitterVelocityVis;
+	public SliderAudioHook LeftEmitterVelocitySpreadVis;
+	public SliderAudioHook LeftEmitterInheritVelocityVis;
 	[Space(10)]
 	public PsyiaController RightController;
 	public PsyiaForce RightForce;
 	public PsyiaEmitter RightEmitter;
 	public ControllerSymmetry RightSymmetry;
 	public ControllerHaptics RightHaptics;
+	public SliderAudioHook RightForceStrengthVis;
+	public SliderAudioHook RightForceAttenuationDistanceVis;
+	public SliderAudioHook RightForceSofteningFactorVis;
+	public SliderAudioHook RightForceWavelengthVis;
+	public SliderAudioHook RightEmitterRadiusVis;
+	public SliderAudioHook RightEmitterVelocityVis;
+	public SliderAudioHook RightEmitterVelocitySpreadVis;
+	public SliderAudioHook RightEmitterInheritVelocityVis;
 	
 	public void Awake()
 	{
@@ -130,11 +153,15 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 		if (CurrentSettings.Visual.ParticleColorAmount == newValue && !skipChangeCheck) return;
 
 		CurrentSettings.Visual.ParticleColorAmount = newValue;
-
 		ColorShader.SetFloat("ColorAmount", CurrentSettings.Visual.ParticleColorAmount);
 	}
+	public void SetParticleColorAmountVis(int newValue, bool skipChangeCheck = false)
+	{
+		if ((int)CurrentSettings.Visual.ParticleColorAmountVis == newValue && !skipChangeCheck) return;
 
-	
+		CurrentSettings.Visual.ParticleColorAmountVis = (SliderAudioHook.AudioDataSource)newValue;
+		ParticleColorAmountVis.DataSource = CurrentSettings.Visual.ParticleColorAmountVis;
+	}
 	public void SetParticleSize(float newValue, bool skipChangeCheck = false)
 	{
 		if (CurrentSettings.Visual.ParticleSize == newValue && !skipChangeCheck) return;
@@ -142,13 +169,26 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 		CurrentSettings.Visual.ParticleSize = newValue;
 		foreach(var m in ParticleMaterials) m.SetFloat("_PointSize", CurrentSettings.Visual.ParticleSize);
 	}
-	
+	public void SetParticleSizeVis(int newValue, bool skipChangeCheck = false)
+	{
+		if ((int)CurrentSettings.Visual.ParticleSizeVis == newValue && !skipChangeCheck) return;
+		
+		CurrentSettings.Visual.ParticleSizeVis = (SliderAudioHook.AudioDataSource)newValue;
+		ParticleSizeVis.DataSource = CurrentSettings.Visual.ParticleSizeVis;
+	}
 	public void SetLineLength(float newValue, bool skipChangeCheck = false)
 	{
 		if(CurrentSettings.Visual.LineLength == newValue && !skipChangeCheck) return;
 		
 		CurrentSettings.Visual.LineLength = newValue;
 		foreach(var m in ParticleMaterials) m.SetFloat("_LineLength", CurrentSettings.Visual.LineLength);
+	}
+	public void SetLineLengthVis(int newValue, bool skipChangeCheck = false)
+	{
+		if((int)CurrentSettings.Visual.LineLengthVis == newValue && !skipChangeCheck) return;
+		
+		CurrentSettings.Visual.LineLengthVis = (SliderAudioHook.AudioDataSource)newValue;
+		LineLengthVis.DataSource = CurrentSettings.Visual.LineLengthVis;
 	}
 	public void SetParticleShape(int newValue, bool skipChangeCheck = false)
 	{
@@ -165,6 +205,13 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 		CurrentSettings.Physics.ParticleMass = newValue;
 		PhysicsManager.ParticleMinimumMass = CurrentSettings.Physics.ParticleMass;
 	}
+	public void SetParticleMassVis(int newValue, bool skipChangeCheck = false)
+	{
+		if((int)CurrentSettings.Physics.ParticleMassVis == newValue && !skipChangeCheck) return;
+		
+		CurrentSettings.Physics.ParticleMassVis = (SliderAudioHook.AudioDataSource)newValue;
+		ParticleMassVis.DataSource = CurrentSettings.Physics.ParticleMassVis;
+	}
 	public void SetParticleDamping(float newValue, bool skipChangeCheck = false)
 	{
 		if(CurrentSettings.Physics.ParticleDamping == newValue && !skipChangeCheck) return;
@@ -172,12 +219,26 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 		CurrentSettings.Physics.ParticleDamping = newValue;
 		PhysicsManager.ParticleDrag = CurrentSettings.Physics.ParticleDamping;
 	}
+	public void SetParticleDampingVis(int newValue, bool skipChangeCheck = false)
+	{
+		if((int)CurrentSettings.Physics.ParticleDampingVis == newValue && !skipChangeCheck) return;
+		
+		CurrentSettings.Physics.ParticleDampingVis = (SliderAudioHook.AudioDataSource)newValue;
+		ParticleDampingVis.DataSource = CurrentSettings.Physics.ParticleDampingVis;
+	}
 	public void SetTimeSpeed(float newValue, bool skipChangeCheck = false)
 	{
 		if(CurrentSettings.Physics.TimeSpeed == newValue && !skipChangeCheck) return;
 		
 		CurrentSettings.Physics.TimeSpeed = newValue;
 		TimeSlower.TimeScaleMultiplier = CurrentSettings.Physics.TimeSpeed;
+	}
+	public void SetTimeSpeedVis(int newValue, bool skipChangeCheck = false)
+	{
+		if((int)CurrentSettings.Physics.TimeSpeedVis == newValue && !skipChangeCheck) return;
+		
+		CurrentSettings.Physics.TimeSpeedVis = (SliderAudioHook.AudioDataSource)newValue;
+		TimeSpeedVis.DataSource = CurrentSettings.Physics.TimeSpeedVis;
 	}
 	public void SetFloorCollision(bool newValue, bool skipChangeCheck = false)
 	{
@@ -246,6 +307,13 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 		CurrentSettings.Controller.ControllerDistance = newValue;
 		LeftController.ControllerDistance = RightController.ControllerDistance = CurrentSettings.Controller.ControllerDistance;
 	}
+	public void SetControllerDistanceVis(int newValue, bool skipChangeCheck = false)
+	{
+		if((int)CurrentSettings.Controller.ControllerDistanceVis == newValue && !skipChangeCheck) return;
+		
+		CurrentSettings.Controller.ControllerDistanceVis = (SliderAudioHook.AudioDataSource)newValue;
+		ControllerDistanceVis.DataSource = CurrentSettings.Controller.ControllerDistanceVis;
+	}
 	public void SetControllerHaptics(bool newValue, bool skipChangeCheck = false)
 	{
 		if(CurrentSettings.Controller.ControllerHaptics == newValue && !skipChangeCheck) return;
@@ -282,12 +350,26 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 		CurrentSettings.ForceLeft.ForceStrength = newValue;
 		LeftForce.Strength = CurrentSettings.ForceLeft.ForceStrength;
 	}
+	public void SetLeftForceStrengthVis(int newValue, bool skipChangeCheck = false)
+	{
+		if((int)CurrentSettings.ForceLeft.ForceStrengthVis == newValue && !skipChangeCheck) return;
+		
+		CurrentSettings.ForceLeft.ForceStrengthVis = (SliderAudioHook.AudioDataSource)newValue;
+		LeftForceStrengthVis.DataSource = CurrentSettings.ForceLeft.ForceStrengthVis;
+	}
 	public void SetLeftForceAttenuationDistance(float newValue, bool skipChangeCheck = false)
 	{
 		if(CurrentSettings.ForceLeft.AttenuationDistance == newValue && !skipChangeCheck) return;
 		
 		CurrentSettings.ForceLeft.AttenuationDistance = newValue;
 		LeftForce.AttenuationDistance = CurrentSettings.ForceLeft.AttenuationDistance;
+	}
+	public void SetLeftForceAttenuationDistanceVis(int newValue, bool skipChangeCheck = false)
+	{
+		if((int)CurrentSettings.ForceLeft.AttenuationDistanceVis == newValue && !skipChangeCheck) return;
+		
+		CurrentSettings.ForceLeft.AttenuationDistanceVis = (SliderAudioHook.AudioDataSource)newValue;
+		LeftForceAttenuationDistanceVis.DataSource = CurrentSettings.ForceLeft.AttenuationDistanceVis;
 	}
 	public void SetLeftForceAttenuationSofteningFactor(float newValue, bool skipChangeCheck = false)
 	{
@@ -296,12 +378,26 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 		CurrentSettings.ForceLeft.SofteningFactor = newValue;
 		LeftForce.AttenuationDistance = CurrentSettings.ForceLeft.SofteningFactor;
 	}
+	public void SetLeftForceAttenuationSofteningFactorVis(int newValue, bool skipChangeCheck = false)
+	{
+		if((int)CurrentSettings.ForceLeft.SofteningFactorVis == newValue && !skipChangeCheck) return;
+		
+		CurrentSettings.ForceLeft.SofteningFactorVis = (SliderAudioHook.AudioDataSource)newValue;
+		LeftForceSofteningFactorVis.DataSource = CurrentSettings.ForceLeft.SofteningFactorVis;
+	}
 	public void SetLeftForceAttenuationWavelength(float newValue, bool skipChangeCheck = false)
 	{
 		if(CurrentSettings.ForceLeft.Wavelength == newValue && !skipChangeCheck) return;
 		
 		CurrentSettings.ForceLeft.Wavelength = newValue;
 		LeftForce.AttenuationDistance = CurrentSettings.ForceLeft.Wavelength;
+	}
+	public void SetLeftForceAttenuationWavelengthVis(int newValue, bool skipChangeCheck = false)
+	{
+		if((int)CurrentSettings.ForceLeft.WavelengthVis == newValue && !skipChangeCheck) return;
+		
+		CurrentSettings.ForceLeft.WavelengthVis = (SliderAudioHook.AudioDataSource)newValue;
+		LeftForceWavelengthVis.DataSource = CurrentSettings.ForceLeft.WavelengthVis;
 	}
 	
 	public void SetRightForceShape(int newValue, bool skipChangeCheck = false)
@@ -332,12 +428,26 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 		CurrentSettings.ForceRight.ForceStrength = newValue;
 		RightForce.Strength = CurrentSettings.ForceRight.ForceStrength;
 	}
+	public void SetRightForceStrengthVis(int newValue, bool skipChangeCheck = false)
+	{
+		if((int)CurrentSettings.ForceRight.ForceStrengthVis == newValue && !skipChangeCheck) return;
+		
+		CurrentSettings.ForceRight.ForceStrengthVis = (SliderAudioHook.AudioDataSource)newValue;
+		RightForceStrengthVis.DataSource = CurrentSettings.ForceRight.ForceStrengthVis;
+	}
 	public void SetRightForceAttenuationDistance(float newValue, bool skipChangeCheck = false)
 	{
 		if(CurrentSettings.ForceRight.AttenuationDistance == newValue && !skipChangeCheck) return;
 		
 		CurrentSettings.ForceRight.AttenuationDistance = newValue;
 		RightForce.AttenuationDistance = CurrentSettings.ForceRight.AttenuationDistance;
+	}
+	public void SetRightForceAttenuationDistanceVis(int newValue, bool skipChangeCheck = false)
+	{
+		if((int)CurrentSettings.ForceRight.AttenuationDistanceVis == newValue && !skipChangeCheck) return;
+		
+		CurrentSettings.ForceRight.AttenuationDistanceVis = (SliderAudioHook.AudioDataSource)newValue;
+		RightForceAttenuationDistanceVis.DataSource = CurrentSettings.ForceRight.AttenuationDistanceVis;
 	}
 	public void SetRightForceAttenuationSofteningFactor(float newValue, bool skipChangeCheck = false)
 	{
@@ -346,12 +456,26 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 		CurrentSettings.ForceRight.SofteningFactor = newValue;
 		RightForce.AttenuationDistance = CurrentSettings.ForceRight.SofteningFactor;
 	}
+	public void SetRightForceAttenuationSofteningFactorVis(int newValue, bool skipChangeCheck = false)
+	{
+		if((int)CurrentSettings.ForceRight.SofteningFactorVis == newValue && !skipChangeCheck) return;
+		
+		CurrentSettings.ForceRight.SofteningFactorVis = (SliderAudioHook.AudioDataSource)newValue;
+		RightForceSofteningFactorVis.DataSource = CurrentSettings.ForceRight.SofteningFactorVis;
+	}
 	public void SetRightForceAttenuationWavelength(float newValue, bool skipChangeCheck = false)
 	{
 		if(CurrentSettings.ForceRight.Wavelength == newValue && !skipChangeCheck) return;
 		
 		CurrentSettings.ForceRight.Wavelength = newValue;
 		RightForce.AttenuationDistance = CurrentSettings.ForceRight.Wavelength;
+	}
+	public void SetRightForceAttenuationWavelengthVis(int newValue, bool skipChangeCheck = false)
+	{
+		if((int)CurrentSettings.ForceRight.WavelengthVis == newValue && !skipChangeCheck) return;
+		
+		CurrentSettings.ForceRight.WavelengthVis = (SliderAudioHook.AudioDataSource)newValue;
+		RightForceWavelengthVis.DataSource = CurrentSettings.ForceRight.WavelengthVis;
 	}
 	public void SetLeftEmitterCount(int newValue, bool skipChangeCheck = false)
 	{
@@ -367,6 +491,13 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 		CurrentSettings.EmitterLeft.EmitterRadius = newValue;
 		LeftEmitter.Settings.EmissionRadius = CurrentSettings.EmitterLeft.EmitterRadius;
 	}
+	public void SetLeftEmitterRadiusVis(int newValue, bool skipChangeCheck = false)
+	{
+		if((int)CurrentSettings.EmitterLeft.EmitterRadiusVis == newValue && !skipChangeCheck) return;
+		
+		CurrentSettings.EmitterLeft.EmitterRadiusVis = (SliderAudioHook.AudioDataSource)newValue;
+		LeftEmitterRadiusVis.DataSource = CurrentSettings.EmitterLeft.EmitterRadiusVis;
+	}
 	public void SetLeftEmitterVelocity(float newValue, bool skipChangeCheck = false)
 	{
 		if(CurrentSettings.EmitterLeft.EmitterVelocity == newValue && !skipChangeCheck) return;
@@ -375,6 +506,13 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 		LeftEmitter.Settings.MinSpawnVelocity = CurrentSettings.EmitterLeft.EmitterVelocity * 0.5f;
 		LeftEmitter.Settings.MaxSpawnVelocity = CurrentSettings.EmitterLeft.EmitterVelocity * 1.5f;
 	}
+	public void SetLeftEmitterVelocityVis(float newValue, bool skipChangeCheck = false)
+	{
+		if((int)CurrentSettings.EmitterLeft.EmitterVelocity == newValue && !skipChangeCheck) return;
+		
+		CurrentSettings.EmitterLeft.EmitterVelocityVis = (SliderAudioHook.AudioDataSource)newValue;
+		LeftEmitterVelocityVis.DataSource = CurrentSettings.EmitterLeft.EmitterVelocityVis;
+	}
 	public void SetLeftEmitterVelocitySpread(float newValue, bool skipChangeCheck = false)
 	{
 		if(CurrentSettings.EmitterLeft.VelocitySpread == newValue && !skipChangeCheck) return;
@@ -382,12 +520,26 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 		CurrentSettings.EmitterLeft.VelocitySpread = newValue;
 		LeftEmitter.Settings.RandomiseDirection = CurrentSettings.EmitterLeft.VelocitySpread;
 	}
+	public void SetLeftEmitterVelocitySpreadVis(int newValue, bool skipChangeCheck = false)
+	{
+		if((int)CurrentSettings.EmitterLeft.VelocitySpreadVis == newValue && !skipChangeCheck) return;
+		
+		CurrentSettings.EmitterLeft.VelocitySpreadVis = (SliderAudioHook.AudioDataSource)newValue;
+		LeftEmitterVelocitySpreadVis.DataSource = CurrentSettings.EmitterLeft.VelocitySpreadVis;
+	}
 	public void SetLeftEmitterInheritVelocity(float newValue, bool skipChangeCheck = false)
 	{
 		if(CurrentSettings.EmitterLeft.InheritVelocity == newValue && !skipChangeCheck) return;
 		
 		CurrentSettings.EmitterLeft.InheritVelocity = newValue;
 		LeftEmitter.Settings.InheritVelocity = CurrentSettings.EmitterLeft.InheritVelocity;
+	}
+	public void SetLeftEmitterInheritVelocityVis(int newValue, bool skipChangeCheck = false)
+	{
+		if((int)CurrentSettings.EmitterLeft.InheritVelocityVis == newValue && !skipChangeCheck) return;
+		
+		CurrentSettings.EmitterLeft.InheritVelocityVis = (SliderAudioHook.AudioDataSource)newValue;
+		LeftEmitterInheritVelocityVis.DataSource = CurrentSettings.EmitterLeft.InheritVelocityVis;
 	}
 	
 	public void SetRightEmitterCount(int newValue, bool skipChangeCheck = false)
@@ -404,6 +556,13 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 		CurrentSettings.EmitterRight.EmitterRadius = newValue;
 		RightEmitter.Settings.EmissionRadius = CurrentSettings.EmitterRight.EmitterRadius;
 	}
+	public void SetRightEmitterRadiusVis(int newValue, bool skipChangeCheck = false)
+	{
+		if((int)CurrentSettings.EmitterRight.EmitterRadiusVis == newValue && !skipChangeCheck) return;
+		
+		CurrentSettings.EmitterRight.EmitterRadiusVis = (SliderAudioHook.AudioDataSource)newValue;
+		RightEmitterRadiusVis.DataSource = CurrentSettings.EmitterRight.EmitterRadiusVis;
+	}
 	public void SetRightEmitterVelocity(float newValue, bool skipChangeCheck = false)
 	{
 		if(CurrentSettings.EmitterRight.EmitterVelocity == newValue && !skipChangeCheck) return;
@@ -412,6 +571,13 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 		RightEmitter.Settings.MinSpawnVelocity = CurrentSettings.EmitterRight.EmitterVelocity * 0.5f;
 		RightEmitter.Settings.MaxSpawnVelocity = CurrentSettings.EmitterRight.EmitterVelocity * 1.5f;
 	}
+	public void SetRightEmitterVelocityVis(float newValue, bool skipChangeCheck = false)
+	{
+		if((int)CurrentSettings.EmitterRight.EmitterVelocity == newValue && !skipChangeCheck) return;
+		
+		CurrentSettings.EmitterRight.EmitterVelocityVis = (SliderAudioHook.AudioDataSource)newValue;
+		RightEmitterVelocityVis.DataSource = CurrentSettings.EmitterRight.EmitterVelocityVis;
+	}
 	public void SetRightEmitterVelocitySpread(float newValue, bool skipChangeCheck = false)
 	{
 		if(CurrentSettings.EmitterRight.VelocitySpread == newValue && !skipChangeCheck) return;
@@ -419,12 +585,26 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 		CurrentSettings.EmitterRight.VelocitySpread = newValue;
 		RightEmitter.Settings.RandomiseDirection = CurrentSettings.EmitterRight.VelocitySpread;
 	}
+	public void SetRightEmitterVelocitySpreadVis(int newValue, bool skipChangeCheck = false)
+	{
+		if((int)CurrentSettings.EmitterRight.VelocitySpreadVis == newValue && !skipChangeCheck) return;
+		
+		CurrentSettings.EmitterRight.VelocitySpreadVis = (SliderAudioHook.AudioDataSource)newValue;
+		RightEmitterVelocitySpreadVis.DataSource = CurrentSettings.EmitterRight.VelocitySpreadVis;
+	}
 	public void SetRightEmitterInheritVelocity(float newValue, bool skipChangeCheck = false)
 	{
 		if(CurrentSettings.EmitterRight.InheritVelocity == newValue && !skipChangeCheck) return;
 		
 		CurrentSettings.EmitterRight.InheritVelocity = newValue;
 		RightEmitter.Settings.InheritVelocity = CurrentSettings.EmitterRight.InheritVelocity;
+	}
+	public void SetRightEmitterInheritVelocityVis(int newValue, bool skipChangeCheck = false)
+	{
+		if((int)CurrentSettings.EmitterRight.InheritVelocityVis == newValue && !skipChangeCheck) return;
+		
+		CurrentSettings.EmitterRight.InheritVelocityVis = (SliderAudioHook.AudioDataSource)newValue;
+		RightEmitterInheritVelocityVis.DataSource = CurrentSettings.EmitterRight.InheritVelocityVis;
 	}
 	
 	

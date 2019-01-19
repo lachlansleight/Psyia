@@ -80,4 +80,19 @@ public class VisualSettings : MonoBehaviour
 	{
 		SettingsApplicator.SetParticleSize(sizeSelection);
 	}
+
+	public void SetParticleColorAmountVis(int value)
+	{
+		SettingsApplicator.SetParticleColorAmountVis(value);
+	}
+	
+	public void SetLineLengthVis(int value)
+	{
+		SettingsApplicator.SetLineLengthVis(value);
+	}
+	
+	public void SetParticleSizeVis(int value)
+	{
+		SettingsApplicator.SetParticleSizeVis(value);
+	}
 }

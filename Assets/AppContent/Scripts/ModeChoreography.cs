@@ -5,6 +5,7 @@ using UCTK;
 using UnityEngine;
 using UnityEngine.UI;
 using Valve.VR;
+using XRP;
 
 public class ModeChoreography : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class ModeChoreography : MonoBehaviour
 		public string Tip;
 		public PsyiaEmitter Emitter;
 		public TextAsset PresetJson;
+		public ModeSettingsPanel Panel;
 	}
 
 	[Header("Fader")]
@@ -36,7 +38,7 @@ public class ModeChoreography : MonoBehaviour
 
 	public Mode[] Modes;
 
-	public AudioSource ModeAudio;
+	public PsyiaMusic Music;
 
 	public Transform LeftController;
 	public Transform RightController;
@@ -80,7 +82,7 @@ public class ModeChoreography : MonoBehaviour
 
 	public IEnumerator ResetEverything()
 	{
-		ModeAudio.Stop();
+		Music.Reset();
 		IntroCanvas.CanvasGroup.alpha = 0f;
 		IntroCanvas.gameObject.SetActive(false);
 		FaderObject.SetActive(false);
@@ -97,6 +99,12 @@ public class ModeChoreography : MonoBehaviour
 		foreach (var m in Modes) {
 			m.TouchSphere.gameObject.SetActive(true);
 			m.TouchSphere.LerpToScale(1f, 0.3f);
+			
+			if (m.Panel.IsUnlocked()) {
+				m.Panel.gameObject.SetActive(true);
+				m.Panel.LerpToScale(1f, 0.3f);
+			}
+
 			yield return null;
 		}
 	}
@@ -110,6 +118,10 @@ public class ModeChoreography : MonoBehaviour
 
 		foreach (var m in Modes) {
 			m.TouchSphere.LerpToScale(0f, 0.3f, true);
+			
+			if (m.Panel.IsUnlocked()) {
+				m.Panel.LerpToScale(0f, 0.3f, true);
+			}
 		}
 		
 		for (var i = 0f; i < 1f; i += Time.deltaTime / FlashFadeTime) {
@@ -122,7 +134,10 @@ public class ModeChoreography : MonoBehaviour
 
 		IntroCanvas.gameObject.SetActive(true);
 		IntroCanvas.SetPositionInstantly();
-		IntroCanvas.SetTexts(targetMode.SongName, targetMode.ArtistName, targetMode.Tip);
+		var text = targetMode.ArtistName;
+		if(targetMode.Panel.InfiniteModeToggle.CurrentValue) 
+			text += "\n\nInfinite mode - hold the menu button to return";
+		IntroCanvas.SetTexts(targetMode.SongName, text, targetMode.Tip);
 		IntroCanvas.Fade(1f, 1f);
 
 		yield return new WaitForSeconds(5f);
@@ -153,11 +168,21 @@ public class ModeChoreography : MonoBehaviour
 		PsyiaRenderer.RenderMaterial.color = DefaultPsyiaColor;
 		PsyiaRenderer.enabled = true;
 		targetMode.Emitter.Emit(targetMode.Emitter.StartEmitCount);
-		
-		ModeAudio.clip = targetMode.Song;
-		ModeAudio.Play();
 
-		while (ModeAudio.time < ModeAudio.clip.length - 5f) {
+		
+		Music.SetClip(targetMode.Song);
+
+		Music.AutoPlay = targetMode.Panel.InfiniteModeToggle.CurrentValue;
+
+		if (!PlayerPrefs.HasKey("UsageCount")) {
+			PlayerPrefs.SetInt("UsageCount", 0);
+		}
+
+		PlayerPrefs.SetInt("UsageCount", PlayerPrefs.GetInt("UsageCount") + 1);
+		
+
+		//note - this means that if Auto Play is on, the only way back is using the menu button!
+		while (Music.TimeInTrack < targetMode.Song.length - 5f || Music.AutoPlay) {
 			yield return null;
 		}
 		
@@ -200,9 +225,16 @@ public class ModeChoreography : MonoBehaviour
 		MenuToggler.AllowMenuToggle = false;
 		MenuToggler.SetTargetValue(false);
 
+		Music.Reset();
+
 		foreach (var m in Modes) {
 			m.TouchSphere.gameObject.SetActive(true);
 			m.TouchSphere.LerpToScale(1f, 0.3f);
+			
+			if (m.Panel.IsUnlocked()) {
+				m.Panel.gameObject.SetActive(true);
+				m.Panel.LerpToScale(1f, 0.3f);
+			}
 		}
 	}
 

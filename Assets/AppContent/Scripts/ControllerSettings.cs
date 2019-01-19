@@ -49,15 +49,10 @@ public class ControllerSettings : MonoBehaviour
 		foreach (var go in RightPanels) go.SetActive(true);
 		RightSymmetryReporter.SetActive(false);
 		
-		var mode = (int) LeftForce.AttenuationMode;
-		LeftDistanceSlider.SetActive(mode > 0 && mode < 4 );
-		LeftDistanceButton.SetActive(LeftDistanceSlider.activeSelf);
-		LeftSofteningFactorSlider.SetActive(mode > 3 && mode < 6);
-		LeftSofteningFactorButton.SetActive(LeftSofteningFactorSlider.activeSelf);
-		LeftWavelengthSlider.SetActive(mode == 6);
-		LeftWavelengthButton.SetActive(LeftWavelengthSlider.activeSelf);
+		EnforceLeftAttenuationSliders();
+		EnforceRightAttenuationSliders();
 		
-		mode = (int) RightForce.AttenuationMode;
+		var mode = (int) RightForce.AttenuationMode;
 		RightDistanceSlider.SetActive(mode > 0 && mode < 4 );
 		RightDistanceButton.SetActive(RightDistanceSlider.activeSelf);
 		RightSofteningFactorSlider.SetActive(mode > 3 && mode < 6);
@@ -73,6 +68,28 @@ public class ControllerSettings : MonoBehaviour
 		}
 		Debug.Log(output);
 		#endif
+	}
+
+	private void EnforceLeftAttenuationSliders()
+	{
+		var mode = (int) LeftForce.AttenuationMode;
+		LeftDistanceSlider.SetActive(mode > 0 && mode < 4 );
+		LeftDistanceButton.SetActive(LeftDistanceSlider.activeSelf);
+		LeftSofteningFactorSlider.SetActive(mode > 3 && mode < 6);
+		LeftSofteningFactorButton.SetActive(LeftSofteningFactorSlider.activeSelf);
+		LeftWavelengthSlider.SetActive(mode == 6);
+		LeftWavelengthButton.SetActive(LeftWavelengthSlider.activeSelf);
+	}
+
+	private void EnforceRightAttenuationSliders()
+	{
+		var mode = (int) RightForce.AttenuationMode;
+		RightDistanceSlider.SetActive(mode > 0 && mode < 4 );
+		RightDistanceButton.SetActive(RightDistanceSlider.activeSelf);
+		RightSofteningFactorSlider.SetActive(mode > 3 && mode < 6);
+		RightSofteningFactorButton.SetActive(RightSofteningFactorSlider.activeSelf);
+		RightWavelengthSlider.SetActive(mode == 6);
+		RightWavelengthButton.SetActive(RightWavelengthSlider.activeSelf);
 	}
 
 	public void SetSymmetry(int value)
@@ -95,6 +112,11 @@ public class ControllerSettings : MonoBehaviour
 	{
 		SettingsApplicator.SetControllerDistance(value);
 	}
+	public void SetControllerDistanceVis(int value)
+	{
+		Debug.Log("Setting controller distance vis to " + value);
+		SettingsApplicator.SetControllerDistanceVis(value);
+	}
 
 	public void SetControllerHaptics(bool value)
 	{
@@ -114,51 +136,85 @@ public class ControllerSettings : MonoBehaviour
 	public void SetLeftForceAttenuationMode(int value)
 	{
 		SettingsApplicator.SetLeftForceAttenuationMode(value);	
+		EnforceLeftAttenuationSliders();
 	}
 	
 	public void SetRightForceAttenuationMode(int value)
 	{
 		SettingsApplicator.SetRightForceAttenuationMode(value);
+		EnforceRightAttenuationSliders();
 	}
 
 	public void SetLeftForceStrength(float value)
 	{
 		SettingsApplicator.SetLeftForceStrength(value);
 	}
+	public void SetLeftForceStrengthVis(int value)
+	{
+		SettingsApplicator.SetLeftForceStrengthVis(value);
+	}
 
 	public void SetRightForceStrength(float value)
 	{
 		SettingsApplicator.SetRightForceStrength(value);
+	}
+	public void SetRightForceStrengthVis(int value)
+	{
+		SettingsApplicator.SetRightForceStrengthVis(value);
 	}
 
 	public void SetLeftForceAttenuationDistance(float value)
 	{
 		SettingsApplicator.SetLeftForceAttenuationDistance(value);
 	}
+	public void SetLeftForceAttenuationDistanceVis(int value)
+	{
+		SettingsApplicator.SetLeftForceAttenuationDistanceVis(value);
+	}
 
 	public void SetRightForceAttenuationDistance(float value)
 	{
 		SettingsApplicator.SetRightForceAttenuationDistance(value);
+	}
+	public void SetRightForceAttenuationDistanceVis(int value)
+	{
+		SettingsApplicator.SetRightForceAttenuationDistanceVis(value);
 	}
 	
 	public void SetLeftForceAttenuationSofteningFactor(float value)
 	{
 		SettingsApplicator.SetLeftForceAttenuationSofteningFactor(value);
 	}
+	public void SetLeftForceAttenuationSofteningFactorVis(int value)
+	{
+		SettingsApplicator.SetLeftForceAttenuationSofteningFactorVis(value);
+	}
 
 	public void SetRightForceAttenuationSofteningFactor(float value)
 	{
 		SettingsApplicator.SetRightForceAttenuationDistance(value);
+	}
+	public void SetRightForceAttenuationSofteningFactorVis(int value)
+	{
+		SettingsApplicator.SetRightForceAttenuationDistanceVis(value);
 	}
 	
 	public void SetLeftForceAttenuationWavelength(float value)
 	{
 		SettingsApplicator.SetLeftForceAttenuationWavelength(value);
 	}
+	public void SetLeftForceAttenuationWavelengthVis(int value)
+	{
+		SettingsApplicator.SetLeftForceAttenuationWavelengthVis(value);
+	}
 
 	public void SetRightForceAttenuationWavelength(float value)
 	{
 		SettingsApplicator.SetRightForceAttenuationWavelength(value);
+	}
+	public void SetRightForceAttenuationWavelengthVis(int value)
+	{
+		SettingsApplicator.SetRightForceAttenuationWavelengthVis(value);
 	}
 
 	public void SetLeftEmissionCount(float value)
@@ -175,39 +231,71 @@ public class ControllerSettings : MonoBehaviour
 	{
 		SettingsApplicator.SetLeftEmitterRadius(value);
 	}
+	public void SetLeftEmissionRadiusVis(int value)
+	{
+		SettingsApplicator.SetLeftEmitterRadiusVis(value);
+	}
 
 	public void SetRightEmissionRadius(float value)
 	{
 		SettingsApplicator.SetRightEmitterRadius(value);
+	}
+	public void SetRightEmissionRadiusVis(int value)
+	{
+		SettingsApplicator.SetRightEmitterRadiusVis(value);
 	}
 
 	public void SetLeftEmissionVelocity(float value)
 	{
 		SettingsApplicator.SetLeftEmitterVelocity(value);
 	}
+	public void SetLeftEmissionVelocityVis(int value)
+	{
+		SettingsApplicator.SetLeftEmitterVelocityVis(value);
+	}
 
 	public void SetRightEmissionVelocity(float value)
 	{
 		SettingsApplicator.SetRightEmitterVelocity(value);
+	}
+	public void SetRightEmissionVelocityVis(int value)
+	{
+		SettingsApplicator.SetRightEmitterVelocityVis(value);
 	}
 
 	public void SetLeftEmissionVelocitySpread(float value)
 	{
 		SettingsApplicator.SetLeftEmitterVelocitySpread(value);
 	}
+	public void SetLeftEmissionVelocitySpreadVis(int value)
+	{
+		SettingsApplicator.SetLeftEmitterVelocitySpreadVis(value);
+	}
 	
 	public void SetRightEmissionVelocitySpread(float value)
 	{
 		SettingsApplicator.SetRightEmitterVelocitySpread(value);
+	}
+	public void SetRightEmissionVelocitySpreadVis(int value)
+	{
+		SettingsApplicator.SetRightEmitterVelocitySpreadVis(value);
 	}
 
 	public void SetLeftEmissionInheritVelocity(float value)
 	{
 		SettingsApplicator.SetLeftEmitterInheritVelocity(value);
 	}
+	public void SetLeftEmissionInheritVelocityVis(int value)
+	{
+		SettingsApplicator.SetLeftEmitterInheritVelocityVis(value);
+	}
 	
 	public void SetRightEmissionInheritVelocity(float value)
 	{
 		SettingsApplicator.SetRightEmitterInheritVelocity(value);
+	}
+	public void SetRightEmissionInheritVelocityVis(int value)
+	{
+		SettingsApplicator.SetRightEmitterInheritVelocityVis(value);
 	}
 }

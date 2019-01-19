@@ -18,7 +18,7 @@ public class MusicDisplay : MonoBehaviour
 	public void Update()
 	{
 		if (AudioData.AverageLevel > 0.2f && !Music.IsPlaying) {
-			OutputText.text = "Now Playing:\nListening to device audio";
+			OutputText.text = "Now Playing:\nListening to PC audio";
 		} else {
 			if (Music.IsPlaying) {
 				OutputText.text = "Now Playing:\n" + Music.GetCurrentSongName();

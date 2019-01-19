@@ -46,15 +46,22 @@ public class PsyiaSettings : ScriptableObject
 			ParticleForm = (PsyiaVisualSettings.Form) jsonObject["Visual"]["ParticleForm"].AsInt,
 			ParticleColor = (PsyiaVisualSettings.Color) jsonObject["Visual"]["ParticleColor"].AsInt,
 			ParticleColorAmount = jsonObject["Visual"]["ParticleColorAmount"].AsFloat,
+			ParticleColorAmountVis = (SliderAudioHook.AudioDataSource)jsonObject["Visual"]["ParticleColorAmount"].AsInt,
 			ParticleSize = jsonObject["Visual"]["ParticleSize"].AsFloat,
+			ParticleSizeVis = (SliderAudioHook.AudioDataSource)jsonObject["Visual"]["ParticleSize"].AsInt,
 			LineLength = jsonObject["Visual"]["LineLength"].AsFloat,
+			LineLengthVis = (SliderAudioHook.AudioDataSource)jsonObject["Visual"]["LineLength"].AsInt,
 			ParticleShape = (PsyiaVisualSettings.Shape) jsonObject["Visual"]["ParticleShape"].AsInt
 		};
 
 		Physics = new PsyiaPhysicsSettings
 		{
 			ParticleMass = jsonObject["Physics"]["ParticleMass"].AsFloat,
+			ParticleMassVis = (SliderAudioHook.AudioDataSource)jsonObject["Physics"]["ParticleMass"].AsInt,
 			ParticleDamping = jsonObject["Physics"]["ParticleDamping"].AsFloat,
+			ParticleDampingVis = (SliderAudioHook.AudioDataSource)jsonObject["Physics"]["ParticleDamping"].AsInt,
+			TimeSpeed = jsonObject["Physics"]["TimeSpeed"].AsFloat,
+			TimeSpeedVis = (SliderAudioHook.AudioDataSource)jsonObject["Physics"]["TimeSpeed"].AsInt,
 			FloorCollision = jsonObject["Physics"]["FloorCollision"].AsBool
 		};
 
@@ -72,6 +79,7 @@ public class PsyiaSettings : ScriptableObject
 			ControllerSymmetry = (PsyiaControllerSettings.Symmetry) jsonObject["Controller"]["ControllerSymmetry"].AsInt,
 			ControllerModels = jsonObject["Controller"]["ControllerModels"].AsBool,
 			ControllerDistance = jsonObject["Controller"]["ControllerDistance"].AsFloat,
+			ControllerDistanceVis = (SliderAudioHook.AudioDataSource)jsonObject["Controller"]["ControllerDistance"].AsInt,
 			ControllerHaptics = jsonObject["Controller"]["ControllerHaptics"].AsBool
 		};
 
@@ -80,9 +88,13 @@ public class PsyiaSettings : ScriptableObject
 			ForceShape = (PsyiaForceSettings.Shape) jsonObject["ForceLeft"]["ForceShape"].AsInt,
 			ForceAttenuation = (PsyiaForceSettings.Attenuation) jsonObject["ForceLeft"]["ForceAttenuation"].AsInt,
 			ForceStrength = jsonObject["ForceLeft"]["ForceStrength"].AsFloat,
+			ForceStrengthVis = (SliderAudioHook.AudioDataSource)jsonObject["ForceLeft"]["ForceStrength"].AsInt,
 			AttenuationDistance = jsonObject["ForceLeft"]["AttenuationDistance"].AsFloat,
+			AttenuationDistanceVis = (SliderAudioHook.AudioDataSource)jsonObject["ForceLeft"]["AttenuationDistance"].AsInt,
 			SofteningFactor = jsonObject["ForceLeft"]["SofteningFactor"].AsFloat,
-			Wavelength = jsonObject["ForceLeft"]["Wavelength"].AsFloat
+			SofteningFactorVis = (SliderAudioHook.AudioDataSource)jsonObject["ForceLeft"]["SofteningFactor"].AsInt,
+			Wavelength = jsonObject["ForceLeft"]["Wavelength"].AsFloat,
+			WavelengthVis = (SliderAudioHook.AudioDataSource)jsonObject["ForceLeft"]["Wavelength"].AsInt
 		};
 		
 		ForceRight = new PsyiaForceSettings
@@ -90,30 +102,41 @@ public class PsyiaSettings : ScriptableObject
 			ForceShape = (PsyiaForceSettings.Shape) jsonObject["ForceRight"]["ForceShape"].AsInt,
 			ForceAttenuation = (PsyiaForceSettings.Attenuation) jsonObject["ForceRight"]["ForceAttenuation"].AsInt,
 			ForceStrength = jsonObject["ForceRight"]["ForceStrength"].AsFloat,
+			ForceStrengthVis = (SliderAudioHook.AudioDataSource)jsonObject["ForceRight"]["ForceStrength"].AsInt,
 			AttenuationDistance = jsonObject["ForceRight"]["AttenuationDistance"].AsFloat,
+			AttenuationDistanceVis = (SliderAudioHook.AudioDataSource)jsonObject["ForceRight"]["AttenuationDistance"].AsInt,
 			SofteningFactor = jsonObject["ForceRight"]["SofteningFactor"].AsFloat,
-			Wavelength = jsonObject["ForceRight"]["Wavelength"].AsFloat
+			SofteningFactorVis = (SliderAudioHook.AudioDataSource)jsonObject["ForceRight"]["SofteningFactor"].AsInt,
+			Wavelength = jsonObject["ForceRight"]["Wavelength"].AsFloat,
+			WavelengthVis = (SliderAudioHook.AudioDataSource)jsonObject["ForceRight"]["Wavelength"].AsInt
 		};
 
-		EmitterLeft = new PsyiaEmitterSettings
+		EmitterLeft= new PsyiaEmitterSettings
 		{
 			EmitterCount = jsonObject["EmitterLeft"]["EmitterCount"].AsInt,
 			EmitterRadius = jsonObject["EmitterLeft"]["EmitterRadius"].AsFloat,
+			EmitterRadiusVis = (SliderAudioHook.AudioDataSource)jsonObject["EmitterLeft"]["EmitterRadius"].AsInt,
 			EmitterVelocity = jsonObject["EmitterLeft"]["EmitterVelocity"].AsFloat,
+			EmitterVelocityVis = (SliderAudioHook.AudioDataSource)jsonObject["EmitterLeft"]["EmitterVelocity"].AsInt,
 			VelocitySpread = jsonObject["EmitterLeft"]["VelocitySpread"].AsFloat,
-			InheritVelocity = jsonObject["EmitterLeft"]["InheritVelocity"].AsFloat
+			VelocitySpreadVis = (SliderAudioHook.AudioDataSource)jsonObject["EmitterLeft"]["VelocitySpread"].AsInt,
+			InheritVelocity = jsonObject["EmitterLeft"]["InheritVelocity"].AsFloat,
+			InheritVelocityVis = (SliderAudioHook.AudioDataSource)jsonObject["EmitterLeft"]["InheritVelocity"].AsInt
 		};
 		
 		EmitterRight = new PsyiaEmitterSettings
 		{
 			EmitterCount = jsonObject["EmitterRight"]["EmitterCount"].AsInt,
 			EmitterRadius = jsonObject["EmitterRight"]["EmitterRadius"].AsFloat,
+			EmitterRadiusVis = (SliderAudioHook.AudioDataSource)jsonObject["EmitterRight"]["EmitterRadius"].AsInt,
 			EmitterVelocity = jsonObject["EmitterRight"]["EmitterVelocity"].AsFloat,
+			EmitterVelocityVis = (SliderAudioHook.AudioDataSource)jsonObject["EmitterRight"]["EmitterVelocity"].AsInt,
 			VelocitySpread = jsonObject["EmitterRight"]["VelocitySpread"].AsFloat,
-			InheritVelocity = jsonObject["EmitterRight"]["InheritVelocity"].AsFloat
+			VelocitySpreadVis = (SliderAudioHook.AudioDataSource)jsonObject["EmitterRight"]["VelocitySpread"].AsInt,
+			InheritVelocity = jsonObject["EmitterRight"]["InheritVelocity"].AsFloat,
+			InheritVelocityVis = (SliderAudioHook.AudioDataSource)jsonObject["EmitterRight"]["InheritVelocity"].AsInt
 		};
 	}
-
 	public string GetSettingsJson()
 	{
 		var settingsObject = new JSONObject();
@@ -197,11 +220,16 @@ public class PsyiaVisualSettings
 		Square
 	}
 
+	
+
 	public Form ParticleForm;
 	public Color ParticleColor;
 	public float ParticleColorAmount;
+	public SliderAudioHook.AudioDataSource ParticleColorAmountVis;
 	public float ParticleSize;
+	public SliderAudioHook.AudioDataSource ParticleSizeVis;
 	public float LineLength;
+	public SliderAudioHook.AudioDataSource LineLengthVis;
 	public Shape ParticleShape;
 	
 	public PsyiaVisualSettings() { }
@@ -210,8 +238,11 @@ public class PsyiaVisualSettings
 		ParticleForm = copyTarget.ParticleForm;
 		ParticleColor = copyTarget.ParticleColor;
 		ParticleColorAmount = copyTarget.ParticleColorAmount;
+		ParticleColorAmountVis = copyTarget.ParticleColorAmountVis;
 		ParticleSize = copyTarget.ParticleSize;
+		ParticleSizeVis = copyTarget.ParticleSizeVis;
 		LineLength = copyTarget.LineLength;
+		LineLengthVis = copyTarget.LineLengthVis;
 		ParticleShape = copyTarget.ParticleShape;
 	}
 	
@@ -221,8 +252,11 @@ public class PsyiaVisualSettings
 		outputObject.Add("ParticleForm", (int)ParticleForm);
 		outputObject.Add("ParticleColor", (int)ParticleColor);
 		outputObject.Add("ParticleColorAmount", ParticleColorAmount);
+		outputObject.Add("ParticleColorAmountVis", (int)ParticleColorAmountVis);
 		outputObject.Add("ParticleSize", ParticleSize);
+		outputObject.Add("ParticleSizeVis", (int)ParticleSizeVis);
 		outputObject.Add("LineLength", LineLength);
+		outputObject.Add("LineLengthVis", (int)LineLengthVis);
 		outputObject.Add("ParticleShape", (int)ParticleShape);
 		return outputObject;
 	}
@@ -232,16 +266,22 @@ public class PsyiaVisualSettings
 public class PsyiaPhysicsSettings
 {
 	public float ParticleMass;
+	public SliderAudioHook.AudioDataSource ParticleMassVis;
 	public float ParticleDamping;
+	public SliderAudioHook.AudioDataSource ParticleDampingVis;
 	public float TimeSpeed;
+	public SliderAudioHook.AudioDataSource TimeSpeedVis;
 	public bool FloorCollision;
 	
 	public PsyiaPhysicsSettings() { }
 	public PsyiaPhysicsSettings(PsyiaPhysicsSettings copyTarget) 
 	{
 		ParticleMass = copyTarget.ParticleMass;
+		ParticleMassVis = copyTarget.ParticleMassVis;
 		ParticleDamping = copyTarget.ParticleDamping;
+		ParticleDampingVis = copyTarget.ParticleDampingVis;
 		TimeSpeed = copyTarget.TimeSpeed;
+		TimeSpeedVis = copyTarget.TimeSpeedVis;
 		FloorCollision = copyTarget.FloorCollision;
 	}
 	
@@ -249,8 +289,11 @@ public class PsyiaPhysicsSettings
 	{
 		var outputObject = new JSONObject();
 		outputObject.Add("ParticleMass", ParticleMass);
+		outputObject.Add("ParticleMassVis", (int)ParticleMassVis);
 		outputObject.Add("ParticleDamping", ParticleDamping);
+		outputObject.Add("ParticleDampingVis", (int)ParticleDampingVis);
 		outputObject.Add("TimeSpeed", TimeSpeed);
+		outputObject.Add("TimeSpeedVis", (int)TimeSpeedVis);
 		outputObject.Add("FloorCollision", FloorCollision);
 		return outputObject;
 	}
@@ -300,6 +343,7 @@ public class PsyiaControllerSettings
 	public Symmetry ControllerSymmetry;
 	public bool ControllerModels;
 	public float ControllerDistance;
+	public SliderAudioHook.AudioDataSource ControllerDistanceVis;
 	public bool ControllerHaptics;
 	
 	public PsyiaControllerSettings() { }
@@ -308,6 +352,7 @@ public class PsyiaControllerSettings
 		ControllerSymmetry = copyTarget.ControllerSymmetry;
 		ControllerModels = copyTarget.ControllerModels;
 		ControllerDistance = copyTarget.ControllerDistance;
+		ControllerDistanceVis = copyTarget.ControllerDistanceVis;
 		ControllerHaptics = copyTarget.ControllerHaptics;
 	}
 	
@@ -317,6 +362,8 @@ public class PsyiaControllerSettings
 		outputObject.Add("ControllerSymmetry", (int)ControllerSymmetry);
 		outputObject.Add("ControllerModels", ControllerModels);
 		outputObject.Add("ControllerDistance", ControllerDistance);
+		outputObject.Add("ControllerDistanceVis", (int)ControllerDistanceVis);
+		Debug.Log("Controller distance vis is " + ControllerDistanceVis);
 		outputObject.Add("ControllerHaptics", ControllerHaptics);
 		return outputObject;
 	}
@@ -329,8 +376,8 @@ public class PsyiaForceSettings
 	{
 		Radial,
 		Vortex,
-		Dipole,
-		Linear
+		Linear,
+		Dipole
 	}
 
 	public enum Attenuation
@@ -347,9 +394,13 @@ public class PsyiaForceSettings
 	public Shape ForceShape;
 	public Attenuation ForceAttenuation;
 	public float ForceStrength;
+	public SliderAudioHook.AudioDataSource ForceStrengthVis;
 	public float AttenuationDistance;
+	public SliderAudioHook.AudioDataSource AttenuationDistanceVis;
 	public float SofteningFactor;
+	public SliderAudioHook.AudioDataSource SofteningFactorVis;
 	public float Wavelength;
+	public SliderAudioHook.AudioDataSource WavelengthVis;
 	
 	public PsyiaForceSettings() { }
 	public PsyiaForceSettings(PsyiaForceSettings copyTarget) 
@@ -357,9 +408,13 @@ public class PsyiaForceSettings
 		ForceShape = copyTarget.ForceShape;
 		ForceAttenuation = copyTarget.ForceAttenuation;
 		ForceStrength = copyTarget.ForceStrength;
+		ForceStrengthVis = copyTarget.ForceStrengthVis;
 		AttenuationDistance = copyTarget.AttenuationDistance;
+		AttenuationDistanceVis = copyTarget.AttenuationDistanceVis;
 		SofteningFactor = copyTarget.SofteningFactor;
+		SofteningFactorVis = copyTarget.SofteningFactorVis;
 		Wavelength = copyTarget.Wavelength;
+		WavelengthVis = copyTarget.WavelengthVis;
 	}
 	
 	public JSONObject GetJsonObject()
@@ -368,9 +423,13 @@ public class PsyiaForceSettings
 		outputObject.Add("ForceShape", (int)ForceShape);
 		outputObject.Add("ForceAttenuation", (int)ForceAttenuation);
 		outputObject.Add("ForceStrength", ForceStrength);
+		outputObject.Add("ForceStrengthVis", (int)ForceStrengthVis);
 		outputObject.Add("AttenuationDistance", AttenuationDistance);
+		outputObject.Add("AttenuationDistanceVis", (int)AttenuationDistanceVis);
 		outputObject.Add("SofteningFactor", SofteningFactor);
+		outputObject.Add("SofteningFactorVis", (int)SofteningFactorVis);
 		outputObject.Add("Wavelength", Wavelength);
+		outputObject.Add("WavelengthVis", (int)WavelengthVis);
 		return outputObject;
 	}
 }
@@ -380,18 +439,26 @@ public class PsyiaEmitterSettings
 {
 	public int EmitterCount;
 	public float EmitterRadius;
+	public SliderAudioHook.AudioDataSource EmitterRadiusVis;
 	public float EmitterVelocity;
+	public SliderAudioHook.AudioDataSource EmitterVelocityVis;
 	public float VelocitySpread;
+	public SliderAudioHook.AudioDataSource VelocitySpreadVis;
 	public float InheritVelocity;
+	public SliderAudioHook.AudioDataSource InheritVelocityVis;
 	
 	public PsyiaEmitterSettings() { }
 	public PsyiaEmitterSettings(PsyiaEmitterSettings copyTarget) 
 	{
 		EmitterCount = copyTarget.EmitterCount;
 		EmitterRadius = copyTarget.EmitterRadius;
+		EmitterRadiusVis = copyTarget.EmitterRadiusVis;
 		EmitterVelocity = copyTarget.EmitterVelocity;
+		EmitterVelocityVis = copyTarget.EmitterVelocityVis;
 		VelocitySpread = copyTarget.VelocitySpread;
+		VelocitySpreadVis = copyTarget.VelocitySpreadVis;
 		InheritVelocity = copyTarget.InheritVelocity;
+		InheritVelocityVis = copyTarget.InheritVelocityVis;
 	}
 	
 	public JSONObject GetJsonObject()
@@ -399,9 +466,13 @@ public class PsyiaEmitterSettings
 		var outputObject = new JSONObject();
 		outputObject.Add("EmitterCount", EmitterCount);
 		outputObject.Add("EmitterRadius", EmitterRadius);
+		outputObject.Add("EmitterRadiusVis", (int)EmitterRadiusVis);
 		outputObject.Add("EmitterVelocity", EmitterVelocity);
+		outputObject.Add("EmitterVelocityVis", (int)EmitterVelocityVis);
 		outputObject.Add("VelocitySpread", VelocitySpread);
+		outputObject.Add("VelocitySpreadVis", (int)VelocitySpreadVis);
 		outputObject.Add("InheritVelocity", InheritVelocity);
+		outputObject.Add("InheritVelocityVis", (int)InheritVelocityVis);
 		return outputObject;
 	}
 }

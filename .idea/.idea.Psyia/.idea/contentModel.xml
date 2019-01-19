@@ -38,9 +38,14 @@
             <e p="ControllerSettings.cs" t="Include" />
             <e p="ControllerSpawn.cs" t="Include" />
             <e p="ControllerSymmetry.cs" t="Include" />
+            <e p="Dance.cs" t="Include" />
+            <e p="Editor" t="Include">
+              <e p="SettingsDebugDisplayInspector.cs" t="Include" />
+            </e>
             <e p="MenuToggler.cs" t="Include" />
             <e p="ModeChoreography.cs" t="Include" />
             <e p="ModeIntroCanvas.cs" t="Include" />
+            <e p="ModeSettingsPanel.cs" t="Include" />
             <e p="MusicDisplay.cs" t="Include" />
             <e p="PhysicsSettings.cs" t="Include" />
             <e p="PsyiaController.cs" t="Include" />
@@ -51,6 +56,8 @@
             <e p="PsyiaSettingsApplicator.cs" t="Include" />
             <e p="PsyiaUiSwitch.cs" t="Include" />
             <e p="Rotator.cs" t="Include" />
+            <e p="SaveGameInterface.cs" t="Include" />
+            <e p="SettingsDebugDisplay.cs" t="Include" />
             <e p="SimpleJSON.cs" t="Include" />
             <e p="SliderAudioHook.cs" t="Include" />
             <e p="SystemSettings.cs" t="Include" />
@@ -61,6 +68,17 @@
             <e p="VisualSettings.cs" t="Include" />
           </e>
           <e p="TouchSphere.shader" t="Include" />
+        </e>
+        <e p="PlayerPrefsEditor" t="Include">
+          <e p="Editor" t="Include">
+            <e p="Mac" t="Include">
+              <e p="Plist.cs" t="Include" />
+            </e>
+            <e p="PlayerPrefsEditor.cs" t="Include" />
+          </e>
+          <e p="PlayerPrefsUtility.cs" t="Include" />
+          <e p="readme.txt" t="Include" />
+          <e p="SimpleEncryption.cs" t="Include" />
         </e>
         <e p="Psyia" t="Include">
           <e p="AssetPackages" t="Include">

@@ -12,10 +12,18 @@ public class PhysicsSettings : MonoBehaviour
 	{
 		SettingsApplicator.SetParticleMass(value);
 	}
+	public void SetMassVis(int value)
+	{
+		SettingsApplicator.SetParticleMassVis(value);
+	}
 
 	public void SetDamping(float value)
 	{
 		SettingsApplicator.SetParticleDamping(value);
+	}
+	public void SetDampingVis(int value)
+	{
+		SettingsApplicator.SetParticleDampingVis(value);
 	}
 
 	public void SetFloorCollision(bool value)
@@ -26,5 +34,9 @@ public class PhysicsSettings : MonoBehaviour
 	public void SetTimeSpeed(float value)
 	{
 		SettingsApplicator.SetTimeSpeed(value);
+	}
+	public void SetTimeSpeedVis(int value)
+	{
+		SettingsApplicator.SetTimeSpeedVis(value);
 	}
 }

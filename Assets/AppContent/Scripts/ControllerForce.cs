@@ -22,12 +22,19 @@ public class ControllerForce : MonoBehaviour
 	
 	public void OnEnable ()
 	{
+		if (ApplyForceAction == null) return;
 		ApplyForceAction.AddOnChangeListener(OnAxisValueChanged, Hand);
 	}
 
 	public void OnDisable()
 	{
+		if (ApplyForceAction == null) return;
 		ApplyForceAction.RemoveOnChangeListener(OnAxisValueChanged, Hand);
+	}
+
+	public void Update()
+	{
+		_psyiaForce.StrengthMultiplier = Value;
 	}
 
 	private void OnAxisValueChanged(SteamVR_Action_In actionIn)
@@ -35,6 +42,5 @@ public class ControllerForce : MonoBehaviour
 		if (!(actionIn is SteamVR_Action_Single)) return;
 		var asSingle = (SteamVR_Action_Single) actionIn;
 		Value = asSingle.GetAxis(Hand);
-		_psyiaForce.StrengthMultiplier = Value;
 	}
 }

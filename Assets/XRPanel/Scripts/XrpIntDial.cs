@@ -117,6 +117,7 @@ namespace XRP
 		
 		public void Bang()
 		{
+			_currentDisplayValue = CurrentValue;
 			OnValueChangedEvent.Invoke(CurrentValue);
 			OnValueChanged?.Invoke(CurrentValue);
 		}

@@ -7,8 +7,10 @@ using XRP;
 public class MenuToggler : MonoBehaviour
 {
 	public SteamVR_Action_Boolean ToggleMenuAction;
-	public SteamVR_Action_Vibration Haptic;
+	public SteamVR_Action_Vibration HapticAction;
 	public SteamVR_Input_Sources Hand;
+	public SteamVR_Input_Sources LeftHand;
+	public SteamVR_Input_Sources RightHand;
 	public ModeChoreography Choreography;
 
 	public bool AllowMenuToggle = true;
@@ -22,8 +24,9 @@ public class MenuToggler : MonoBehaviour
 
 	public bool _targetValue;
 	private float _currentValue;
-	private float _holdTime;
+	public float _holdTime;
 	private bool _down;
+	private float _lastHapticTime;
 	
 	public void OnEnable ()
 	{
@@ -57,12 +60,20 @@ public class MenuToggler : MonoBehaviour
 			_down = false;
 			Choreography.ReturnToMenu();
 		}
-
+		
 		if (_holdTime > 0f && _holdTime < ReturnToMenuTime) {
-			if (Time.frameCount % (int)Mathf.Lerp(90, 9, Mathf.InverseLerp(0f, ReturnToMenuTime, _holdTime)) == 0) {
-				Haptic.Execute(0f, 0f, 180f, 1f, SteamVR_Input_Sources.LeftHand);
-				Haptic.Execute(0f, 0f, 180f, 1f, SteamVR_Input_Sources.RightHand);
+			var requiredTime = Mathf.Lerp(0.2f, 0.02f, Mathf.Pow(Mathf.InverseLerp(0f, ReturnToMenuTime, _holdTime), 0.5f));
+			if (Time.time - _lastHapticTime > requiredTime) {
+				Debug.Log("buzz");
+				HapticAction.Execute(0f, 0f, 160f, 0.95f, SteamVR_Input_Sources.LeftHand);
+				HapticAction.Execute(0f, 0f, 160f, 0.95f, SteamVR_Input_Sources.RightHand);
+				_lastHapticTime = Time.time;
 			}
+			//Debug.Log(Time.frameCount % (int)Mathf.Lerp(90, 9, Mathf.InverseLerp(0f, ReturnToMenuTime, _holdTime)));
+			//if (Time.frameCount % (int)Mathf.Lerp(90, 9, Mathf.InverseLerp(0f, ReturnToMenuTime, _holdTime)) == 0) {
+			//	Haptic.Execute(0f, 0f, 180f, 1f, SteamVR_Input_Sources.LeftHand);
+			//	Haptic.Execute(0f, 0f, 180f, 1f, SteamVR_Input_Sources.RightHand);
+			//}
 		}
 	}
 

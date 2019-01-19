@@ -13,7 +13,7 @@ public class SliderAudioHook : MonoBehaviour
 	}
 
 	public AudioData AudioData;
-	public AudioDataSource Source = AudioDataSource.None;
+	public AudioDataSource DataSource = AudioDataSource.None;
 	[Range(0f, 1f)] public float VisualisationStrength = 0.5f;
 
 	private XrpSlider _myXrpSlider;
@@ -42,13 +42,13 @@ public class SliderAudioHook : MonoBehaviour
 
 	public void Update()
 	{
-		if (Source == AudioDataSource.None) return;
+		if (DataSource == AudioDataSource.None) return;
 		var newValue = _centralSliderValue;
 
 		newValue = Mathf.Lerp(
 			_centralSliderValue * (1f - VisualisationStrength),
 			_centralSliderValue * (1f + VisualisationStrength),
-			Source == AudioDataSource.Instant ? AudioData.InstantLevel : AudioData.AverageLevel
+			DataSource == AudioDataSource.Instant ? AudioData.InstantLevel : AudioData.AverageLevel
 		);
 
 		if (_myXrpSlider.CurrentState == State.Inactive) {
