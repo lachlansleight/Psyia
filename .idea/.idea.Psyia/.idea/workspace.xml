@@ -4,938 +4,13 @@
     <list default="true" id="140a6c05-64ff-46f0-b2c6-b112526fc446" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Psyia/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Psyia/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Psyia/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Psyia/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/AudioBarsUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/AudioBarsUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/AudioBins.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/AudioBins.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/AudioData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/AudioData.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/AudioMaster.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/AudioMaster.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/AudioreactivityTest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/AudioreactivityTest.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/SoundCapture.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/SoundCapture.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/SoundCapture.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/SoundCapture.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/VisiTest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/VisiTest.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/Visualization.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/Visualization/BasicSpectrumProvider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/Visualization/BasicSpectrumProvider.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/Visualization/GradientCalculator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/Visualization/GradientCalculator.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/Visualization/ISpectrumProvider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/Visualization/ISpectrumProvider.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/Visualization/LineSpectrum.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/Visualization/LineSpectrum.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/Visualization/Plugins.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/Visualization/Plugins/CSCore.XML" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/Visualization/Plugins/CSCore.XML.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/Visualization/Plugins/CSCore.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/Visualization/Plugins/CSCore.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/Visualization/Plugins/NAudio.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/Visualization/Plugins/NAudio.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/Visualization/Plugins/System.Drawing.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/Visualization/Plugins/System.Drawing.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/Visualization/ScalingStrategy.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/Visualization/ScalingStrategy.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/Visualization/SpectrumBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/Visualization/SpectrumBase.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/Visualization/VoicePrint3DSpectrum.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/Visualization/VoicePrint3DSpectrum.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/visi demo.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/AudioVisualisation/visi demo.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/Enthusiast (Tours).mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/Enthusiast (Tours).mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/EscapeTheTangle.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/EscapeTheTangle/Colorpulse-AboardaGrandVessel.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/EscapeTheTangle/Colorpulse-AboardaGrandVessel.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/EscapeTheTangle/Colorpulse-DigitalEvening.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/EscapeTheTangle/Colorpulse-DigitalEvening.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/EscapeTheTangle/Colorpulse-EscapingtheTangle.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/EscapeTheTangle/Colorpulse-EscapingtheTangle.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/EscapeTheTangle/Colorpulse-IntrospectiveAutomatron.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/EscapeTheTangle/Colorpulse-IntrospectiveAutomatron.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/EscapeTheTangle/Colorpulse-LittleBraveYoungBoy.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/EscapeTheTangle/Colorpulse-LittleBraveYoungBoy.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/EscapeTheTangle/Colorpulse-MoonZither.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/EscapeTheTangle/Colorpulse-MoonZither.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/EscapeTheTangle/Colorpulse-SnowintheLowlands.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/EscapeTheTangle/Colorpulse-SnowintheLowlands.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/EscapeTheTangle/Colorpulse-SriLanka.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/EscapeTheTangle/Colorpulse-SriLanka.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/EscapeTheTangle/Colorpulse-TheSlowDanceofGoldenLights.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/EscapeTheTangle/Colorpulse-TheSlowDanceofGoldenLights.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/Fragile Do Not Drop (Podington Bear).mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/Fragile Do Not Drop (Podington Bear).mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/Grief and Sleep (Ghosts).mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/Grief and Sleep (Ghosts).mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/Lee_Rosevere_-_07_-_Planet_H.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Audio/Lee_Rosevere_-_07_-_Planet_H.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Dances.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Dances/JSON.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Dances/JSON/dance_2019-01-19_16-00-19.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Dances/JSON/dance_2019-01-19_16-00-19.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Dances/JSON/dance_2019-01-19_16-13-02.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Dances/JSON/dance_2019-01-19_16-13-02.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Dances/JSON/dance_2019-01-19_16-28-23.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Dances/JSON/dance_2019-01-19_16-28-23.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Dances/JSON/dance_2019-01-19_16-34-29.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Dances/JSON/dance_2019-01-19_16-34-29.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/DefaultProfile.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/DefaultProfile.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Fonts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Fonts/VERLAG-LIGHT.TTF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Fonts/VERLAG-LIGHT.TTF.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Fonts/VERLAG-LIGHTITALIC.TTF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Fonts/VERLAG-LIGHTITALIC.TTF.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Materials/Black.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Materials/Black.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Materials/ControllerBase.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Materials/ControllerBase.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Materials/ControllerGlow_L.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Materials/ControllerGlow_L.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Materials/ControllerGlow_R.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Materials/ControllerGlow_R.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Materials/Fader.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Materials/Fader.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Materials/Ground.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Materials/Ground.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Materials/TouchSphereSystem.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Materials/TouchSphereSystem.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Models.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Models/ControllerBase_SplitMaterials.blend" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Models/ControllerBase_SplitMaterials.blend.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Models/ControllerTwist.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Models/ControllerTwist.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Models/PsyiaCanvas_MkI.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Models/PsyiaCanvas_MkI.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Models/Sphere_HardNormals.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Models/Sphere_HardNormals.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Models/Sphere_Inverted.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Models/Sphere_Inverted.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Models/SubdivCube.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Models/SubdivCube.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scenes/StarLab.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scenes/StarLab.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scenes/UI_MockupScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scenes/UI_MockupScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/AudioSettings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/AudioSettings.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/AudioVisualisationButton.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/AudioVisualisationButton.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/ControllerForce.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/ControllerForce.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/ControllerHaptics.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/ControllerHaptics.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/ControllerLine.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/ControllerLine.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/ControllerPose.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/ControllerPose.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/ControllerSettings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/ControllerSettings.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/ControllerSpawn.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/ControllerSpawn.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/ControllerSymmetry.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/ControllerSymmetry.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/Dance.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/Dance.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/Editor/SettingsDebugDisplayInspector.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/Editor/SettingsDebugDisplayInspector.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/MenuToggler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/MenuToggler.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/ModeChoreography.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/ModeChoreography.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/ModeIntroCanvas.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/ModeIntroCanvas.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/ModeSettingsPanel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/ModeSettingsPanel.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/MusicDisplay.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/MusicDisplay.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/PhysicsSettings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/PhysicsSettings.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/PsyiaController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/PsyiaController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/PsyiaJsonUiSetter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/PsyiaJsonUiSetter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/PsyiaMusic.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/PsyiaMusic.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/PsyiaSandbox.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/PsyiaSandbox.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/PsyiaSettings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/PsyiaSettings.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/PsyiaSettingsApplicator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/PsyiaSettingsApplicator.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/PsyiaUiSwitch.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/PsyiaUiSwitch.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/Rotator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/Rotator.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/SaveGameInterface.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/SaveGameInterface.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/SettingsDebugDisplay.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/SettingsDebugDisplay.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/SimpleJSON.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/SimpleJSON.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/SliderAudioHook.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/SliderAudioHook.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/SystemSettings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/SystemSettings.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/TimeSlower.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/TimeSlower.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/TouchSphere.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/TouchSphere.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/UiPages.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/UiPages.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/VisualSettings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/VisualSettings.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/VisualisationStrengthSetter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Scripts/VisualisationStrengthSetter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Settings.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Settings/JSON.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Settings/JSON/Enthusiast.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Settings/JSON/Enthusiast.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Settings/JSON/FragileDoNotDrop.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Settings/JSON/FragileDoNotDrop.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Settings/JSON/GriefAndSleep.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Settings/JSON/GriefAndSleep.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Settings/JSON/LittleBraveYoungBoy.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Settings/JSON/LittleBraveYoungBoy.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Settings/JSON/LittleBraveYoungBoy_14-01-2019_1-30pm.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Settings/JSON/LittleBraveYoungBoy_14-01-2019_1-30pm.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Settings/JSON/PlanetH.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Settings/JSON/PlanetH.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Settings/JSON/test.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Settings/JSON/test.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Settings/MenuDefault.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Settings/MenuDefault.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/ColourTextures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/ColourTextures/Air.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/ColourTextures/Air.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/ColourTextures/Earth.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/ColourTextures/Earth.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/ColourTextures/Fire.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/ColourTextures/Fire.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/ColourTextures/PsyiaColourTextureTemplate.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/ColourTextures/PsyiaColourTextureTemplate.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/ColourTextures/Water.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/ColourTextures/Water.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/MusicIcon_Average.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/MusicIcon_Average.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/MusicIcon_Instant.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/MusicIcon_Instant.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/MusicIcon_None.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/MusicIcon_None.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/ParticleSprites.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/ParticleSprites/WhiteCircle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/ParticleSprites/WhiteCircle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/ParticleSprites/WhiteSquare.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/ParticleSprites/WhiteSquare.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/ParticleSprites/circle_03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/ParticleSprites/circle_03.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/ParticleSprites/circle_05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/ParticleSprites/circle_05.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/ParticleSprites/smoke_04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/ParticleSprites/smoke_04.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/ParticleSprites/star_07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/ParticleSprites/star_07.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/PlayPauseIcon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/PlayPauseIcon.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/TrackSkipIcon.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/Textures/TrackSkipIcon.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/TouchSphere.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/TouchSphere.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/TouchSphere.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AppContent/TouchSphere.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerPrefsEditor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerPrefsEditor/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerPrefsEditor/Editor/Mac.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerPrefsEditor/Editor/Mac/Plist.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerPrefsEditor/Editor/Mac/Plist.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerPrefsEditor/Editor/PlayerPrefsEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerPrefsEditor/Editor/PlayerPrefsEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerPrefsEditor/PlayerPrefsUtility.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerPrefsEditor/PlayerPrefsUtility.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerPrefsEditor/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerPrefsEditor/README.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerPrefsEditor/SimpleEncryption.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerPrefsEditor/SimpleEncryption.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PsyiaUI 1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PsyiaUI 1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PsyiaUI.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PsyiaUI.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/GLSL.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/GLSL/ClassicNoise2D.glsl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/GLSL/ClassicNoise2D.glsl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/GLSL/ClassicNoise3D.glsl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/GLSL/ClassicNoise3D.glsl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/GLSL/NoiseTest.glslinc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/GLSL/NoiseTest.glslinc.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/GLSL/NoiseTest.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/GLSL/NoiseTest.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/GLSL/SimplexNoise2D.glsl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/GLSL/SimplexNoise2D.glsl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/GLSL/SimplexNoise3D.glsl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/GLSL/SimplexNoise3D.glsl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/GLSL/SimplexNoiseGrad2D.glsl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/GLSL/SimplexNoiseGrad2D.glsl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/GLSL/SimplexNoiseGrad3D.glsl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/GLSL/SimplexNoiseGrad3D.glsl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/HLSL.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/HLSL/ClassicNoise2D.hlsl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/HLSL/ClassicNoise2D.hlsl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/HLSL/ClassicNoise3D.hlsl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/HLSL/ClassicNoise3D.hlsl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/HLSL/NoiseTest.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/HLSL/NoiseTest.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/HLSL/SimplexNoise2D.hlsl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/HLSL/SimplexNoise2D.hlsl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/HLSL/SimplexNoise3D.hlsl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/HLSL/SimplexNoise3D.hlsl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/NoiseTest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/NoiseTest.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/NoiseTest.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/ShaderNoise/NoiseTest.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Buffer.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Buffer/BufferSetup.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Buffer/BufferSetup.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Buffer/BufferSetupWithDispatch.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Buffer/BufferSetupWithDispatch.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Buffer/GpuAppendBuffer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Buffer/GpuAppendBuffer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Buffer/GpuBuffer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Buffer/GpuBuffer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Dispatchers.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Dispatchers/ComputeDispatcher.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Dispatchers/ComputeDispatcher.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Dispatchers/ComputeDispatcherCPU.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Dispatchers/ComputeDispatcherCPU.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Dispatchers/DispatchQueue.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Dispatchers/DispatchQueue.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Dispatchers/DispatchQueueItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Dispatchers/DispatchQueueItem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Dispatchers/IDispatchable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Dispatchers/IDispatchable.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Editor/DispatchQueueInspector.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Editor/DispatchQueueInspector.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Editor/GPUAppendBufferInspector.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Editor/GPUAppendBufferInspector.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Editor/GPUBufferInspector.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Editor/GPUBufferInspector.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Parameters.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Parameters/ComputeParameterSetter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Parameters/ComputeParameterSetter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Parameters/ComputeValueAttribute.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Parameters/ComputeValueAttribute.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Parameters/MaterialParameterSetter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Parameters/MaterialParameterSetter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Parameters/ShaderValueAttribute.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Parameters/ShaderValueAttribute.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Parameters/ShaderValues.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Parameters/ShaderValues.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Renderers.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Renderers/ComputeRenderer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/AssetPackages/UCTK/Renderers/ComputeRenderer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/ExampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/ExampleScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Materials/ParticleDiamonds.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Materials/ParticleDiamonds.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Materials/ParticleLines.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Materials/ParticleLines.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Materials/ParticlePoints.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Materials/ParticlePoints.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Materials/ParticleQuads.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Materials/ParticleQuads.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Prefabs/PsyiaSystem.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Prefabs/PsyiaSystem.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Prefabs/pet.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/Editor/ParticleCountManagerInspector.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/Editor/ParticleCountManagerInspector.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/Editor/PsyiaEmitterInspector.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/Editor/PsyiaEmitterInspector.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/Editor/PsyiaForceInspector.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/Editor/PsyiaForceInspector.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/Editor/PsyiaSystemInspector.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/Editor/PsyiaSystemInspector.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/EmissionManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/EmissionManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/Forces.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/Forces/ForceManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/Forces/ForceManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/Forces/PsyiaForce.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/Forces/PsyiaForce.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/Forces/PsyiaInternalGravityForce.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/Forces/PsyiaInternalGravityForce.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/GPU Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/GPU Scripts/DistanceBufferSetup.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/GPU Scripts/DistanceBufferSetup.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/GPU Scripts/OddEvenSortDispatcher.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/GPU Scripts/OddEvenSortDispatcher.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/GPU Scripts/ParticleBufferSetup.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/GPU Scripts/ParticleBufferSetup.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/GPU Scripts/ParticleCountManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/GPU Scripts/ParticleCountManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/GPU Scripts/PsyiaCoreParticleEmitter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/GPU Scripts/PsyiaCoreParticleEmitter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/GPU Scripts/UpdateGlobalMatrix.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/GPU Scripts/UpdateGlobalMatrix.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/GPU Scripts/UpdateMainCameraPosition.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/GPU Scripts/UpdateMainCameraPosition.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/GPU Scripts/UpdateTime.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/GPU Scripts/UpdateTime.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/GlobalManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/GlobalManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/PhysicsManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/PhysicsManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/PsyiaEmitter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/PsyiaEmitter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/PsyiaSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/PsyiaSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/RenderingManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/RenderingManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/ScriptableObjects.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/ScriptableObjects/ParticleSettings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/ScriptableObjects/ParticleSettings.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/SupplySettings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Scripts/SupplySettings.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Compute.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Compute/CalculateDistances.compute" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Compute/CalculateDistances.compute.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Compute/ColorParticles.compute" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Compute/ColorParticles.compute.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Compute/EmitParticles.compute" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Compute/EmitParticles.compute.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Compute/SetupDeadList.compute" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Compute/SetupDeadList.compute.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Compute/SimulateParticles.compute" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Compute/SimulateParticles.compute.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Compute/SortParticles.compute" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Compute/SortParticles.compute.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Graphics.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Graphics/ParticleDiamonds.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Graphics/ParticleDiamonds.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Graphics/ParticleLines.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Graphics/ParticleLines.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Graphics/ParticlePoints.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Graphics/ParticlePoints.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Graphics/ParticleQuads.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Graphics/ParticleQuads.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Graphics/PetrichorParticles.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Graphics/PetrichorParticles.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Includes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Includes/ForceFields.hlsl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Includes/ForceFields.hlsl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Includes/NoiseFunctions.hlsl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Includes/NoiseFunctions.hlsl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Includes/Structs.hlsl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Shaders/Includes/Structs.hlsl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/StructsAndSOs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/StructsAndSOs/GPU Structs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/StructsAndSOs/GPU Structs/DistanceData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/StructsAndSOs/GPU Structs/DistanceData.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/StructsAndSOs/GPU Structs/ForceData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/StructsAndSOs/GPU Structs/ForceData.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/StructsAndSOs/GPU Structs/ParticleData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/StructsAndSOs/GPU Structs/ParticleData.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/StructsAndSOs/SettingsData.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/StructsAndSOs/SettingsData/ParticleSettings.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/StructsAndSOs/SettingsData/ParticleSettings.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Textures/TempIcon_Emitter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Textures/TempIcon_Emitter.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Textures/TempIcon_Force.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Textures/TempIcon_Force.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Textures/TempIcon_System.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Psyia/Textures/TempIcon_System.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Editor/SteamVR_Editor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Editor/SteamVR_Editor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Editor/SteamVR_Preferences.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Editor/SteamVR_Preferences.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Editor/SteamVR_RenderModelEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Editor/SteamVR_RenderModelEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Editor/SteamVR_Settings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Editor/SteamVR_Settings.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Editor/SteamVR_SkyboxEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Editor/SteamVR_SkyboxEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Editor/SteamVR_UnitySettingsWindow.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Editor/SteamVR_UnitySettingsWindow.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Editor/SteamVR_Update.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Editor/SteamVR_Update.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Editor/SteamVR_UpdateModeEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Editor/SteamVR_UpdateModeEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Extras.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Extras/SteamVR_GazeTracker.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Extras/SteamVR_GazeTracker.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Extras/SteamVR_TestIK.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Extras/SteamVR_TestIK.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Extras/SteamVR_TestThrow.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Extras/SteamVR_TestThrow.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Extras/SteamVR_TestThrow.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Extras/SteamVR_TestThrow.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Extras/SteamVR_TestTrackedCamera.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Extras/SteamVR_TestTrackedCamera.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Extras/SteamVR_TestTrackedCamera.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Extras/SteamVR_TestTrackedCamera.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Extras/SteamVR_TestTrackedCamera.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Extras/SteamVR_TestTrackedCamera.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Icon.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Icon/_steamvr.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Icon/_steamvr.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/InputSkin.guiskin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/InputSkin.guiskin.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_CopyExampleInputFiles.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_CopyExampleInputFiles.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_ActionSetPropertyEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_ActionSetPropertyEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_Action_Boolean_PropertyEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_Action_Boolean_PropertyEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_Action_GenericPropertyEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_Action_GenericPropertyEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_Action_In_PropertyEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_Action_In_PropertyEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_Action_Out_PropertyEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_Action_Out_PropertyEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_Action_Pose_PropertyEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_Action_Pose_PropertyEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_Action_PropertyEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_Action_PropertyEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_Action_Single_PropertyEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_Action_Single_PropertyEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_Action_Skeleton_PropertyEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_Action_Skeleton_PropertyEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_Action_Vector2_PropertyEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_Action_Vector2_PropertyEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_Action_Vector3_PropertyEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_Action_Vector3_PropertyEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_Action_Vibration_PropertyEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_Action_Vibration_PropertyEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_EditorWindow.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_EditorWindow.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_Generator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_Generator.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_LiveWindow.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_LiveWindow.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_PostProcessBuild.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Editor/SteamVR_Input_PostProcessBuild.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/ExampleJSON.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/ExampleJSON/actions.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/ExampleJSON/actions.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/ExampleJSON/bindings_holographic_controller.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/ExampleJSON/bindings_holographic_controller.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/ExampleJSON/bindings_knuckles.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/ExampleJSON/bindings_knuckles.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/ExampleJSON/bindings_oculus_touch.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/ExampleJSON/bindings_oculus_touch.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/ExampleJSON/bindings_vive_controller.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/ExampleJSON/bindings_vive_controller.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Plugins.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Plugins/JSON.NET.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Plugins/JSON.NET/LICENSE_James_Newton-King" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Plugins/JSON.NET/LICENSE_James_Newton-King.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Plugins/JSON.NET/LICENSE_SaladLab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Plugins/JSON.NET/LICENSE_SaladLab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Action.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Action.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_ActionDirections.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_ActionDirections.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_ActionSet.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_ActionSet.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Action_Boolean.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Action_Boolean.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Action_In.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Action_In.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Action_List.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Action_List.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Action_Out.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Action_Out.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Action_Pose.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Action_Pose.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Action_Single.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Action_Single.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Action_Skeleton.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Action_Skeleton.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Action_Vector2.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Action_Vector2.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Action_Vector3.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Action_Vector3.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Action_Vibration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Action_Vibration.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_ActivateActionSetOnLoad.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_ActivateActionSetOnLoad.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Behaviour_Boolean.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Behaviour_Boolean.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Behaviour_Pose.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Behaviour_Pose.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Behaviour_Single.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Behaviour_Single.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Behaviour_Skeleton.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Behaviour_Skeleton.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Behaviour_SkeletonCustom.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Behaviour_SkeletonCustom.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Behaviour_Vector2.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Behaviour_Vector2.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Behaviour_Vector3.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Behaviour_Vector3.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_DefaultAction.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_DefaultAction.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_DefaultActionSet.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_DefaultActionSet.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Input.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Input.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Input_ActionFile.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Input_ActionFile.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Input_ActionScopes.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Input_ActionScopes.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Input_ActionSetUsages.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Input_ActionSetUsages.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Input_Generator_Names.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Input_Generator_Names.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Input_References.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Input_References.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Input_Source.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Input_Source.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Input_Sources.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Input_Sources.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_UpdateModes.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_UpdateModes.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Materials/def.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Materials/def.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Materials/workshop.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Materials/workshop.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/Abyss.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/Abyss.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/AlienHand.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/AlienHand.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/AlienHand_AlbedoTransparency.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/AlienHand_AlbedoTransparency.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/AlienHand_MetallicSmoothness.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/AlienHand_MetallicSmoothness.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/AlienHand_Normal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/AlienHand_Normal.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/No Name.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/No Name.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/floppyHand Emit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/floppyHand Emit.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/floppyHand.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/floppyHand.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/knuckles_right.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/knuckles_right.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/models_hands_vr_glove.vmat.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/models_hands_vr_glove.vmat.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/vr_glove_color.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/vr_glove_color.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/vr_glove_color.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/vr_glove_color.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/vr_glove_color_red.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/vr_glove_color_red.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/vr_glove_color_red.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/vr_glove_color_red.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/vr_glove_normal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/Materials/vr_glove_normal.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/handFingers.mask" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/handFingers.mask.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/vr_alien_hand.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/vr_alien_hand.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/vr_floppyHand.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/vr_floppyHand.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/vr_glove_graspPoses.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/vr_glove_graspPoses.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/vr_glove_left_model_slim.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/vr_glove_left_model_slim.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/vr_glove_model.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/vr_glove_model.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/vr_glove_right_model_slim.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/vr_glove_right_model_slim.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/vr_hand_grabposes.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Models/vr_hand_grabposes.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Plugins.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Plugins/openvr_api.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Plugins/openvr_api.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Prefabs/[CameraRig].prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Prefabs/[CameraRig].prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Prefabs/[Status].prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Prefabs/[Status].prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Prefabs/[SteamVR].prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Prefabs/[SteamVR].prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Prefabs/controller.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Prefabs/controller.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Prefabs/vr_glove_left.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Prefabs/vr_glove_left.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Prefabs/vr_glove_left_model_slim.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Prefabs/vr_glove_left_model_slim.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Prefabs/vr_glove_right.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Prefabs/vr_glove_right.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Prefabs/vr_glove_right_model_slim.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Prefabs/vr_glove_right_model_slim.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Prefabs/vr_hand_alien_left.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Prefabs/vr_hand_alien_left.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Prefabs/vr_hand_alien_right.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Prefabs/vr_hand_alien_right.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Prefabs/vr_hand_floppy_left.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Prefabs/vr_hand_floppy_left.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Prefabs/vr_hand_floppy_right.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Prefabs/vr_hand_floppy_right.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Resources.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Resources/SteamVR_AlphaOut.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Resources/SteamVR_AlphaOut.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Resources/SteamVR_ClearAll.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Resources/SteamVR_ClearAll.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Resources/SteamVR_ColorOut.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Resources/SteamVR_ColorOut.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Resources/SteamVR_ExternalCamera.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Resources/SteamVR_ExternalCamera.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Resources/SteamVR_Fade.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Resources/SteamVR_Fade.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Resources/SteamVR_HoverHighlight.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Resources/SteamVR_HoverHighlight.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Resources/SteamVR_Settings.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Resources/SteamVR_Settings.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Resources/SteamVR_SphericalProjection.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Resources/SteamVR_SphericalProjection.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_Behaviour.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_Behaviour.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_Camera.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_Camera.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_CameraFlip.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_CameraFlip.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_CameraMask.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_CameraMask.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_Ears.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_Ears.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_EnumEqualityComparer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_EnumEqualityComparer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_Events.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_Events.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_ExternalCamera.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_ExternalCamera.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_Fade.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_Fade.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_Frustum.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_Frustum.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_IK.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_IK.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_LoadLevel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_LoadLevel.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_Menu.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_Menu.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_Overlay.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_Overlay.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_PlayArea.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_PlayArea.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_Render.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_Render.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_RenderModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_RenderModel.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_RingBuffer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_RingBuffer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_Settings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_Settings.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_Skybox.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_Skybox.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_SphericalProjection.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_SphericalProjection.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_TrackedCamera.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_TrackedCamera.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_TrackedObject.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_TrackedObject.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_Utils.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR_Utils.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Simple Sample.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Simple Sample.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/SteamVR Unity Plugin - Input System.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/SteamVR Unity Plugin - Input System.pdf.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/SteamVR Unity Plugin.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/SteamVR Unity Plugin.pdf.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Textures/arrow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Textures/arrow.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Textures/background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Textures/background.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Textures/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Textures/logo.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Textures/overlay.renderTexture" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Textures/overlay.renderTexture.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Textures/workshop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Textures/workshop.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/readme.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/readme.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects/SteamVR_Input_ActionSet_Psyia.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects/SteamVR_Input_ActionSet_Psyia.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects/SteamVR_Input_ActionSet_Psyia_In.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects/SteamVR_Input_ActionSet_Psyia_In.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects/SteamVR_Input_ActionSet_Psyia_In.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects/SteamVR_Input_ActionSet_Psyia_In.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects/SteamVR_Input_ActionSet_Psyia_Out.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects/SteamVR_Input_ActionSet_Psyia_Out.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects/SteamVR_Input_ActionSet_Psyia_Out.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects/SteamVR_Input_ActionSet_Psyia_Out.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects/__actions_Psyia.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects/__actions_Psyia.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects/__actions_Psyia_in_ApplyForce.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects/__actions_Psyia_in_ApplyForce.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects/__actions_Psyia_in_Pose.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects/__actions_Psyia_in_Pose.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects/__actions_Psyia_in_SkeletonLeftHand.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects/__actions_Psyia_in_SkeletonLeftHand.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects/__actions_Psyia_in_SkeletonRightHand.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects/__actions_Psyia_in_SkeletonRightHand.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects/__actions_Psyia_in_SlowTime.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects/__actions_Psyia_in_SlowTime.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects/__actions_Psyia_in_SpawnParticles.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects/__actions_Psyia_in_SpawnParticles.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects/__actions_Psyia_in_ToggleMenu.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects/__actions_Psyia_in_ToggleMenu.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects/__actions_Psyia_out_Haptic.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionObjects/__actions_Psyia_out_Haptic.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/Resources.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/Resources/SteamVR_Input_References.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/Resources/SteamVR_Input_References.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/SteamVR_Input_ActionSets.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/SteamVR_Input_ActionSets.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/SteamVR_Input_Actions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/SteamVR_Input_Actions.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UISketch.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UISketch/Flat.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UISketch/Flat.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UISketch/UnlitVC.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UISketch/UnlitVC.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UISketch/Untitled.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UISketch/Untitled.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UISketch/Wire.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UISketch/Wire.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Button.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Button.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Dial.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Dial.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Enum Slider.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Enum Slider.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Int Dial.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Int Dial.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Int Slider.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Int Slider.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Panel.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Panel.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Slider.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Slider.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Toggle.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Prefabs/XRP Toggle.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Audio.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Audio/ui_scifi_hightech_back.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Audio/ui_scifi_hightech_back.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Audio/ui_scifi_hightech_close.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Audio/ui_scifi_hightech_close.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Audio/ui_scifi_hightech_confirm.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Audio/ui_scifi_hightech_confirm.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Audio/ui_scifi_hightech_error.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Audio/ui_scifi_hightech_error.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Audio/ui_scifi_hightech_open.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Audio/ui_scifi_hightech_open.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/ActiveElement.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/ActiveElement.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/DarkGrey.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/DarkGrey.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/FadePanel.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/FadePanel.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/Glass.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/Glass.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/LightGrey.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/LightGrey.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/Line.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/Line.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/PointerIndicator.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Materials/PointerIndicator.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Models.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Models/Disc.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Models/Disc.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Models/Ring.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Models/Ring.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Models/RingSegment.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Models/RingSegment.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Models/RoundCube.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Models/RoundCube.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Shaders.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Shaders/UnlitTransparentColor.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Shaders/UnlitTransparentColor.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Textures/Circle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Resources/Textures/Circle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/EnumsAndClasses.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/EnumsAndClasses.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/OneShotter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/OneShotter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpButton.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpButton.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpCanvasAlphaCopier.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpCanvasAlphaCopier.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpControl.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpControl.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpControlGeometry.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpControlGeometry.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpCopyMaterialColor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpCopyMaterialColor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpDial.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpDial.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpEnumSlider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpEnumSlider.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpEnumSliderGeometry.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpEnumSliderGeometry.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpIntDial.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpIntDial.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpIntDialGeometry.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpIntDialGeometry.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpIntSlider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpIntSlider.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpIntSliderGeometry.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpIntSliderGeometry.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpPanel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpPanel.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpPanelGeometry.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpPanelGeometry.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpPointer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpPointer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpSlider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpSlider.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpToggle.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpToggle.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/AudioVisualisation/SoundCapture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/AudioVisualisation/SoundCapture.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/Psyia/AssetPackages/UCTK/Dispatchers/DispatchQueue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/Psyia/AssetPackages/UCTK/Dispatchers/DispatchQueue.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/Psyia/AssetPackages/UCTK/Editor/DispatchQueueInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/Psyia/AssetPackages/UCTK/Editor/DispatchQueueInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/_ApplicationFlow/SettingsDebugDisplay.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/_ApplicationFlow/SettingsDebugDisplay.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/_Experimental/Dance.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/_Experimental/Dance.cs.meta" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -948,7 +23,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="compute" value="16" />
-          <entry key="cs" value="173" />
+          <entry key="cs" value="183" />
           <entry key="hlsl" value="5" />
           <entry key="json" value="6" />
           <entry key="shader" value="7" />
@@ -956,7 +31,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="C#" value="173" />
+          <entry key="C#" value="183" />
           <entry key="Cg" value="21" />
           <entry key="JSON" value="6" />
           <entry key="ShaderLab" value="7" />
@@ -965,14 +40,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="compute" value="3915" />
-          <entry key="cs" value="75822" />
+          <entry key="cs" value="76522" />
           <entry key="hlsl" value="5" />
           <entry key="shader" value="1905" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="75822" />
+          <entry key="C#" value="76522" />
           <entry key="Cg" value="3920" />
           <entry key="ShaderLab" value="1905" />
         </counts>
@@ -990,7 +65,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Dependencies/AudioVisualisation/Visualization/VoicePrint3DSpectrum.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -1013,13 +88,170 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Dependencies/Psyia/AssetPackages/UCTK/Editor/DispatchQueueInspector.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="17" column="73" selection-start-line="17" selection-start-column="73" selection-end-line="17" selection-end-column="73" />
+              <folding>
+                <marker date="1547950075515" expanded="false" signature="6:97" ph="..." />
+                <marker date="1547950075515" expanded="true" signature="114:1403" ph="{...}" />
+                <marker date="1547950075515" expanded="true" signature="204:1401" ph="{...}" />
+                <marker date="1547950075515" expanded="true" signature="247:1398" ph="{...}" />
+                <marker date="1547950075515" expanded="true" signature="661:801" ph="{...}" />
+                <marker date="1547950075515" expanded="true" signature="846:877" ph="{...}" />
+                <marker date="1547950075515" expanded="true" signature="1010:1188" ph="{...}" />
+                <marker date="1547950075515" expanded="true" signature="1235:1394" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Dependencies/AudioVisualisation/SoundCapture.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-416">
+              <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+              <folding>
+                <marker date="1547950383968" expanded="false" signature="6:162" ph="..." />
+                <marker date="1547950383968" expanded="true" signature="205:5598" ph="{...}" />
+                <marker date="1547950383968" expanded="true" signature="872:2553" ph="{...}" />
+                <marker date="1547950383968" expanded="true" signature="1146:1322" ph="/* From https://github.com/filoe/cscore/blob/master/Samples/WinformsVisualization/Form1.cs ... */" />
+                <marker date="1547950383968" expanded="true" signature="1440:1620" ph="/* These are the actual classes that give you spectrum data ... */" />
+                <marker date="1547950383968" expanded="true" signature="1822:2059" ph="{...}" />
+                <marker date="1547950383968" expanded="true" signature="2634:2703" ph="{...}" />
+                <marker date="1547950383968" expanded="true" signature="2799:2858" ph="{...}" />
+                <marker date="1547950383968" expanded="true" signature="2888:3000" ph="{...}" />
+                <marker date="1547950383968" expanded="true" signature="2915:2994" ph="{...}" />
+                <marker date="1547950383968" expanded="true" signature="3063:3754" ph="{...}" />
+                <marker date="1547950383968" expanded="true" signature="3190:3264" ph="{...}" />
+                <marker date="1547950383968" expanded="true" signature="3324:3690" ph="{...}" />
+                <marker date="1547950383968" expanded="true" signature="3703:3748" ph="{...}" />
+                <marker date="1547950383968" expanded="true" signature="3799:4490" ph="{...}" />
+                <marker date="1547950383968" expanded="true" signature="3926:4000" ph="{...}" />
+                <marker date="1547950383968" expanded="true" signature="4060:4426" ph="{...}" />
+                <marker date="1547950383968" expanded="true" signature="4439:4484" ph="{...}" />
+                <marker date="1547950383968" expanded="true" signature="4509:5596" ph="{...}" />
+                <marker date="1547950383968" expanded="true" signature="4743:4783" ph="{...}" />
+                <marker date="1547950383968" expanded="true" signature="4885:5016" ph="{...}" />
+                <marker date="1547950383968" expanded="true" signature="5085:5579" ph="{...}" />
+                <marker date="1547950383968" expanded="true" signature="5144:5393" ph="{...}" />
+                <marker date="1547950383968" expanded="true" signature="5414:5565" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Dependencies/AudioVisualisation/Visualization/LineSpectrum.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-224">
+              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+              <folding>
+                <marker date="1529840345000" expanded="false" signature="6:141" ph="..." />
+                <marker date="1529840345000" expanded="true" signature="188:5644" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="235:5642" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="423:474" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="533:591" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="625:1010" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="691:1000" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="1039:1463" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="1103:1453" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="1532:1738" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="1609:1728" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="1849:2659" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="2064:2624" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="2147:2610" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="2311:2556" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="2776:3187" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="3068:3177" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="3262:3565" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="3455:3530" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="3672:4318" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="3874:4308" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="4376:4549" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="4619:4849" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="4669:4778" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="4924:5636" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="4963:5285" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="5302:5626" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Dependencies/Psyia/Scripts/PsyiaSystem.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1344">
+              <caret line="86" column="30" selection-start-line="86" selection-start-column="30" selection-end-line="86" selection-end-column="30" />
+              <folding>
+                <marker date="1547086849723" expanded="true" signature="0:1066" ph="/* Copyright (c) 2018 Lachlan Sleight ... */" />
+                <marker date="1547086849723" expanded="false" signature="1074:1146" ph="..." />
+                <marker date="1547086849723" expanded="true" signature="1164:2686" ph="{...}" />
+                <marker date="1547086849723" expanded="true" signature="1208:2684" ph="{...}" />
+                <marker date="1547086849723" expanded="true" signature="1213:1872" ph="/* [System.Serializable] ... */" />
+                <marker date="1547086849723" expanded="true" signature="1937:2064" ph="{...}" />
+                <marker date="1547086849723" expanded="true" signature="1946:2060" ph="{...}" />
+                <marker date="1547086849723" expanded="true" signature="1972:2035" ph="{...}" />
+                <marker date="1547086849723" expanded="true" signature="2136:2271" ph="{...}" />
+                <marker date="1547086849723" expanded="true" signature="2145:2267" ph="{...}" />
+                <marker date="1547086849723" expanded="true" signature="2173:2240" ph="{...}" />
+                <marker date="1547086849723" expanded="true" signature="2340:2471" ph="{...}" />
+                <marker date="1547086849723" expanded="true" signature="2349:2467" ph="{...}" />
+                <marker date="1547086849723" expanded="true" signature="2376:2441" ph="{...}" />
+                <marker date="1547086849723" expanded="true" signature="2545:2681" ph="{...}" />
+                <marker date="1547086849723" expanded="true" signature="2554:2677" ph="{...}" />
+                <marker date="1547086849723" expanded="true" signature="2582:2650" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/_Scripts/_Debug/TestRendererNull.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+              <folding>
+                <marker date="1547949641435" expanded="false" signature="6:90" ph="..." />
+                <marker date="1547949641435" expanded="true" signature="137:415" ph="{...}" />
+                <marker date="1547949641435" expanded="true" signature="218:304" ph="{...}" />
+                <marker date="1547949641435" expanded="true" signature="327:413" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Dependencies/Psyia/AssetPackages/UCTK/Dispatchers/DispatchQueue.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="11" column="30" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="30" />
+              <folding>
+                <marker date="1547950076240" expanded="false" signature="6:78" ph="..." />
+                <marker date="1547950076240" expanded="true" signature="95:1766" ph="{...}" />
+                <marker date="1547950076240" expanded="true" signature="142:1763" ph="{...}" />
+                <marker date="1547950076240" expanded="true" signature="316:351" ph="{...}" />
+                <marker date="1547950076240" expanded="true" signature="369:460" ph="{...}" />
+                <marker date="1547950076240" expanded="true" signature="420:456" ph="{...}" />
+                <marker date="1547950076240" expanded="true" signature="479:624" ph="{...}" />
+                <marker date="1547950076240" expanded="true" signature="651:980" ph="{...}" />
+                <marker date="1547950076240" expanded="true" signature="702:976" ph="{...}" />
+                <marker date="1547950076240" expanded="true" signature="935:971" ph="{...}" />
+                <marker date="1547950076240" expanded="true" signature="1022:1760" ph="{...}" />
+                <marker date="1547950076240" expanded="true" signature="1217:1483" ph="{...}" />
+                <marker date="1547950076240" expanded="true" signature="1268:1478" ph="{...}" />
+                <marker date="1547950076240" expanded="true" signature="1525:1756" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ShadowStre</find>
-      <find>check</find>
-      <find>StartPress</find>
       <find>_Color</find>
       <find>_</find>
       <find>_Time.y</find>
@@ -1047,6 +279,9 @@
       <find>thing</find>
       <find>Application.data</find>
       <find>\\JSON</find>
+      <find>ObjectField</find>
+      <find>TestRenderer</find>
+      <find>DispatchQueue</find>
     </findStrings>
     <replaceStrings>
       <replace>Color</replace>
@@ -1068,21 +303,27 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Dependencies/Psyia/AssetPackages/UCTK/Dispatchers/DispatchQueue.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Dependencies/Psyia/AssetPackages/UCTK/Dispatchers/DispatchQueueItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/_ApplicationFlow/PsyiaSettingsApplicator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Dependencies/AudioVisualisation/SoundCapture.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Dependencies/AudioVisualisation/Visualization/LineSpectrum.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/_Debug/TestRendererNull.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Dependencies/AudioVisualisation/Visualization/VoicePrint3DSpectrum.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Dependencies/Psyia/Scripts/PsyiaSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Dependencies/Psyia/Scripts/RenderingManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Dependencies/Psyia/Scripts/Editor/ParticleCountManagerInspector.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Dependencies/Psyia/Scripts/Editor/PsyiaEmitterInspector.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Dependencies/Psyia/Shaders/Graphics/ParticleDiamonds.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Mountaineer/Assets/_Scripts/Graph/GraphMarkers.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/PsyiaSettingsApplicator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Dependencies/SteamVR/Editor/SteamVR_UnitySettingsWindow.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Dance.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Dependencies/Psyia/AssetPackages/UCTK/Editor/DispatchQueueInspector.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Dependencies/Psyia/AssetPackages/UCTK/Renderers/ComputeRenderer.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/AppContent/Scripts/LookAtTarget.cs" />
-        <option value="$PROJECT_DIR$/Assets/AppContent/Scripts/SystemFader.cs" />
-        <option value="$PROJECT_DIR$/Assets/AppContent/Scripts/PsyiaController.cs" />
-        <option value="$PROJECT_DIR$/Assets/AppContent/Scripts/SandboxSettings.cs" />
-        <option value="$PROJECT_DIR$/Assets/AppContent/Scripts/PsyiaSandbox.cs" />
         <option value="$PROJECT_DIR$/Assets/AppContent/Scripts/AudioSettings.cs" />
         <option value="$PROJECT_DIR$/Assets/AppContent/Scripts/SystemSettings.cs" />
         <option value="$PROJECT_DIR$/Assets/AppContent/Scripts/ControllerLine.cs" />
@@ -1129,6 +370,11 @@
         <option value="$PROJECT_DIR$/Assets/AppContent/Scripts/PsyiaSettings.cs" />
         <option value="$PROJECT_DIR$/../Mountaineer/Assets/_Scripts/Graph/GraphMarkers.cs" />
         <option value="$PROJECT_DIR$/Assets/AppContent/TouchSphere.shader" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/_Experimental/Dance.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/_Debug/TestRendererNull.cs" />
+        <option value="$PROJECT_DIR$/Assets/Dependencies/Psyia/AssetPackages/UCTK/Dispatchers/DispatchQueue.cs" />
+        <option value="$PROJECT_DIR$/Assets/Dependencies/Psyia/AssetPackages/UCTK/Editor/DispatchQueueInspector.cs" />
+        <option value="$PROJECT_DIR$/Assets/Dependencies/AudioVisualisation/SoundCapture.cs" />
       </list>
     </option>
   </component>
@@ -1141,7 +387,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="569" />
     <option name="y" value="40" />
-    <option name="width" value="1550" />
+    <option name="width" value="1741" />
     <option name="height" value="2127" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -1173,13 +419,6 @@
               <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
               <item name="Dependencies" type="1045f7f1:UnityExplorerNode" />
               <item name="AudioVisualisation" type="1045f7f1:UnityExplorerNode" />
-            </path>
-            <path>
-              <item name="Project" type="e068e287:UnityExplorerRootNode" />
-              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
-              <item name="Dependencies" type="1045f7f1:UnityExplorerNode" />
-              <item name="AudioVisualisation" type="1045f7f1:UnityExplorerNode" />
-              <item name="Visualization" type="1045f7f1:UnityExplorerNode" />
             </path>
             <path>
               <item name="Project" type="e068e287:UnityExplorerRootNode" />
@@ -1248,12 +487,12 @@
       <workItem from="1547416829092" duration="30808000" />
       <workItem from="1547627668664" duration="3487000" />
       <workItem from="1547867468886" duration="9335000" />
-      <workItem from="1547940898850" duration="1751000" />
+      <workItem from="1547940898850" duration="3470000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121841000" />
+    <option name="totallyTimeSpent" value="123560000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1310,68 +549,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/AppContent/Scripts/AudioSettings.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpDial.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1248">
-          <caret line="81" column="8" selection-start-line="81" selection-start-column="8" selection-end-line="85" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpEnumSliderGeometry.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpSlider.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1382">
-          <caret line="88" column="9" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpToggle.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="36" column="63" selection-start-line="36" selection-start-column="63" selection-end-line="36" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpButton.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Action_In.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="936">
-          <caret line="168" column="20" selection-start-line="168" selection-start-column="20" selection-end-line="168" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Psyia/Scripts/GPU Scripts/UpdateTime.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/AppContent/Scripts/VisualisationStrengthSetter.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/XRPanel/Scripts/XrpControl.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="66" column="25" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Psyia/Shaders/Compute/ColorParticles.compute">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="774">
@@ -1659,6 +836,300 @@
             <marker date="1529840345000" expanded="true" signature="1589:2705" ph="{...}" />
             <marker date="1529840345000" expanded="true" signature="1766:2662" ph="{...}" />
             <marker date="1529840345000" expanded="true" signature="1936:2644" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Dependencies/Psyia/AssetPackages/UCTK/Renderers/ComputeRenderer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding>
+            <marker date="1533613739925" expanded="false" signature="6:78" ph="..." />
+            <marker date="1533613739925" expanded="true" signature="95:3137" ph="{...}" />
+            <marker date="1533613739925" expanded="true" signature="144:3134" ph="{...}" />
+            <marker date="1533613739925" expanded="true" signature="213:384" ph="{...}" />
+            <marker date="1533613739925" expanded="true" signature="640:816" ph="{...}" />
+            <marker date="1533613739925" expanded="true" signature="649:771" ph="{...}" />
+            <marker date="1533613739925" expanded="true" signature="684:737" ph="{...}" />
+            <marker date="1533613739925" expanded="true" signature="776:812" ph="{...}" />
+            <marker date="1533613739925" expanded="true" signature="833:876" ph="{...}" />
+            <marker date="1533613739925" expanded="true" signature="902:1235" ph="{...}" />
+            <marker date="1533613739925" expanded="true" signature="1261:1270" ph="{...}" />
+            <marker date="1533613739925" expanded="true" signature="1321:1511" ph="{...}" />
+            <marker date="1533613739925" expanded="true" signature="1371:1507" ph="{...}" />
+            <marker date="1533613739925" expanded="true" signature="1414:1502" ph="{...}" />
+            <marker date="1533613739925" expanded="true" signature="1558:2756" ph="{...}" />
+            <marker date="1533613739925" expanded="true" signature="1608:1690" ph="{...}" />
+            <marker date="1533613739925" expanded="true" signature="1694:2752" ph="/* for(int i = 0; i &lt; InputBuffers.Length; i++) { ... */" />
+            <marker date="1533613739925" expanded="true" signature="2804:3051" ph="{...}" />
+            <marker date="1533613739925" expanded="true" signature="2871:2967" ph="{...}" />
+            <marker date="1533613739925" expanded="true" signature="3101:3131" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Dependencies/Psyia/Scripts/RenderingManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
+          <folding>
+            <marker date="1547086849727" expanded="true" signature="0:1066" ph="/* Copyright (c) 2018 Lachlan Sleight ... */" />
+            <marker date="1547086849727" expanded="false" signature="1074:1158" ph="..." />
+            <marker date="1547086849727" expanded="true" signature="1176:1737" ph="{...}" />
+            <marker date="1547086849727" expanded="true" signature="1226:1735" ph="{...}" />
+            <marker date="1547086849727" expanded="true" signature="1264:1592" ph="{...}" />
+            <marker date="1547086849727" expanded="true" signature="1273:1315" ph="{...}" />
+            <marker date="1547086849727" expanded="true" signature="1320:1588" ph="{...}" />
+            <marker date="1547086849727" expanded="true" signature="1363:1450" ph="{...}" />
+            <marker date="1547086849727" expanded="true" signature="1481:1528" ph="{...}" />
+            <marker date="1547086849727" expanded="true" signature="1677:1731" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Dependencies/Psyia/Scripts/PsyiaSystem.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1344">
+          <caret line="86" column="30" selection-start-line="86" selection-start-column="30" selection-end-line="86" selection-end-column="30" />
+          <folding>
+            <marker date="1547086849723" expanded="true" signature="0:1066" ph="/* Copyright (c) 2018 Lachlan Sleight ... */" />
+            <marker date="1547086849723" expanded="false" signature="1074:1146" ph="..." />
+            <marker date="1547086849723" expanded="true" signature="1164:2686" ph="{...}" />
+            <marker date="1547086849723" expanded="true" signature="1208:2684" ph="{...}" />
+            <marker date="1547086849723" expanded="true" signature="1213:1872" ph="/* [System.Serializable] ... */" />
+            <marker date="1547086849723" expanded="true" signature="1937:2064" ph="{...}" />
+            <marker date="1547086849723" expanded="true" signature="1946:2060" ph="{...}" />
+            <marker date="1547086849723" expanded="true" signature="1972:2035" ph="{...}" />
+            <marker date="1547086849723" expanded="true" signature="2136:2271" ph="{...}" />
+            <marker date="1547086849723" expanded="true" signature="2145:2267" ph="{...}" />
+            <marker date="1547086849723" expanded="true" signature="2173:2240" ph="{...}" />
+            <marker date="1547086849723" expanded="true" signature="2340:2471" ph="{...}" />
+            <marker date="1547086849723" expanded="true" signature="2349:2467" ph="{...}" />
+            <marker date="1547086849723" expanded="true" signature="2376:2441" ph="{...}" />
+            <marker date="1547086849723" expanded="true" signature="2545:2681" ph="{...}" />
+            <marker date="1547086849723" expanded="true" signature="2554:2677" ph="{...}" />
+            <marker date="1547086849723" expanded="true" signature="2582:2650" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/_Scripts/_Experimental/Dance.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="928">
+          <caret line="63" column="34" selection-start-line="63" selection-start-column="34" selection-end-line="63" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/_Scripts/_ApplicationFlow/PsyiaSettingsApplicator.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1548">
+          <caret line="20" column="38" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="38" />
+          <folding>
+            <marker date="1547948652685" expanded="false" signature="6:161" ph="..." />
+            <marker date="1547948652685" expanded="true" signature="215:38173" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="2535:2620" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="2699:2849" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="2911:3032" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="3105:3768" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="3337:3765" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="3835:4089" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="4041:4086" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="4163:4649" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="4724:5437" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="4955:5354" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="5520:5757" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="5840:6123" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="6198:6441" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="6517:6774" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="6847:7084" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="7158:7406" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="7480:7778" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="7854:8074" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="8150:8409" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="8487:8709" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="8788:9059" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="9131:9338" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="9411:9658" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="9734:10021" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="10106:10360" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="10445:10700" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="10769:10943" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="11009:11175" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="11249:11453" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="11523:11888" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="11966:12233" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="12314:12597" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="12679:12971" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="13050:13302" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="13378:13634" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="13719:14399" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="14479:14692" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="14773:15046" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="15137:15379" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="15471:15773" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="15871:16101" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="16200:16486" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="16579:16794" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="16888:17154" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="17232:17492" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="17578:18269" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="18350:18567" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="18649:18926" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="19018:19264" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="19357:19663" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="19762:19996" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="20096:20386" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="20480:20699" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="20794:21064" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="21141:21363" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="21443:21679" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="21760:22039" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="22121:22466" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="22551:22835" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="22923:23166" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="23255:23545" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="23634:23877" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="23967:24261" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="24341:24567" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="24648:24888" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="24970:25253" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="25336:25687" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="25773:26061" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="26150:26397" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="26487:26781" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="26871:27118" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="27209:27507" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="27542:30663" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="30700:33821" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="33876:37031" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="37069:37119" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="37215:37503" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="37580:37730" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="37785:38163" ph="{...}" />
+            <marker date="1547948652685" expanded="true" signature="38071:38159" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/_Scripts/_Debug/TestRendererNull.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+          <folding>
+            <marker date="1547949641435" expanded="false" signature="6:90" ph="..." />
+            <marker date="1547949641435" expanded="true" signature="137:415" ph="{...}" />
+            <marker date="1547949641435" expanded="true" signature="218:304" ph="{...}" />
+            <marker date="1547949641435" expanded="true" signature="327:413" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Dependencies/Psyia/AssetPackages/UCTK/Dispatchers/DispatchQueue.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="11" column="30" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="30" />
+          <folding>
+            <marker date="1547950076240" expanded="false" signature="6:78" ph="..." />
+            <marker date="1547950076240" expanded="true" signature="95:1766" ph="{...}" />
+            <marker date="1547950076240" expanded="true" signature="142:1763" ph="{...}" />
+            <marker date="1547950076240" expanded="true" signature="316:351" ph="{...}" />
+            <marker date="1547950076240" expanded="true" signature="369:460" ph="{...}" />
+            <marker date="1547950076240" expanded="true" signature="420:456" ph="{...}" />
+            <marker date="1547950076240" expanded="true" signature="479:624" ph="{...}" />
+            <marker date="1547950076240" expanded="true" signature="651:980" ph="{...}" />
+            <marker date="1547950076240" expanded="true" signature="702:976" ph="{...}" />
+            <marker date="1547950076240" expanded="true" signature="935:971" ph="{...}" />
+            <marker date="1547950076240" expanded="true" signature="1022:1760" ph="{...}" />
+            <marker date="1547950076240" expanded="true" signature="1217:1483" ph="{...}" />
+            <marker date="1547950076240" expanded="true" signature="1268:1478" ph="{...}" />
+            <marker date="1547950076240" expanded="true" signature="1525:1756" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Dependencies/Psyia/AssetPackages/UCTK/Editor/DispatchQueueInspector.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="17" column="73" selection-start-line="17" selection-start-column="73" selection-end-line="17" selection-end-column="73" />
+          <folding>
+            <marker date="1547950075515" expanded="false" signature="6:97" ph="..." />
+            <marker date="1547950075515" expanded="true" signature="114:1403" ph="{...}" />
+            <marker date="1547950075515" expanded="true" signature="204:1401" ph="{...}" />
+            <marker date="1547950075515" expanded="true" signature="247:1398" ph="{...}" />
+            <marker date="1547950075515" expanded="true" signature="661:801" ph="{...}" />
+            <marker date="1547950075515" expanded="true" signature="846:877" ph="{...}" />
+            <marker date="1547950075515" expanded="true" signature="1010:1188" ph="{...}" />
+            <marker date="1547950075515" expanded="true" signature="1235:1394" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Dependencies/AudioVisualisation/SoundCapture.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-416">
+          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+          <folding>
+            <marker date="1547950383968" expanded="false" signature="6:162" ph="..." />
+            <marker date="1547950383968" expanded="true" signature="205:5598" ph="{...}" />
+            <marker date="1547950383968" expanded="true" signature="872:2553" ph="{...}" />
+            <marker date="1547950383968" expanded="true" signature="1146:1322" ph="/* From https://github.com/filoe/cscore/blob/master/Samples/WinformsVisualization/Form1.cs ... */" />
+            <marker date="1547950383968" expanded="true" signature="1440:1620" ph="/* These are the actual classes that give you spectrum data ... */" />
+            <marker date="1547950383968" expanded="true" signature="1822:2059" ph="{...}" />
+            <marker date="1547950383968" expanded="true" signature="2634:2703" ph="{...}" />
+            <marker date="1547950383968" expanded="true" signature="2799:2858" ph="{...}" />
+            <marker date="1547950383968" expanded="true" signature="2888:3000" ph="{...}" />
+            <marker date="1547950383968" expanded="true" signature="2915:2994" ph="{...}" />
+            <marker date="1547950383968" expanded="true" signature="3063:3754" ph="{...}" />
+            <marker date="1547950383968" expanded="true" signature="3190:3264" ph="{...}" />
+            <marker date="1547950383968" expanded="true" signature="3324:3690" ph="{...}" />
+            <marker date="1547950383968" expanded="true" signature="3703:3748" ph="{...}" />
+            <marker date="1547950383968" expanded="true" signature="3799:4490" ph="{...}" />
+            <marker date="1547950383968" expanded="true" signature="3926:4000" ph="{...}" />
+            <marker date="1547950383968" expanded="true" signature="4060:4426" ph="{...}" />
+            <marker date="1547950383968" expanded="true" signature="4439:4484" ph="{...}" />
+            <marker date="1547950383968" expanded="true" signature="4509:5596" ph="{...}" />
+            <marker date="1547950383968" expanded="true" signature="4743:4783" ph="{...}" />
+            <marker date="1547950383968" expanded="true" signature="4885:5016" ph="{...}" />
+            <marker date="1547950383968" expanded="true" signature="5085:5579" ph="{...}" />
+            <marker date="1547950383968" expanded="true" signature="5144:5393" ph="{...}" />
+            <marker date="1547950383968" expanded="true" signature="5414:5565" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Dependencies/AudioVisualisation/Visualization/LineSpectrum.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-224">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding>
+            <marker date="1529840345000" expanded="false" signature="6:141" ph="..." />
+            <marker date="1529840345000" expanded="true" signature="188:5644" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="235:5642" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="423:474" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="533:591" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="625:1010" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="691:1000" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="1039:1463" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="1103:1453" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="1532:1738" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="1609:1728" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="1849:2659" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="2064:2624" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="2147:2610" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="2311:2556" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="2776:3187" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="3068:3177" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="3262:3565" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="3455:3530" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="3672:4318" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="3874:4308" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="4376:4549" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="4619:4849" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="4669:4778" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="4924:5636" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="4963:5285" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="5302:5626" ph="{...}" />
           </folding>
         </state>
       </provider>

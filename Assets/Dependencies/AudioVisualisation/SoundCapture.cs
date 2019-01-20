@@ -36,6 +36,8 @@ public class SoundCapture : MonoBehaviour
 
     IWaveSource finalSource;
 
+    float[] resData;
+
     void Start()
     {
 
@@ -131,12 +133,36 @@ public class SoundCapture : MonoBehaviour
         }
     }
 
+    public void UpdateFftData(float[] data)
+    {
+        lock (barData)
+        {
+            lineSpectrum.BarCount = numBars;
+            if (numBars != barData.Length)
+            {
+                barData = new float[numBars];
+            }
+        }
+
+        if (spectrumProvider.IsNewDataAvailable)
+        {
+            lineSpectrum.MinimumFrequency = minFreq;
+            lineSpectrum.MaximumFrequency = maxFreq;
+            lineSpectrum.IsXLogScale = logScale;
+            lineSpectrum.BarSpacing = barSpacing;
+            lineSpectrum.SpectrumProvider.GetFftData(fftBuffer, this);
+            data = lineSpectrum.GetSpectrumPoints(100.0f, fftBuffer);
+        }
+    }
+
     void Update()
     {
 
         int numBars = barData.Length;
 
-        float[] resData = GetFFtData();
+        if (resData == null) resData = GetFFtData();
+        else if (resData.Length != numBars) resData = GetFFtData();
+        else UpdateFftData(resData);
 
         if (resData == null)
         {

@@ -9,7 +9,7 @@ namespace UCTK {
 		public bool RunOnUpdate = true;
 		public bool RunOnAwake = false;
 		public bool RunOnlyWhenRendererActive = true;
-		public ComputeRenderer Renderer;
+		public ComputeRenderer TestRenderer;
 
 		void Awake() {
 			if(RunOnAwake) RunQueue();
@@ -23,7 +23,7 @@ namespace UCTK {
 	
 		void Update ()
 		{
-			if (RunOnlyWhenRendererActive && Renderer != null && !Renderer.isActiveAndEnabled) return;
+			if (RunOnlyWhenRendererActive && TestRenderer != null && !TestRenderer.isActiveAndEnabled) return;
 			
 			if(RunOnUpdate) RunQueue();
 		}

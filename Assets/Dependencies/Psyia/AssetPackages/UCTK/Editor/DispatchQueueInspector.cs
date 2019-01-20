@@ -5,7 +5,7 @@ using UnityEditor;
 
 namespace UCTK {
 
-	[CustomEditor(typeof(DispatchQueue))]
+	//[CustomEditor(typeof(DispatchQueue))]
 	public class DispatchQueueInspector : Editor {
 
 		public override void OnInspectorGUI() {
@@ -13,8 +13,8 @@ namespace UCTK {
 
 			myTarget.RunOnAwake = EditorGUILayout.Toggle("Run on Awake", myTarget.RunOnAwake);
 			myTarget.RunOnUpdate = EditorGUILayout.Toggle("Run on Update", myTarget.RunOnUpdate);
-			myTarget.Renderer = (ComputeRenderer)EditorGUILayout.ObjectField("Compute Renderer", myTarget.Renderer, typeof(ComputeRenderer), true);
-			if (myTarget.Renderer != null) {
+			myTarget.TestRenderer = (ComputeRenderer)EditorGUILayout.ObjectField("Compute Renderer", myTarget.TestRenderer, typeof(ComputeRenderer), true);
+			if (myTarget.TestRenderer != null) {
 				myTarget.RunOnlyWhenRendererActive = EditorGUILayout.Toggle("Run only when renderer active", myTarget.RunOnlyWhenRendererActive);
 			}
 			if(GUILayout.Button("Manual Run Queue")) {

@@ -8,54 +8,67 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="_Scripts" t="Include">
-          <e p="AudioSettings.cs" t="Include" />
-          <e p="AudioVisualisationButton.cs" t="Include" />
-          <e p="ControllerForce.cs" t="Include" />
-          <e p="ControllerHaptics.cs" t="Include" />
-          <e p="ControllerLine.cs" t="Include" />
-          <e p="ControllerPose.cs" t="Include" />
-          <e p="ControllerSettings.cs" t="Include" />
-          <e p="ControllerSpawn.cs" t="Include" />
-          <e p="ControllerSymmetry.cs" t="Include" />
-          <e p="Dance.cs" t="Include" />
+          <e p="_ApplicationFlow" t="Include">
+            <e p="PsyiaSettings.cs" t="Include" />
+            <e p="PsyiaSettingsApplicator.cs" t="Include" />
+            <e p="SaveGameInterface.cs" t="Include" />
+          </e>
+          <e p="_Audio" t="Include">
+            <e p="AudioData.cs" t="Include" />
+            <e p="PsyiaMusic.cs" t="Include" />
+          </e>
+          <e p="_Controllers" t="Include">
+            <e p="ControllerForce.cs" t="Include" />
+            <e p="ControllerHaptics.cs" t="Include" />
+            <e p="ControllerLine.cs" t="Include" />
+            <e p="ControllerPose.cs" t="Include" />
+            <e p="ControllerSpawn.cs" t="Include" />
+            <e p="ControllerSymmetry.cs" t="Include" />
+            <e p="PsyiaController.cs" t="Include" />
+            <e p="TimeSlower.cs" t="Include" />
+          </e>
+          <e p="_Debug" t="Include">
+            <e p="Dance.cs" t="Include" />
+            <e p="TestRendererNull.cs" t="Include" />
+          </e>
+          <e p="_UI" t="Include">
+            <e p="AudioBarsUI.cs" t="Include" />
+            <e p="AudioSettings.cs" t="Include" />
+            <e p="AudioVisualisationButton.cs" t="Include" />
+            <e p="ControllerSettings.cs" t="Include" />
+            <e p="MenuToggler.cs" t="Include" />
+            <e p="ModeIntroCanvas.cs" t="Include" />
+            <e p="ModeSettingsPanel.cs" t="Include" />
+            <e p="MusicDisplay.cs" t="Include" />
+            <e p="PhysicsSettings.cs" t="Include" />
+            <e p="PsyiaJsonUiSetter.cs" t="Include" />
+            <e p="PsyiaUiSwitch.cs" t="Include" />
+            <e p="SliderAudioHook.cs" t="Include" />
+            <e p="SystemSettings.cs" t="Include" />
+            <e p="UiPages.cs" t="Include" />
+            <e p="VisualisationStrengthSetter.cs" t="Include" />
+            <e p="VisualSettings.cs" t="Include" />
+          </e>
           <e p="Editor" t="Include">
             <e p="SettingsDebugDisplayInspector.cs" t="Include" />
           </e>
-          <e p="MenuToggler.cs" t="Include" />
-          <e p="ModeChoreography.cs" t="Include" />
-          <e p="ModeIntroCanvas.cs" t="Include" />
-          <e p="ModeSettingsPanel.cs" t="Include" />
-          <e p="MusicDisplay.cs" t="Include" />
-          <e p="PhysicsSettings.cs" t="Include" />
-          <e p="PsyiaController.cs" t="Include" />
-          <e p="PsyiaJsonUiSetter.cs" t="Include" />
-          <e p="PsyiaMusic.cs" t="Include" />
-          <e p="PsyiaSandbox.cs" t="Include" />
-          <e p="PsyiaSettings.cs" t="Include" />
-          <e p="PsyiaSettingsApplicator.cs" t="Include" />
-          <e p="PsyiaUiSwitch.cs" t="Include" />
-          <e p="Rotator.cs" t="Include" />
-          <e p="SaveGameInterface.cs" t="Include" />
+          <e p="ModeMenu" t="Include">
+            <e p="ModeChoreography.cs" t="Include" />
+            <e p="TouchSphere.cs" t="Include" />
+          </e>
           <e p="SettingsDebugDisplay.cs" t="Include" />
-          <e p="SimpleJSON.cs" t="Include" />
-          <e p="SliderAudioHook.cs" t="Include" />
-          <e p="SystemSettings.cs" t="Include" />
-          <e p="TimeSlower.cs" t="Include" />
-          <e p="TouchSphere.cs" t="Include" />
-          <e p="UiPages.cs" t="Include" />
-          <e p="VisualisationStrengthSetter.cs" t="Include" />
-          <e p="VisualSettings.cs" t="Include" />
+          <e p="Utilities" t="Include">
+            <e p="Rotator.cs" t="Include" />
+            <e p="SimpleJSON.cs" t="Include" />
+          </e>
         </e>
         <e p="_Shaders" t="Include">
           <e p="TouchSphere.shader" t="Include" />
         </e>
         <e p="Dependencies" t="Include">
           <e p="AudioVisualisation" t="Include">
-            <e p="AudioBarsUI.cs" t="Include" />
             <e p="AudioBins.cs" t="Include" />
-            <e p="AudioData.cs" t="Include" />
             <e p="AudioMaster.cs" t="Include" />
-            <e p="AudioreactivityTest.cs" t="Include" />
             <e p="SoundCapture.cs" t="Include" />
             <e p="VisiTest.cs" t="Include" />
             <e p="Visualization" t="Include">
