@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/AppContent/Scenes/StarLab.unity
+    path: Assets/_Scenes/StarLab.unity
     guid: d6271b27b7c317441bd0829200de5755
   m_configObjects: {}
