@@ -9,6 +9,7 @@
       <e p="Assets" t="Include">
         <e p="_Scripts" t="Include">
           <e p="_ApplicationFlow" t="Include">
+            <e p="ModeChoreography.cs" t="Include" />
             <e p="PsyiaSettings.cs" t="Include" />
             <e p="PsyiaSettingsApplicator.cs" t="Include" />
             <e p="SaveGameInterface.cs" t="Include" />
@@ -38,7 +39,6 @@
             <e p="ControllerSettings.cs" t="Include" />
             <e p="MenuToggler.cs" t="Include" />
             <e p="ModeIntroCanvas.cs" t="Include" />
-            <e p="ModeSettingsPanel.cs" t="Include" />
             <e p="MusicDisplay.cs" t="Include" />
             <e p="PhysicsSettings.cs" t="Include" />
             <e p="PsyiaJsonUiSetter.cs" t="Include" />
@@ -53,7 +53,7 @@
             <e p="SettingsDebugDisplayInspector.cs" t="Include" />
           </e>
           <e p="ModeMenu" t="Include">
-            <e p="ModeChoreography.cs" t="Include" />
+            <e p="ModeSettingsPanel.cs" t="Include" />
             <e p="TouchSphere.cs" t="Include" />
           </e>
           <e p="SettingsDebugDisplay.cs" t="Include" />

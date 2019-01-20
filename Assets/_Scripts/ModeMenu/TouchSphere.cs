@@ -19,10 +19,11 @@ public class TouchSphere : MonoBehaviour
 	public Vector2 Ranges = new Vector2(0.8f, 0.2f);
 	public AnimationCurve RangeCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f);
 
-	[Header("Behaviour")]
+	[Header("Properties")]
 	public float TouchDistance;
 	public UnityEvent OnTouch;
 	public float CooldownTime = 1f;
+	public int UsageCountRequirement = 0;
 	
 	private Material _myMaterial;
 	private Vector2 _defaultSpeeds;

@@ -83,24 +83,34 @@ public class ModeChoreography : MonoBehaviour
 	public IEnumerator ResetEverything()
 	{
 		Music.Reset();
+		PsyiaRenderer.enabled = false;
+		
 		IntroCanvas.CanvasGroup.alpha = 0f;
 		IntroCanvas.gameObject.SetActive(false);
+		
 		FaderObject.SetActive(false);
 		LeftController.gameObject.SetActive(false);
 		RightController.gameObject.SetActive(false);
+		
 		LeftHaptics.enabled = false;
 		RightHaptics.enabled = false;
-		PsyiaRenderer.enabled = false;
-		MenuToggler.SetTargetValue(false);
-		MenuToggler.AllowMenuToggle = false;
+		
 		LeftControllerBase.SetActive(true);
 		RightControllerBase.SetActive(true);
 		
+		MenuToggler.SetTargetValue(false);
+		MenuToggler.AllowMenuToggle = false;
+		
 		foreach (var m in Modes) {
-			m.TouchSphere.gameObject.SetActive(true);
-			m.TouchSphere.LerpToScale(1f, 0.3f);
+			if (m.TouchSphere.UsageCountRequirement == SaveGameInterface.Main.PlayCount) {
+				m.TouchSphere.gameObject.SetActive(true);
+				m.TouchSphere.LerpToScale(1f, 2f);
+			} else if (m.TouchSphere.UsageCountRequirement < SaveGameInterface.Main.PlayCount) {
+				m.TouchSphere.gameObject.SetActive(true);
+				m.TouchSphere.LerpToScale(1f, 0.3f);
+			}
 			
-			if (m.Panel.IsUnlocked()) {
+			if (m.Panel.UsageCountRequirement < SaveGameInterface.Main.PlayCount) {
 				m.Panel.gameObject.SetActive(true);
 				m.Panel.LerpToScale(1f, 0.3f);
 			}
@@ -174,12 +184,7 @@ public class ModeChoreography : MonoBehaviour
 
 		Music.AutoPlay = targetMode.Panel.InfiniteModeToggle.CurrentValue;
 
-		if (!PlayerPrefs.HasKey("UsageCount")) {
-			PlayerPrefs.SetInt("UsageCount", 0);
-		}
-
-		PlayerPrefs.SetInt("UsageCount", PlayerPrefs.GetInt("UsageCount") + 1);
-		
+		SaveGameInterface.Main.PlayCount++;
 
 		//note - this means that if Auto Play is on, the only way back is using the menu button!
 		while (Music.TimeInTrack < targetMode.Song.length - 5f || Music.AutoPlay) {
@@ -215,27 +220,8 @@ public class ModeChoreography : MonoBehaviour
 
 		LeftController.localScale = Vector3.zero;
 		RightController.localScale = Vector3.zero;
-		LeftController.gameObject.SetActive(false);
-		RightController.gameObject.SetActive(false);
-		LeftControllerBase.SetActive(true);
-		RightControllerBase.SetActive(true);
-		LeftHaptics.enabled = false;
-		RightHaptics.enabled = false;
-		
-		MenuToggler.AllowMenuToggle = false;
-		MenuToggler.SetTargetValue(false);
 
-		Music.Reset();
-
-		foreach (var m in Modes) {
-			m.TouchSphere.gameObject.SetActive(true);
-			m.TouchSphere.LerpToScale(1f, 0.3f);
-			
-			if (m.Panel.IsUnlocked()) {
-				m.Panel.gameObject.SetActive(true);
-				m.Panel.LerpToScale(1f, 0.3f);
-			}
-		}
+		ReturnToMenu();
 	}
 
 	public void ReturnToMenu()
