@@ -1,0 +1,135 @@
+﻿/*
+
+Copyright (c) 2018 Lachlan Sleight
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+*/
+
+
+
+//Does the main particle simulation step
+
+#pragma kernel SimulateParticles
+
+//Includes
+#include "../Includes/Structs.hlsl"
+#include "../Includes/ForceFields.hlsl"
+
+//define thread group sizes
+#define thread_group_x 1024
+#define thread_group_y 1
+#define thread_group_z 1
+#define thread_x 1024
+#define thread_y 1
+#define thread_z 1
+
+//Physics Parameters:
+float Damping;
+float ForceMultiplier;
+float ParticleMinimumMass;
+int FloorCollision;
+
+//time parameters
+float Lifespan;
+float Time;
+float DeltaTime;
+
+float4x4 InverseSystemMatrix;
+float4x4 SystemMatrix;
+
+RWStructuredBuffer<ParticleData> ParticleBuffer;
+AppendStructuredBuffer<uint> DeadList;
+RWStructuredBuffer<ForceData> ForceBuffer;
+
+float InverseLerp(float a, float b, float t) {
+	return saturate((t - a) / (b - a));
+}
+
+[numthreads(1024, 1, 1)]
+void SimulateParticles(uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
+{
+	//Get current particle from thread
+	int id = tid.x + thread_group_x * gid.x;
+	ParticleData ThisParticle = ParticleBuffer[id];
+
+	//If we're not alive, just make sure it's not visible and continue
+	if (ThisParticle.IsAlive == 0) {
+		ThisParticle.Position = float3(0, -100000, 0);
+		ParticleBuffer[id] = ThisParticle;
+		return;
+	}
+
+	//Increase age, die if too old
+	ThisParticle.Age += DeltaTime;
+	if (ThisParticle.Age > Lifespan && Lifespan > 0) {
+		DeadList.Append(id);
+		ThisParticle.IsAlive = false;
+		ParticleBuffer[id] = ThisParticle;
+		return;
+	}
+
+	//sum all external forces
+	uint ForceCount = 0;
+	uint ForceStride = 0;
+	ForceBuffer.GetDimensions(ForceCount, ForceStride);
+
+	float4x4 InverseSystemRotation = {
+		InverseSystemMatrix[0][0], InverseSystemMatrix[0][1], InverseSystemMatrix[0][2], 0,
+		InverseSystemMatrix[1][0], InverseSystemMatrix[1][1], InverseSystemMatrix[1][2], 0,
+		InverseSystemMatrix[2][0], InverseSystemMatrix[2][1], InverseSystemMatrix[2][2], 0,
+		0, 0, 0, 1
+	};
+
+	float3 ExternalForce = float3(0,0,0);
+	for(uint i = 0; i < ForceCount; i++) {
+		ForceData CurrentForce = ForceBuffer[i];
+		//add SystemMatrix to CurrentForce position
+		float3 NewForce = mul(InverseSystemRotation, float4(GetForceAtPoint(CurrentForce, mul(SystemMatrix, float4(ThisParticle.Position, 1)).xyz), 1.0)).xyz;
+		//NewForce = GetForceAtPoint(CurrentForce, ThisParticle.Position);
+		ExternalForce += NewForce;
+	}
+	
+	ExternalForce *= ForceMultiplier;
+
+	float NonZeroMass = ParticleMinimumMass + ThisParticle.Mass;
+	if(NonZeroMass <= 0) {
+		NonZeroMass = 0.000001;
+	}
+
+	//Apply forces
+	ThisParticle.Velocity += (ExternalForce / NonZeroMass) * DeltaTime;
+
+	//Damping
+	float3 DampingForce = -1.0 * ThisParticle.Velocity * Damping;
+	ThisParticle.Velocity += (DampingForce / NonZeroMass) * DeltaTime;
+
+	//And we update position
+	ThisParticle.Position += ThisParticle.Velocity * DeltaTime;
+	
+	if(FloorCollision > 0) {
+        if(ThisParticle.Position.y < 0) {
+            ThisParticle.Position = float3(ThisParticle.Position.x, -ThisParticle.Position.y, ThisParticle.Position.z);
+            ThisParticle.Velocity = 0.5 * float3(ThisParticle.Velocity.x, -ThisParticle.Velocity.y, ThisParticle.Velocity.z);
+        }
+	}
+
+	//And finally, push the updated particle to the buffer
+	ParticleBuffer[id] = ThisParticle;
+}

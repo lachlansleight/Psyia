@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d396700968894c078bdedede74b03d20, type: 3}
+  m_Name: MenuDefault
+  m_EditorClassIdentifier: 
+  System:
+    MaxParticleCount: 256
+    Antialiasing: 4
+    Bloom: 1
+  Visual:
+    ParticleForm: 0
+    ParticleColor: 0
+    ParticleSize: 0.025
+    LineLength: 0.005
+    ParticleShape: 3
+  Physics:
+    ParticleMass: 0.05
+    ParticleDamping: 0.1
+    FloorCollision: 0
+  Audio:
+    VisualsAudioreactivity: 0.5
+    PhysicsAudioreactivity: 0.5
+    Volume: 1
+    Loop: 0
+    SlowWithTime: 1
+  Controller:
+    ControllerSymmetry: 1
+    ControllerModels: 1
+    ControllerDistance: 0
+    ControllerHaptics: 1
+  ForceLeft:
+    ForceShape: 0
+    ForceAttenuation: 4
+    ForceStrength: 0.1
+    AttenuationDistance: 5
+    SofteningFactor: 0.2
+    Wavelength: 0.2
+  ForceRight:
+    ForceShape: 0
+    ForceAttenuation: 4
+    ForceStrength: 0.1
+    AttenuationDistance: 5
+    SofteningFactor: 0.2
+    Wavelength: 0.2
+  EmitterLeft:
+    EmitterCount: 2000
+    EmitterRadius: 0.01
+    EmitterVelocity: 0.005
+    VelocitySpread: 1
+    InheritVelocity: 0.05
+  EmitterRight:
+    EmitterCount: 2000
+    EmitterRadius: 0.01
+    EmitterVelocity: 0.005
+    VelocitySpread: 1
+    InheritVelocity: 0.05
