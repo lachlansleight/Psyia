@@ -5,15 +5,12 @@ using XRP;
 public class ModeSettingsPanel : MonoBehaviour
 {
 
-	public int UsageCountRequirement;
 	public string PlayerPrefsPrefix;
 	public XrpToggle InfiniteModeToggle;
 
 	public void Awake()
 	{
-		if (!IsUnlocked()) {
-			gameObject.SetActive(false);
-		}
+		
 	}
 
 	public void OnEnable()
@@ -23,11 +20,6 @@ public class ModeSettingsPanel : MonoBehaviour
 			InfiniteModeToggle.CurrentValue = true;
 			InfiniteModeToggle.Bang();
 		}
-	}
-
-	public bool IsUnlocked()
-	{
-		return PlayerPrefs.HasKey("UsageCount") && PlayerPrefs.GetInt("UsageCount") >= UsageCountRequirement;
 	}
 
 	public void SetInfiniteMode(bool value)
@@ -42,6 +34,7 @@ public class ModeSettingsPanel : MonoBehaviour
 	
 	public void LerpToScale(float targetScalePercentage, float duration, bool disableAtEnd = false)
 	{
+		
 		StartCoroutine(LerpToScaleRoutine(targetScalePercentage, duration, disableAtEnd));
 	}
 

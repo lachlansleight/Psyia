@@ -30,7 +30,8 @@ public class ModeChoreography : MonoBehaviour
 	public Color DefaultPsyiaColor = new Color(1f, 1f, 1f, 0.25f);
 
 	public ComputeRenderer PsyiaRenderer;
-
+	public DispatchQueue PsyiaDispatcher;
+	
 	public PsyiaSettingsApplicator SettingsApplicator;
 	public PsyiaJsonUiSetter UiSettingsApplicator;
 
@@ -49,18 +50,24 @@ public class ModeChoreography : MonoBehaviour
 
 	public MenuToggler MenuToggler;
 	
-	public void Awake()
+	public void Start()
 	{
 		_faderMaterial = FaderObject.GetComponent<Renderer>().material;
-		IntroCanvas.CanvasGroup.alpha = 0f;
-		IntroCanvas.gameObject.SetActive(false);
 
-		LeftController.gameObject.SetActive(false);
-		RightController.gameObject.SetActive(false);
-		MenuToggler.SetTargetValue(false);
-		MenuToggler.AllowMenuToggle = false;
-		
-		PsyiaRenderer.enabled = false;
+		foreach (var m in Modes) {
+			m.TouchSphere.LerpToScale(0f, 0f, true);
+			m.Panel.LerpToScale(0f, 0f, true);
+		}
+
+		ResetObjects();
+
+		StartCoroutine(FirstOpen());
+	}
+
+	public IEnumerator FirstOpen()
+	{
+		yield return new WaitForSeconds(1f);
+		StartCoroutine(ResetEverything());
 	}
 
 	public void SetMode(TouchSphere sourceSphere)
@@ -80,10 +87,11 @@ public class ModeChoreography : MonoBehaviour
 		StartCoroutine(RunModeRoutine(targetMode));
 	}
 
-	public IEnumerator ResetEverything()
+	public void ResetObjects()
 	{
 		Music.Reset();
 		PsyiaRenderer.enabled = false;
+		PsyiaDispatcher.RunOnUpdate = false;
 		
 		IntroCanvas.CanvasGroup.alpha = 0f;
 		IntroCanvas.gameObject.SetActive(false);
@@ -100,17 +108,23 @@ public class ModeChoreography : MonoBehaviour
 		
 		MenuToggler.SetTargetValue(false);
 		MenuToggler.AllowMenuToggle = false;
+	}
+
+	public IEnumerator ResetEverything()
+	{
+		ResetObjects();
 		
 		foreach (var m in Modes) {
+			Debug.Log(m.TouchSphere.name + " requires " + m.TouchSphere.UsageCountRequirement + " vs actual of " + SaveGameInterface.Main.PlayCount);
 			if (m.TouchSphere.UsageCountRequirement == SaveGameInterface.Main.PlayCount) {
+				Debug.Log("Up slow");
 				m.TouchSphere.gameObject.SetActive(true);
 				m.TouchSphere.LerpToScale(1f, 2f);
 			} else if (m.TouchSphere.UsageCountRequirement < SaveGameInterface.Main.PlayCount) {
+				Debug.Log("Up fast");
 				m.TouchSphere.gameObject.SetActive(true);
 				m.TouchSphere.LerpToScale(1f, 0.3f);
-			}
-			
-			if (m.Panel.UsageCountRequirement < SaveGameInterface.Main.PlayCount) {
+				
 				m.Panel.gameObject.SetActive(true);
 				m.Panel.LerpToScale(1f, 0.3f);
 			}
@@ -129,7 +143,7 @@ public class ModeChoreography : MonoBehaviour
 		foreach (var m in Modes) {
 			m.TouchSphere.LerpToScale(0f, 0.3f, true);
 			
-			if (m.Panel.IsUnlocked()) {
+			if (m.Panel.gameObject.activeSelf) {
 				m.Panel.LerpToScale(0f, 0.3f, true);
 			}
 		}
@@ -177,6 +191,7 @@ public class ModeChoreography : MonoBehaviour
 		SettingsApplicator.ApplyTestJson();
 		PsyiaRenderer.RenderMaterial.color = DefaultPsyiaColor;
 		PsyiaRenderer.enabled = true;
+		PsyiaDispatcher.RunOnUpdate = true;
 		targetMode.Emitter.Emit(targetMode.Emitter.StartEmitCount);
 
 		
@@ -202,6 +217,7 @@ public class ModeChoreography : MonoBehaviour
 		}
 
 		PsyiaRenderer.enabled = false;
+		PsyiaDispatcher.RunOnUpdate = false;
 		
 		yield return new WaitForSeconds(2f);
 		

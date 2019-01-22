@@ -78,6 +78,13 @@ public class TouchSphere : MonoBehaviour
 
 	public void LerpToScale(float targetScalePercentage, float duration, bool disableAtEnd = false)
 	{
+		Debug.Log($"{gameObject.name} lerping to {(int)(targetScalePercentage*100f)} over {duration:0.00} seconds, disableAtEnd={disableAtEnd}");
+		if (duration <= 0f) {
+			SetScale(targetScalePercentage * _defaultScale);
+			if (disableAtEnd) gameObject.SetActive(false);
+			return;
+		}
+		
 		StartCoroutine(LerpToScaleRoutine(targetScalePercentage, duration, disableAtEnd));
 	}
 
@@ -87,21 +94,22 @@ public class TouchSphere : MonoBehaviour
 		var to = targetScalePercentage * _defaultScale;
 		
 		for (var i = 0f; i < 1f; i += Time.deltaTime / duration) {
-			transform.localScale = Vector3.one * Mathf.Lerp(from, to, LerpCubic(i));
-			foreach (var ps in ParticleSystems) {
-				var em = ps.emission;
-				em.rateOverTimeMultiplier = (transform.localScale.x / _defaultScale);
-			}
+			SetScale(Mathf.Lerp(from, to, LerpCubic(i)));
 			yield return null;
 		}
 
-		transform.localScale = Vector3.one * to;
+		SetScale(to);
+
+		if (disableAtEnd) gameObject.SetActive(false);
+	}
+
+	private void SetScale(float value)
+	{
+		transform.localScale = Vector3.one * value;
 		foreach (var ps in ParticleSystems) {
 			var em = ps.emission;
 			em.rateOverTimeMultiplier = (transform.localScale.x / _defaultScale);
 		}
-
-		if (disableAtEnd) gameObject.SetActive(false);
 	}
 
 	private float LerpCubic(float t)

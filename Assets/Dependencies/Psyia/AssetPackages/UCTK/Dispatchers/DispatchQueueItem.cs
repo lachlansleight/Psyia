@@ -10,7 +10,8 @@ namespace UCTK {
 		public bool Enabled;
 		public int DispatchInterval;
 
-		public void Dispatch() {
+		public void Dispatch()
+		{
 			if(Dispatcher != null) Dispatcher.Dispatch();
 			DispatchEvent.Invoke();
 		}

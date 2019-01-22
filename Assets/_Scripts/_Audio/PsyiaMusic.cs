@@ -28,7 +28,7 @@ public class PsyiaMusic : MonoBehaviour {
 	private float _targetPitch;
 	private float _currentPitch;
 
-	public void Start () {
+	public void Awake () {
 		_mySource = GetComponent<AudioSource>();
 		_mySource.clip = Clips[DefaultTrack];
 	}

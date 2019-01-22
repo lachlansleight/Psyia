@@ -69,6 +69,7 @@ namespace Psyia {
 			Emitter.Shader.SetFloat("RandomiseDirection", Settings.RandomiseDirection);
 
 			int NumberToEmit = Mathf.Min(Amount, _currentCount);
+			Debug.Log("Emitting " + Amount);
 			if(NumberToEmit > 0) {
 				Emitter.Dispatch(NumberToEmit, 1, 1);
 			}
