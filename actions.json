@@ -32,6 +32,11 @@
       "requirement": "mandatory"
     },
     {
+      "name": "/actions/Psyia/in/SlowTime",
+      "type": "boolean",
+      "requirement": "mandatory"
+    },
+    {
       "name": "/actions/Psyia/out/Haptic",
       "type": "vibration",
       "requirement": "suggested"

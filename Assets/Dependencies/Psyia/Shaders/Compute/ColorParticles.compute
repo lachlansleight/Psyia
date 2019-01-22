@@ -1,0 +1,156 @@
+﻿/*
+
+Copyright (c) 2018 Lachlan Sleight
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+*/
+
+
+
+//Responsible for changing the particle Colors
+//At the moment - this is just based on velocity direction
+
+#pragma kernel ColorParticles
+
+//includes
+#include "../Includes/Structs.hlsl"
+
+//define thread group sizes
+#define thread_group_x 1024
+#define thread_group_y 1
+#define thread_group_z 1
+#define thread_x 1024
+#define thread_y 1
+#define thread_z 1
+
+RWStructuredBuffer<ParticleData> ParticleBuffer;
+
+ float Lifespan;
+ int ColorMode;
+ 
+ float3 xColorMin;
+ float3 xColorMax;
+ float3 yColorMin;
+ float3 yColorMax;
+ float3 zColorMin;
+ float3 zColorMax;
+ 
+ float ColorAmount;
+ 
+ float DebugValue;
+
+float3 GetRGBFromYPbPr(float Pb, float Pr) {
+    float Y = 0.3;
+	float r = Pr + Y;
+	float g = Y - (0.2126 * Pr + 0.0722 * Pb) / 0.7152;
+	float b = Pb + Y;
+	return float3(r, g, b);
+}
+
+float3 GetRGBFromYCbCr(float Cb, float Cr) {
+    float Y = 0.3;
+	float y = Y * 255;
+	float cb = Cb * 255;
+	float cr = Cr * 255;
+
+	float ScaleFactor = 255./129.;
+
+	float r = ((255. / 219.) * (y - 16)) + ((255. / 112.) * 0.701 * (cr - 128));
+	float g = ((255. / 219.) * (y - 16)) - ((255. / 112.) * 0.886 * (0.114 / 0.587) * (cb - 128)) - ((255. / 112.) * 0.701 * (0.299 / 0.587) * (cr - 128));
+	float b = ((255. / 129.) * (y - 16)) + ((255. / 112.) * 0.866 * (cb - 128));
+
+	return float3(r, g, b) / 255;
+}
+
+[numthreads(1024, 1, 1)]
+void ColorParticles(uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
+{
+	//get particle for this thread
+	int id = tid.x + thread_group_x * gid.x;
+	ParticleData ThisParticle = ParticleBuffer[id];
+
+	//if dead, set alpha to zero and close thread
+	if (ThisParticle.IsAlive == 0) {
+		ThisParticle.Color.a = 0;
+		ParticleBuffer[id] = ThisParticle;
+		return;
+	}
+	
+	float3 col = float3(1,1,1);
+	float3 VelocityZeroOne = (normalize(ThisParticle.Velocity) + float3(1.0, 1.0, 1.0)) * 0.5;
+	
+	//float3 VelocityZeroOne = float3(ThisParticle.Velocity
+	
+	if(ColorMode == 0) {
+	    if (length(ThisParticle.Velocity) > 0) {
+            col = VelocityZeroOne;
+            col = lerp(float3(1, 1, 1), col, 2.0);
+            col = float3(saturate(col.x), saturate(col.y), saturate(col.z));
+            if(length(col) < 0.1) {
+                col.x = 1.0 - col.x;
+            }
+            //if(col.x < 0) col.x = 1.0 - (col.x % 1.0);
+            //if(col.y < 0) col.y = 1.0 - (col.y % 1.0);
+            //if(col.z < 0) col.z = 1.0 - (col.z % 1.0);
+            //if (length(col) > 1.5) { col.x = 1.0 - col.x; }
+            //if(length(col) < 0.2) { col.x = 1.0 - col.x; }
+        }
+	} else if(ColorMode == 1) {
+	    if (length(ThisParticle.Velocity) > 0) {
+            float3 VelocityDirection = VelocityZeroOne - float3(0.5, 0.5, 0.5);
+            float theta = atan(VelocityDirection.z / VelocityDirection.x);
+            float phi = atan(VelocityDirection.y / length(VelocityDirection.xz));
+    
+            float ThetaMap = (theta / 1.5707963) % 1.0;
+            float PhiMap = (phi / 1.5707963) % 1.0;
+    
+            if(ThetaMap < 0) {
+                ThetaMap = ThetaMap * -1;
+            }
+            if(PhiMap < 0) {
+                PhiMap = PhiMap * -1;
+            }
+    
+            col = GetRGBFromYCbCr(ThetaMap, PhiMap);
+           
+        }
+	} else {
+        float3 ColorX = lerp(xColorMin, xColorMax, float3(1.0, 1.0, 1.0) * VelocityZeroOne.x);
+        float3 ColorY = lerp(yColorMin, yColorMax, float3(1.0, 1.0, 1.0) * VelocityZeroOne.y);
+        float3 ColorZ = lerp(zColorMin, zColorMax, float3(1.0, 1.0, 1.0) * VelocityZeroOne.z);
+        float xWeight = abs(ThisParticle.Velocity.x);
+        float yWeight = abs(ThisParticle.Velocity.y);
+        float zWeight = abs(ThisParticle.Velocity.z);
+        float3 FinalColor = (ColorX * xWeight + ColorY * yWeight + ColorZ * zWeight) / (xWeight + yWeight + zWeight);
+        col = FinalColor;
+	}
+
+    float a = 1.0;
+    
+	if(Lifespan > 0) {
+		a = saturate(Lifespan - ThisParticle.Age - 0.5);
+	}
+	
+	col = lerp(float3(1,1,1), col, ColorAmount);
+	
+	ThisParticle.Color = lerp(ThisParticle.Color, float4(col, a), 0.1);
+	
+	ParticleBuffer[id] = ThisParticle;
+}

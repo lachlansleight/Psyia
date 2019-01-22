@@ -7,299 +7,353 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="AppContent" t="Include">
-          <e p="Scripts" t="Include">
-            <e p="AudioSettings.cs" t="Include" />
+        <e p="_Scripts" t="Include">
+          <e p="_ApplicationFlow" t="Include">
+            <e p="ModeChoreography.cs" t="Include" />
+            <e p="PsyiaSettings.cs" t="Include" />
+            <e p="PsyiaSettingsApplicator.cs" t="Include" />
+            <e p="SaveGameInterface.cs" t="Include" />
+          </e>
+          <e p="_Audio" t="Include">
+            <e p="AudioData.cs" t="Include" />
+            <e p="PsyiaMusic.cs" t="Include" />
+          </e>
+          <e p="_Controllers" t="Include">
             <e p="ControllerForce.cs" t="Include" />
             <e p="ControllerHaptics.cs" t="Include" />
+            <e p="ControllerLine.cs" t="Include" />
             <e p="ControllerPose.cs" t="Include" />
-            <e p="ControllerSettings.cs" t="Include" />
             <e p="ControllerSpawn.cs" t="Include" />
             <e p="ControllerSymmetry.cs" t="Include" />
+            <e p="PsyiaController.cs" t="Include" />
+            <e p="TimeSlower.cs" t="Include" />
+          </e>
+          <e p="_Debug" t="Include">
+            <e p="Dance.cs" t="Include" />
+            <e p="TestRendererNull.cs" t="Include" />
+          </e>
+          <e p="_UI" t="Include">
+            <e p="AudioBarsUI.cs" t="Include" />
+            <e p="AudioSettings.cs" t="Include" />
+            <e p="AudioVisualisationButton.cs" t="Include" />
+            <e p="ControllerSettings.cs" t="Include" />
             <e p="MenuToggler.cs" t="Include" />
+            <e p="ModeIntroCanvas.cs" t="Include" />
             <e p="MusicDisplay.cs" t="Include" />
             <e p="PhysicsSettings.cs" t="Include" />
-            <e p="PsyiaController.cs" t="Include" />
-            <e p="PsyiaMusic.cs" t="Include" />
+            <e p="PsyiaJsonUiSetter.cs" t="Include" />
             <e p="PsyiaUiSwitch.cs" t="Include" />
+            <e p="SliderAudioHook.cs" t="Include" />
             <e p="SystemSettings.cs" t="Include" />
             <e p="UiPages.cs" t="Include" />
+            <e p="VisualisationStrengthSetter.cs" t="Include" />
             <e p="VisualSettings.cs" t="Include" />
           </e>
-        </e>
-        <e p="AudioVisualisation" t="Include">
-          <e p="AudioBarsUI.cs" t="Include" />
-          <e p="AudioBins.cs" t="Include" />
-          <e p="AudioData.cs" t="Include" />
-          <e p="AudioMaster.cs" t="Include" />
-          <e p="SoundCapture.cs" t="Include" />
-          <e p="VisiTest.cs" t="Include" />
-          <e p="Visualization" t="Include">
-            <e p="BasicSpectrumProvider.cs" t="Include" />
-            <e p="GradientCalculator.cs" t="Include" />
-            <e p="ISpectrumProvider.cs" t="Include" />
-            <e p="LineSpectrum.cs" t="Include" />
-            <e p="ScalingStrategy.cs" t="Include" />
-            <e p="SpectrumBase.cs" t="Include" />
-            <e p="VoicePrint3DSpectrum.cs" t="Include" />
-          </e>
-        </e>
-        <e p="Psyia" t="Include">
-          <e p="AssetPackages" t="Include">
-            <e p="ShaderNoise" t="Include">
-              <e p="GLSL" t="Include">
-                <e p="NoiseTest.glslinc" t="Include" />
-                <e p="NoiseTest.shader" t="Include" />
-              </e>
-              <e p="HLSL" t="Include">
-                <e p="ClassicNoise2D.hlsl" t="Include" />
-                <e p="ClassicNoise3D.hlsl" t="Include" />
-                <e p="NoiseTest.shader" t="Include" />
-                <e p="SimplexNoise2D.hlsl" t="Include" />
-                <e p="SimplexNoise3D.hlsl" t="Include" />
-              </e>
-              <e p="NoiseTest.cs" t="Include" />
-            </e>
-            <e p="UCTK" t="Include">
-              <e p="Buffer" t="Include">
-                <e p="BufferSetup.cs" t="Include" />
-                <e p="BufferSetupWithDispatch.cs" t="Include" />
-                <e p="GpuAppendBuffer.cs" t="Include" />
-                <e p="GpuBuffer.cs" t="Include" />
-              </e>
-              <e p="Dispatchers" t="Include">
-                <e p="ComputeDispatcher.cs" t="Include" />
-                <e p="ComputeDispatcherCPU.cs" t="Include" />
-                <e p="DispatchQueue.cs" t="Include" />
-                <e p="DispatchQueueItem.cs" t="Include" />
-                <e p="IDispatchable.cs" t="Include" />
-              </e>
-              <e p="Editor" t="Include">
-                <e p="DispatchQueueInspector.cs" t="Include" />
-                <e p="GPUAppendBufferInspector.cs" t="Include" />
-                <e p="GPUBufferInspector.cs" t="Include" />
-              </e>
-              <e p="Parameters" t="Include">
-                <e p="ComputeParameterSetter.cs" t="Include" />
-                <e p="ComputeValueAttribute.cs" t="Include" />
-                <e p="MaterialParameterSetter.cs" t="Include" />
-                <e p="ShaderValueAttribute.cs" t="Include" />
-                <e p="ShaderValues.cs" t="Include" />
-              </e>
-              <e p="Renderers" t="Include">
-                <e p="ComputeRenderer.cs" t="Include" />
-              </e>
-            </e>
-          </e>
-          <e p="Scripts" t="Include">
-            <e p="Editor" t="Include">
-              <e p="ParticleCountManagerInspector.cs" t="Include" />
-              <e p="PsyiaEmitterInspector.cs" t="Include" />
-              <e p="PsyiaForceInspector.cs" t="Include" />
-              <e p="PsyiaSystemInspector.cs" t="Include" />
-            </e>
-            <e p="EmissionManager.cs" t="Include" />
-            <e p="Forces" t="Include">
-              <e p="ForceManager.cs" t="Include" />
-              <e p="PsyiaForce.cs" t="Include" />
-              <e p="PsyiaInternalGravityForce.cs" t="Include" />
-            </e>
-            <e p="GlobalManager.cs" t="Include" />
-            <e p="GPU Scripts" t="Include">
-              <e p="DistanceBufferSetup.cs" t="Include" />
-              <e p="OddEvenSortDispatcher.cs" t="Include" />
-              <e p="ParticleBufferSetup.cs" t="Include" />
-              <e p="ParticleCountManager.cs" t="Include" />
-              <e p="PsyiaCoreParticleEmitter.cs" t="Include" />
-              <e p="UpdateGlobalMatrix.cs" t="Include" />
-              <e p="UpdateMainCameraPosition.cs" t="Include" />
-              <e p="UpdateTime.cs" t="Include" />
-            </e>
-            <e p="PhysicsManager.cs" t="Include" />
-            <e p="PsyiaEmitter.cs" t="Include" />
-            <e p="PsyiaSystem.cs" t="Include" />
-            <e p="RenderingManager.cs" t="Include" />
-            <e p="ScriptableObjects" t="Include">
-              <e p="ParticleSettings.cs" t="Include" />
-            </e>
-            <e p="SupplySettings.cs" t="Include" />
-          </e>
-          <e p="Shaders" t="Include">
-            <e p="Compute" t="Include">
-              <e p="CalculateDistances.compute" t="Include" />
-              <e p="ColorParticles.compute" t="Include" />
-              <e p="EmitParticles.compute" t="Include" />
-              <e p="SetupDeadList.compute" t="Include" />
-              <e p="SimulateParticles.compute" t="Include" />
-              <e p="SortParticles.compute" t="Include" />
-            </e>
-            <e p="Graphics" t="Include">
-              <e p="ParticleDiamonds.shader" t="Include" />
-              <e p="ParticleLines.shader" t="Include" />
-              <e p="ParticlePoints.shader" t="Include" />
-              <e p="ParticleQuads.shader" t="Include" />
-              <e p="PetrichorParticles.shader" t="Include" />
-            </e>
-            <e p="Includes" t="Include">
-              <e p="ForceFields.hlsl" t="Include" />
-              <e p="NoiseFunctions.hlsl" t="Include" />
-              <e p="Structs.hlsl" t="Include" />
-            </e>
-          </e>
-          <e p="StructsAndSOs" t="Include">
-            <e p="GPU Structs" t="Include">
-              <e p="DistanceData.cs" t="Include" />
-              <e p="ForceData.cs" t="Include" />
-              <e p="ParticleData.cs" t="Include" />
-            </e>
-          </e>
-        </e>
-        <e p="SteamVR" t="Include">
           <e p="Editor" t="Include">
-            <e p="SteamVR_Editor.cs" t="Include" />
-            <e p="SteamVR_Preferences.cs" t="Include" />
-            <e p="SteamVR_RenderModelEditor.cs" t="Include" />
-            <e p="SteamVR_Settings.cs" t="Include" />
-            <e p="SteamVR_SkyboxEditor.cs" t="Include" />
-            <e p="SteamVR_UnitySettingsWindow.cs" t="Include" />
-            <e p="SteamVR_Update.cs" t="Include" />
-            <e p="SteamVR_UpdateModeEditor.cs" t="Include" />
+            <e p="SaveGameInterfaceInspector.cs" t="Include" />
+            <e p="SettingsDebugDisplayInspector.cs" t="Include" />
           </e>
-          <e p="Extras" t="Include">
-            <e p="SteamVR_GazeTracker.cs" t="Include" />
-            <e p="SteamVR_TestThrow.cs" t="Include" />
-            <e p="SteamVR_TestTrackedCamera.cs" t="Include" />
+          <e p="ModeMenu" t="Include">
+            <e p="ModeSettingsPanel.cs" t="Include" />
+            <e p="TouchSphere.cs" t="Include" />
           </e>
-          <e p="Input" t="Include">
+          <e p="SettingsDebugDisplay.cs" t="Include" />
+          <e p="Utilities" t="Include">
+            <e p="Rotator.cs" t="Include" />
+            <e p="SimpleJSON.cs" t="Include" />
+          </e>
+        </e>
+        <e p="_Shaders" t="Include">
+          <e p="TouchSphere.shader" t="Include" />
+        </e>
+        <e p="Dependencies" t="Include">
+          <e p="AudioVisualisation" t="Include">
+            <e p="AudioBins.cs" t="Include" />
+            <e p="AudioMaster.cs" t="Include" />
+            <e p="SoundCapture.cs" t="Include" />
+            <e p="VisiTest.cs" t="Include" />
+            <e p="Visualization" t="Include">
+              <e p="BasicSpectrumProvider.cs" t="Include" />
+              <e p="GradientCalculator.cs" t="Include" />
+              <e p="ISpectrumProvider.cs" t="Include" />
+              <e p="LineSpectrum.cs" t="Include" />
+              <e p="ScalingStrategy.cs" t="Include" />
+              <e p="SpectrumBase.cs" t="Include" />
+              <e p="VoicePrint3DSpectrum.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Klak" t="Include">
+            <e p="BrownianMotion.cs" t="Include" />
             <e p="Editor" t="Include">
-              <e p="SteamVR_CopyExampleInputFiles.cs" t="Include" />
-              <e p="SteamVR_Input_Action_Boolean_PropertyEditor.cs" t="Include" />
-              <e p="SteamVR_Input_Action_GenericPropertyEditor.cs" t="Include" />
-              <e p="SteamVR_Input_Action_In_PropertyEditor.cs" t="Include" />
-              <e p="SteamVR_Input_Action_Out_PropertyEditor.cs" t="Include" />
-              <e p="SteamVR_Input_Action_Pose_PropertyEditor.cs" t="Include" />
-              <e p="SteamVR_Input_Action_PropertyEditor.cs" t="Include" />
-              <e p="SteamVR_Input_Action_Single_PropertyEditor.cs" t="Include" />
-              <e p="SteamVR_Input_Action_Skeleton_PropertyEditor.cs" t="Include" />
-              <e p="SteamVR_Input_Action_Vector2_PropertyEditor.cs" t="Include" />
-              <e p="SteamVR_Input_Action_Vector3_PropertyEditor.cs" t="Include" />
-              <e p="SteamVR_Input_Action_Vibration_PropertyEditor.cs" t="Include" />
-              <e p="SteamVR_Input_ActionSetPropertyEditor.cs" t="Include" />
-              <e p="SteamVR_Input_EditorWindow.cs" t="Include" />
-              <e p="SteamVR_Input_Generator.cs" t="Include" />
-              <e p="SteamVR_Input_LiveWindow.cs" t="Include" />
-              <e p="SteamVR_Input_PostProcessBuild.cs" t="Include" />
+              <e p="BrownianMotionEditor.cs" t="Include" />
             </e>
-            <e p="SteamVR_Action.cs" t="Include" />
-            <e p="SteamVR_Action_Boolean.cs" t="Include" />
-            <e p="SteamVR_Action_In.cs" t="Include" />
-            <e p="SteamVR_Action_List.cs" t="Include" />
-            <e p="SteamVR_Action_Out.cs" t="Include" />
-            <e p="SteamVR_Action_Pose.cs" t="Include" />
-            <e p="SteamVR_Action_Single.cs" t="Include" />
-            <e p="SteamVR_Action_Skeleton.cs" t="Include" />
-            <e p="SteamVR_Action_Vector2.cs" t="Include" />
-            <e p="SteamVR_Action_Vector3.cs" t="Include" />
-            <e p="SteamVR_Action_Vibration.cs" t="Include" />
-            <e p="SteamVR_ActionDirections.cs" t="Include" />
-            <e p="SteamVR_ActionSet.cs" t="Include" />
-            <e p="SteamVR_ActivateActionSetOnLoad.cs" t="Include" />
-            <e p="SteamVR_Behaviour_Boolean.cs" t="Include" />
-            <e p="SteamVR_Behaviour_Pose.cs" t="Include" />
-            <e p="SteamVR_Behaviour_Single.cs" t="Include" />
-            <e p="SteamVR_Behaviour_Skeleton.cs" t="Include" />
-            <e p="SteamVR_Behaviour_SkeletonCustom.cs" t="Include" />
-            <e p="SteamVR_Behaviour_Vector2.cs" t="Include" />
-            <e p="SteamVR_Behaviour_Vector3.cs" t="Include" />
-            <e p="SteamVR_DefaultAction.cs" t="Include" />
-            <e p="SteamVR_DefaultActionSet.cs" t="Include" />
-            <e p="SteamVR_Input.cs" t="Include" />
-            <e p="SteamVR_Input_ActionFile.cs" t="Include" />
-            <e p="SteamVR_Input_ActionScopes.cs" t="Include" />
-            <e p="SteamVR_Input_ActionSetUsages.cs" t="Include" />
-            <e p="SteamVR_Input_Generator_Names.cs" t="Include" />
-            <e p="SteamVR_Input_References.cs" t="Include" />
-            <e p="SteamVR_Input_Source.cs" t="Include" />
-            <e p="SteamVR_Input_Sources.cs" t="Include" />
-            <e p="SteamVR_UpdateModes.cs" t="Include" />
+            <e p="Perlin.cs" t="Include" />
           </e>
-          <e p="Plugins" t="Include">
-            <e p="openvr_api.cs" t="Include" />
+          <e p="PlayerPrefsEditor" t="Include">
+            <e p="Editor" t="Include">
+              <e p="Mac" t="Include">
+                <e p="Plist.cs" t="Include" />
+              </e>
+              <e p="PlayerPrefsEditor.cs" t="Include" />
+            </e>
+            <e p="PlayerPrefsUtility.cs" t="Include" />
+            <e p="readme.txt" t="Include" />
+            <e p="SimpleEncryption.cs" t="Include" />
           </e>
-          <e p="readme.txt" t="Include" />
-          <e p="Resources" t="Include">
-            <e p="SteamVR_AlphaOut.shader" t="Include" />
-            <e p="SteamVR_ClearAll.shader" t="Include" />
-            <e p="SteamVR_ColorOut.shader" t="Include" />
-            <e p="SteamVR_Fade.shader" t="Include" />
-            <e p="SteamVR_SphericalProjection.shader" t="Include" />
-          </e>
-          <e p="Scripts" t="Include">
-            <e p="SteamVR.cs" t="Include" />
-            <e p="SteamVR_Behaviour.cs" t="Include" />
-            <e p="SteamVR_Camera.cs" t="Include" />
-            <e p="SteamVR_CameraFlip.cs" t="Include" />
-            <e p="SteamVR_CameraMask.cs" t="Include" />
-            <e p="SteamVR_Ears.cs" t="Include" />
-            <e p="SteamVR_EnumEqualityComparer.cs" t="Include" />
-            <e p="SteamVR_Events.cs" t="Include" />
-            <e p="SteamVR_ExternalCamera.cs" t="Include" />
-            <e p="SteamVR_Fade.cs" t="Include" />
-            <e p="SteamVR_Frustum.cs" t="Include" />
-            <e p="SteamVR_IK.cs" t="Include" />
-            <e p="SteamVR_LoadLevel.cs" t="Include" />
-            <e p="SteamVR_Menu.cs" t="Include" />
-            <e p="SteamVR_Overlay.cs" t="Include" />
-            <e p="SteamVR_PlayArea.cs" t="Include" />
-            <e p="SteamVR_Render.cs" t="Include" />
-            <e p="SteamVR_RenderModel.cs" t="Include" />
-            <e p="SteamVR_RingBuffer.cs" t="Include" />
-            <e p="SteamVR_Settings.cs" t="Include" />
-            <e p="SteamVR_Skybox.cs" t="Include" />
-            <e p="SteamVR_SphericalProjection.cs" t="Include" />
-            <e p="SteamVR_TrackedCamera.cs" t="Include" />
-            <e p="SteamVR_TrackedObject.cs" t="Include" />
-            <e p="SteamVR_Utils.cs" t="Include" />
-          </e>
-        </e>
-        <e p="SteamVR_Input" t="Include">
-          <e p="ActionObjects" t="Include">
-            <e p="SteamVR_Input_ActionSet_Psyia.cs" t="Include" />
-            <e p="SteamVR_Input_ActionSet_Psyia_In.cs" t="Include" />
-            <e p="SteamVR_Input_ActionSet_Psyia_Out.cs" t="Include" />
-          </e>
-          <e p="SteamVR_Input_Actions.cs" t="Include" />
-          <e p="SteamVR_Input_ActionSets.cs" t="Include" />
-        </e>
-        <e p="UISketch" t="Include">
-          <e p="UnlitVC.shader" t="Include" />
-        </e>
-        <e p="XRPanel" t="Include">
-          <e p="Resources" t="Include">
+          <e p="Psyia" t="Include">
+            <e p="AssetPackages" t="Include">
+              <e p="ShaderNoise" t="Include">
+                <e p="GLSL" t="Include">
+                  <e p="NoiseTest.glslinc" t="Include" />
+                  <e p="NoiseTest.shader" t="Include" />
+                </e>
+                <e p="HLSL" t="Include">
+                  <e p="ClassicNoise2D.hlsl" t="Include" />
+                  <e p="ClassicNoise3D.hlsl" t="Include" />
+                  <e p="NoiseTest.shader" t="Include" />
+                  <e p="SimplexNoise2D.hlsl" t="Include" />
+                  <e p="SimplexNoise3D.hlsl" t="Include" />
+                </e>
+                <e p="NoiseTest.cs" t="Include" />
+              </e>
+              <e p="UCTK" t="Include">
+                <e p="Buffer" t="Include">
+                  <e p="BufferSetup.cs" t="Include" />
+                  <e p="BufferSetupWithDispatch.cs" t="Include" />
+                  <e p="GpuAppendBuffer.cs" t="Include" />
+                  <e p="GpuBuffer.cs" t="Include" />
+                </e>
+                <e p="Dispatchers" t="Include">
+                  <e p="ComputeDispatcher.cs" t="Include" />
+                  <e p="ComputeDispatcherCPU.cs" t="Include" />
+                  <e p="DispatchQueue.cs" t="Include" />
+                  <e p="DispatchQueueItem.cs" t="Include" />
+                  <e p="IDispatchable.cs" t="Include" />
+                </e>
+                <e p="Editor" t="Include">
+                  <e p="DispatchQueueInspector.cs" t="Include" />
+                  <e p="GPUAppendBufferInspector.cs" t="Include" />
+                  <e p="GPUBufferInspector.cs" t="Include" />
+                </e>
+                <e p="Parameters" t="Include">
+                  <e p="ComputeParameterSetter.cs" t="Include" />
+                  <e p="ComputeValueAttribute.cs" t="Include" />
+                  <e p="MaterialParameterSetter.cs" t="Include" />
+                  <e p="ShaderValueAttribute.cs" t="Include" />
+                  <e p="ShaderValues.cs" t="Include" />
+                </e>
+                <e p="Renderers" t="Include">
+                  <e p="ComputeRenderer.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="Editor" t="Include">
+                <e p="ParticleCountManagerInspector.cs" t="Include" />
+                <e p="PsyiaEmitterInspector.cs" t="Include" />
+                <e p="PsyiaForceInspector.cs" t="Include" />
+                <e p="PsyiaSystemInspector.cs" t="Include" />
+              </e>
+              <e p="EmissionManager.cs" t="Include" />
+              <e p="Forces" t="Include">
+                <e p="ForceManager.cs" t="Include" />
+                <e p="PsyiaForce.cs" t="Include" />
+                <e p="PsyiaInternalGravityForce.cs" t="Include" />
+              </e>
+              <e p="GlobalManager.cs" t="Include" />
+              <e p="GPU Scripts" t="Include">
+                <e p="DistanceBufferSetup.cs" t="Include" />
+                <e p="OddEvenSortDispatcher.cs" t="Include" />
+                <e p="ParticleBufferSetup.cs" t="Include" />
+                <e p="ParticleCountManager.cs" t="Include" />
+                <e p="PsyiaCoreParticleEmitter.cs" t="Include" />
+                <e p="UpdateGlobalMatrix.cs" t="Include" />
+                <e p="UpdateMainCameraPosition.cs" t="Include" />
+                <e p="UpdateTime.cs" t="Include" />
+              </e>
+              <e p="PhysicsManager.cs" t="Include" />
+              <e p="PsyiaEmitter.cs" t="Include" />
+              <e p="PsyiaSystem.cs" t="Include" />
+              <e p="RenderingManager.cs" t="Include" />
+              <e p="ScriptableObjects" t="Include">
+                <e p="ParticleSettings.cs" t="Include" />
+              </e>
+              <e p="SupplySettings.cs" t="Include" />
+            </e>
             <e p="Shaders" t="Include">
-              <e p="UnlitTransparentColor.shader" t="Include" />
+              <e p="Compute" t="Include">
+                <e p="CalculateDistances.compute" t="Include" />
+                <e p="ColorParticles.compute" t="Include" />
+                <e p="EmitParticles.compute" t="Include" />
+                <e p="SetupDeadList.compute" t="Include" />
+                <e p="SimulateParticles.compute" t="Include" />
+                <e p="SortParticles.compute" t="Include" />
+              </e>
+              <e p="Graphics" t="Include">
+                <e p="ParticleDiamonds.shader" t="Include" />
+                <e p="ParticleLines.shader" t="Include" />
+                <e p="ParticlePoints.shader" t="Include" />
+                <e p="ParticleQuads.shader" t="Include" />
+                <e p="PetrichorParticles.shader" t="Include" />
+              </e>
+              <e p="Includes" t="Include">
+                <e p="ForceFields.hlsl" t="Include" />
+                <e p="NoiseFunctions.hlsl" t="Include" />
+                <e p="Structs.hlsl" t="Include" />
+              </e>
+            </e>
+            <e p="StructsAndSOs" t="Include">
+              <e p="GPU Structs" t="Include">
+                <e p="DistanceData.cs" t="Include" />
+                <e p="ForceData.cs" t="Include" />
+                <e p="ParticleData.cs" t="Include" />
+              </e>
             </e>
           </e>
-          <e p="Scripts" t="Include">
-            <e p="EnumsAndClasses.cs" t="Include" />
-            <e p="OneShotter.cs" t="Include" />
-            <e p="XrpButton.cs" t="Include" />
-            <e p="XrpCanvasAlphaCopier.cs" t="Include" />
-            <e p="XrpControl.cs" t="Include" />
-            <e p="XrpControlGeometry.cs" t="Include" />
-            <e p="XrpCopyMaterialColor.cs" t="Include" />
-            <e p="XrpDial.cs" t="Include" />
-            <e p="XrpEnumSlider.cs" t="Include" />
-            <e p="XrpEnumSliderGeometry.cs" t="Include" />
-            <e p="XrpIntDial.cs" t="Include" />
-            <e p="XrpIntDialGeometry.cs" t="Include" />
-            <e p="XrpIntSlider.cs" t="Include" />
-            <e p="XrpIntSliderGeometry.cs" t="Include" />
-            <e p="XrpPanel.cs" t="Include" />
-            <e p="XrpPanelGeometry.cs" t="Include" />
-            <e p="XrpPointer.cs" t="Include" />
-            <e p="XrpSlider.cs" t="Include" />
-            <e p="XrpToggle.cs" t="Include" />
+          <e p="SteamVR" t="Include">
+            <e p="Editor" t="Include">
+              <e p="SteamVR_Editor.cs" t="Include" />
+              <e p="SteamVR_Preferences.cs" t="Include" />
+              <e p="SteamVR_RenderModelEditor.cs" t="Include" />
+              <e p="SteamVR_Settings.cs" t="Include" />
+              <e p="SteamVR_SkyboxEditor.cs" t="Include" />
+              <e p="SteamVR_UnitySettingsWindow.cs" t="Include" />
+              <e p="SteamVR_Update.cs" t="Include" />
+              <e p="SteamVR_UpdateModeEditor.cs" t="Include" />
+            </e>
+            <e p="Extras" t="Include">
+              <e p="SteamVR_GazeTracker.cs" t="Include" />
+              <e p="SteamVR_TestThrow.cs" t="Include" />
+              <e p="SteamVR_TestTrackedCamera.cs" t="Include" />
+            </e>
+            <e p="Input" t="Include">
+              <e p="Editor" t="Include">
+                <e p="SteamVR_CopyExampleInputFiles.cs" t="Include" />
+                <e p="SteamVR_Input_Action_Boolean_PropertyEditor.cs" t="Include" />
+                <e p="SteamVR_Input_Action_GenericPropertyEditor.cs" t="Include" />
+                <e p="SteamVR_Input_Action_In_PropertyEditor.cs" t="Include" />
+                <e p="SteamVR_Input_Action_Out_PropertyEditor.cs" t="Include" />
+                <e p="SteamVR_Input_Action_Pose_PropertyEditor.cs" t="Include" />
+                <e p="SteamVR_Input_Action_PropertyEditor.cs" t="Include" />
+                <e p="SteamVR_Input_Action_Single_PropertyEditor.cs" t="Include" />
+                <e p="SteamVR_Input_Action_Skeleton_PropertyEditor.cs" t="Include" />
+                <e p="SteamVR_Input_Action_Vector2_PropertyEditor.cs" t="Include" />
+                <e p="SteamVR_Input_Action_Vector3_PropertyEditor.cs" t="Include" />
+                <e p="SteamVR_Input_Action_Vibration_PropertyEditor.cs" t="Include" />
+                <e p="SteamVR_Input_ActionSetPropertyEditor.cs" t="Include" />
+                <e p="SteamVR_Input_EditorWindow.cs" t="Include" />
+                <e p="SteamVR_Input_Generator.cs" t="Include" />
+                <e p="SteamVR_Input_LiveWindow.cs" t="Include" />
+                <e p="SteamVR_Input_PostProcessBuild.cs" t="Include" />
+              </e>
+              <e p="SteamVR_Action.cs" t="Include" />
+              <e p="SteamVR_Action_Boolean.cs" t="Include" />
+              <e p="SteamVR_Action_In.cs" t="Include" />
+              <e p="SteamVR_Action_List.cs" t="Include" />
+              <e p="SteamVR_Action_Out.cs" t="Include" />
+              <e p="SteamVR_Action_Pose.cs" t="Include" />
+              <e p="SteamVR_Action_Single.cs" t="Include" />
+              <e p="SteamVR_Action_Skeleton.cs" t="Include" />
+              <e p="SteamVR_Action_Vector2.cs" t="Include" />
+              <e p="SteamVR_Action_Vector3.cs" t="Include" />
+              <e p="SteamVR_Action_Vibration.cs" t="Include" />
+              <e p="SteamVR_ActionDirections.cs" t="Include" />
+              <e p="SteamVR_ActionSet.cs" t="Include" />
+              <e p="SteamVR_ActivateActionSetOnLoad.cs" t="Include" />
+              <e p="SteamVR_Behaviour_Boolean.cs" t="Include" />
+              <e p="SteamVR_Behaviour_Pose.cs" t="Include" />
+              <e p="SteamVR_Behaviour_Single.cs" t="Include" />
+              <e p="SteamVR_Behaviour_Skeleton.cs" t="Include" />
+              <e p="SteamVR_Behaviour_SkeletonCustom.cs" t="Include" />
+              <e p="SteamVR_Behaviour_Vector2.cs" t="Include" />
+              <e p="SteamVR_Behaviour_Vector3.cs" t="Include" />
+              <e p="SteamVR_DefaultAction.cs" t="Include" />
+              <e p="SteamVR_DefaultActionSet.cs" t="Include" />
+              <e p="SteamVR_Input.cs" t="Include" />
+              <e p="SteamVR_Input_ActionFile.cs" t="Include" />
+              <e p="SteamVR_Input_ActionScopes.cs" t="Include" />
+              <e p="SteamVR_Input_ActionSetUsages.cs" t="Include" />
+              <e p="SteamVR_Input_Generator_Names.cs" t="Include" />
+              <e p="SteamVR_Input_References.cs" t="Include" />
+              <e p="SteamVR_Input_Source.cs" t="Include" />
+              <e p="SteamVR_Input_Sources.cs" t="Include" />
+              <e p="SteamVR_UpdateModes.cs" t="Include" />
+            </e>
+            <e p="Plugins" t="Include">
+              <e p="openvr_api.cs" t="Include" />
+            </e>
+            <e p="readme.txt" t="Include" />
+            <e p="Resources" t="Include">
+              <e p="SteamVR_AlphaOut.shader" t="Include" />
+              <e p="SteamVR_ClearAll.shader" t="Include" />
+              <e p="SteamVR_ColorOut.shader" t="Include" />
+              <e p="SteamVR_Fade.shader" t="Include" />
+              <e p="SteamVR_SphericalProjection.shader" t="Include" />
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="SteamVR.cs" t="Include" />
+              <e p="SteamVR_Behaviour.cs" t="Include" />
+              <e p="SteamVR_Camera.cs" t="Include" />
+              <e p="SteamVR_CameraFlip.cs" t="Include" />
+              <e p="SteamVR_CameraMask.cs" t="Include" />
+              <e p="SteamVR_Ears.cs" t="Include" />
+              <e p="SteamVR_EnumEqualityComparer.cs" t="Include" />
+              <e p="SteamVR_Events.cs" t="Include" />
+              <e p="SteamVR_ExternalCamera.cs" t="Include" />
+              <e p="SteamVR_Fade.cs" t="Include" />
+              <e p="SteamVR_Frustum.cs" t="Include" />
+              <e p="SteamVR_IK.cs" t="Include" />
+              <e p="SteamVR_LoadLevel.cs" t="Include" />
+              <e p="SteamVR_Menu.cs" t="Include" />
+              <e p="SteamVR_Overlay.cs" t="Include" />
+              <e p="SteamVR_PlayArea.cs" t="Include" />
+              <e p="SteamVR_Render.cs" t="Include" />
+              <e p="SteamVR_RenderModel.cs" t="Include" />
+              <e p="SteamVR_RingBuffer.cs" t="Include" />
+              <e p="SteamVR_Settings.cs" t="Include" />
+              <e p="SteamVR_Skybox.cs" t="Include" />
+              <e p="SteamVR_SphericalProjection.cs" t="Include" />
+              <e p="SteamVR_TrackedCamera.cs" t="Include" />
+              <e p="SteamVR_TrackedObject.cs" t="Include" />
+              <e p="SteamVR_Utils.cs" t="Include" />
+            </e>
+          </e>
+          <e p="SteamVR_Input" t="Include">
+            <e p="ActionObjects" t="Include">
+              <e p="SteamVR_Input_ActionSet_Psyia.cs" t="Include" />
+              <e p="SteamVR_Input_ActionSet_Psyia_In.cs" t="Include" />
+              <e p="SteamVR_Input_ActionSet_Psyia_Out.cs" t="Include" />
+            </e>
+            <e p="SteamVR_Input_Actions.cs" t="Include" />
+            <e p="SteamVR_Input_ActionSets.cs" t="Include" />
+          </e>
+          <e p="XRPanel" t="Include">
+            <e p="Resources" t="Include">
+              <e p="Shaders" t="Include">
+                <e p="UnlitTransparentColor.shader" t="Include" />
+              </e>
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="EnumsAndClasses.cs" t="Include" />
+              <e p="OneShotter.cs" t="Include" />
+              <e p="XrpButton.cs" t="Include" />
+              <e p="XrpCanvasAlphaCopier.cs" t="Include" />
+              <e p="XrpControl.cs" t="Include" />
+              <e p="XrpControlGeometry.cs" t="Include" />
+              <e p="XrpCopyMaterialColor.cs" t="Include" />
+              <e p="XrpDial.cs" t="Include" />
+              <e p="XrpEnumSlider.cs" t="Include" />
+              <e p="XrpEnumSliderGeometry.cs" t="Include" />
+              <e p="XrpIntDial.cs" t="Include" />
+              <e p="XrpIntDialGeometry.cs" t="Include" />
+              <e p="XrpIntSlider.cs" t="Include" />
+              <e p="XrpIntSliderGeometry.cs" t="Include" />
+              <e p="XrpPanel.cs" t="Include" />
+              <e p="XrpPanelGeometry.cs" t="Include" />
+              <e p="XrpPointer.cs" t="Include" />
+              <e p="XrpSlider.cs" t="Include" />
+              <e p="XrpToggle.cs" t="Include" />
+            </e>
           </e>
         </e>
       </e>
