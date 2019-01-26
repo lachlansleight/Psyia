@@ -18,6 +18,7 @@ namespace XRP
 		{
 			transform.localScale =
 				Vector3.one * Mathf.Lerp(transform.localScale.x, Hovering ? HoverScale : DefaultScale, 0.2f);
+			
 		}
 
 		public void LateUpdate()

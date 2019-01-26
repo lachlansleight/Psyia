@@ -141,7 +141,8 @@ public class ModeChoreography : MonoBehaviour
 		_faderMaterial.SetColor("_Color", color);
 
 		foreach (var m in Modes) {
-			m.TouchSphere.LerpToScale(0f, 0.3f, true);
+			if(m.TouchSphere.gameObject.activeSelf)
+				m.TouchSphere.LerpToScale(0f, 0.3f, true);
 			
 			if (m.Panel.gameObject.activeSelf) {
 				m.Panel.LerpToScale(0f, 0.3f, true);

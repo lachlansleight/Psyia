@@ -25,6 +25,7 @@
             <e p="ControllerPose.cs" t="Include" />
             <e p="ControllerSpawn.cs" t="Include" />
             <e p="ControllerSymmetry.cs" t="Include" />
+            <e p="MatchPosition.cs" t="Include" />
             <e p="PsyiaController.cs" t="Include" />
             <e p="TimeSlower.cs" t="Include" />
           </e>

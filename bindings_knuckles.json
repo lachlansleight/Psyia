@@ -131,6 +131,9 @@
             }
          ]
       },
+      "/actions/legacy" : {
+         "sources" : []
+      },
       "/actions/platformer" : {
          "sources" : [
             {
@@ -184,27 +187,27 @@
          ],
          "poses" : [
             {
-               "output" : "/actions/psyia/in/pose",
+               "output" : "none",
                "path" : "/user/hand/left/pose/base"
             },
             {
-               "output" : "/actions/psyia/in/pose",
+               "output" : "none",
                "path" : "/user/hand/right/pose/base"
             },
             {
-               "output" : "/actions/psyia/in/pose",
+               "output" : "none",
                "path" : "/user/hand/left/pose/gdc2015"
             },
             {
-               "output" : "/actions/psyia/in/pose",
+               "output" : "none",
                "path" : "/user/hand/right/pose/gdc2015"
             },
             {
-               "output" : "/actions/psyia/in/pose",
+               "output" : "none",
                "path" : "/user/hand/left/pose/handgrip"
             },
             {
-               "output" : "/actions/psyia/in/pose",
+               "output" : "none",
                "path" : "/user/hand/right/pose/handgrip"
             },
             {
@@ -216,17 +219,17 @@
                "path" : "/user/hand/right/pose/raw"
             },
             {
-               "output" : "/actions/psyia/in/pose",
+               "output" : "none",
                "path" : "/user/hand/left/pose/tip"
             },
             {
-               "output" : "/actions/psyia/in/pose",
+               "output" : "none",
                "path" : "/user/hand/right/pose/tip"
             }
          ],
          "skeleton" : [
             {
-               "output" : "/actions/psyia/in/skeletonrighthand",
+               "output" : "none",
                "path" : "/user/hand/left/input/skeleton/right"
             },
             {
@@ -256,6 +259,60 @@
                },
                "mode" : "trigger",
                "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "force" : {
+                     "output" : "/actions/psyia/in/spawnparticles"
+                  }
+               },
+               "mode" : "force_sensor",
+               "path" : "/user/hand/left/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "force" : {
+                     "output" : "/actions/psyia/in/spawnparticles"
+                  }
+               },
+               "mode" : "force_sensor",
+               "path" : "/user/hand/right/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/psyia/in/slowtime"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/a"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/psyia/in/slowtime"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/a"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/psyia/in/togglemenu"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/b"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/psyia/in/togglemenu"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/b"
             }
          ]
       }
@@ -263,6 +320,8 @@
    "controller_type" : "knuckles",
    "description" : "",
    "name" : "Psyia_Knuckles",
-   "options" : {},
+   "options" : {
+      "mirror_actions" : false
+   },
    "simulated_actions" : []
 }

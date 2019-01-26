@@ -67,6 +67,7 @@ Shader "Psyia/Points"
 
 	float4 myFragmentShader(v2f IN) : COLOR
 	{
+	    //return float4(1,0,0,1);
 		return IN.col * _Color;
 	}
 

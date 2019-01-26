@@ -1,7 +1,6 @@
 using System.IO;
 using UnityEngine;
 using SimpleJSON;
-using File = UnityEngine.Windows.File;
 
 public class SaveGameInterface : MonoBehaviour
 {
