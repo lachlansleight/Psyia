@@ -22,6 +22,8 @@ public class ModeChoreography : MonoBehaviour
 		public ModeSettingsPanel Panel;
 	}
 
+	public Meditation Meditation;
+	
 	[Header("Fader")]
 	public GameObject FaderObject;
 	public float FlashFadeTime = 1f;
@@ -70,6 +72,13 @@ public class ModeChoreography : MonoBehaviour
 		StartCoroutine(ResetEverything());
 	}
 
+	public void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.Space)) {
+			StartMeditation();
+		}
+	}
+	
 	public void SetMode(TouchSphere sourceSphere)
 	{
 		Mode targetMode = null;
@@ -217,6 +226,111 @@ public class ModeChoreography : MonoBehaviour
 		IntroCanvas.gameObject.SetActive(true);
 		IntroCanvas.SetPositionInstantly();
 		IntroCanvas.SetTexts(targetMode.SongName, targetMode.ArtistName, targetMode.Tip);
+		IntroCanvas.Fade(1f, 2f);
+
+		for (var i = 0f; i <= 1f; i += Time.deltaTime / 5f) {
+			PsyiaRenderer.RenderMaterial.color = Color.Lerp(DefaultPsyiaColor, new Color(0f, 0f, 0f, 0f), i);
+			yield return null;
+		}
+
+		PsyiaRenderer.enabled = false;
+		PsyiaDispatcher.RunOnUpdate = false;
+		
+		yield return new WaitForSeconds(2f);
+		
+		IntroCanvas.Fade(0f, 1f, true);
+
+		for (var i = 0f; i < 1f; i += Time.deltaTime / 0.5f) {
+			var iL = 0f;
+			if (i < 0.5f) iL = 4f * i * i * i;
+			iL = (i - 1f);
+			iL = 4f * iL * iL * iL + 1f;
+			
+			iL = 1f - iL;
+			LeftController.localScale = new Vector3(iL, iL, 1f);
+			RightController.localScale = new Vector3(iL, iL, 1f);
+		}
+
+		LeftController.localScale = Vector3.zero;
+		RightController.localScale = Vector3.zero;
+
+		ReturnToMenu();
+	}
+
+	public void StartMeditation()
+	{
+		StartCoroutine(RunMeditationRoutine());
+	}
+
+	public IEnumerator RunMeditationRoutine()
+	{
+		FaderObject.SetActive(true);
+
+		var color = Color.black;
+		_faderMaterial.SetColor("_Color", color);
+
+		foreach (var m in Modes) {
+			if(m.TouchSphere.gameObject.activeSelf)
+				m.TouchSphere.LerpToScale(0f, 0.3f, true);
+			
+			if (m.Panel.gameObject.activeSelf) {
+				m.Panel.LerpToScale(0f, 0.3f, true);
+			}
+		}
+		
+		for (var i = 0f; i < 1f; i += Time.deltaTime / FlashFadeTime) {
+			color.a = 1f - i;
+			_faderMaterial.SetColor("_Color", color);
+			yield return null;
+		}
+
+		FaderObject.SetActive(false);
+
+		IntroCanvas.gameObject.SetActive(true);
+		IntroCanvas.SetPositionInstantly();
+		var text = "Suggested duration: 20 minutes";
+		text += "\n\nInfinite mode - hold the menu button to return";
+		IntroCanvas.SetTexts("Meditation", text, "");
+		IntroCanvas.Fade(1f, 1f);
+
+		yield return new WaitForSeconds(5f);
+
+		IntroCanvas.Fade(0f, 1f, true);
+
+		MenuToggler.AllowMenuToggle = true;
+
+		for (var i = 0f; i < 1f; i += Time.deltaTime / 0.5f) {
+			var iL = 0f;
+			if (i < 0.5f) iL = 4f * i * i * i;
+			iL = (i - 1f);
+			iL = 4f * iL * iL * iL + 1f;
+			LeftController.localScale = new Vector3(iL, iL, 1f);
+			RightController.localScale = new Vector3(iL, iL, 1f);
+		}
+
+		LeftController.localScale = Vector3.one;
+		RightController.localScale = Vector3.one;
+
+		SettingsApplicator.TestJson = Meditation.PresetJson;
+		UiSettingsApplicator.LoadFromJson(Meditation.PresetJson.text);
+		SettingsApplicator.ApplyTestJson();
+		PsyiaRenderer.RenderMaterial.color = DefaultPsyiaColor;
+		PsyiaRenderer.enabled = true;
+		PsyiaDispatcher.RunOnUpdate = true;
+		Meditation.Emitter.Emit(Meditation.Emitter.StartEmitCount);
+
+		Meditation.BeginMeditation();
+
+		//note - this means that if Auto Play is on, the only way back is using the menu button!
+		var duration = 0f;
+		while (duration < (60f * 20f)) {
+			duration += Time.deltaTime;
+			yield return null;
+		}
+		
+		IntroCanvas.gameObject.SetActive(true);
+		IntroCanvas.SetPositionInstantly();
+		IntroCanvas.SetTexts("Welcome back", "", "");
 		IntroCanvas.Fade(1f, 2f);
 
 		for (var i = 0f; i <= 1f; i += Time.deltaTime / 5f) {

@@ -55,6 +55,10 @@
             <e p="SaveGameInterfaceInspector.cs" t="Include" />
             <e p="SettingsDebugDisplayInspector.cs" t="Include" />
           </e>
+          <e p="Meditation" t="Include">
+            <e p="Meditation.cs" t="Include" />
+            <e p="MeditationCrystal.cs" t="Include" />
+          </e>
           <e p="ModeMenu" t="Include">
             <e p="ModeSettingsPanel.cs" t="Include" />
             <e p="TouchSphere.cs" t="Include" />
