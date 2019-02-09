@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Valve.VR.InteractionSystem;
 
 public class PsyiaController : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class PsyiaController : MonoBehaviour
 
 	public GameObject fancy;
 	public GameObject minimal;
-	public GameObject fancyBase;
+	public Hand fancyBase;
 
 	public Transform spinner;
 	public Transform sphere;
@@ -53,7 +54,8 @@ public class PsyiaController : MonoBehaviour
 		}
 
 		//no matter whether we're on the menu or not, the base should be enabled/disabled regardless
-		if(fancyBase.activeSelf != ShowFullModel) fancyBase.SetActive(ShowFullModel);
+		if (ShowFullModel) fancyBase.ShowController(true);
+		else fancyBase.HideController(true);
 
 		var value = Pointer.Hovering ? 0f : ForceValue.Value;
 		

@@ -5,6 +5,7 @@
       "app_key": "application.generated.unity.psyia.exe",
       "launch_type": "url",
       "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\Lachlan\\Development\\GitHub\\Psyia\\actions.json",
       "strings": {
         "en_us": {
           "name": "Psyia [Testing]"

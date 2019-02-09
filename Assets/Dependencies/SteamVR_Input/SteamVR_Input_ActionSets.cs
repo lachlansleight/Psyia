@@ -14,21 +14,24 @@ namespace Valve.VR
     using UnityEngine;
     
     
-    public partial class SteamVR_Input
+    public partial class SteamVR_Actions
     {
         
-        public static Valve.VR.SteamVR_Input_ActionSet_Psyia Psyia;
+        private static SteamVR_Input_ActionSet_Psyia p_Psyia;
         
-        public static void Dynamic_InitializeActionSets()
+        public static SteamVR_Input_ActionSet_Psyia Psyia
         {
-            SteamVR_Input.Psyia.Initialize();
+            get
+            {
+                return SteamVR_Actions.p_Psyia.GetCopy<SteamVR_Input_ActionSet_Psyia>();
+            }
         }
         
-        public static void Dynamic_InitializeInstanceActionSets()
+        private static void StartPreInitActionSets()
         {
-            Valve.VR.SteamVR_Input.Psyia = ((SteamVR_Input_ActionSet_Psyia)(SteamVR_Input_References.GetActionSet("Psyia")));
+            SteamVR_Actions.p_Psyia = ((SteamVR_Input_ActionSet_Psyia)(SteamVR_ActionSet.Create<SteamVR_Input_ActionSet_Psyia>("/actions/Psyia")));
             Valve.VR.SteamVR_Input.actionSets = new Valve.VR.SteamVR_ActionSet[] {
-                    Valve.VR.SteamVR_Input.Psyia};
+                    SteamVR_Actions.Psyia};
         }
     }
 }
