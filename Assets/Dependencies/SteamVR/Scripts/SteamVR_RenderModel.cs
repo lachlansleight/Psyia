@@ -52,6 +52,8 @@ namespace Valve.VR
 
         private List<MeshRenderer> meshRenderers = new List<MeshRenderer>();
 
+        public Material customMaterial;
+
         // If someone knows how to keep these from getting cleaned up every time
         // you exit play mode, let me know.  I've tried marking the RenderModel
         // class below as [System.Serializable] and switching to normal public
@@ -326,9 +328,10 @@ namespace Valve.VR
                         models[renderModelName] = model;
                     }
 
+                    Debug.Log("Adding mesh and stuff");
                     gameObject.AddComponent<MeshFilter>().mesh = model.mesh;
                     MeshRenderer newRenderer = gameObject.AddComponent<MeshRenderer>();
-                    newRenderer.sharedMaterial = model.material;
+                    newRenderer.sharedMaterial = customMaterial == null ? model.material : customMaterial;
                     meshRenderers.Add(newRenderer);
                     return true;
                 }
@@ -452,7 +455,9 @@ namespace Valve.VR
                         texture.Apply();
                     }
 
-                    material = new Material(shader != null ? shader : Shader.Find("Standard"));
+                    material = customMaterial == null
+                        ? new Material(shader != null ? shader : Shader.Find("Standard"))
+                        : customMaterial;
                     material.mainTexture = texture;
                     //material.hideFlags = HideFlags.DontUnloadUnusedAsset;
 
@@ -617,7 +622,7 @@ namespace Valve.VR
 
                 t.gameObject.AddComponent<MeshFilter>().mesh = model.mesh;
                 MeshRenderer newRenderer = t.gameObject.AddComponent<MeshRenderer>();
-                newRenderer.sharedMaterial = model.material;
+                newRenderer.sharedMaterial = customMaterial == null ? model.material : customMaterial;
                 meshRenderers.Add(newRenderer);
             }
 
