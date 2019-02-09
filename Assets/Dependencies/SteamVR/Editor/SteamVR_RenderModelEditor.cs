@@ -14,7 +14,7 @@ namespace Valve.VR
     [CustomEditor(typeof(SteamVR_RenderModel)), CanEditMultipleObjects]
     public class SteamVR_RenderModelEditor : Editor
     {
-        SerializedProperty script, index, modelOverride, shader, verbose, createComponents, updateDynamically;
+        SerializedProperty script, index, modelOverride, shader, verbose, createComponents, updateDynamically, customMaterial;
 
         static string[] renderModelNames;
         int renderModelIndex;

@@ -78,7 +78,7 @@ public class TouchSphere : MonoBehaviour
 
 	public void LerpToScale(float targetScalePercentage, float duration, bool disableAtEnd = false)
 	{
-		Debug.Log($"{gameObject.name} lerping to {(int)(targetScalePercentage*100f)} over {duration:0.00} seconds, disableAtEnd={disableAtEnd}");
+		//Debug.Log($"{gameObject.name} lerping to {(int)(targetScalePercentage*100f)} over {duration:0.00} seconds, disableAtEnd={disableAtEnd}");
 		if (duration <= 0f) {
 			SetScale(targetScalePercentage * _defaultScale);
 			if (disableAtEnd) gameObject.SetActive(false);

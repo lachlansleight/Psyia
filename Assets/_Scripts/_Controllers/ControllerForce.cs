@@ -37,10 +37,8 @@ public class ControllerForce : MonoBehaviour
 		_psyiaForce.StrengthMultiplier = Value;
 	}
 
-	private void OnAxisValueChanged(SteamVR_Action_In actionIn)
+	private void OnAxisValueChanged(SteamVR_Action_Single actionIn, SteamVR_Input_Sources hand, float newAxis, float newDelta)
 	{
-		if (!(actionIn is SteamVR_Action_Single)) return;
-		var asSingle = (SteamVR_Action_Single) actionIn;
-		Value = asSingle.GetAxis(Hand);
+		Value = actionIn.GetAxis(Hand);
 	}
 }

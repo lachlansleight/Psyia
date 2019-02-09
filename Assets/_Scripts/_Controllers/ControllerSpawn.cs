@@ -33,11 +33,9 @@ public class ControllerSpawn : MonoBehaviour {
 		SpawnParticlesAction.RemoveOnChangeListener(OnAxisValueChanged, Hand);
 	}
 
-	private void OnAxisValueChanged(SteamVR_Action_In actionIn)
+	private void OnAxisValueChanged(SteamVR_Action_Boolean actionIn, SteamVR_Input_Sources hand, bool newState)
 	{
-		if (!(actionIn is SteamVR_Action_Boolean)) return;
-		var asBoolean = (SteamVR_Action_Boolean) actionIn;
-		Value = SpawnMultiplier.Evaluate(asBoolean.GetState(Hand) ? 1f : 0f);
+		Value = SpawnMultiplier.Evaluate(actionIn.GetState(Hand) ? 1f : 0f);
 		_psyiaEmitter.EmissionMultiplier = Value;
 		//_psyiaEmitter.Settings.MinSpawnVelocity = MinSpawnVelocity.Evaluate(Value);
 		//_psyiaEmitter.Settings.MaxSpawnVelocity = MaxSpawnVelocity.Evaluate(Value);

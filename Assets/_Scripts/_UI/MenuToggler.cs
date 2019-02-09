@@ -82,13 +82,10 @@ public class MenuToggler : MonoBehaviour
 		_targetValue = value;
 	}
 
-	private void OnAxisValueChanged(SteamVR_Action_In actionIn)
+	private void OnAxisValueChanged(SteamVR_Action_Boolean actionIn, SteamVR_Input_Sources hand, bool newState)
 	{
-		
-		if (!(actionIn is SteamVR_Action_Boolean)) return;
-		var asBoolean = (SteamVR_Action_Boolean) actionIn;
-		var pressUp = asBoolean.GetStateUp(Hand);
-		var pressDown = asBoolean.GetStateDown(Hand);
+		var pressUp = actionIn.GetStateUp(hand);
+		var pressDown = actionIn.GetStateDown(hand);
 
 		if (pressDown) _down = true;
 		else _down = false;

@@ -133,7 +133,7 @@ public class SoundCapture : MonoBehaviour
         }
     }
 
-    public void UpdateFftData(float[] data)
+    public void UpdateFftData(ref float[] data)
     {
         lock (barData)
         {
@@ -159,10 +159,10 @@ public class SoundCapture : MonoBehaviour
     {
 
         int numBars = barData.Length;
-
+        
         if (resData == null) resData = GetFFtData();
         else if (resData.Length != numBars) resData = GetFFtData();
-        else UpdateFftData(resData);
+        else UpdateFftData(ref resData);
 
         if (resData == null)
         {
