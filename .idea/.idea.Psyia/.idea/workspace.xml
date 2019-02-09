@@ -2,207 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="140a6c05-64ff-46f0-b2c6-b112526fc446" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Psyia/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Psyia/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Psyia/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Psyia/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/Psyia/Materials/ParticleDiamonds.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/Psyia/Materials/ParticleDiamonds.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/Psyia/Materials/ParticleLines.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/Psyia/Materials/ParticleLines.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/Psyia/Materials/ParticleQuads.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/Psyia/Materials/ParticleQuads.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Editor/SteamVR_Preferences.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Editor/SteamVR_Preferences.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Editor/SteamVR_SkyboxEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Editor/SteamVR_SkyboxEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Editor/SteamVR_UnitySettingsWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Editor/SteamVR_UnitySettingsWindow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Editor/SteamVR_Update.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Editor/SteamVR_Update.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Extras/SteamVR_TestThrow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Extras/SteamVR_TestThrow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Extras/SteamVR_TestTrackedCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Extras/SteamVR_TestTrackedCamera.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/Editor/SteamVR_CopyExampleInputFiles.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/Editor/SteamVR_CopyExampleInputFiles.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/Editor/SteamVR_Input_ActionSetPropertyEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/Editor/SteamVR_Input_ActionSetPropertyEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/Editor/SteamVR_Input_Action_GenericPropertyEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/Editor/SteamVR_Input_Action_GenericPropertyEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/Editor/SteamVR_Input_Action_In_PropertyEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/Editor/SteamVR_Input_Action_In_PropertyEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/Editor/SteamVR_Input_Action_Out_PropertyEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/Editor/SteamVR_Input_Action_Out_PropertyEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/Editor/SteamVR_Input_Action_PropertyEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/Editor/SteamVR_Input_Action_PropertyEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/Editor/SteamVR_Input_EditorWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/Editor/SteamVR_Input_EditorWindow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/Editor/SteamVR_Input_Generator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/Editor/SteamVR_Input_Generator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/Editor/SteamVR_Input_LiveWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/Editor/SteamVR_Input_LiveWindow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/Editor/SteamVR_Input_PostProcessBuild.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/Editor/SteamVR_Input_PostProcessBuild.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/ExampleJSON/actions.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/ExampleJSON/actions.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/ExampleJSON/actions.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/ExampleJSON/actions.json.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/ExampleJSON/bindings_holographic_controller.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/ExampleJSON/bindings_holographic_controller.json.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/ExampleJSON/bindings_knuckles.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/ExampleJSON/bindings_knuckles.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/ExampleJSON/bindings_knuckles.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/ExampleJSON/bindings_knuckles.json.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/ExampleJSON/bindings_oculus_touch.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/ExampleJSON/bindings_oculus_touch.json.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/ExampleJSON/bindings_vive_controller.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/ExampleJSON/bindings_vive_controller.json.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_ActionDirections.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_ActionDirections.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_ActionSet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_ActionSet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_ActionSet.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_ActionSet.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Boolean.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Boolean.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Boolean.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Boolean.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_In.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_In.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_In.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_In.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_List.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_List.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Out.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Out.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Out.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Out.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Pose.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Pose.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Pose.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Pose.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Single.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Single.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Single.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Single.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Skeleton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Skeleton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Skeleton.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Skeleton.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Vector2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Vector2.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Vector2.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Vector2.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Vector3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Vector3.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Vector3.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Vector3.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Vibration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Vibration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Vibration.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Action_Vibration.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_ActivateActionSetOnLoad.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_ActivateActionSetOnLoad.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_ActivateActionSetOnLoad.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_ActivateActionSetOnLoad.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Behaviour_Boolean.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Behaviour_Boolean.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Behaviour_Boolean.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Behaviour_Boolean.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Behaviour_Pose.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Behaviour_Pose.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Behaviour_Pose.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Behaviour_Pose.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Behaviour_Single.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Behaviour_Single.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Behaviour_Single.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Behaviour_Single.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Behaviour_Skeleton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Behaviour_Skeleton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Behaviour_Skeleton.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Behaviour_Skeleton.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Behaviour_SkeletonCustom.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Behaviour_SkeletonCustom.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Behaviour_Vector2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Behaviour_Vector2.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Behaviour_Vector2.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Behaviour_Vector2.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Behaviour_Vector3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Behaviour_Vector3.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Behaviour_Vector3.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Behaviour_Vector3.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_DefaultAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_DefaultAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_DefaultAction.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_DefaultAction.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_DefaultActionSet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_DefaultActionSet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_DefaultActionSet.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_DefaultActionSet.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Input.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Input.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Input.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Input.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Input_ActionFile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Input_ActionFile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Input_ActionFile.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Input_ActionFile.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Input_ActionScopes.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Input_ActionScopes.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Input_ActionSetUsages.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Input_ActionSetUsages.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Input_Generator_Names.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Input_Generator_Names.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Input_Generator_Names.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Input_Generator_Names.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Input_References.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Input_References.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Input_References.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Input_References.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Input_Source.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Input_Source.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Input_Source.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Input_Source.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Input_Sources.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Input_Sources.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Input_Sources.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_Input_Sources.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_UpdateModes.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Input/SteamVR_UpdateModes.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Models/Materials/vr_glove_color.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Models/Materials/vr_glove_color.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Models/Materials/vr_glove_color_red.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Models/Materials/vr_glove_color_red.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Models/Materials/vr_glove_color_red.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Models/Materials/vr_glove_color_red.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Models/Materials/vr_glove_normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Models/Materials/vr_glove_normal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Models/vr_floppyHand.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Models/vr_floppyHand.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Plugins.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Plugins.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Plugins/openvr_api.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Plugins/openvr_api.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Prefabs/[CameraRig].prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Prefabs/[CameraRig].prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Prefabs/vr_glove_left.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Prefabs/vr_glove_left.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Prefabs/vr_glove_left_model_slim.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Prefabs/vr_glove_left_model_slim.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Prefabs/vr_glove_right.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Prefabs/vr_glove_right.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Prefabs/vr_glove_right_model_slim.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Prefabs/vr_glove_right_model_slim.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Prefabs/vr_hand_alien_left.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Prefabs/vr_hand_alien_left.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Prefabs/vr_hand_alien_right.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Prefabs/vr_hand_alien_right.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Prefabs/vr_hand_floppy_left.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Prefabs/vr_hand_floppy_left.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Prefabs/vr_hand_floppy_right.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Prefabs/vr_hand_floppy_right.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Resources/SteamVR_ExternalCamera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Resources/SteamVR_ExternalCamera.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Resources/SteamVR_Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Resources/SteamVR_Settings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Resources/SteamVR_Settings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Resources/SteamVR_Settings.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Behaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Behaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Behaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Behaviour.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Camera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Camera.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Camera.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Camera.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_CameraFlip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_CameraFlip.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_CameraFlip.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_CameraFlip.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_CameraMask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_CameraMask.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_CameraMask.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_CameraMask.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Ears.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Ears.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_EnumEqualityComparer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_EnumEqualityComparer.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Events.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Events.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_ExternalCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_ExternalCamera.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_ExternalCamera.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_ExternalCamera.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Fade.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Fade.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Frustum.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Frustum.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_IK.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_IK.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_LoadLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_LoadLevel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_LoadLevel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_LoadLevel.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Menu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Menu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Menu.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Menu.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Overlay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Overlay.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Overlay.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Overlay.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_PlayArea.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_PlayArea.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_PlayArea.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_PlayArea.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Render.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Render.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Render.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Render.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_RenderModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_RenderModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_RenderModel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_RenderModel.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_RingBuffer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_RingBuffer.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Settings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Settings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Settings.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Settings.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Skybox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Skybox.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Skybox.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Skybox.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_SphericalProjection.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_SphericalProjection.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_TrackedCamera.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_TrackedCamera.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_TrackedObject.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_TrackedObject.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Utils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Utils.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Utils.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/Scripts/SteamVR_Utils.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR/readme.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects/SteamVR_Input_ActionSet_Psyia.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects/SteamVR_Input_ActionSet_Psyia.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects/SteamVR_Input_ActionSet_Psyia_In.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects/SteamVR_Input_ActionSet_Psyia_In.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects/SteamVR_Input_ActionSet_Psyia_In.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects/SteamVR_Input_ActionSet_Psyia_In.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects/SteamVR_Input_ActionSet_Psyia_Out.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects/SteamVR_Input_ActionSet_Psyia_Out.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects/SteamVR_Input_ActionSet_Psyia_Out.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects/SteamVR_Input_ActionSet_Psyia_Out.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects/__actions_Psyia.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects/__actions_Psyia.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects/__actions_Psyia_in_ApplyForce.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects/__actions_Psyia_in_ApplyForce.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects/__actions_Psyia_in_Pose.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects/__actions_Psyia_in_Pose.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects/__actions_Psyia_in_SkeletonLeftHand.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects/__actions_Psyia_in_SkeletonLeftHand.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects/__actions_Psyia_in_SkeletonRightHand.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects/__actions_Psyia_in_SkeletonRightHand.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects/__actions_Psyia_in_SlowTime.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects/__actions_Psyia_in_SlowTime.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects/__actions_Psyia_in_SpawnParticles.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects/__actions_Psyia_in_SpawnParticles.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects/__actions_Psyia_in_ToggleMenu.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects/__actions_Psyia_in_ToggleMenu.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects/__actions_Psyia_out_Haptic.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/ActionObjects/__actions_Psyia_out_Haptic.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/Resources.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/Resources/SteamVR_Input_References.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/Resources/SteamVR_Input_References.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/SteamVR_Input_ActionSets.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/SteamVR_Input_ActionSets.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/SteamVR_Input_ActionSets.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/SteamVR_Input_ActionSets.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/SteamVR_Input_Actions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/SteamVR_Input_Actions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/SteamVR_Input_Actions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/SteamVR_Input/SteamVR_Input_Actions.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Data/save.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Data/save.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/StarLab.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/StarLab.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/ModeMenu/TouchSphere.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/ModeMenu/TouchSphere.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/_ApplicationFlow/ModeChoreography.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/_ApplicationFlow/ModeChoreography.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/_Controllers/ControllerForce.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/_Controllers/ControllerForce.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/_Controllers/ControllerPose.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/_Controllers/ControllerPose.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/_Controllers/ControllerSpawn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/_Controllers/ControllerSpawn.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/_Controllers/PsyiaController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/_Controllers/PsyiaController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/_Controllers/TimeSlower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/_Controllers/TimeSlower.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/_UI/MenuToggler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/_UI/MenuToggler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actions.json" beforeDir="false" afterPath="$PROJECT_DIR$/actions.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bindings_holographic_controller.json" beforeDir="false" afterPath="$PROJECT_DIR$/bindings_holographic_controller.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bindings_knuckles.json" beforeDir="false" afterPath="$PROJECT_DIR$/bindings_knuckles.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bindings_oculus_touch.json" beforeDir="false" afterPath="$PROJECT_DIR$/bindings_oculus_touch.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bindings_vive_controller.json" beforeDir="false" afterPath="$PROJECT_DIR$/bindings_vive_controller.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unityProject.vrmanifest" beforeDir="false" afterPath="$PROJECT_DIR$/unityProject.vrmanifest" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -215,7 +15,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="compute" value="20" />
-          <entry key="cs" value="220" />
+          <entry key="cs" value="224" />
           <entry key="hlsl" value="5" />
           <entry key="json" value="7" />
           <entry key="shader" value="10" />
@@ -223,7 +23,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="C#" value="220" />
+          <entry key="C#" value="224" />
           <entry key="Cg" value="25" />
           <entry key="JSON" value="7" />
           <entry key="ShaderLab" value="10" />
@@ -232,7 +32,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="compute" value="3962" />
-          <entry key="cs" value="80935" />
+          <entry key="cs" value="80966" />
           <entry key="hlsl" value="5" />
           <entry key="json" value="6" />
           <entry key="shader" value="1968" />
@@ -240,7 +40,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="80935" />
+          <entry key="C#" value="80966" />
           <entry key="Cg" value="3967" />
           <entry key="JSON" value="6" />
           <entry key="ShaderLab" value="1968" />
@@ -282,6 +82,116 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Dependencies/AudioVisualisation/SoundCapture.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="822">
+              <caret line="127" column="69" lean-forward="true" selection-start-line="127" selection-start-column="69" selection-end-line="127" selection-end-column="69" />
+              <folding>
+                <marker date="1549695215427" expanded="false" signature="6:162" ph="..." />
+                <marker date="1549695215427" expanded="true" signature="205:5540" ph="{...}" />
+                <marker date="1549695215427" expanded="true" signature="872:2553" ph="{...}" />
+                <marker date="1549695215427" expanded="true" signature="1146:1322" ph="/* From https://github.com/filoe/cscore/blob/master/Samples/WinformsVisualization/Form1.cs ... */" />
+                <marker date="1549695215427" expanded="true" signature="1440:1620" ph="/* These are the actual classes that give you spectrum data ... */" />
+                <marker date="1549695215427" expanded="true" signature="1822:2059" ph="{...}" />
+                <marker date="1549695215427" expanded="true" signature="2634:2703" ph="{...}" />
+                <marker date="1549695215427" expanded="true" signature="2799:2858" ph="{...}" />
+                <marker date="1549695215427" expanded="true" signature="2888:3000" ph="{...}" />
+                <marker date="1549695215427" expanded="true" signature="2915:2994" ph="{...}" />
+                <marker date="1549695215427" expanded="true" signature="3063:3754" ph="{...}" />
+                <marker date="1549695215427" expanded="true" signature="3190:3264" ph="{...}" />
+                <marker date="1549695215427" expanded="true" signature="3324:3690" ph="{...}" />
+                <marker date="1549695215427" expanded="true" signature="3703:3748" ph="{...}" />
+                <marker date="1549695215427" expanded="true" signature="3799:4432" ph="{...}" />
+                <marker date="1549695215427" expanded="true" signature="3926:4000" ph="{...}" />
+                <marker date="1549695215427" expanded="true" signature="4060:4426" ph="{...}" />
+                <marker date="1549695215427" expanded="true" signature="4451:5538" ph="{...}" />
+                <marker date="1549695215427" expanded="true" signature="4685:4725" ph="{...}" />
+                <marker date="1549695215427" expanded="true" signature="4827:4958" ph="{...}" />
+                <marker date="1549695215427" expanded="true" signature="5027:5521" ph="{...}" />
+                <marker date="1549695215427" expanded="true" signature="5086:5335" ph="{...}" />
+                <marker date="1549695215427" expanded="true" signature="5356:5507" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Dependencies/AudioVisualisation/Visualization/LineSpectrum.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1680">
+              <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
+              <folding>
+                <marker date="1529840345000" expanded="false" signature="6:141" ph="..." />
+                <marker date="1529840345000" expanded="true" signature="188:5644" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="235:5642" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="423:474" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="533:591" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="625:1010" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="691:1000" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="1039:1463" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="1103:1453" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="1532:1738" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="1609:1728" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="1849:2659" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="2064:2624" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="2147:2610" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="2311:2556" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="2776:3187" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="3068:3177" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="3262:3565" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="3455:3530" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="3672:4318" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="3874:4308" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="4376:4549" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="4619:4849" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="4669:4778" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="4924:5636" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="4963:5285" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="5302:5626" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Dependencies/AudioVisualisation/Visualization/SpectrumBase.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="326">
+              <caret line="159" column="59" lean-forward="true" selection-start-line="159" selection-start-column="59" selection-end-line="159" selection-end-column="59" />
+              <folding>
+                <marker date="1529840345000" expanded="false" signature="6:134" ph="..." />
+                <marker date="1529840345000" expanded="true" signature="181:7717" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="238:7715" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="1129:1615" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="1201:1605" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="1262:1447" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="1652:2005" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="1724:1995" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="2092:2401" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="2164:2391" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="2434:2672" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="2501:2662" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="2720:2928" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="2791:2918" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="2960:3153" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="3026:3143" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="3221:3611" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="3304:3601" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="3735:5167" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="4531:4914" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="4953:5157" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="5274:7283" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="5591:7231" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="5646:6213" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="6599:7187" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="7349:7532" ph="{...}" />
+                <marker date="1529840345000" expanded="true" signature="7613:7709" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/_Scripts/_ApplicationFlow/ModeChoreography.cs">
           <provider selected="true" editor-type-id="text-editor">
@@ -317,28 +227,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/_Scripts/_Controllers/TimeSlower.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-              <folding>
-                <marker date="1549688156203" expanded="false" signature="6:94" ph="..." />
-                <marker date="1549688156203" expanded="true" signature="135:1892" ph="{...}" />
-                <marker date="1549688156203" expanded="true" signature="228:341" ph="{...}" />
-                <marker date="1549688156203" expanded="true" signature="276:338" ph="{...}" />
-                <marker date="1549688156203" expanded="true" signature="646:813" ph="{...}" />
-                <marker date="1549688156203" expanded="true" signature="839:1012" ph="{...}" />
-                <marker date="1549688156203" expanded="true" signature="1035:1358" ph="{...}" />
-                <marker date="1549688156203" expanded="true" signature="1238:1295" ph="{...}" />
-                <marker date="1549688156203" expanded="true" signature="1463:1890" ph="{...}" />
-                <marker date="1549688156203" expanded="true" signature="1564:1706" ph="{...}" />
-                <marker date="1549688156203" expanded="true" signature="1743:1887" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/_Scripts/_Controllers/PsyiaController.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="880">
@@ -359,7 +247,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Dependencies/Psyia/Scripts/GPU Scripts/PsyiaCoreParticleEmitter.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1088">
@@ -715,8 +603,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/_Scripts/_Controllers/ControllerSpawn.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="38" column="49" selection-start-line="38" selection-start-column="49" selection-end-line="40" selection-end-column="85" />
+            <state relative-caret-position="528">
+              <caret line="37" column="75" selection-start-line="37" selection-start-column="75" selection-end-line="37" selection-end-column="75" />
               <folding>
                 <marker date="1549686890648" expanded="false" signature="6:107" ph="..." />
                 <marker date="1549686890648" expanded="true" signature="195:1284" ph="{...}" />
@@ -725,24 +613,6 @@
                 <marker date="1549686890648" expanded="true" signature="812:891" ph="{...}" />
                 <marker date="1549686890648" expanded="true" signature="1001:1282" ph="{...}" />
                 <marker date="1549686890648" expanded="true" signature="1122:1279" ph="/* _psyiaEmitter.Settings.MinSpawnVelocity = MinSpawnVelocity.Evaluate(Value); ... */" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/_Scripts/_Controllers/ControllerForce.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="39" column="125" selection-start-line="39" selection-start-column="125" selection-end-line="39" selection-end-column="125" />
-              <folding>
-                <marker date="1549686934186" expanded="false" signature="6:107" ph="..." />
-                <marker date="1549686934186" expanded="true" signature="192:943" ph="{...}" />
-                <marker date="1549686934186" expanded="true" signature="375:425" ph="{...}" />
-                <marker date="1549686934186" expanded="true" signature="452:564" ph="{...}" />
-                <marker date="1549686934186" expanded="true" signature="590:705" ph="{...}" />
-                <marker date="1549686934186" expanded="true" signature="728:776" ph="{...}" />
-                <marker date="1549686934186" expanded="true" signature="901:941" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -836,6 +706,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Dependencies/Psyia/Shaders/Graphics/ParticleDiamonds.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Dependencies/AudioVisualisation/Visualization/BasicSpectrumProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Shaders/TouchSphere.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Dependencies/AudioVisualisation/Visualization/SpectrumBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Dependencies/AudioVisualisation/Visualization/VoicePrint3DSpectrum.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Mountaineer/Assets/_Scripts/Graph/GraphMarkers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/_Controllers/ControllerPose.cs" root0="FORCE_HIGHLIGHTING" />
@@ -849,7 +720,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/AppContent/Scripts/VisualSettings.cs" />
         <option value="$PROJECT_DIR$/Assets/AppContent/Scripts/SliderAudioHook.cs" />
         <option value="$PROJECT_DIR$/Assets/AppContent/Scripts/PhysicsSettings.cs" />
         <option value="$PROJECT_DIR$/Assets/AppContent/Scripts/SettingsDebugDisplay.cs" />
@@ -875,7 +745,6 @@
         <option value="$PROJECT_DIR$/Assets/AppContent/TouchSphere.shader" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/_Experimental/Dance.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/_Debug/TestRendererNull.cs" />
-        <option value="$PROJECT_DIR$/Assets/Dependencies/AudioVisualisation/SoundCapture.cs" />
         <option value="$PROJECT_DIR$/Assets/Dependencies/Psyia/AssetPackages/UCTK/Dispatchers/DispatchQueue.cs" />
         <option value="$PROJECT_DIR$/Assets/Dependencies/Psyia/AssetPackages/UCTK/Editor/DispatchQueueInspector.cs" />
         <option value="$PROJECT_DIR$/Assets/Dependencies/Psyia/AssetPackages/UCTK/Dispatchers/DispatchQueueItem.cs" />
@@ -900,6 +769,8 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/ModeMenu/TouchSphere.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/_ApplicationFlow/ModeChoreography.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/_Controllers/PsyiaController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Dependencies/AudioVisualisation/Visualization/LineSpectrum.cs" />
+        <option value="$PROJECT_DIR$/Assets/Dependencies/AudioVisualisation/SoundCapture.cs" />
       </list>
     </option>
   </component>
@@ -1068,12 +939,12 @@
       <workItem from="1548107247936" duration="3306000" />
       <workItem from="1548272735912" duration="943000" />
       <workItem from="1548465208371" duration="3134000" />
-      <workItem from="1549686160480" duration="4475000" />
+      <workItem from="1549686160480" duration="5118000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140061000" />
+    <option name="totallyTimeSpent" value="140704000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1130,7 +1001,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/AppContent/Scripts/PsyiaSettingsApplicator.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/AppContent/Scripts/ControllerHaptics.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/AppContent/Scripts/PsyiaSettings.cs" />
     <entry file="file://$PROJECT_DIR$/../Mountaineer/Assets/_Scripts/Graph/GraphMarkers.cs">
@@ -1172,13 +1042,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Dependencies/AudioVisualisation/Visualization/LineSpectrum.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1270,38 +1133,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1520">
           <caret line="95" column="16" selection-start-line="95" selection-start-column="11" selection-end-line="95" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Dependencies/AudioVisualisation/SoundCapture.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2368">
-          <caret line="154" column="9" selection-start-line="154" selection-start-column="9" selection-end-line="154" selection-end-column="9" />
-          <folding>
-            <marker date="1547950426901" expanded="false" signature="6:162" ph="..." />
-            <marker date="1547950426901" expanded="true" signature="205:5540" ph="{...}" />
-            <marker date="1547950426901" expanded="true" signature="872:2553" ph="{...}" />
-            <marker date="1547950426901" expanded="true" signature="1146:1322" ph="/* From https://github.com/filoe/cscore/blob/master/Samples/WinformsVisualization/Form1.cs ... */" />
-            <marker date="1547950426901" expanded="true" signature="1440:1620" ph="/* These are the actual classes that give you spectrum data ... */" />
-            <marker date="1547950426901" expanded="true" signature="1822:2059" ph="{...}" />
-            <marker date="1547950426901" expanded="true" signature="2634:2703" ph="{...}" />
-            <marker date="1547950426901" expanded="true" signature="2799:2858" ph="{...}" />
-            <marker date="1547950426901" expanded="true" signature="2888:3000" ph="{...}" />
-            <marker date="1547950426901" expanded="true" signature="2915:2994" ph="{...}" />
-            <marker date="1547950426901" expanded="true" signature="3063:3754" ph="{...}" />
-            <marker date="1547950426901" expanded="true" signature="3190:3264" ph="{...}" />
-            <marker date="1547950426901" expanded="true" signature="3324:3690" ph="{...}" />
-            <marker date="1547950426901" expanded="true" signature="3703:3748" ph="{...}" />
-            <marker date="1547950426901" expanded="true" signature="3799:4432" ph="{...}" />
-            <marker date="1547950426901" expanded="true" signature="3926:4000" ph="{...}" />
-            <marker date="1547950426901" expanded="true" signature="4060:4426" ph="{...}" />
-            <marker date="1547950426901" expanded="true" signature="4451:5538" ph="{...}" />
-            <marker date="1547950426901" expanded="true" signature="4685:4725" ph="{...}" />
-            <marker date="1547950426901" expanded="true" signature="4827:4958" ph="{...}" />
-            <marker date="1547950426901" expanded="true" signature="5027:5521" ph="{...}" />
-            <marker date="1547950426901" expanded="true" signature="5086:5335" ph="{...}" />
-            <marker date="1547950426901" expanded="true" signature="5356:5507" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1433,22 +1264,6 @@
             <marker date="1549686813177" expanded="true" signature="2064:2432" ph="/* Debug.Log(Time.frameCount % (int)Mathf.Lerp(90, 9, Mathf.InverseLerp(0f, ReturnToMenuTime, _holdTime))); ... */" />
             <marker date="1549686813177" expanded="true" signature="2480:2510" ph="{...}" />
             <marker date="1549686813177" expanded="true" signature="2620:3207" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/_Scripts/_Controllers/ControllerSpawn.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="38" column="49" selection-start-line="38" selection-start-column="49" selection-end-line="40" selection-end-column="85" />
-          <folding>
-            <marker date="1549686890648" expanded="false" signature="6:107" ph="..." />
-            <marker date="1549686890648" expanded="true" signature="195:1284" ph="{...}" />
-            <marker date="1549686890648" expanded="true" signature="629:683" ph="{...}" />
-            <marker date="1549686890648" expanded="true" signature="710:786" ph="{...}" />
-            <marker date="1549686890648" expanded="true" signature="812:891" ph="{...}" />
-            <marker date="1549686890648" expanded="true" signature="1001:1282" ph="{...}" />
-            <marker date="1549686890648" expanded="true" signature="1122:1279" ph="/* _psyiaEmitter.Settings.MinSpawnVelocity = MinSpawnVelocity.Evaluate(Value); ... */" />
           </folding>
         </state>
       </provider>
@@ -1932,6 +1747,126 @@
             <marker date="1548107937073" expanded="true" signature="3137:3185" ph="{...}" />
             <marker date="1548107937073" expanded="true" signature="3193:3373" ph="/* Unfortunately, this line does what we want but it's so expensive we just can't call it every frame ... */" />
             <marker date="1548107937073" expanded="true" signature="3405:3459" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/_Scripts/_Controllers/ControllerSpawn.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="37" column="75" selection-start-line="37" selection-start-column="75" selection-end-line="37" selection-end-column="75" />
+          <folding>
+            <marker date="1549686890648" expanded="false" signature="6:107" ph="..." />
+            <marker date="1549686890648" expanded="true" signature="195:1284" ph="{...}" />
+            <marker date="1549686890648" expanded="true" signature="629:683" ph="{...}" />
+            <marker date="1549686890648" expanded="true" signature="710:786" ph="{...}" />
+            <marker date="1549686890648" expanded="true" signature="812:891" ph="{...}" />
+            <marker date="1549686890648" expanded="true" signature="1001:1282" ph="{...}" />
+            <marker date="1549686890648" expanded="true" signature="1122:1279" ph="/* _psyiaEmitter.Settings.MinSpawnVelocity = MinSpawnVelocity.Evaluate(Value); ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Dependencies/AudioVisualisation/Visualization/SpectrumBase.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="159" column="59" lean-forward="true" selection-start-line="159" selection-start-column="59" selection-end-line="159" selection-end-column="59" />
+          <folding>
+            <marker date="1529840345000" expanded="false" signature="6:134" ph="..." />
+            <marker date="1529840345000" expanded="true" signature="181:7717" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="238:7715" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="1129:1615" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="1201:1605" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="1262:1447" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="1652:2005" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="1724:1995" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="2092:2401" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="2164:2391" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="2434:2672" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="2501:2662" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="2720:2928" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="2791:2918" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="2960:3153" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="3026:3143" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="3221:3611" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="3304:3601" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="3735:5167" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="4531:4914" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="4953:5157" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="5274:7283" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="5591:7231" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="5646:6213" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="6599:7187" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="7349:7532" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="7613:7709" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Dependencies/AudioVisualisation/Visualization/LineSpectrum.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1680">
+          <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
+          <folding>
+            <marker date="1529840345000" expanded="false" signature="6:141" ph="..." />
+            <marker date="1529840345000" expanded="true" signature="188:5644" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="235:5642" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="423:474" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="533:591" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="625:1010" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="691:1000" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="1039:1463" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="1103:1453" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="1532:1738" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="1609:1728" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="1849:2659" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="2064:2624" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="2147:2610" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="2311:2556" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="2776:3187" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="3068:3177" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="3262:3565" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="3455:3530" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="3672:4318" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="3874:4308" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="4376:4549" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="4619:4849" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="4669:4778" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="4924:5636" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="4963:5285" ph="{...}" />
+            <marker date="1529840345000" expanded="true" signature="5302:5626" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Dependencies/AudioVisualisation/SoundCapture.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="822">
+          <caret line="127" column="69" lean-forward="true" selection-start-line="127" selection-start-column="69" selection-end-line="127" selection-end-column="69" />
+          <folding>
+            <marker date="1549695215427" expanded="false" signature="6:162" ph="..." />
+            <marker date="1549695215427" expanded="true" signature="205:5540" ph="{...}" />
+            <marker date="1549695215427" expanded="true" signature="872:2553" ph="{...}" />
+            <marker date="1549695215427" expanded="true" signature="1146:1322" ph="/* From https://github.com/filoe/cscore/blob/master/Samples/WinformsVisualization/Form1.cs ... */" />
+            <marker date="1549695215427" expanded="true" signature="1440:1620" ph="/* These are the actual classes that give you spectrum data ... */" />
+            <marker date="1549695215427" expanded="true" signature="1822:2059" ph="{...}" />
+            <marker date="1549695215427" expanded="true" signature="2634:2703" ph="{...}" />
+            <marker date="1549695215427" expanded="true" signature="2799:2858" ph="{...}" />
+            <marker date="1549695215427" expanded="true" signature="2888:3000" ph="{...}" />
+            <marker date="1549695215427" expanded="true" signature="2915:2994" ph="{...}" />
+            <marker date="1549695215427" expanded="true" signature="3063:3754" ph="{...}" />
+            <marker date="1549695215427" expanded="true" signature="3190:3264" ph="{...}" />
+            <marker date="1549695215427" expanded="true" signature="3324:3690" ph="{...}" />
+            <marker date="1549695215427" expanded="true" signature="3703:3748" ph="{...}" />
+            <marker date="1549695215427" expanded="true" signature="3799:4432" ph="{...}" />
+            <marker date="1549695215427" expanded="true" signature="3926:4000" ph="{...}" />
+            <marker date="1549695215427" expanded="true" signature="4060:4426" ph="{...}" />
+            <marker date="1549695215427" expanded="true" signature="4451:5538" ph="{...}" />
+            <marker date="1549695215427" expanded="true" signature="4685:4725" ph="{...}" />
+            <marker date="1549695215427" expanded="true" signature="4827:4958" ph="{...}" />
+            <marker date="1549695215427" expanded="true" signature="5027:5521" ph="{...}" />
+            <marker date="1549695215427" expanded="true" signature="5086:5335" ph="{...}" />
+            <marker date="1549695215427" expanded="true" signature="5356:5507" ph="{...}" />
           </folding>
         </state>
       </provider>
