@@ -194,11 +194,18 @@ public class ModeChoreography : MonoBehaviour
 		PsyiaRenderer.enabled = true;
 		PsyiaDispatcher.RunOnUpdate = true;
 		targetMode.Emitter.Emit(targetMode.Emitter.StartEmitCount);
-
 		
 		Music.SetClip(targetMode.Song);
 
 		Music.AutoPlay = targetMode.Panel.InfiniteModeToggle.CurrentValue;
+
+		if (AudioData.Instance.AudioDetected) {
+			Music.AutoPlay = true;
+		} else {
+			Debug.Log(Music.IsPlaying);
+			Music.PlayPause();
+			Debug.Log(Music.IsPlaying);
+		}
 
 		SaveGameInterface.Main.PlayCount++;
 

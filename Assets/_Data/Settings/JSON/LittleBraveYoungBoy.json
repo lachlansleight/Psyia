@@ -15,7 +15,7 @@
     "Physics" : {
         "ParticleMass" : 0.0513748675584793,
         "ParticleDamping" : 0.149869859218597,
-        "TimeSpeed": 0.5,
+        "TimeSpeed": 1,
         "FloorCollision" : false
     },
     "Audio" : {

@@ -6,18 +6,7 @@ using Valve.VR;
 public class TimeSlower : MonoBehaviour
 {
 
-	[SerializeField]
-	private float _timeScaleMultiplier;
-
-	public float TimeScaleMultiplier
-	{
-		get { return _timeScaleMultiplier; }
-		set
-		{
-			Debug.Log("set");
-			_timeScaleMultiplier = value;
-		}
-	}
+	public float TimeScaleMultiplier;
 	public float TimeScale;
 	public PsyiaMusic Music;
 	public bool SlowsWithTime;
@@ -58,7 +47,7 @@ public class TimeSlower : MonoBehaviour
 	
 	private void HandleButton(SteamVR_Action_Boolean actionIn, SteamVR_Input_Sources hand, bool newState)
 	{
-		Debug.Log($"{hand} down is {actionIn.GetStateDown(hand)}");
+		//Debug.Log($"{hand} down is {actionIn.GetStateDown(hand)}");
 		if (actionIn.GetStateDown(hand)) {
 			if (hand == SteamVR_Input_Sources.LeftHand) _leftDown = true;
 			else if (hand == SteamVR_Input_Sources.RightHand) _rightDown = true;

@@ -23,7 +23,7 @@
         "PhysicsAudioreactivity" : 0.5,
         "Volume" : 1,
         "Loop" : false,
-        "SlowWithTime" : true
+        "SlowWithTime" : false
     },
     "Controller" : {
         "ControllerSymmetry" : 2,

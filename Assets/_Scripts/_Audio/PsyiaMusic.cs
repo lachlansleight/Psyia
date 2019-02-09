@@ -66,6 +66,7 @@ public class PsyiaMusic : MonoBehaviour {
 
 	public string GetCurrentSongName()
 	{
+		return _mySource.clip.name;
 		for (var i = 0; i < Clips.Length; i++) {
 			if (Clips[i] == _mySource.clip) return ClipNames[i];
 		}

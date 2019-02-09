@@ -32122,14 +32122,14 @@ MonoBehaviour:
   - Aboard a Grand Vessel - ColorPulse
   Clips:
   - {fileID: 8300000, guid: e5d419d819c555947a8f0d9404a35fd9, type: 3}
-  - {fileID: 8300000, guid: 0f2b8b10541961e45acfe1e9b40bd766, type: 3}
-  - {fileID: 8300000, guid: c01ecfb220ed64f43838ec01a0cf8b1c, type: 3}
-  - {fileID: 8300000, guid: 6ff2520c5160ffb42a527a985235ddfc, type: 3}
-  - {fileID: 8300000, guid: 0d74c6facf16ad34784654ca0ec1723b, type: 3}
-  - {fileID: 8300000, guid: e0e8567dc24c53f44ac53bff60cd84cf, type: 3}
-  - {fileID: 8300000, guid: afaa80e1f9b06eb4382b5744cc18da1d, type: 3}
-  - {fileID: 8300000, guid: 2767b0b15b77d484bbef71657ca425b5, type: 3}
-  - {fileID: 8300000, guid: 333b4a525f8700a43b69ccee4b42c943, type: 3}
+  - {fileID: 8300000, guid: feee6e99776e26848912f5de4f86af1a, type: 3}
+  - {fileID: 8300000, guid: b5de86a96a957e346b78dcae321b5c4a, type: 3}
+  - {fileID: 8300000, guid: a4a7c28c8f5ce184b902cd3b17bf2ba1, type: 3}
+  - {fileID: 8300000, guid: 04b5da6f651cc6d41a529e12328c9cea, type: 3}
+  - {fileID: 8300000, guid: da1e95c26865e824da4430da8b79626a, type: 3}
+  - {fileID: 8300000, guid: fc07521cc443950439312d9fe1fb3c97, type: 3}
+  - {fileID: 8300000, guid: 1d936669c4cab394aa9b36c7932b74dc, type: 3}
+  - {fileID: 8300000, guid: 98302e76a1445ae4fb92a90ab039dbf7, type: 3}
   Volume: 1
   DefaultTrack: 2
   PitchLerpTime: 0.02
@@ -51711,7 +51711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1da92d006538e6b458b15e7c1fd443b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeScaleMultiplier: 0
+  TimeScaleMultiplier: 0
   TimeScale: 1
   Music: {fileID: 847119477}
   SlowsWithTime: 1
@@ -67093,7 +67093,7 @@ MonoBehaviour:
   IntroCanvas: {fileID: 1705497104}
   Modes:
   - TouchSphere: {fileID: 870788902}
-    Song: {fileID: 8300000, guid: c01ecfb220ed64f43838ec01a0cf8b1c, type: 3}
+    Song: {fileID: 8300000, guid: b5de86a96a957e346b78dcae321b5c4a, type: 3}
     SongName: Little Brave Young Boy
     ArtistName: ColorPulse
     Tip: Hold the menu button to return to the spheres
@@ -67101,7 +67101,7 @@ MonoBehaviour:
     PresetJson: {fileID: 4900000, guid: 018a1373dd7d62441b1a948637f4be89, type: 3}
     Panel: {fileID: 1053749111}
   - TouchSphere: {fileID: 2043556297}
-    Song: {fileID: 8300000, guid: 26cf40c604cc62b40a487ebc88a6d39f, type: 3}
+    Song: {fileID: 8300000, guid: fd9a3a79f13c67e48a76a793251e403f, type: 3}
     SongName: Enthusiast
     ArtistName: Tours
     Tip: Hold the grip buttons to slow time
@@ -67109,7 +67109,7 @@ MonoBehaviour:
     PresetJson: {fileID: 4900000, guid: b6892646fb4c7634e9abee3ef899f371, type: 3}
     Panel: {fileID: 1430705412}
   - TouchSphere: {fileID: 2069031950}
-    Song: {fileID: 8300000, guid: 61450eea2c2b1a0468328edcdaf8e734, type: 3}
+    Song: {fileID: 8300000, guid: 6bf6e4ef4205cee4781051cb4a1e63b4, type: 3}
     SongName: Grief and Sleep
     ArtistName: Ghosts
     Tip: Hold still.
@@ -67117,7 +67117,7 @@ MonoBehaviour:
     PresetJson: {fileID: 4900000, guid: 53f7b7d4d4c9d1e41bd758497c2a9422, type: 3}
     Panel: {fileID: 1867184896}
   - TouchSphere: {fileID: 1439080336}
-    Song: {fileID: 8300000, guid: 3ed1b93473003c14c9142620f122fdc7, type: 3}
+    Song: {fileID: 8300000, guid: 3ef8ee76e00211a46b4e9629725e71a2, type: 3}
     SongName: Planet H
     ArtistName: Lee Rosevere
     Tip: Press the menu button to toggle the control panel
@@ -67125,7 +67125,7 @@ MonoBehaviour:
     PresetJson: {fileID: 4900000, guid: de574a49e16f9b54185aca8ff86192c4, type: 3}
     Panel: {fileID: 1444736824}
   - TouchSphere: {fileID: 88848781}
-    Song: {fileID: 8300000, guid: 215aec62526b30b408534d8d1723fc6e, type: 3}
+    Song: {fileID: 8300000, guid: b8e882cbde72d8f4fa1e16fcc6ef99fe, type: 3}
     SongName: Fragile, Do Not Drop
     ArtistName: Podington Bear
     Tip: Place both controllers on the floor while in the menu to begin a meditation
@@ -72329,6 +72329,16 @@ PrefabInstance:
         type: 3}
       propertyPath: OnValueChangedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetTimeSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257407129099081230, guid: 268896555873b9f4b9d99e28acd02b6c,
+        type: 3}
+      propertyPath: MaxValue
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257407129099081230, guid: 268896555873b9f4b9d99e28acd02b6c,
+        type: 3}
+      propertyPath: CurrentValue
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4429015687244893412, guid: 268896555873b9f4b9d99e28acd02b6c,
         type: 3}
