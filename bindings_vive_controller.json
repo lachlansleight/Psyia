@@ -1,5 +1,6 @@
 {
-   "app_key" : "application.generated.unity.steamvr.exe",
+   "alias_info" : {},
+   "app_key" : "application.generated.unity.psyia.exe",
    "bindings" : {
       "/actions/buggy" : {
          "sources" : [
@@ -248,9 +249,121 @@
                "path" : "/user/hand/right/input/trackpad"
             }
          ]
+      },
+      "/actions/psyia" : {
+         "haptics" : [
+            {
+               "output" : "/actions/psyia/out/haptic",
+               "path" : "/user/hand/left/output/haptic"
+            },
+            {
+               "output" : "/actions/psyia/out/haptic",
+               "path" : "/user/hand/right/output/haptic"
+            }
+         ],
+         "poses" : [
+            {
+               "output" : "/actions/psyia/in/pose",
+               "path" : "/user/hand/left/pose/raw"
+            },
+            {
+               "output" : "/actions/psyia/in/pose",
+               "path" : "/user/hand/right/pose/raw"
+            }
+         ],
+         "skeleton" : [
+            {
+               "output" : "none",
+               "path" : "/user/hand/left/input/skeleton/right"
+            },
+            {
+               "output" : "none",
+               "path" : "/user/hand/right/input/skeleton/right"
+            },
+            {
+               "output" : "/actions/psyia/in/skeletonlefthand",
+               "path" : "/user/hand/left/input/skeleton/left"
+            }
+         ],
+         "sources" : [
+            {
+               "inputs" : {
+                  "pull" : {
+                     "output" : "/actions/psyia/in/applyforce"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/psyia/in/togglemenu"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/psyia/in/slowtime"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/psyia/in/spawnparticles"
+                  }
+               },
+               "mode" : "trackpad",
+               "path" : "/user/hand/left/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/psyia/in/togglemenu"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/application_menu"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/psyia/in/slowtime"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/psyia/in/spawnparticles"
+                  }
+               },
+               "mode" : "trackpad",
+               "path" : "/user/hand/right/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "pull" : {
+                     "output" : "/actions/psyia/in/applyforce"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            }
+         ]
       }
    },
    "controller_type" : "vive_controller",
-   "description" : "",
-   "name" : "vive_controller"
+   "description" : "sdgfh",
+   "name" : "vive_controllerB",
+   "options" : {},
+   "simulated_actions" : []
 }

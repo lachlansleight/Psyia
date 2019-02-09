@@ -12,19 +12,17 @@ public class ControllerPose : MonoBehaviour
 	
 	public void OnEnable ()
 	{
-		PoseAction.AddOnChangeListener(OnPoseChanged, Hand);
+		PoseAction.AddOnChangeListener(Hand, OnPoseChanged);
 	}
 
 	public void OnDisable()
 	{
-		PoseAction.RemoveOnChangeListener(OnPoseChanged, Hand);
+		PoseAction.RemoveOnChangeListener(Hand, OnPoseChanged);
 	}
 
-	private void OnPoseChanged(SteamVR_Action_In actionIn)
+	private void OnPoseChanged(SteamVR_Action_Pose actionIn, SteamVR_Input_Sources hand)
 	{
-		if (!(actionIn is SteamVR_Action_Pose)) return;
-		var asPose = (SteamVR_Action_Pose) actionIn;
-		transform.position = asPose.GetLocalPosition(Hand);
-		transform.rotation = asPose.GetLocalRotation(Hand);
+		transform.position = actionIn.GetLocalPosition(hand);
+		transform.rotation = actionIn.GetLocalRotation(hand);
 	}
 }

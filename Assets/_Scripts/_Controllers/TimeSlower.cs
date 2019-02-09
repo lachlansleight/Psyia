@@ -6,7 +6,18 @@ using Valve.VR;
 public class TimeSlower : MonoBehaviour
 {
 
-	public float TimeScaleMultiplier;
+	[SerializeField]
+	private float _timeScaleMultiplier;
+
+	public float TimeScaleMultiplier
+	{
+		get { return _timeScaleMultiplier; }
+		set
+		{
+			Debug.Log("set");
+			_timeScaleMultiplier = value;
+		}
+	}
 	public float TimeScale;
 	public PsyiaMusic Music;
 	public bool SlowsWithTime;
@@ -45,21 +56,15 @@ public class TimeSlower : MonoBehaviour
 		TimeUpdater.TimeScale = TimeScale * TimeScaleMultiplier;
 	}
 	
-	private void HandleButton(SteamVR_Action_In actionIn)
+	private void HandleButton(SteamVR_Action_Boolean actionIn, SteamVR_Input_Sources hand, bool newState)
 	{
-		if (!(actionIn is SteamVR_Action_Boolean)) return;
-		var asBoolean = (SteamVR_Action_Boolean) actionIn;
-		
-		if (asBoolean.GetStateDown(SteamVR_Input_Sources.LeftHand)) {
-			_leftDown = true;
-		} else if (asBoolean.GetStateUp(SteamVR_Input_Sources.LeftHand)) {
-			_leftDown = false;
-		}
-		
-		if (asBoolean.GetStateDown(SteamVR_Input_Sources.RightHand)) {
-			_rightDown = true;
-		} else if (asBoolean.GetStateUp(SteamVR_Input_Sources.RightHand)) {
-			_rightDown = false;
+		Debug.Log($"{hand} down is {actionIn.GetStateDown(hand)}");
+		if (actionIn.GetStateDown(hand)) {
+			if (hand == SteamVR_Input_Sources.LeftHand) _leftDown = true;
+			else if (hand == SteamVR_Input_Sources.RightHand) _rightDown = true;
+		} else if (actionIn.GetStateUp(hand)) {
+			if (hand == SteamVR_Input_Sources.LeftHand) _leftDown = false;
+			else if (hand == SteamVR_Input_Sources.RightHand) _rightDown = false;
 		}
 	}
 }

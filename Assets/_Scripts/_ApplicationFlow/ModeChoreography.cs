@@ -115,13 +115,13 @@ public class ModeChoreography : MonoBehaviour
 		ResetObjects();
 		
 		foreach (var m in Modes) {
-			Debug.Log(m.TouchSphere.name + " requires " + m.TouchSphere.UsageCountRequirement + " vs actual of " + SaveGameInterface.Main.PlayCount);
+			//Debug.Log(m.TouchSphere.name + " requires " + m.TouchSphere.UsageCountRequirement + " vs actual of " + SaveGameInterface.Main.PlayCount);
 			if (m.TouchSphere.UsageCountRequirement == SaveGameInterface.Main.PlayCount) {
-				Debug.Log("Up slow");
+				//Debug.Log("Up slow");
 				m.TouchSphere.gameObject.SetActive(true);
 				m.TouchSphere.LerpToScale(1f, 2f);
 			} else if (m.TouchSphere.UsageCountRequirement < SaveGameInterface.Main.PlayCount) {
-				Debug.Log("Up fast");
+				//Debug.Log("Up fast");
 				m.TouchSphere.gameObject.SetActive(true);
 				m.TouchSphere.LerpToScale(1f, 0.3f);
 				

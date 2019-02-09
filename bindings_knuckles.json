@@ -1,327 +1,151 @@
 {
-   "alias_info" : {},
-   "app_key" : "application.generated.unity.psyia.exe",
-   "bindings" : {
-      "/actions/buggy" : {
-         "sources" : [
-            {
-               "inputs" : {
-                  "position" : {
-                     "output" : "/actions/buggy/in/steering"
-                  }
-               },
-               "mode" : "joystick",
-               "path" : "/user/hand/left/input/thumbstick"
-            },
-            {
-               "inputs" : {
-                  "position" : {
-                     "output" : "/actions/buggy/in/steering"
-                  }
-               },
-               "mode" : "joystick",
-               "path" : "/user/hand/right/input/thumbstick"
-            },
-            {
-               "inputs" : {
-                  "pull" : {
-                     "output" : "/actions/buggy/in/throttle"
-                  }
-               },
-               "mode" : "trigger",
-               "path" : "/user/hand/left/input/trigger"
-            },
-            {
-               "inputs" : {
-                  "pull" : {
-                     "output" : "/actions/buggy/in/throttle"
-                  }
-               },
-               "mode" : "trigger",
-               "path" : "/user/hand/right/input/trigger"
-            },
-            {
-               "inputs" : {
-                  "click" : {
-                     "output" : "/actions/buggy/in/brake"
-                  }
-               },
-               "mode" : "button",
-               "path" : "/user/hand/left/input/a"
-            },
-            {
-               "inputs" : {
-                  "click" : {
-                     "output" : "/actions/buggy/in/brake"
-                  }
-               },
-               "mode" : "button",
-               "path" : "/user/hand/right/input/a"
-            },
-            {
-               "inputs" : {
-                  "click" : {
-                     "output" : "/actions/buggy/in/reset"
-                  }
-               },
-               "mode" : "button",
-               "path" : "/user/hand/left/input/b"
-            },
-            {
-               "inputs" : {
-                  "click" : {
-                     "output" : "/actions/buggy/in/reset"
-                  }
-               },
-               "mode" : "button",
-               "path" : "/user/hand/right/input/b"
+  "app_key": "application.generated.unity.psyia.exe",
+  "bindings": {
+    "/actions/buggy": {
+      "chords": [],
+      "poses": [],
+      "haptics": [],
+      "sources": [],
+      "skeleton": []
+    },
+    "/actions/default": {
+      "chords": [],
+      "poses": [],
+      "haptics": [],
+      "sources": [],
+      "skeleton": []
+    },
+    "/actions/legacy": {
+      "chords": [],
+      "poses": [],
+      "haptics": [],
+      "sources": [],
+      "skeleton": []
+    },
+    "/actions/platformer": {
+      "chords": [],
+      "poses": [],
+      "haptics": [],
+      "sources": [],
+      "skeleton": []
+    },
+    "/actions/psyia": {
+      "chords": [],
+      "poses": [
+        {
+          "output": "/actions/psyia/in/pose",
+          "path": "/user/hand/left/pose/raw"
+        },
+        {
+          "output": "/actions/psyia/in/pose",
+          "path": "/user/hand/right/pose/raw"
+        }
+      ],
+      "haptics": [
+        {
+          "output": "/actions/psyia/out/haptic",
+          "path": "/user/hand/left/output/haptic"
+        },
+        {
+          "output": "/actions/psyia/out/haptic",
+          "path": "/user/hand/right/output/haptic"
+        }
+      ],
+      "sources": [
+        {
+          "path": "/user/hand/left/input/trigger",
+          "mode": "trigger",
+          "parameters": {},
+          "inputs": {
+            "pull": {
+              "output": "/actions/psyia/in/applyforce"
             }
-         ]
-      },
-      "/actions/default" : {
-         "chords" : [],
-         "haptics" : [
-            {
-               "output" : "/actions/default/out/haptic",
-               "path" : "/user/hand/left/output/haptic"
-            },
-            {
-               "output" : "/actions/default/out/haptic",
-               "path" : "/user/hand/right/output/haptic"
+          }
+        },
+        {
+          "path": "/user/hand/right/input/trigger",
+          "mode": "trigger",
+          "parameters": {},
+          "inputs": {
+            "pull": {
+              "output": "/actions/psyia/in/applyforce"
             }
-         ],
-         "poses" : [
-            {
-               "output" : "/actions/default/in/pose",
-               "path" : "/user/hand/left/pose/raw"
-            },
-            {
-               "output" : "/actions/default/in/pose",
-               "path" : "/user/hand/right/pose/raw"
+          }
+        },
+        {
+          "path": "/user/hand/left/input/trackpad",
+          "mode": "force_sensor",
+          "parameters": {},
+          "inputs": {
+            "force": {
+              "output": "/actions/psyia/in/spawnparticles"
             }
-         ],
-         "skeleton" : [
-            {
-               "output" : "/actions/default/in/skeletonlefthand",
-               "path" : "/user/hand/left/input/skeleton/left"
-            },
-            {
-               "output" : "/actions/default/in/skeletonrighthand",
-               "path" : "/user/hand/right/input/skeleton/right"
+          }
+        },
+        {
+          "path": "/user/hand/right/input/trackpad",
+          "mode": "force_sensor",
+          "parameters": {},
+          "inputs": {
+            "force": {
+              "output": "/actions/psyia/in/spawnparticles"
             }
-         ],
-         "sources" : [
-            {
-               "inputs" : {
-                  "pull" : {
-                     "output" : "/actions/default/in/applyforce"
-                  }
-               },
-               "mode" : "trigger",
-               "path" : "/user/hand/left/input/trigger"
-            },
-            {
-               "inputs" : {
-                  "pull" : {
-                     "output" : "/actions/default/in/applyforce"
-                  }
-               },
-               "mode" : "trigger",
-               "path" : "/user/hand/right/input/trigger"
+          }
+        },
+        {
+          "path": "/user/hand/left/input/a",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/psyia/in/slowtime"
             }
-         ]
-      },
-      "/actions/legacy" : {
-         "sources" : []
-      },
-      "/actions/platformer" : {
-         "sources" : [
-            {
-               "inputs" : {
-                  "position" : {
-                     "output" : "/actions/platformer/in/move"
-                  }
-               },
-               "mode" : "joystick",
-               "path" : "/user/hand/left/input/thumbstick"
-            },
-            {
-               "inputs" : {
-                  "position" : {
-                     "output" : "/actions/platformer/in/move"
-                  }
-               },
-               "mode" : "joystick",
-               "path" : "/user/hand/right/input/thumbstick"
-            },
-            {
-               "inputs" : {
-                  "click" : {
-                     "output" : "/actions/platformer/in/jump"
-                  }
-               },
-               "mode" : "button",
-               "path" : "/user/hand/left/input/trigger"
-            },
-            {
-               "inputs" : {
-                  "click" : {
-                     "output" : "/actions/platformer/in/jump"
-                  }
-               },
-               "mode" : "button",
-               "path" : "/user/hand/right/input/trigger"
+          }
+        },
+        {
+          "path": "/user/hand/right/input/a",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/psyia/in/slowtime"
             }
-         ]
-      },
-      "/actions/psyia" : {
-         "haptics" : [
-            {
-               "output" : "/actions/psyia/out/haptic",
-               "path" : "/user/hand/left/output/haptic"
-            },
-            {
-               "output" : "/actions/psyia/out/haptic",
-               "path" : "/user/hand/right/output/haptic"
+          }
+        },
+        {
+          "path": "/user/hand/left/input/b",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/psyia/in/togglemenu"
             }
-         ],
-         "poses" : [
-            {
-               "output" : "none",
-               "path" : "/user/hand/left/pose/base"
-            },
-            {
-               "output" : "none",
-               "path" : "/user/hand/right/pose/base"
-            },
-            {
-               "output" : "none",
-               "path" : "/user/hand/left/pose/gdc2015"
-            },
-            {
-               "output" : "none",
-               "path" : "/user/hand/right/pose/gdc2015"
-            },
-            {
-               "output" : "none",
-               "path" : "/user/hand/left/pose/handgrip"
-            },
-            {
-               "output" : "none",
-               "path" : "/user/hand/right/pose/handgrip"
-            },
-            {
-               "output" : "/actions/psyia/in/pose",
-               "path" : "/user/hand/left/pose/raw"
-            },
-            {
-               "output" : "/actions/psyia/in/pose",
-               "path" : "/user/hand/right/pose/raw"
-            },
-            {
-               "output" : "none",
-               "path" : "/user/hand/left/pose/tip"
-            },
-            {
-               "output" : "none",
-               "path" : "/user/hand/right/pose/tip"
+          }
+        },
+        {
+          "path": "/user/hand/right/input/b",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/psyia/in/togglemenu"
             }
-         ],
-         "skeleton" : [
-            {
-               "output" : "none",
-               "path" : "/user/hand/left/input/skeleton/right"
-            },
-            {
-               "output" : "/actions/psyia/in/skeletonrighthand",
-               "path" : "/user/hand/right/input/skeleton/right"
-            },
-            {
-               "output" : "/actions/psyia/in/skeletonlefthand",
-               "path" : "/user/hand/left/input/skeleton/left"
-            }
-         ],
-         "sources" : [
-            {
-               "inputs" : {
-                  "pull" : {
-                     "output" : "/actions/psyia/in/applyforce"
-                  }
-               },
-               "mode" : "trigger",
-               "path" : "/user/hand/left/input/trigger"
-            },
-            {
-               "inputs" : {
-                  "pull" : {
-                     "output" : "/actions/psyia/in/applyforce"
-                  }
-               },
-               "mode" : "trigger",
-               "path" : "/user/hand/right/input/trigger"
-            },
-            {
-               "inputs" : {
-                  "force" : {
-                     "output" : "/actions/psyia/in/spawnparticles"
-                  }
-               },
-               "mode" : "force_sensor",
-               "path" : "/user/hand/left/input/trackpad"
-            },
-            {
-               "inputs" : {
-                  "force" : {
-                     "output" : "/actions/psyia/in/spawnparticles"
-                  }
-               },
-               "mode" : "force_sensor",
-               "path" : "/user/hand/right/input/trackpad"
-            },
-            {
-               "inputs" : {
-                  "click" : {
-                     "output" : "/actions/psyia/in/slowtime"
-                  }
-               },
-               "mode" : "button",
-               "path" : "/user/hand/left/input/a"
-            },
-            {
-               "inputs" : {
-                  "click" : {
-                     "output" : "/actions/psyia/in/slowtime"
-                  }
-               },
-               "mode" : "button",
-               "path" : "/user/hand/right/input/a"
-            },
-            {
-               "inputs" : {
-                  "click" : {
-                     "output" : "/actions/psyia/in/togglemenu"
-                  }
-               },
-               "mode" : "button",
-               "path" : "/user/hand/left/input/b"
-            },
-            {
-               "inputs" : {
-                  "click" : {
-                     "output" : "/actions/psyia/in/togglemenu"
-                  }
-               },
-               "mode" : "button",
-               "path" : "/user/hand/right/input/b"
-            }
-         ]
-      }
-   },
-   "controller_type" : "knuckles",
-   "description" : "",
-   "name" : "Psyia_Knuckles",
-   "options" : {
-      "mirror_actions" : false
-   },
-   "simulated_actions" : []
+          }
+        }
+      ],
+      "skeleton": [
+        {
+          "output": "/actions/psyia/in/skeletonrighthand",
+          "path": "/user/hand/right/input/skeleton/right"
+        },
+        {
+          "output": "/actions/psyia/in/skeletonlefthand",
+          "path": "/user/hand/left/input/skeleton/left"
+        }
+      ]
+    }
+  },
+  "controller_type": "knuckles",
+  "description": "",
+  "name": "Psyia_Knuckles"
 }
