@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000012279006706}
   - component: {fileID: 114000014106095768}
+  - component: {fileID: 8230927567407130667}
   m_Layer: 0
   m_Name: controller
   m_TagString: Untagged
@@ -49,4 +50,24 @@ MonoBehaviour:
   verbose: 0
   createComponents: 1
   updateDynamically: 1
-  customMaterial: {fileID: 2100000, guid: 13677e62a1135584badca3588c43d0b1, type: 2}
+--- !u!114 &8230927567407130667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011460529826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ffde2f366134562acc9a0f429a14fd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CustomMaterial: {fileID: 2100000, guid: 13677e62a1135584badca3588c43d0b1, type: 2}
+  ModelNames:
+  - vr_controller_vive_1_5
+  - oculus_cv1_controller_left
+  - oculus_cv1_controller_right
+  ModelMeshes:
+  - {fileID: 4300012, guid: 21b748f1f5528bd48a0c4f787bb22884, type: 3}
+  - {fileID: 4300000, guid: 7340a5a7c06d647428e58141985a9215, type: 3}
+  - {fileID: 4300000, guid: 155a42ef0a5d1824bab2ad70932e952a, type: 3}

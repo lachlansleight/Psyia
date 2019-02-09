@@ -28,7 +28,6 @@ namespace Valve.VR
             verbose = serializedObject.FindProperty("verbose");
             createComponents = serializedObject.FindProperty("createComponents");
             updateDynamically = serializedObject.FindProperty("updateDynamically");
-            customMaterial = serializedObject.FindProperty("customMaterial");
 
             // Load render model names if necessary.
             if (renderModelNames == null)
@@ -100,7 +99,6 @@ namespace Valve.VR
             EditorGUILayout.PropertyField(verbose);
             EditorGUILayout.PropertyField(createComponents);
             EditorGUILayout.PropertyField(updateDynamically);
-            EditorGUILayout.PropertyField(customMaterial);
 
             serializedObject.ApplyModifiedProperties();
         }

@@ -19,6 +19,7 @@
             <e p="PsyiaMusic.cs" t="Include" />
           </e>
           <e p="_Controllers" t="Include">
+            <e p="ApplyCustomControllerVisuals.cs" t="Include" />
             <e p="ControllerForce.cs" t="Include" />
             <e p="ControllerHaptics.cs" t="Include" />
             <e p="ControllerLine.cs" t="Include" />
