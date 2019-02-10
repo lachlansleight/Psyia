@@ -22,7 +22,7 @@
         "ParticleDampingVis" : 0,
         "TimeSpeed" : 1,
         "TimeSpeedVis" : 1,
-        "FloorCollision" : true
+        "FloorCollision" : false
     },
     "Audio" : {
         "VisualsAudioreactivity" : 1,

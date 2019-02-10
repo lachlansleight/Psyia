@@ -58,6 +58,7 @@
           <e p="Meditation" t="Include">
             <e p="Meditation.cs" t="Include" />
             <e p="MeditationCrystal.cs" t="Include" />
+            <e p="MeditationTriggers.cs" t="Include" />
           </e>
           <e p="ModeMenu" t="Include">
             <e p="ModeSettingsPanel.cs" t="Include" />
@@ -71,6 +72,7 @@
         </e>
         <e p="_Shaders" t="Include">
           <e p="TouchSphere.shader" t="Include" />
+          <e p="UnlitTransparentTexture.shader" t="Include" />
         </e>
         <e p="Dependencies" t="Include">
           <e p="AudioVisualisation" t="Include">

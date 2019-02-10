@@ -23,6 +23,7 @@ public class ModeChoreography : MonoBehaviour
 	}
 
 	public Meditation Meditation;
+	public MeditationTriggers MeditationTriggers;
 	
 	[Header("Fader")]
 	public GameObject FaderObject;
@@ -70,13 +71,6 @@ public class ModeChoreography : MonoBehaviour
 	{
 		yield return new WaitForSeconds(1f);
 		StartCoroutine(ResetEverything());
-	}
-
-	public void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.Space)) {
-			StartMeditation();
-		}
 	}
 	
 	public void SetMode(TouchSphere sourceSphere)
@@ -191,6 +185,7 @@ public class ModeChoreography : MonoBehaviour
 			iL = 4f * iL * iL * iL + 1f;
 			LeftController.localScale = new Vector3(iL, iL, 1f);
 			RightController.localScale = new Vector3(iL, iL, 1f);
+			MeditationTriggers.GlobalSizeMultiplier = 1f - i;
 		}
 
 		LeftController.localScale = Vector3.one;
@@ -249,6 +244,7 @@ public class ModeChoreography : MonoBehaviour
 			iL = 1f - iL;
 			LeftController.localScale = new Vector3(iL, iL, 1f);
 			RightController.localScale = new Vector3(iL, iL, 1f);
+			MeditationTriggers.GlobalSizeMultiplier = i;
 		}
 
 		LeftController.localScale = Vector3.zero;
@@ -259,6 +255,7 @@ public class ModeChoreography : MonoBehaviour
 
 	public void StartMeditation()
 	{
+		Debug.Log("Starting meditation");
 		StartCoroutine(RunMeditationRoutine());
 	}
 
@@ -306,6 +303,7 @@ public class ModeChoreography : MonoBehaviour
 			iL = 4f * iL * iL * iL + 1f;
 			LeftController.localScale = new Vector3(iL, iL, 1f);
 			RightController.localScale = new Vector3(iL, iL, 1f);
+			MeditationTriggers.GlobalSizeMultiplier = 1f - i;
 		}
 
 		LeftController.localScale = Vector3.one;
@@ -354,6 +352,7 @@ public class ModeChoreography : MonoBehaviour
 			iL = 1f - iL;
 			LeftController.localScale = new Vector3(iL, iL, 1f);
 			RightController.localScale = new Vector3(iL, iL, 1f);
+			MeditationTriggers.GlobalSizeMultiplier = i;
 		}
 
 		LeftController.localScale = Vector3.zero;

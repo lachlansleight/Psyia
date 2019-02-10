@@ -119,9 +119,11 @@ public class Meditation : MonoBehaviour
 
 	private Vector3 CylindricalPosition()
 	{
-		var radius = Random.Range(0.4f, 5f);
+		var radius = Random.Range(0.6f, 5f);
 		var angle = Random.Range(-1f, 1f) * Mathf.PI * 0.5f;
 		var height = Random.Range(0.25f, 2.5f);
+
+		angle += Mathf.PI / 2f;
 
 		return new Vector3(radius * Mathf.Cos(angle), height, radius * Mathf.Sin(angle));
 	}
