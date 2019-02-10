@@ -188,6 +188,7 @@ public class ModeChoreography : MonoBehaviour
 			MeditationTriggers.GlobalSizeMultiplier = 1f - i;
 		}
 
+		MeditationTriggers.GlobalSizeMultiplier = 0f;
 		LeftController.localScale = Vector3.one;
 		RightController.localScale = Vector3.one;
 
@@ -247,6 +248,7 @@ public class ModeChoreography : MonoBehaviour
 			MeditationTriggers.GlobalSizeMultiplier = i;
 		}
 
+		MeditationTriggers.GlobalSizeMultiplier = 1f;
 		LeftController.localScale = Vector3.zero;
 		RightController.localScale = Vector3.zero;
 
@@ -306,6 +308,7 @@ public class ModeChoreography : MonoBehaviour
 			MeditationTriggers.GlobalSizeMultiplier = 1f - i;
 		}
 
+		MeditationTriggers.GlobalSizeMultiplier = 0f;
 		LeftController.localScale = Vector3.one;
 		RightController.localScale = Vector3.one;
 
@@ -355,6 +358,7 @@ public class ModeChoreography : MonoBehaviour
 			MeditationTriggers.GlobalSizeMultiplier = i;
 		}
 
+		MeditationTriggers.GlobalSizeMultiplier = 0f;
 		LeftController.localScale = Vector3.zero;
 		RightController.localScale = Vector3.zero;
 
