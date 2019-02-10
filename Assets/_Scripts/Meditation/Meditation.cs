@@ -12,6 +12,7 @@ public class Meditation : MonoBehaviour
 	public Object CrystalPrefab;
 	public TextAsset PresetJson;
 	public PsyiaEmitter Emitter;
+	public MeditationDrone Drone;
 
 	[Header("Properties")]
 	public int MaxCrystalCount = 20;
@@ -28,6 +29,7 @@ public class Meditation : MonoBehaviour
 	public float LeadInTime = 2f;
 
 	[Header("Status")]
+	public bool Running;
 	public List<MeditationCrystal> Crystals;
 
 	private int[] _toneCounts;
@@ -40,14 +42,24 @@ public class Meditation : MonoBehaviour
 
 	public void BeginMeditation()
 	{
+		Running = true;
 		SpawnCrystal(5f);
 		PlayDrone();
 		StartCoroutine(MeditationRoutine());
 	}
 
+	public void StopMeditation()
+	{
+		Drone.StopDrone();
+		for (var i = Crystals.Count - 1; i >= 0; i--) {
+			Crystals[i].Dispose();
+			Crystals.RemoveAt(i);
+		}
+	}
+
 	public void PlayDrone()
 	{
-		//TODO: add meditation drone
+		Drone.StartDrone();
 	}
 
 	IEnumerator MeditationRoutine()
