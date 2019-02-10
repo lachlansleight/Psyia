@@ -1,0 +1,87 @@
+{
+    "System" : {
+        "MaxParticleCount" : 460,
+        "Antialiasing" : 2,
+        "Bloom" : true
+    },
+    "Visual" : {
+        "ParticleForm" : 3,
+        "ParticleColor" : 5,
+        "ParticleColorAmount" : 1,
+        "ParticleColorAmountVis" : 1,
+        "ParticleSize" : 0.0577277056872845,
+        "ParticleSizeVis" : 1,
+        "LineLength" : 0.0399999991059303,
+        "LineLengthVis" : 0,
+        "ParticleShape" : 3
+    },
+    "Physics" : {
+        "ParticleMass" : 0.0370973062515259,
+        "ParticleMassVis" : 0,
+        "ParticleDamping" : 0.0326341092586517,
+        "ParticleDampingVis" : 0,
+        "TimeSpeed" : 1,
+        "TimeSpeedVis" : 1,
+        "FloorCollision" : false
+    },
+    "Audio" : {
+        "VisualsAudioreactivity" : 1,
+        "PhysicsAudioreactivity" : 0.5,
+        "Volume" : 1,
+        "Loop" : false,
+        "SlowWithTime" : true
+    },
+    "Controller" : {
+        "ControllerSymmetry" : 2,
+        "ControllerModels" : true,
+        "ControllerDistance" : 0,
+        "ControllerDistanceVis" : 0,
+        "ControllerHaptics" : true
+    },
+    "ForceLeft" : {
+        "ForceShape" : 0,
+        "ForceAttenuation" : 4,
+        "ForceStrength" : 0.100000001490116,
+        "ForceStrengthVis" : 0,
+        "AttenuationDistance" : 5,
+        "AttenuationDistanceVis" : 5,
+        "SofteningFactor" : 0.200000002980232,
+        "SofteningFactorVis" : 0,
+        "Wavelength" : 0.200000002980232,
+        "WavelengthVis" : 0
+    },
+    "ForceRight" : {
+        "ForceShape" : 0,
+        "ForceAttenuation" : 6,
+        "ForceStrength" : 0.100000001490116,
+        "ForceStrengthVis" : 0,
+        "AttenuationDistance" : 0.308376252651215,
+        "AttenuationDistanceVis" : 0,
+        "SofteningFactor" : 0.200000002980232,
+        "SofteningFactorVis" : 0,
+        "Wavelength" : 0.200000002980232,
+        "WavelengthVis" : 0
+    },
+    "EmitterLeft" : {
+        "EmitterCount" : 2000,
+        "EmitterRadius" : 0.00999999977648258,
+        "EmitterRadiusVis" : 0,
+        "EmitterVelocity" : 0.00499999988824129,
+        "EmitterVelocityVis" : 0,
+        "VelocitySpread" : 1,
+        "VelocitySpreadVis" : 1,
+        "InheritVelocity" : 0.0500000007450581,
+        "InheritVelocityVis" : 0
+    },
+    "EmitterRight" : {
+        "EmitterCount" : 2000,
+        "EmitterRadius" : 0.00999999977648258,
+        "EmitterRadiusVis" : 0,
+        "EmitterVelocity" : 0.00499999988824129,
+        "EmitterVelocityVis" : 0,
+        "VelocitySpread" : 1,
+        "VelocitySpreadVis" : 1,
+        "InheritVelocity" : 0.0500000007450581,
+        "InheritVelocityVis" : 0
+    }
+}
