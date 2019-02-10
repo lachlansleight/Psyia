@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Security.Policy;
 using Psyia;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-public class MeditationCrystal : MonoBehaviour
+public class MeditationCrystal : MonoBehaviour, IDisposable
 {
 
 	[Header("Required")]
@@ -36,11 +38,6 @@ public class MeditationCrystal : MonoBehaviour
 	private float _growTime;
 	private float _minMultiplier;
 	private float _growProgress;
-	
-	public void Awake()
-	{
-		
-	}
 
 	public void Update()
 	{
@@ -83,6 +80,14 @@ public class MeditationCrystal : MonoBehaviour
 		StartCoroutine(GrowRoutine());
 
 		_initialized = true;
+	}
+
+	public void Dispose()
+	{
+		Destroy(_material);
+		Destroy(Pole.material);
+		Destroy(SpawnIndicator.material);
+		Destroy(gameObject);
 	}
 
 	private IEnumerator GrowRoutine()
@@ -135,8 +140,9 @@ public class MeditationCrystal : MonoBehaviour
 	{
 		yield return new WaitForSeconds(IntervalTime + Meditation.DecayTime - Meditation.LeadInTime);
 
+		//lerp up to 0.7, so that we jump up to 1.0 in the next for loop
 		for(float i = 0; i < 1f; i += Time.deltaTime / Meditation.LeadInTime) {
-			Force.StrengthMultiplier = Mathf.Lerp(_minMultiplier, 1f, LerpCubic(i));
+			Force.StrengthMultiplier = Mathf.Lerp(_minMultiplier, 0.7f, LerpCubic(i));
 			SineForce.StrengthMultiplier = Force.StrengthMultiplier - _minMultiplier;
 			yield return null;
 		}

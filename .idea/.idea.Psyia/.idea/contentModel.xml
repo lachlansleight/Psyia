@@ -58,6 +58,7 @@
           <e p="Meditation" t="Include">
             <e p="Meditation.cs" t="Include" />
             <e p="MeditationCrystal.cs" t="Include" />
+            <e p="MeditationDrone.cs" t="Include" />
             <e p="MeditationTriggers.cs" t="Include" />
           </e>
           <e p="ModeMenu" t="Include">

@@ -103,6 +103,7 @@ public class ModeChoreography : MonoBehaviour
 		LeftController.gameObject.SetActive(false);
 		RightController.gameObject.SetActive(false);
 		
+		
 		LeftHaptics.enabled = false;
 		RightHaptics.enabled = false;
 		
@@ -379,6 +380,7 @@ public class ModeChoreography : MonoBehaviour
 	public void ReturnToMenu()
 	{
 		StopAllCoroutines();
+		if (Meditation.Running) Meditation.StopMeditation();
 		StartCoroutine(ResetEverything());
 	}
 }
