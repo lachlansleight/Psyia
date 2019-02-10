@@ -195,7 +195,7 @@ public class ModeChoreography : MonoBehaviour
 		SettingsApplicator.TestJson = targetMode.PresetJson;
 		UiSettingsApplicator.LoadFromJson(targetMode.PresetJson.text);
 		SettingsApplicator.ApplyTestJson();
-		PsyiaRenderer.RenderMaterial.color = DefaultPsyiaColor;
+		PsyiaRenderer.RenderMaterial.color = new Color(0f, 0f, 0f, 0f);
 		PsyiaRenderer.enabled = true;
 		PsyiaDispatcher.RunOnUpdate = true;
 		targetMode.Emitter.Emit(targetMode.Emitter.StartEmitCount);
@@ -213,6 +213,11 @@ public class ModeChoreography : MonoBehaviour
 		}
 
 		SaveGameInterface.Main.PlayCount++;
+		
+		for (var i = 0f; i <= 1f; i += Time.deltaTime / 2f) {
+			PsyiaRenderer.RenderMaterial.color = Color.Lerp(DefaultPsyiaColor, new Color(0f, 0f, 0f, 0f), i);
+			yield return null;
+		}
 
 		//note - this means that if Auto Play is on, the only way back is using the menu button!
 		while (Music.TimeInTrack < targetMode.Song.length - 5f || Music.AutoPlay) {
@@ -225,7 +230,7 @@ public class ModeChoreography : MonoBehaviour
 		IntroCanvas.Fade(1f, 2f);
 
 		for (var i = 0f; i <= 1f; i += Time.deltaTime / 5f) {
-			PsyiaRenderer.RenderMaterial.color = Color.Lerp(DefaultPsyiaColor, new Color(0f, 0f, 0f, 0f), i);
+			PsyiaRenderer.RenderMaterial.color = Color.Lerp(new Color(0f, 0f, 0f, 0f), DefaultPsyiaColor, i);
 			yield return null;
 		}
 
@@ -255,6 +260,7 @@ public class ModeChoreography : MonoBehaviour
 		ReturnToMenu();
 	}
 
+	[ContextMenu("StartMeditation")]
 	public void StartMeditation()
 	{
 		Debug.Log("Starting meditation");
@@ -315,12 +321,17 @@ public class ModeChoreography : MonoBehaviour
 		SettingsApplicator.TestJson = Meditation.PresetJson;
 		UiSettingsApplicator.LoadFromJson(Meditation.PresetJson.text);
 		SettingsApplicator.ApplyTestJson();
-		PsyiaRenderer.RenderMaterial.color = DefaultPsyiaColor;
+		PsyiaRenderer.RenderMaterial.color = new Color(0f, 0f, 0f, 0f);
 		PsyiaRenderer.enabled = true;
 		PsyiaDispatcher.RunOnUpdate = true;
 		Meditation.Emitter.Emit(Meditation.Emitter.StartEmitCount);
 
 		Meditation.BeginMeditation();
+		
+		for (var i = 0f; i <= 1f; i += Time.deltaTime / 5f) {
+			PsyiaRenderer.RenderMaterial.color = Color.Lerp(new Color(0f, 0f, 0f, 0f), DefaultPsyiaColor, i);
+			yield return null;
+		}
 
 		//note - this means that if Auto Play is on, the only way back is using the menu button!
 		var duration = 0f;

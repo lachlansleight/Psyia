@@ -16,7 +16,7 @@
         "ParticleShape" : 3
     },
     "Physics" : {
-        "ParticleMass" : 0.0670973062515259,
+        "ParticleMass" : 0.0370973062515259,
         "ParticleMassVis" : 0,
         "ParticleDamping" : 0.0326341092586517,
         "ParticleDampingVis" : 0,

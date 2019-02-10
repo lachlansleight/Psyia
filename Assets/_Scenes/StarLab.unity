@@ -44786,8 +44786,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1168482602}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0, z: 1}
   m_Children: []
   m_Father: {fileID: 1641702716}
   m_RootOrder: 1
@@ -44812,7 +44812,7 @@ MonoBehaviour:
   Settings:
     EmissionRadius: 1.5
     EmissionRadiusShell: 1
-    EmissionArcSize: 1
+    EmissionArcSize: 0.5
     MinSpawnVelocity: 0.001
     MaxSpawnVelocity: 0.001
     MinSpawnMass: 0.05
@@ -55514,13 +55514,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tones:
   - {fileID: 8300000, guid: 81deeba37cb63fd47a3bf5e201357136, type: 3}
-  - {fileID: 8300000, guid: cf5d59f469cc7b3438378241835e5f08, type: 3}
+  - {fileID: 8300000, guid: 8099955377fe6814697b1da5290ee891, type: 3}
   - {fileID: 8300000, guid: 9a7691492d8adcc42a82324acdace1cb, type: 3}
   - {fileID: 8300000, guid: 26f60375ce5e3a04ab31a8649022242f, type: 3}
-  - {fileID: 8300000, guid: b58fcd411cc5b1f41b249ecbefbcd904, type: 3}
-  - {fileID: 8300000, guid: 4143d3fdeb4260240a868abd86e62a98, type: 3}
   - {fileID: 8300000, guid: 7c34d8319a4898d4ebacf048afafc69d, type: 3}
-  - {fileID: 8300000, guid: 8099955377fe6814697b1da5290ee891, type: 3}
+  - {fileID: 8300000, guid: 4143d3fdeb4260240a868abd86e62a98, type: 3}
   CrystalPrefab: {fileID: 5373201182829938774, guid: 6576d26b33866cc44b76756f540e4f9b,
     type: 3}
   PresetJson: {fileID: 4900000, guid: afeb0027129477741b136692d4447d3b, type: 3}
@@ -55528,9 +55526,11 @@ MonoBehaviour:
   MaxCrystalCount: 20
   LowestInterval: 10
   HighestInterval: 15
-  SpawnInterval: 2
+  SpawnInterval: 30
   MinCharge: 0.001
-  MaxCharge: 0.05
+  MaxCharge: 0.04
+  ChargeVariability: 0.1
+  SineForceMultiplier: 0
   DecayTime: 5
   LeadInTime: 2
   Crystals: []

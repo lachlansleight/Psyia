@@ -21,6 +21,8 @@ public class Meditation : MonoBehaviour
 	public float SpawnInterval = 30f;
 	public float MinCharge = 0.1f;
 	public float MaxCharge = 5f;
+	public float ChargeVariability = 0.1f;
+	public float SineForceMultiplier = 0.2f;
 	[Space(5)]
 	public float DecayTime = 5f;
 	public float LeadInTime = 2f;
@@ -63,6 +65,8 @@ public class Meditation : MonoBehaviour
 		var newObj = Instantiate(CrystalPrefab, transform) as GameObject;
 		var crystal = newObj.GetComponent<MeditationCrystal>();
 		var position = GetCrystalPosition();
+		if (Crystals.Count == 0)
+			position = new Vector3(0f, 1f, 0.8f);
 		crystal.transform.position = new Vector3(position.x, 0f, position.z);
 		var index = 0;
 		var tone = GetMeditationTone(out index);
@@ -85,6 +89,7 @@ public class Meditation : MonoBehaviour
 			}
 		}
 
+		_toneCounts[choice]++;
 		index = choice;
 		return Tones[choice];
 	}
@@ -120,7 +125,7 @@ public class Meditation : MonoBehaviour
 	private Vector3 CylindricalPosition()
 	{
 		var radius = Random.Range(0.6f, 5f);
-		var angle = Random.Range(-1f, 1f) * Mathf.PI * 0.5f;
+		var angle = Random.Range(-1f, 1f) * Mathf.PI * 0.4f;
 		var height = Random.Range(0.25f, 2.5f);
 
 		angle += Mathf.PI / 2f;
