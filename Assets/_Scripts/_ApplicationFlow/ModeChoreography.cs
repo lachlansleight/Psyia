@@ -216,7 +216,7 @@ public class ModeChoreography : MonoBehaviour
 		SaveGameInterface.Main.PlayCount++;
 		
 		for (var i = 0f; i <= 1f; i += Time.deltaTime / 2f) {
-			PsyiaRenderer.RenderMaterial.color = Color.Lerp(DefaultPsyiaColor, new Color(0f, 0f, 0f, 0f), i);
+			PsyiaRenderer.RenderMaterial.color = Color.Lerp(new Color(0f, 0f, 0f, 0f), DefaultPsyiaColor, i);
 			yield return null;
 		}
 
@@ -231,10 +231,11 @@ public class ModeChoreography : MonoBehaviour
 		IntroCanvas.Fade(1f, 2f);
 
 		for (var i = 0f; i <= 1f; i += Time.deltaTime / 5f) {
-			PsyiaRenderer.RenderMaterial.color = Color.Lerp(new Color(0f, 0f, 0f, 0f), DefaultPsyiaColor, i);
+			PsyiaRenderer.RenderMaterial.color = Color.Lerp(DefaultPsyiaColor, new Color(0f, 0f, 0f, 0f), i);
 			yield return null;
 		}
 
+		PsyiaRenderer.RenderMaterial.color = new Color(0f, 0f, 0f, 0f);
 		PsyiaRenderer.enabled = false;
 		PsyiaDispatcher.RunOnUpdate = false;
 		

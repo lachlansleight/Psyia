@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="140a6c05-64ff-46f0-b2c6-b112526fc446" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Psyia/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Psyia/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Audio/Meditation/Drone.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Audio/Meditation/Drone.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/StarLab.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/StarLab.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Meditation/Meditation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Meditation/Meditation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Meditation/MeditationCrystal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Meditation/MeditationCrystal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/_ApplicationFlow/ModeChoreography.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/_ApplicationFlow/ModeChoreography.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +48,7 @@
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
+          <entry key="project.closed" value="13" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.5" value="11" />
           <entry key="project.open.time.6" value="3" />
@@ -127,11 +121,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/_Scripts/Meditation/Meditation.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="768">
-              <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+            <state relative-caret-position="912">
+              <caret line="61" selection-start-line="61" selection-end-line="61" />
               <folding>
                 <marker date="1549793344525" expanded="false" signature="6:110" ph="..." />
                 <marker date="1549793344525" expanded="true" signature="151:3617" ph="{...}" />
@@ -181,7 +175,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/_Scripts/Meditation/MeditationCrystal.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="950">
@@ -480,8 +474,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="572" />
-    <option name="y" value="562" />
+    <option name="x" value="1106" />
+    <option name="y" value="542" />
     <option name="width" value="2318" />
     <option name="height" value="1597" />
   </component>
@@ -645,12 +639,12 @@
       <workItem from="1548272735912" duration="943000" />
       <workItem from="1548465208371" duration="3134000" />
       <workItem from="1549686160480" duration="15542000" />
-      <workItem from="1549775290662" duration="9626000" />
+      <workItem from="1549775290662" duration="10223000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160754000" />
+    <option name="totallyTimeSpent" value="161351000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -663,7 +657,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="572" y="562" width="2318" height="1597" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16681147" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1294,10 +1287,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/_Scripts/Meditation/MeditationCrystal.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="950">
+          <caret line="142" column="72" selection-start-line="142" selection-start-column="72" selection-end-line="142" selection-end-column="72" />
+          <folding>
+            <marker date="1549793443950" expanded="true" signature="6:170" ph="..." />
+            <marker date="1549793443950" expanded="true" signature="231:5272" ph="{...}" />
+            <marker date="1549793443950" expanded="true" signature="1005:1758" ph="{...}" />
+            <marker date="1549793443950" expanded="true" signature="1878:2521" ph="{...}" />
+            <marker date="1549793443950" expanded="true" signature="2545:2658" ph="{...}" />
+            <marker date="1549793443950" expanded="true" signature="2694:3443" ph="{...}" />
+            <marker date="1549793443950" expanded="true" signature="2800:3383" ph="{...}" />
+            <marker date="1549793443950" expanded="true" signature="3485:4279" ph="{...}" />
+            <marker date="1549793443950" expanded="true" signature="3773:3974" ph="{...}" />
+            <marker date="1549793443950" expanded="true" signature="4028:4229" ph="{...}" />
+            <marker date="1549793443950" expanded="true" signature="4316:5060" ph="{...}" />
+            <marker date="1549793443950" expanded="true" signature="4556:4738" ph="{...}" />
+            <marker date="1549793443950" expanded="true" signature="4836:5023" ph="{...}" />
+            <marker date="1549793443950" expanded="true" signature="5104:5153" ph="{...}" />
+            <marker date="1549793443950" expanded="true" signature="5189:5270" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/_Scripts/Meditation/Meditation.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+        <state relative-caret-position="912">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
           <folding>
             <marker date="1549793344525" expanded="false" signature="6:110" ph="..." />
             <marker date="1549793344525" expanded="true" signature="151:3617" ph="{...}" />
@@ -1319,30 +1336,6 @@
             <marker date="1549793344525" expanded="true" signature="3169:3270" ph="{...}" />
             <marker date="1549793344525" expanded="true" signature="3328:3582" ph="{...}" />
             <marker date="1549793344525" expanded="true" signature="3606:3615" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/_Scripts/Meditation/MeditationCrystal.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="950">
-          <caret line="142" column="72" selection-start-line="142" selection-start-column="72" selection-end-line="142" selection-end-column="72" />
-          <folding>
-            <marker date="1549793443950" expanded="true" signature="6:170" ph="..." />
-            <marker date="1549793443950" expanded="true" signature="231:5272" ph="{...}" />
-            <marker date="1549793443950" expanded="true" signature="1005:1758" ph="{...}" />
-            <marker date="1549793443950" expanded="true" signature="1878:2521" ph="{...}" />
-            <marker date="1549793443950" expanded="true" signature="2545:2658" ph="{...}" />
-            <marker date="1549793443950" expanded="true" signature="2694:3443" ph="{...}" />
-            <marker date="1549793443950" expanded="true" signature="2800:3383" ph="{...}" />
-            <marker date="1549793443950" expanded="true" signature="3485:4279" ph="{...}" />
-            <marker date="1549793443950" expanded="true" signature="3773:3974" ph="{...}" />
-            <marker date="1549793443950" expanded="true" signature="4028:4229" ph="{...}" />
-            <marker date="1549793443950" expanded="true" signature="4316:5060" ph="{...}" />
-            <marker date="1549793443950" expanded="true" signature="4556:4738" ph="{...}" />
-            <marker date="1549793443950" expanded="true" signature="4836:5023" ph="{...}" />
-            <marker date="1549793443950" expanded="true" signature="5104:5153" ph="{...}" />
-            <marker date="1549793443950" expanded="true" signature="5189:5270" ph="{...}" />
           </folding>
         </state>
       </provider>
