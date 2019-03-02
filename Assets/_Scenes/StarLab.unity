@@ -70792,7 +70792,7 @@ PrefabInstance:
     - target: {fileID: 5104338612050607952, guid: 268896555873b9f4b9d99e28acd02b6c,
         type: 3}
       propertyPath: OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetLeftForceStrengthVis
+      value: SetRightForceStrengthVis
       objectReference: {fileID: 0}
     - target: {fileID: 5104338612050607952, guid: 268896555873b9f4b9d99e28acd02b6c,
         type: 3}
