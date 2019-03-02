@@ -70,6 +70,11 @@ public class TouchSphere : MonoBehaviour
 		_myMaterial.SetFloat("_CustomTimeX", _customTime.x);
 		_myMaterial.SetFloat("_CustomTimeY", _customTime.y);
 
+		if (Input.GetKeyDown(KeyCode.F12) && gameObject.name == "WhiteTouchSphere") {
+			_touchTime = Time.time;
+			OnTouch.Invoke();
+		}
+		
 		if (proximity < TouchDistance && (Time.time - _touchTime) > CooldownTime) {
 			_touchTime = Time.time;
 			OnTouch.Invoke();
