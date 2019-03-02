@@ -64,7 +64,6 @@ public class MenuToggler : MonoBehaviour
 		if (_holdTime > 0f && _holdTime < ReturnToMenuTime) {
 			var requiredTime = Mathf.Lerp(0.2f, 0.02f, Mathf.Pow(Mathf.InverseLerp(0f, ReturnToMenuTime, _holdTime), 0.5f));
 			if (Time.time - _lastHapticTime > requiredTime) {
-				Debug.Log("buzz");
 				HapticAction.Execute(0f, 0f, 160f, 0.95f, SteamVR_Input_Sources.LeftHand);
 				HapticAction.Execute(0f, 0f, 160f, 0.95f, SteamVR_Input_Sources.RightHand);
 				_lastHapticTime = Time.time;
