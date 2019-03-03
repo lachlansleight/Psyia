@@ -11,8 +11,6 @@ public class ControllerSpawn : MonoBehaviour {
 	public SteamVR_Input_Sources Hand;
 
 	public AnimationCurve SpawnMultiplier = AnimationCurve.Linear(0f, 0f, 1f, 1f);
-	public AnimationCurve MinSpawnVelocity = AnimationCurve.Linear(0f, 0f, 1f, 1f);
-	public AnimationCurve MaxSpawnVelocity = AnimationCurve.Linear(0f, 0f, 1f, 1f);
 	
 	[Range(0f, 1f)] public float Value;
 
@@ -21,6 +19,7 @@ public class ControllerSpawn : MonoBehaviour {
 	private void Awake()
 	{
 		_psyiaEmitter = GetComponent<PsyiaEmitter>();
+		_psyiaEmitter.SetEmission(false);
 	}
 	
 	public void OnEnable ()
@@ -37,6 +36,7 @@ public class ControllerSpawn : MonoBehaviour {
 	{
 		Value = SpawnMultiplier.Evaluate(actionIn.GetState(Hand) ? 1f : 0f);
 		_psyiaEmitter.EmissionMultiplier = Value;
+		_psyiaEmitter.SetEmission(Value > 0f);
 		//_psyiaEmitter.Settings.MinSpawnVelocity = MinSpawnVelocity.Evaluate(Value);
 		//_psyiaEmitter.Settings.MaxSpawnVelocity = MaxSpawnVelocity.Evaluate(Value);
 	}
