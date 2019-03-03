@@ -4328,7 +4328,7 @@ PrefabInstance:
     - target: {fileID: 114742742659665160, guid: 313d98257bf0b8b4c9e6434146dd1f1d,
         type: 3}
       propertyPath: _EmissionMultiplier
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114742742659665160, guid: 313d98257bf0b8b4c9e6434146dd1f1d,
         type: 3}
@@ -4363,7 +4363,7 @@ PrefabInstance:
     - target: {fileID: 114742742659665160, guid: 313d98257bf0b8b4c9e6434146dd1f1d,
         type: 3}
       propertyPath: _Mode
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114742742659665160, guid: 313d98257bf0b8b4c9e6434146dd1f1d,
         type: 3}
@@ -4391,7 +4391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1543145249069096, guid: 313d98257bf0b8b4c9e6434146dd1f1d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114635151363917138, guid: 313d98257bf0b8b4c9e6434146dd1f1d,
         type: 3}
@@ -4425,6 +4425,11 @@ PrefabInstance:
     - target: {fileID: 4198158339953434, guid: 313d98257bf0b8b4c9e6434146dd1f1d, type: 3}
       propertyPath: m_LocalPosition.z
       value: 2.4870706
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077972091234790176, guid: 313d98257bf0b8b4c9e6434146dd1f1d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 313d98257bf0b8b4c9e6434146dd1f1d, type: 3}
@@ -12268,7 +12273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1168482603
 Transform:
   m_ObjectHideFlags: 0
@@ -12295,11 +12300,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 981252e7b8713544bb50bf0b84b01e55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Mode: 1
+  _Mode: 3
   _StartEmitCount: 1048576
   _EmitOverTime: 100
   _EmitOverDistance: 0
-  _EmissionMultiplier: 0
+  _EmissionMultiplier: 1
   Settings:
     EmissionRadius: 1.5
     EmissionRadiusShell: 1
