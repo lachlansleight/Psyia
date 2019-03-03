@@ -55,7 +55,6 @@ float4x4 InverseSystemMatrix;
 float4x4 SystemMatrix;
 
 RWStructuredBuffer<ParticleData> ParticleBuffer;
-AppendStructuredBuffer<uint> DeadList;
 RWStructuredBuffer<ForceData> ForceBuffer;
 
 float InverseLerp(float a, float b, float t) {
@@ -79,7 +78,6 @@ void SimulateParticles(uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
 	//Increase age, die if too old
 	ThisParticle.Age += DeltaTime;
 	if (ThisParticle.Age > Lifespan && Lifespan > 0) {
-		DeadList.Append(id);
 		ThisParticle.IsAlive = false;
 		ParticleBuffer[id] = ThisParticle;
 		return;

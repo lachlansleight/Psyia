@@ -40,6 +40,8 @@ public class TimeSlower : MonoBehaviour
 
 		if (SlowsWithTime) {
 			Music.SetPitch(TimeScale * TimeScaleMultiplier);
+		} else {
+			Music.SetPitch(1f);
 		}
 
 		TimeUpdater.TimeScale = TimeScale * TimeScaleMultiplier;

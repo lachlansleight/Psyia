@@ -34,5 +34,6 @@ public struct ParticleData {
 	public float Age;
 	public float Size;
 	public float Mass;
-	public Vector2 Padding;
+	public float Random;
+	public float Padding;
 }

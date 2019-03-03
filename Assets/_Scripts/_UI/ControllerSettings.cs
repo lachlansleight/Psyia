@@ -192,11 +192,11 @@ public class ControllerSettings : MonoBehaviour
 
 	public void SetRightForceAttenuationSofteningFactor(float value)
 	{
-		SettingsApplicator.SetRightForceAttenuationDistance(value);
+		SettingsApplicator.SetRightForceAttenuationSofteningFactor(value);
 	}
 	public void SetRightForceAttenuationSofteningFactorVis(int value)
 	{
-		SettingsApplicator.SetRightForceAttenuationDistanceVis(value);
+		SettingsApplicator.SetRightForceAttenuationSofteningFactorVis(value);
 	}
 	
 	public void SetLeftForceAttenuationWavelength(float value)

@@ -34,12 +34,9 @@ public class ParticleCountManager : MonoBehaviour {
 
 	public BufferSetup ParticleBuffer;
 	public BufferSetup DistanceBuffer;
-	public BufferSetupWithDispatch DeadList;
 
 	public void ApplyParticleCount() {
 		ParticleBuffer.Setup(ParticleCountFactor * 1024);
 		DistanceBuffer.Setup(ParticleCountFactor * 1024);
-		DeadList.ThreadGroups.x = ParticleCountFactor;
-		DeadList.Setup(ParticleCountFactor * 1024);
 	}
 }
