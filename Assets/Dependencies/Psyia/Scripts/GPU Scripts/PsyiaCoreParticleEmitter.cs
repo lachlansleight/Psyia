@@ -68,6 +68,7 @@ namespace Psyia {
 		{
 			var emitSpan = amount / ParticleBuffer.Count;
 			var emitMin = Random.Range(0f, 1f - emitSpan);
+			//Debug.Log($"Emission properties [maxcount, amount, span, min]: [{ParticleBuffer.Count}, {amount}, {emitSpan}, {emitMin}]");
 			Emitter.Shader.SetFloat("EmitSpan", emitSpan);
 			Emitter.Shader.SetFloat("EmitMin", emitMin);
 			Emitter.Dispatch();
