@@ -30,11 +30,8 @@ using UCTK;
 namespace Psyia {
 	public class PsyiaCoreParticleEmitter : MonoBehaviour {
 
-		public GpuAppendBuffer AppendBuffer;
+		public GpuBuffer ParticleBuffer;
 		public ComputeDispatcher Emitter;
-
-		private int _currentCount;
-		
 
 		public void Emit(Vector3 Position, int Amount) { Emit(Position, Vector3.zero, Amount); }
 		public void Emit(Vector3 Position, Vector3 Velocity, int Amount) {
@@ -43,11 +40,7 @@ namespace Psyia {
 			Emitter.Shader.SetVector("LastSpawnPosition", Position);
 			Emitter.Shader.SetVector("LastSpawnVelocity", Velocity);
 
-			float AppendBufferCount = AppendBuffer.CurrentCount;
-			int NumberToEmit = (int)Mathf.Min(Amount, AppendBufferCount);
-			if(NumberToEmit > 0) {
-				Emitter.Dispatch(NumberToEmit, 1, 1);
-			}
+			DispatchEmit(Amount);
 		}
 		public void Emit(Matrix4x4 StartTransform, Matrix4x4 LastTransform, Vector3 StartVelocity, Vector3 EndVelocity, int Amount, PsyiaEmitter.EmitterSettings Settings) {
 			Emitter.Shader.SetMatrix("SpawnTransform", StartTransform);
@@ -68,20 +61,18 @@ namespace Psyia {
 			
 			Emitter.Shader.SetFloat("RandomiseDirection", Settings.RandomiseDirection);
 
-			int NumberToEmit = Mathf.Min(Amount, _currentCount);
-			Debug.Log("Emitting " + Amount);
-			if(NumberToEmit > 0) {
-				Emitter.Dispatch(NumberToEmit, 1, 1);
-			}
-			
-			//Unfortunately, this line does what we want but it's so expensive we just can't call it every frame
-			//Takes literally 30ms to complete
-			//AppendBuffer.SetCurrentCountDirty();
+			DispatchEmit(Amount);
 		}
 
-		public void LateUpdate()
+		private void DispatchEmit(float amount)
 		{
-			_currentCount = AppendBuffer.CurrentCount;
+			var emitSpan = amount / ParticleBuffer.Count;
+			var emitMin = Random.Range(0f, 1f - emitSpan);
+			Emitter.Shader.SetFloat("EmitSpan", emitSpan);
+			Emitter.Shader.SetFloat("EmitMin", emitMin);
+			Emitter.Dispatch();
+			Emitter.Shader.SetFloat("EmitSpan", 0f);
+			Emitter.Shader.SetFloat("EmitMin", 2f);
 		}
 	}
 }

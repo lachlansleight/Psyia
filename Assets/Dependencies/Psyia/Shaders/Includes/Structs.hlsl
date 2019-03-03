@@ -42,7 +42,8 @@ struct ParticleData {
 	float Age;
     float Size;
     float Mass;
-    float2 Padding;
+    float Random;
+    float Padding;
 };
 
 struct DistanceData {

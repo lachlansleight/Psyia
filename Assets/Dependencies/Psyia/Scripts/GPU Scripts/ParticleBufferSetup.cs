@@ -38,7 +38,8 @@ public class ParticleBufferSetup : BufferSetup {
 			Data[i].Color.w = 1f;
 			Data[i].IsAlive = 0;
 			Data[i].Size = 1f;
-			Data[i].Padding = Vector3.zero;
+			Data[i].Random = Random.Range(0f, 1f);
+			Data[i].Padding = 0f;
 		}
 
 		MyGpuBuffer.SetData(Data);

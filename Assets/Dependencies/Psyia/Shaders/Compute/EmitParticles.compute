@@ -24,15 +24,25 @@ SOFTWARE.
 
 
 
-//Responsible for taking particles from the DeadList and making them come alive!
+//Responsible for taking particles and making them come alive!
 
 #pragma kernel EmitParticles
 
 //includes
 #include "../Includes/Structs.hlsl"
 
+//define thread group sizes
+#define thread_group_x 1024
+#define thread_group_y 1
+#define thread_group_z 1
+#define thread_x 1024
+#define thread_y 1
+#define thread_z 1
+
 RWStructuredBuffer<ParticleData> ParticleBuffer;
-ConsumeStructuredBuffer<uint> DeadList;
+
+float EmitSpan;
+float EmitMin;
 
 float3 SpawnVelocity;
 float3 LastSpawnVelocity;
@@ -69,17 +79,21 @@ float3 randVec(float seed) {
 	return float3(rand(seedA.x, seedB.x), rand(seedA.y, seedB.y), rand(seedA.z, seedB.z));
 }
 
-[numthreads(1,1,1)]
-void EmitParticles() {
+[numthreads(1024, 1, 1)]
+void EmitParticles(uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID) {
 	//Consume a particle from the dead list
-	uint newIndex = DeadList.Consume();
-	ParticleData CurrentParticle = ParticleBuffer[newIndex];
+	int id = tid.x + thread_group_x * gid.x;
+	ParticleData CurrentParticle = ParticleBuffer[id];
+
+    if(CurrentParticle.Random < EmitMin || CurrentParticle.Random > (EmitMin + EmitSpan)) {
+        return;
+    }
 
 	//Reset particle age and mark as alive
 	CurrentParticle.Age = 0;
 	CurrentParticle.IsAlive = 1;
 	
-	float3 seed = float3(newIndex * 0.01 + Time, newIndex * 0.01 + Time * 0.38762, newIndex * 0.01 + Time * 1.5863);
+	float3 seed = float3(id * 0.01 + Time, id * 0.01 + Time * 0.38762, id * 0.01 + Time * 1.5863);
 	float PositionLerpFactor = rand(seed.x, seed.y);
 
 	//Spawn randomly along line from last controller position to current controller position
@@ -124,5 +138,5 @@ void EmitParticles() {
 
 	CurrentParticle.Color = float4(1,1,1,1);
 
-	ParticleBuffer[newIndex] = CurrentParticle;
+	ParticleBuffer[id] = CurrentParticle;
 }
