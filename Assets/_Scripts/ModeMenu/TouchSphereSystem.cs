@@ -79,6 +79,10 @@ public class TouchSphereSystem : TouchSphere
 	{
 		if (_dying) return;
 		
+		if (Input.GetKeyDown(KeyCode.F12) && gameObject.name == "WhiteTouchSphere") {
+			OnTrigger.Invoke();
+		}
+		
 		var breathingFactor = 1f;
 		if (Affectors != null && Affectors.Length > 0) {
 			var distances = new float[Affectors.Length];
