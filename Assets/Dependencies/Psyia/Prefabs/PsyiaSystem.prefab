@@ -406,7 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd81c69293a9c154282b5c810847ccfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AppendBuffer: {fileID: 0}
+  ParticleBuffer: {fileID: 0}
   Emitter: {fileID: 114329319765827592}
 --- !u!1 &1365722649508862
 GameObject:
@@ -714,8 +714,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 981252e7b8713544bb50bf0b84b01e55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Mode: 1
-  _StartEmitCount: 500000
+  _Mode: 0
+  _StartEmitCount: 0
   _EmitOverTime: 0
   _EmitOverDistance: 0
   _EmissionMultiplier: 0
@@ -1225,7 +1225,7 @@ MonoBehaviour:
     MainBuffer: {fileID: 114128997006186928}
   TargetTextures: []
   KernelName: EmitParticles
-  ThreadGroupsX: 1
+  ThreadGroupsX: 1024
   ThreadGroupsY: 1
   ThreadGroupsZ: 1
 --- !u!1 &1895000386224268
