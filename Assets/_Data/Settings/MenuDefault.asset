@@ -19,12 +19,20 @@ MonoBehaviour:
   Visual:
     ParticleForm: 0
     ParticleColor: 0
+    ParticleColorAmount: 1
+    ParticleColorAmountVis: 0
     ParticleSize: 0.025
+    ParticleSizeVis: 0
     LineLength: 0.005
+    LineLengthVis: 0
     ParticleShape: 3
   Physics:
     ParticleMass: 0.05
+    ParticleMassVis: 0
     ParticleDamping: 0.1
+    ParticleDampingVis: 0
+    TimeSpeed: 0
+    TimeSpeedVis: 0
     FloorCollision: 0
   Audio:
     VisualsAudioreactivity: 0.5
@@ -36,30 +44,47 @@ MonoBehaviour:
     ControllerSymmetry: 1
     ControllerModels: 1
     ControllerDistance: 0
+    ControllerDistanceVis: 0
     ControllerHaptics: 1
   ForceLeft:
     ForceShape: 0
     ForceAttenuation: 4
     ForceStrength: 0.1
+    ForceStrengthVis: 0
     AttenuationDistance: 5
+    AttenuationDistanceVis: 0
     SofteningFactor: 0.2
+    SofteningFactorVis: 0
     Wavelength: 0.2
+    WavelengthVis: 0
   ForceRight:
     ForceShape: 0
     ForceAttenuation: 4
     ForceStrength: 0.1
+    ForceStrengthVis: 0
     AttenuationDistance: 5
+    AttenuationDistanceVis: 0
     SofteningFactor: 0.2
+    SofteningFactorVis: 0
     Wavelength: 0.2
+    WavelengthVis: 0
   EmitterLeft:
     EmitterCount: 2000
     EmitterRadius: 0.01
+    EmitterRadiusVis: 0
     EmitterVelocity: 0.005
+    EmitterVelocityVis: 0
     VelocitySpread: 1
+    VelocitySpreadVis: 0
     InheritVelocity: 0.05
+    InheritVelocityVis: 0
   EmitterRight:
     EmitterCount: 2000
     EmitterRadius: 0.01
+    EmitterRadiusVis: 0
     EmitterVelocity: 0.005
+    EmitterVelocityVis: 0
     VelocitySpread: 1
+    VelocitySpreadVis: 0
     InheritVelocity: 0.05
+    InheritVelocityVis: 0
