@@ -73,6 +73,8 @@ public class TouchSphereSystem : TouchSphere
 		_rotationT = new Vector3[_cubes.Length];
 		Increment(StartRotationAmount);
 		_proximityIncrement = StartRotationAmount;
+		_dying = false;
+		_breathT = 0f;
 	}
 
 	public void Update()
