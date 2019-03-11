@@ -125,8 +125,8 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 		if ((int) CurrentSettings.Visual.ParticleForm == newValue && !skipChangeCheck) return;
 		
 		CurrentSettings.Visual.ParticleForm = (PsyiaVisualSettings.Form)newValue;
-		ParticleQueue.transform.GetChild(2).gameObject.SetActive((int) CurrentSettings.Visual.ParticleForm != 2);
 		ParticleQueue.transform.GetChild(3).gameObject.SetActive((int) CurrentSettings.Visual.ParticleForm != 2);
+		ParticleQueue.transform.GetChild(4).gameObject.SetActive((int) CurrentSettings.Visual.ParticleForm != 2);
 		TargetRenderer.RenderMaterial = ParticleMaterials[(int) CurrentSettings.Visual.ParticleForm];
 	}
 
