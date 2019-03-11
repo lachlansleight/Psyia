@@ -17,12 +17,23 @@ public class PsyiaUiSwitch : MonoBehaviour
 
 	public void SetMixedSettings(int value)
 	{
-		ShowingControllerSettings = value == 1;
+		Debug.Log($"Setting mixed settings to {value}");
+		ShowingControllerSettings = value == 0;
 	}
 	
 	public void Update()
 	{
 		_currentValue = Mathf.Lerp(_currentValue, ShowingControllerSettings ? 1f : 0f, LerpTime);
+
+		foreach (var t in ControllerSettingsPanels) {
+			t.gameObject.SetActive(ShowingControllerSettings);
+		}
+
+		foreach (var t in MixedSettingsPanels) {
+			t.gameObject.SetActive(!ShowingControllerSettings);
+		}
+
+		return;
 		
 		//ControllerSettings.localPosition = new Vector3(0f, 0f, Mathf.Lerp(-0.4f, 0f, _currentValue));
 		ControllerSettings.localRotation = Quaternion.Euler(0f, Mathf.Lerp(-270f, 0f, _currentValue), 0f);

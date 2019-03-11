@@ -57,6 +57,13 @@ namespace XRP
 			_boxCollider = GetComponent<BoxCollider>();
 		}
 
+		public virtual void OnEnable()
+		{
+			CurrentState = State.Inactive;
+			_pointerIndicatorTargetSize = _pointerIndicatorCurrentSize = 0f;
+			ActivePointer = null;
+		}
+
 		public virtual void Start() { }
 
 		public virtual void Update()
