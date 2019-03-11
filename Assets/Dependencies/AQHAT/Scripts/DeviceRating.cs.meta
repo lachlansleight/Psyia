@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 094064f6e7d4d414388af33fc073a707
+timeCreated: 1498588812
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - IosTvosProcessorFile: {fileID: 4900000, guid: 3ddc63f3f9d9970469cab2bbf96b1007,
+      type: 3}
+  - gfxScanFile: {fileID: 4900000, guid: 4ebb7d9fefe27314cb8cda990baca362, type: 3}
+  - processorScanFile: {fileID: 4900000, guid: 86fcb4030f324bf49b11a28732abb163, type: 3}
+  - gfxScanFileCsv: {fileID: 4900000, guid: ebbc95f3a339ee94eae7836d085eeb8e, type: 3}
+  - processorScanFileCsv: {fileID: 4900000, guid: 175152fe685132843a17278d73b360a2,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
