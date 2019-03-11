@@ -58,7 +58,6 @@ namespace XRP
 
 		public void Trigger()
 		{
-			Debug.Log($"{gameObject.name} has been triggered!");
 			
 			OnClickEvent.Invoke();
 			OnClick?.Invoke();

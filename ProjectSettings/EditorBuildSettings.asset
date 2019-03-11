@@ -5,10 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/_Scenes/StarLab.unity
     guid: d6271b27b7c317441bd0829200de5755
-  - enabled: 1
-    path: Assets/Dependencies/AQHAT/Scenes/testScene.unity
-    guid: 0ecee807d022e124a9534a03ab1726c7
   m_configObjects: {}
