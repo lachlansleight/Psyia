@@ -61,6 +61,7 @@ namespace XRP
 		{
 			CurrentState = State.Inactive;
 			_pointerIndicatorTargetSize = _pointerIndicatorCurrentSize = 0f;
+			ActivePointer = null;
 		}
 
 		public virtual void Start() { }

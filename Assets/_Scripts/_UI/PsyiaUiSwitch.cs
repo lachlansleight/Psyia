@@ -17,6 +17,7 @@ public class PsyiaUiSwitch : MonoBehaviour
 
 	public void SetMixedSettings(int value)
 	{
+		Debug.Log($"Setting mixed settings to {value}");
 		ShowingControllerSettings = value == 0;
 	}
 	

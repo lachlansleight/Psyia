@@ -29814,6 +29814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cee2e24a11dfdb45a2362f27b51fea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UiSwitch: {fileID: 20849338}
   SettingsApplicator: {fileID: 1387650065}
   LeftController: {fileID: 516427656}
   LeftForce: {fileID: 1261633008}
