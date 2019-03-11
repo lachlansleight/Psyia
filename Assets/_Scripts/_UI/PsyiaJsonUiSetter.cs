@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using eageramoeba.DeviceRating;
 using UnityEngine;
 using XRP;
 
@@ -7,6 +8,7 @@ public class PsyiaJsonUiSetter : MonoBehaviour
 {
 	public PsyiaSettingsApplicator SourceSettings;
 	private PsyiaSettings _settings;
+	public DeviceRating DeviceRating;
 
 	[Header("System")]
 	public XrpSlider MaxParticleCountSlider;
@@ -104,7 +106,8 @@ public class PsyiaJsonUiSetter : MonoBehaviour
 
 	public void ApplyJsonValues()
 	{
-		MaxParticleCountSlider.CurrentValue = _settings.System.MaxParticleCount;
+		var transformedCount = _settings.System.MaxParticleCount * (DeviceRating.GFXScore / 20f);
+		MaxParticleCountSlider.CurrentValue = Mathf.Min(transformedCount, _settings.System.MaxParticleCount);
 		MaxParticleCountSlider.Bang();
 		AntialiasingDial.CurrentValue = (int)_settings.System.Antialiasing;
 		AntialiasingDial.Bang();
