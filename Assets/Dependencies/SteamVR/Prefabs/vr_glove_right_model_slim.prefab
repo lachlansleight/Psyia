@@ -269,15 +269,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skeletonAction:
-    actionPath: 
+    actionPath: /actions/Psyia/in/SkeletonRightHand
     needsReinit: 0
   inputSource: 2
-  rangeOfMotion: 0
+  rangeOfMotion: 1
   skeletonRoot: {fileID: 4000011264745556}
   origin: {fileID: 0}
   updatePose: 1
-  onlySetRotations: 0
-  skeletonBlend: 1
+  onlySetRotations: 1
+  skeletonBlend: 0.5
   onBoneTransformsUpdated:
     m_PersistentCalls:
       m_Calls: []
@@ -1028,6 +1028,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000011633937216}
+  - component: {fileID: 9142417613820525630}
   m_Layer: 0
   m_Name: finger_index_r_end
   m_TagString: Untagged
@@ -1049,6 +1050,23 @@ Transform:
   m_Father: {fileID: 4000011962222754}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9142417613820525630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013120609844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05107411d1c64ec8b293f798a3505618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HoverDistance: 0.1
+  DefaultScale: 0.01
+  HoverScale: 0.02
+  Hovering: 0
+  LastPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1000013232349450
 GameObject:
   m_ObjectHideFlags: 0

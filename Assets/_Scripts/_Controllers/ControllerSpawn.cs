@@ -7,7 +7,7 @@ using Valve.VR;
 [RequireComponent(typeof(PsyiaEmitter))]
 public class ControllerSpawn : MonoBehaviour {
 
-	public SteamVR_Action_Boolean SpawnParticlesAction;
+	public SteamVR_Action_Single SpawnParticlesAction;
 	public SteamVR_Input_Sources Hand;
 
 	public AnimationCurve SpawnMultiplier = AnimationCurve.Linear(0f, 0f, 1f, 1f);
@@ -32,9 +32,10 @@ public class ControllerSpawn : MonoBehaviour {
 		SpawnParticlesAction.RemoveOnChangeListener(OnAxisValueChanged, Hand);
 	}
 
-	private void OnAxisValueChanged(SteamVR_Action_Boolean actionIn, SteamVR_Input_Sources hand, bool newState)
+	private void OnAxisValueChanged(SteamVR_Action_Single actionIn, SteamVR_Input_Sources hand, float a, float b)
 	{
-		Value = SpawnMultiplier.Evaluate(actionIn.GetState(Hand) ? 1f : 0f);
+		//Value = SpawnMultiplier.Evaluate(actionIn.GetState(Hand) ? 1f : 0f);
+		Value = SpawnMultiplier.Evaluate(actionIn.GetAxis(Hand));
 		_psyiaEmitter.EmissionMultiplier = Value;
 		_psyiaEmitter.SetEmission(Value > 0f);
 		//_psyiaEmitter.Settings.MinSpawnVelocity = MinSpawnVelocity.Evaluate(Value);

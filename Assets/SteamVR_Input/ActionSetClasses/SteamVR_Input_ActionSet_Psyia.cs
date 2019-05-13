@@ -49,7 +49,7 @@ namespace Valve.VR
             }
         }
         
-        public virtual SteamVR_Action_Boolean SpawnParticles
+        public virtual SteamVR_Action_Single SpawnParticles
         {
             get
             {

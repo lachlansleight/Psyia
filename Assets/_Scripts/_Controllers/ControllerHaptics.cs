@@ -9,6 +9,8 @@ public class ControllerHaptics : MonoBehaviour
 	public SteamVR_Action_Vibration HapticAction;
 	public SteamVR_Input_Sources Hand;
 	public ControllerForce Force;
+
+	public bool Invert;
 	
 	[Range(0f, 360f)] public float Frequency;
 	public Vector2 DistanceAmplitude = new Vector2(0.2f, 0.7f);
@@ -32,17 +34,18 @@ public class ControllerHaptics : MonoBehaviour
 		var time = Time.time - _lastPulseTime;
 
 		var value = Force.Value;
+		if (Invert) value *= -1;
 		
 		var pulseDistance = Mathf.Lerp(PulseDistance.x, PulseDistance.y, value);
-		var distanceAmplitude = Mathf.Lerp(DistanceAmplitude.x, DistanceAmplitude.y, Force.Value);
+		var distanceAmplitude = Mathf.Lerp(DistanceAmplitude.x, DistanceAmplitude.y, value);
 		
 		if (distance > pulseDistance) {
 			HapticAction.Execute(0f, 0f, Frequency, distanceAmplitude, Hand);
 			_lastPulsePosition = transform.position;
 		}
 
-		var pulseFrequency = 1f / Mathf.Lerp(PulseFrequency.x, PulseFrequency.y, Force.Value);
-		var frequencyAmplitude = Mathf.Lerp(FrequencyAmplitude.x, FrequencyAmplitude.y, Force.Value);
+		var pulseFrequency = 1f / Mathf.Lerp(PulseFrequency.x, PulseFrequency.y, value);
+		var frequencyAmplitude = Mathf.Lerp(FrequencyAmplitude.x, FrequencyAmplitude.y, value);
 
 		if (time > pulseFrequency) {
 			HapticAction.Execute(0f, 0f, Frequency, frequencyAmplitude, Hand);

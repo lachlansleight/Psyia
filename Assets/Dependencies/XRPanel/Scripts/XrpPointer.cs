@@ -13,15 +13,27 @@ namespace XRP
 
 		[HideInInspector]
 		public Vector3 LastPosition;
+
+		public virtual void OnEnable()
+		{
+			var panels = FindObjectsOfType<XrpPanel>();
+			foreach(var panel in panels) panel.AddPointer(this);
+		}
+
+		public virtual void OnDisable()
+		{
+			var panels = FindObjectsOfType<XrpPanel>();
+			foreach(var panel in panels) panel.RemovePointer(this);
+		}
 		
-		public void Update()
+		public virtual void Update()
 		{
 			transform.localScale =
 				Vector3.one * Mathf.Lerp(transform.localScale.x, Hovering ? HoverScale : DefaultScale, 0.2f);
 			
 		}
 
-		public void LateUpdate()
+		public virtual void LateUpdate()
 		{
 			LastPosition = transform.position;
 		}

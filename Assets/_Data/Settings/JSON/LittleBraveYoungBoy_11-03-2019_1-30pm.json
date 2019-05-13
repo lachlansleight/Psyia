@@ -33,7 +33,7 @@
     },
     "Controller" : {
         "ControllerSymmetry" : 2,
-        "ControllerModels" : true,
+        "ControllerModels" : false,
         "ControllerDistance" : 0,
         "ControllerDistanceVis" : 0,
         "ControllerHaptics" : true

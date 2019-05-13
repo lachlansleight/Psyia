@@ -868,6 +868,13 @@ namespace Valve.VR.InteractionSystem
             hoveringInteractable = closestInteractable;
         }
 
+        public Vector3 GetBonePosition(SteamVR_Skeleton_JointIndexEnum targetBone)
+        {
+            if (mainRenderModel == null) return Vector3.zero;
+            if (!mainRenderModel.IsHandVisibile()) return Vector3.zero;
+            return mainRenderModel.GetBonePosition((int) targetBone);
+        }
+
         protected virtual bool CheckHoveringForTransform(Vector3 hoverPosition, float hoverRadius, ref float closestDistance, ref Interactable closestInteractable, Color debugColor)
         {
             bool foundCloser = false;

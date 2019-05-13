@@ -67,12 +67,12 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _LineLength: 0.04
+    - _LineLength: 0.005
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _PointSize: 0.057727706
+    - _PointSize: 0.034952123
     - _ShadowStrength: 0.2
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -84,7 +84,7 @@ Material:
     - _gIndex: 2
     - _rIndex: 0
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 0.25}
+    - _Color: {r: 0.999286, g: 0.999286, b: 0.999286, a: 0.2498215}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OffsetPosition: {r: 0, g: 0, b: 0, a: 0}
     - _SystemMatrix0: {r: 0, g: 0, b: 0, a: 1}

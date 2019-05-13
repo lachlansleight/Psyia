@@ -1,12 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Valve.VR.InteractionSystem;
+using XRP;
 
 public class PsyiaController : MonoBehaviour
 {
 
 	public Transform SourceTransform;
 	public ControllerForce ForceValue;
+
+	public Vector3 offset;
+	public bool Invert;
 
 	public float minSpinRate = 10f;
 	public float maxSpinRate = 1000f;
@@ -30,7 +34,8 @@ public class PsyiaController : MonoBehaviour
 
 	public bool ShowFullModel = true;
 	public float ControllerDistance;
-	public XRP.XrpPointer Pointer;
+	public string PointerName = "LeftUiPointer";
+	public XrpPointer Pointer;
 
 	// Use this for initialization
 	void Start () {
@@ -41,10 +46,12 @@ public class PsyiaController : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	public void Update () {
-
+	public void Update ()
+	{
+		if (Pointer == null) Pointer = GameObject.Find(PointerName).GetComponent<XrpPointer>();
+		
 		if(ControllerDistance <= 0f) {
-			transform.position = SourceTransform.position + SourceTransform.forward * 0.03f;
+			transform.position = SourceTransform.position + SourceTransform.forward * offset.z;
 			transform.rotation = SourceTransform.rotation;
 		} else {
 			var slerpyPos = Vector3.Slerp(transform.position - SourceTransform.position, SourceTransform.forward * (ControllerDistance + 0.03f), Mathf.Lerp(0.2f, 0.02f, Mathf.InverseLerp(0.05f, 2f, ControllerDistance)));
@@ -57,10 +64,12 @@ public class PsyiaController : MonoBehaviour
 		if (ShowFullModel) fancyBase.ShowController(true);
 		else fancyBase.HideController(true);
 
-		var value = Pointer.Hovering ? 0f : ForceValue.Value;
+		var value = ForceValue.Value;
+		if (Invert) value *= -1;
+		if (Pointer != null && Pointer.Hovering) value = 0f;
 		
 		//if we're on the menu with this controller, disable attractor
-		if(Pointer.Hovering) {
+		if(Pointer != null && Pointer.Hovering) {
 			fancy.SetActive(false);
 			minimal.SetActive(false);
 			

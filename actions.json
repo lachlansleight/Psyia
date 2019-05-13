@@ -7,23 +7,24 @@
     },
     {
       "name": "/actions/Psyia/in/Pose",
-      "type": "pose"
+      "type": "pose",
+      "requirement": "mandatory"
     },
     {
       "name": "/actions/Psyia/in/SkeletonRightHand",
       "type": "skeleton",
       "skeleton": "/skeleton/hand/right",
-      "requirement": "optional"
+      "requirement": "suggested"
     },
     {
       "name": "/actions/Psyia/in/SkeletonLeftHand",
       "type": "skeleton",
       "skeleton": "/skeleton/hand/left",
-      "requirement": "optional"
+      "requirement": "suggested"
     },
     {
       "name": "/actions/Psyia/in/SpawnParticles",
-      "type": "boolean",
+      "type": "vector1",
       "requirement": "mandatory"
     },
     {

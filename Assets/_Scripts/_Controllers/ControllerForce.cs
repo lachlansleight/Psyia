@@ -10,6 +10,8 @@ public class ControllerForce : MonoBehaviour
 
 	public SteamVR_Action_Single ApplyForceAction;
 	public SteamVR_Input_Sources Hand;
+
+	public bool Invert;
 	
 	[Range(0f, 1f)] public float Value;
 
@@ -34,7 +36,7 @@ public class ControllerForce : MonoBehaviour
 
 	public void Update()
 	{
-		_psyiaForce.StrengthMultiplier = Value;
+		_psyiaForce.StrengthMultiplier = Invert ? 1f - Value : Value;
 	}
 
 	private void OnAxisValueChanged(SteamVR_Action_Single actionIn, SteamVR_Input_Sources hand, float newAxis, float newDelta)

@@ -560,15 +560,19 @@ namespace Valve.VR
                         if ((boneIndex == SteamVR_Skeleton_JointIndexes.wrist && mainPose.ignoreWristPoseData) ||
                             (boneIndex == SteamVR_Skeleton_JointIndexes.root && mainPose.ignoreRootPoseData))
                         {
-                            SetBonePosition(boneIndex, bonePositions[boneIndex]);
-                            SetBoneRotation(boneIndex, boneRotations[boneIndex]);
+                            if(bonePositions.Length > boneIndex) {
+                                SetBonePosition(boneIndex, bonePositions[boneIndex]);
+                                SetBoneRotation(boneIndex, boneRotations[boneIndex]);
+                            }
                         }
                         else
                         {
                             Quaternion poseRotation = GetBlendPoseForBone(boneIndex, boneRotations[boneIndex]);
 
-                            SetBonePosition(boneIndex, blendSnapshot.bonePositions[boneIndex]);
-                            SetBoneRotation(boneIndex, poseRotation);
+                            if(bonePositions.Length > boneIndex) {
+                                SetBonePosition(boneIndex, blendSnapshot.bonePositions[boneIndex]);
+                                SetBoneRotation(boneIndex, poseRotation);
+                            }
                         }
                     }
                 }
@@ -580,8 +584,10 @@ namespace Valve.VR
                     if (bones[boneIndex] == null)
                         continue;
 
-                    SetBonePosition(boneIndex, bonePositions[boneIndex]);
-                    SetBoneRotation(boneIndex, boneRotations[boneIndex]);
+                    if(bonePositions.Length > boneIndex) {
+                        SetBonePosition(boneIndex, bonePositions[boneIndex]);
+                        SetBoneRotation(boneIndex, boneRotations[boneIndex]);
+                    }
                 }
             }
             else
@@ -598,21 +604,27 @@ namespace Valve.VR
                         if ((boneIndex == SteamVR_Skeleton_JointIndexes.wrist && mainPose.ignoreWristPoseData) ||
                             (boneIndex == SteamVR_Skeleton_JointIndexes.root && mainPose.ignoreRootPoseData))
                         {
-                            SetBonePosition(boneIndex, bonePositions[boneIndex]);
-                            SetBoneRotation(boneIndex, boneRotations[boneIndex]);
+                            if(bonePositions.Length > boneIndex) {
+                                SetBonePosition(boneIndex, bonePositions[boneIndex]);
+                                SetBoneRotation(boneIndex, boneRotations[boneIndex]);
+                            }
                         }
                         else
                         {
                             Quaternion poseRotation = GetBlendPoseForBone(boneIndex, boneRotations[boneIndex]);
 
-                            SetBonePosition(boneIndex, Vector3.Lerp(blendSnapshot.bonePositions[boneIndex], bonePositions[boneIndex], skeletonBlend));
-                            SetBoneRotation(boneIndex, Quaternion.Lerp(poseRotation, boneRotations[boneIndex], skeletonBlend));
+                            if(bonePositions.Length > boneIndex) {
+                                SetBonePosition(boneIndex, Vector3.Lerp(blendSnapshot.bonePositions[boneIndex], bonePositions[boneIndex], skeletonBlend));
+                                SetBoneRotation(boneIndex, Quaternion.Lerp(poseRotation, boneRotations[boneIndex], skeletonBlend));
+                            }
                         }
                     }
                     else
                     {
-                        SetBonePosition(boneIndex, Vector3.Lerp(bones[boneIndex].localPosition, bonePositions[boneIndex], skeletonBlend));
-                        SetBoneRotation(boneIndex, Quaternion.Lerp(bones[boneIndex].localRotation, boneRotations[boneIndex], skeletonBlend));
+                        if(bonePositions.Length > boneIndex) {
+                            SetBonePosition(boneIndex, Vector3.Lerp(bones[boneIndex].localPosition, bonePositions[boneIndex], skeletonBlend));
+                            SetBoneRotation(boneIndex, Quaternion.Lerp(bones[boneIndex].localRotation, boneRotations[boneIndex], skeletonBlend));
+                        }
                     }
                 }
             }

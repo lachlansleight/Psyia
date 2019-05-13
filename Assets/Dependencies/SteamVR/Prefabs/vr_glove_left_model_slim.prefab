@@ -839,15 +839,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skeletonAction:
-    actionPath: 
+    actionPath: /actions/Psyia/in/SkeletonLeftHand
     needsReinit: 0
   inputSource: 1
-  rangeOfMotion: 0
+  rangeOfMotion: 1
   skeletonRoot: {fileID: 4000010709239554}
   origin: {fileID: 0}
   updatePose: 1
   onlySetRotations: 0
-  skeletonBlend: 1
+  skeletonBlend: 0.5
   onBoneTransformsUpdated:
     m_PersistentCalls:
       m_Calls: []

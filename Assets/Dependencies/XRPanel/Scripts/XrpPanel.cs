@@ -1,10 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace XRP
 {
 	public class XrpPanel : MonoBehaviour
 	{
-		private XrpPointer[] _pointers;
+		private List<XrpPointer> _pointers;
 		private XrpControl[] _controls;
 
 		public float PointerSize = 0.015f;
@@ -26,14 +27,25 @@ namespace XRP
 			_hoverCandidates = new float[_controls.Length];
 			_touchCandidates = new int[_controls.Length];
 			for (var i = 0; i < _controls.Length; i++) _hoverCandidates[i] = _touchCandidates[i] = -1;
-			
-			_pointers = FindObjectsOfType<XrpPointer>();
+			_pointers = new List<XrpPointer>();
+		}
+
+		public void AddPointer(XrpPointer pointer)
+		{
+			if (_pointers == null) _pointers = new List<XrpPointer>();
+			if (!_pointers.Contains(pointer)) _pointers.Add(pointer);
+		}
+
+		public void RemovePointer(XrpPointer pointer)
+		{
+			if (_pointers == null) _pointers = new List<XrpPointer>();
+			if (_pointers.Contains(pointer)) _pointers.Remove(pointer);
 		}
 
 		public void Update()
 		{
-			
-			for (var i = 0; i < _pointers.Length; i++) {
+			if (_pointers == null) _pointers = new List<XrpPointer>();
+			for (var i = 0; i < _pointers.Count; i++) {
 				_pointers[i].Hovering = false;
 				for (var j = 0; j < _controls.Length; j++) {
 					if (!_controls[j].gameObject.activeInHierarchy) continue;
