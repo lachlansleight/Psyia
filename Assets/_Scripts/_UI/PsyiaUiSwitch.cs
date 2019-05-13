@@ -1,24 +1,95 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using XRP;
 
 public class PsyiaUiSwitch : MonoBehaviour
 {
 
 	[Range(0f, 1f)] public float LerpTime = 0.1f;
 	public bool ShowingControllerSettings = false;
+	public bool ShowingSimpleSettings = true;
 
+	public Transform AdvancedSettings;
+	public Transform SimpleSettings;
+	public XrpPanel AdvancedPanel;
+	public XrpPanel SimplePanel;
+	public Text SimpleAdvancedText;
+	
+	[Space(10)]
+	
 	public Transform ControllerSettings;
 	public Transform[] ControllerSettingsPanels;
 	public Transform MixedSettings;
 	public Transform[] MixedSettingsPanels;
+	public Sprite MixedIcon;
+	public Sprite ControllerIcon;
+	public Image ControllerMixedButton;
 
+	private bool _lerpingSimpleAdvanced = false;
 	private float _currentValue;
 
 	public void SetMixedSettings(int value)
 	{
 		Debug.Log($"Setting mixed settings to {value}");
 		ShowingControllerSettings = value == 0;
+		ControllerMixedButton.sprite = ShowingControllerSettings ? MixedIcon : ControllerIcon;
+	}
+
+	public void ToggleSimpleSettings()
+	{
+		SetSimpleSettings(!ShowingSimpleSettings);
+	}
+
+	public void BackToMenu()
+	{
+		var modeChoreography = FindObjectOfType<ModeChoreography>();
+		if (modeChoreography != null) {
+			modeChoreography.ReturnToMenu();
+		}
+	}
+
+	public void SetSimpleSettings(bool value)
+	{
+		if (_lerpingSimpleAdvanced) return;
+		
+		StartCoroutine(LerpSimpleAdvanced(!value));
+	}
+
+	private IEnumerator LerpSimpleAdvanced(bool toAdvanced)
+	{
+		_lerpingSimpleAdvanced = true;
+		
+		for (var i = 0f; i < 1f; i += Time.deltaTime / LerpTime) {
+			if (toAdvanced) {
+				SimpleSettings.localScale = Vector3.one * Mathf.Lerp(1f, 0f, i);
+			} else {
+				AdvancedSettings.localScale = Vector3.one * Mathf.Lerp(1f, 0f, i);
+			}
+			yield return null;
+		}
+		if (toAdvanced) {
+			SimpleSettings.localScale = Vector3.zero;
+		} else {
+			AdvancedSettings.localScale = Vector3.one;
+		}
+
+		SimpleAdvancedText.text = toAdvanced ? "Simple" : "Advanced";
+		
+		for (var i = 0f; i < 1f; i += Time.deltaTime / LerpTime) {
+			if (toAdvanced) {
+				AdvancedSettings.localScale = Vector3.zero;
+			} else {
+				SimpleSettings.localScale = Vector3.one;
+			}
+			yield return null;
+		}
+
+		_lerpingSimpleAdvanced = false;
+		ShowingSimpleSettings = !toAdvanced;
+		AdvancedPanel.enabled = toAdvanced;
+		SimplePanel.enabled = !toAdvanced;
 	}
 	
 	public void Update()
