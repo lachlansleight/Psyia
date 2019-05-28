@@ -17,6 +17,7 @@ public class MenuToggler : MonoBehaviour
 	[Range(0f, 1f)] public float LerpSpeed = 0.2f;
 	public Transform MenuObject;
 	public PsyiaUiSwitch UiController;
+	public XrpPanel MetaPanel;
 	public Transform MenuHeight;
 	public Transform HMDObject;
 	public float HeightOffset = -0.39f;
@@ -50,12 +51,16 @@ public class MenuToggler : MonoBehaviour
 			} else {
 				UiController.AdvancedPanel.enabled = false;
 			}
+
+			MetaPanel.enabled = false;
 		} else {
 			if (UiController.ShowingSimpleSettings) {
 				UiController.SimplePanel.enabled = true;
 			} else {
 				UiController.AdvancedPanel.enabled = true;
 			}
+
+			MetaPanel.enabled = true;
 		}
 		
 		//MenuObject.gameObject.SetActive(_currentValue > 0.01f);

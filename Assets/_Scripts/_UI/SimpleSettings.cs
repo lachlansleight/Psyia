@@ -64,11 +64,10 @@ public class SimpleSettings : MonoBehaviour
 	{
 		SettingsApplicator.TestJson = Presets[value];
 		UiSettingsApplicator.LoadFromJson(Presets[value].text);
-		SettingsApplicator.ApplyTestJson();
+		//SettingsApplicator.ApplyTestJson();
 		Music.SetClip(PresetAudio[value]);
 		
-		SettingsApplicator.SetMaxParticleCount(SettingsApplicator.CurrentSettings.System.MaxParticleCount);
-		SettingsApplicator.ApplyParticleCount();
-		StartEmitter.Emit(Mathf.Min(StartEmitter.StartEmitCount, _storedCount * 1024));
+		SetParticleCount(SettingsApplicator.CurrentSettings.System.MaxParticleCount);
+		ApplyParticleCount();
 	}
 }

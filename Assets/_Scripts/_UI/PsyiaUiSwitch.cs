@@ -30,10 +30,22 @@ public class PsyiaUiSwitch : MonoBehaviour
 	private bool _lerpingSimpleAdvanced = false;
 	private float _currentValue;
 
+	public void ToggleMixedSettings()
+	{
+		SetMixedSettings(!ShowingControllerSettings);
+	}
+	
 	public void SetMixedSettings(int value)
 	{
 		Debug.Log($"Setting mixed settings to {value}");
 		ShowingControllerSettings = value == 0;
+		ControllerMixedButton.sprite = ShowingControllerSettings ? MixedIcon : ControllerIcon;
+	}
+	
+	public void SetMixedSettings(bool value)
+	{
+		Debug.Log($"Setting mixed settings to {value}");
+		ShowingControllerSettings = value;
 		ControllerMixedButton.sprite = ShowingControllerSettings ? MixedIcon : ControllerIcon;
 	}
 
@@ -53,12 +65,17 @@ public class PsyiaUiSwitch : MonoBehaviour
 	public void SetSimpleSettings(bool value)
 	{
 		if (_lerpingSimpleAdvanced) return;
+
+		Debug.Log("Setting simple settings to " + value);
 		
 		StartCoroutine(LerpSimpleAdvanced(!value));
 	}
 
 	private IEnumerator LerpSimpleAdvanced(bool toAdvanced)
 	{
+		AdvancedPanel.enabled = false;
+		SimplePanel.enabled = false;
+		
 		_lerpingSimpleAdvanced = true;
 		
 		for (var i = 0f; i < 1f; i += Time.deltaTime / LerpTime) {
@@ -72,18 +89,23 @@ public class PsyiaUiSwitch : MonoBehaviour
 		if (toAdvanced) {
 			SimpleSettings.localScale = Vector3.zero;
 		} else {
-			AdvancedSettings.localScale = Vector3.one;
+			AdvancedSettings.localScale = Vector3.zero;
 		}
 
 		SimpleAdvancedText.text = toAdvanced ? "Simple" : "Advanced";
 		
 		for (var i = 0f; i < 1f; i += Time.deltaTime / LerpTime) {
 			if (toAdvanced) {
-				AdvancedSettings.localScale = Vector3.zero;
+				AdvancedSettings.localScale = Vector3.one * Mathf.Lerp(0f, 1f, i);
 			} else {
-				SimpleSettings.localScale = Vector3.one;
+				SimpleSettings.localScale = Vector3.one * Mathf.Lerp(0f, 1f, i);
 			}
 			yield return null;
+		}
+		if (toAdvanced) {
+			AdvancedSettings.localScale = Vector3.one;
+		} else {
+			SimpleSettings.localScale = Vector3.one;
 		}
 
 		_lerpingSimpleAdvanced = false;
