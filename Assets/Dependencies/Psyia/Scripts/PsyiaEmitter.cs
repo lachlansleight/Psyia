@@ -225,6 +225,12 @@ namespace Psyia {
 			LastVelocity = CurrentVelocity;
 			LastTransform = CurrentTransform;
 		}
+
+		public void ResetVelocity()
+		{
+			LastTransform = CurrentTransform;
+			LastVelocity = CurrentVelocity = Vector3.zero;
+		}
 	}
 
 }
