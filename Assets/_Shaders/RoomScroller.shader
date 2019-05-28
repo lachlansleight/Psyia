@@ -81,7 +81,7 @@ Shader "Unlit/RoomScroller"
                     distance = 1.0;
                 }
                 
-                return lerp(col, _FadeColor, distance);
+                return lerp(_FadeColor, col, distance);
             }
             ENDCG
         }
