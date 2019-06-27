@@ -47,7 +47,7 @@ namespace UCTK {
 			SupplyBuffersToMaterial(RenderMaterial);
 
 			RenderMaterial.SetPass(0);
-			Graphics.DrawProcedural(Topology, InputBuffers[BufferToCount].MainBuffer.Count);
+			Graphics.DrawProceduralNow(Topology, InputBuffers[BufferToCount].MainBuffer.Count);
 		}
 
 		private void Update() {
