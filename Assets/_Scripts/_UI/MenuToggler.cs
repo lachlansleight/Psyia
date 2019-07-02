@@ -16,7 +16,8 @@ public class MenuToggler : MonoBehaviour
 	public bool AllowMenuToggle = true;
 	[Range(0f, 1f)] public float LerpSpeed = 0.2f;
 	public Transform MenuObject;
-	public XrpPanel MenuPanel;
+	public PsyiaUiSwitch UiController;
+	public XrpPanel MetaPanel;
 	public Transform MenuHeight;
 	public Transform HMDObject;
 	public float HeightOffset = -0.39f;
@@ -45,9 +46,21 @@ public class MenuToggler : MonoBehaviour
 
 		if (MenuObject.localScale.x < 0.01f) {
 			MenuObject.transform.position = HMDObject.position + HMDObject.forward * -1f;
-			MenuPanel.enabled = false;
+			if (UiController.ShowingSimpleSettings) {
+				UiController.SimplePanel.enabled = false;
+			} else {
+				UiController.AdvancedPanel.enabled = false;
+			}
+
+			MetaPanel.enabled = false;
 		} else {
-			MenuPanel.enabled = true;
+			if (UiController.ShowingSimpleSettings) {
+				UiController.SimplePanel.enabled = true;
+			} else {
+				UiController.AdvancedPanel.enabled = true;
+			}
+
+			MetaPanel.enabled = true;
 		}
 		
 		//MenuObject.gameObject.SetActive(_currentValue > 0.01f);

@@ -59,7 +59,7 @@ public class ModeChoreography : MonoBehaviour
 
 		foreach (var m in Modes) {
 			m.TouchSphere.LerpToScale(0f, 0f, true);
-			m.Panel.LerpToScale(0f, 0f, true);
+			//m.Panel.LerpToScale(0f, 0f, true);
 		}
 
 		ResetObjects();

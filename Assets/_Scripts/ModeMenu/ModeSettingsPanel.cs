@@ -34,7 +34,8 @@ public class ModeSettingsPanel : MonoBehaviour
 	
 	public void LerpToScale(float targetScalePercentage, float duration, bool disableAtEnd = false)
 	{
-		
+		//Debug.Log(gameObject.name + " lerping to " + targetScalePercentage + ", enabled is " + gameObject.activeSelf + ", disableAtEnd is " + disableAtEnd);
+		if (!gameObject.activeSelf && targetScalePercentage > 0f) gameObject.SetActive(true);
 		StartCoroutine(LerpToScaleRoutine(targetScalePercentage, duration, disableAtEnd));
 	}
 

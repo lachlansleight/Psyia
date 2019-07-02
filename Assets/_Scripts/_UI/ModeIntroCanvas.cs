@@ -18,7 +18,7 @@ public class ModeIntroCanvas : MonoBehaviour
 	public void SetTexts(string songTitle, string artistName, string hint)
 	{
 		SongTitleText.text = songTitle;
-		ArtistNameText.text = artistName;
+		ArtistNameText.text = "by " + artistName;
 		TipText.text = hint;
 	}
 	
