@@ -25,6 +25,8 @@ SOFTWARE.
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR;
+using VRTools;
 
 namespace Psyia {
 
@@ -74,6 +76,8 @@ namespace Psyia {
 			}
 		}
 
+		public bool DoEmit = true;
+
 		[SerializeField]
 		private int _StartEmitCount;
 		public int StartEmitCount { 
@@ -104,9 +108,9 @@ namespace Psyia {
 		private float TimeSinceLastEmit = 0f;
 
 		private Matrix4x4 LastTransform;
+		private Matrix4x4 CurrentTransform;
 		private Vector3 LastVelocity = Vector3.zero;
-		private Vector3 Velocity = Vector3.zero;
-		private Vector3 PositionLastFrame = Vector3.zero;
+		private Vector3 CurrentVelocity = Vector3.zero;
 
 		Matrix4x4 GetCurrentMatrix() {
 			return Matrix4x4.TRS(transform.position, transform.rotation, transform.localScale);
@@ -124,7 +128,7 @@ namespace Psyia {
 			DistanceSinceLastEmit = 0f;
 			TimeSinceLastEmit = 0f;
 
-			LastVelocity = Velocity = Vector3.zero;
+			LastVelocity = CurrentVelocity = Vector3.zero;
 			LastTransform = GetCurrentMatrix();
 		}
 
@@ -157,15 +161,31 @@ namespace Psyia {
 
 		void Start() {
 			LastTransform = GetCurrentMatrix();
-			LastVelocity = Velocity = Vector3.zero;
-			PositionLastFrame = transform.position;
+			LastVelocity = CurrentVelocity = Vector3.zero;
 			if(Mode == PsyiaEmitterMode.Start) {
 				Emit(StartEmitCount);
 			}
 		}
 
-		void Update() {
+		public void SetEmission(bool value)
+		{
+			var oldValue = DoEmit;
+			DoEmit = value;
+			
+			if (oldValue || !DoEmit) return;
 
+			CurrentTransform = GetCurrentMatrix();
+			CurrentVelocity = Vector3.zero;
+			TimeSinceLastEmit = 0;
+			DistanceSinceLastEmit = 0;
+			LastVelocity = CurrentVelocity;
+			LastTransform = CurrentTransform;
+		}
+		
+		void Update() {
+			CurrentVelocity = (transform.position - LastTransform.GetPosition()) / Time.deltaTime;
+			CurrentTransform = GetCurrentMatrix();
+			
 			int ParticlesToEmit = GetParticleEmitCount();
 			if(ParticlesToEmit > 0) {
 				Emit(ParticlesToEmit);
@@ -173,16 +193,18 @@ namespace Psyia {
 				TimeSinceLastEmit = 0f;
 				DistanceSinceLastEmit = 0f;
 			} else {
-				DistanceSinceLastEmit += (transform.position - (Vector3)LastTransform.GetColumn(3)).magnitude;
+				DistanceSinceLastEmit += (transform.position - LastTransform.GetPosition()).magnitude;
 				TimeSinceLastEmit += Time.deltaTime;
 			}
+			
+			//VRDebug.DrawLine(LastTransform.GetPosition(), CurrentTransform.GetPosition(), Color.blue, 20f, true, 0.003f);
 
-			LastVelocity = Velocity;
-			Velocity = (transform.position - PositionLastFrame) / Time.deltaTime;
-			PositionLastFrame = transform.position;
+			
 		}
 
-		int GetParticleEmitCount() {
+		int GetParticleEmitCount()
+		{
+			if (!DoEmit) return 0;
 			if(Mode == PsyiaEmitterMode.Time) {
 				return Mathf.RoundToInt(TimeSinceLastEmit * EmitOverTime * EmissionMultiplier);
 			} else if(Mode == PsyiaEmitterMode.Distance) {
@@ -194,17 +216,20 @@ namespace Psyia {
 
 		public void Emit(int Count)
 		{
-			if (TimeSinceLastEmit > Time.deltaTime * 3f) UpdateTransform();
-			
-			MainEmitter.Emit(GetCurrentMatrix(), LastTransform, LastVelocity, Velocity, Count, Settings);
+//			VRDebug.DrawLine(CurrentTransform.GetPosition(), CurrentTransform.GetPosition() + CurrentVelocity * Time.deltaTime, Color.green, 20f, true, 0.002f);
+//			VRDebug.DrawLine(LastTransform.GetPosition(), LastTransform.GetPosition() + LastVelocity * Time.deltaTime * 1.5f, Color.red, 20f, true, 0.002f);
+//			VRDebug.DrawLine(LastTransform.GetPosition(), CurrentTransform.GetPosition(), Color.blue, 20f, true, 0.003f);
+			MainEmitter.Emit(CurrentTransform, LastTransform, LastVelocity, CurrentVelocity, Count, Settings);
 			TimeSinceLastEmit = 0;
 			DistanceSinceLastEmit = 0;
-			UpdateTransform();
+			LastVelocity = CurrentVelocity;
+			LastTransform = CurrentTransform;
 		}
 
-		public void UpdateTransform()
+		public void ResetVelocity()
 		{
-			LastTransform = GetCurrentMatrix();
+			LastTransform = CurrentTransform;
+			LastVelocity = CurrentVelocity = Vector3.zero;
 		}
 	}
 

@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class ControllerSettings : MonoBehaviour
 {
+	public PsyiaUiSwitch UiSwitch;
 	public PsyiaSettingsApplicator SettingsApplicator;
 	
 	[Header("Controllers")]
@@ -70,6 +71,17 @@ public class ControllerSettings : MonoBehaviour
 		#endif
 	}
 
+	public void Update()
+	{
+		if (!UiSwitch.ShowingControllerSettings) return;
+		
+		LeftSymmetryReporter.SetActive(LeftSymmetry.enabled);
+		RightSymmetryReporter.SetActive(RightSymmetry.enabled);
+		
+		foreach (var go in LeftPanels) go.SetActive(!LeftSymmetry.enabled);
+		foreach (var go in RightPanels) go.SetActive(!RightSymmetry.enabled);
+	}
+
 	private void EnforceLeftAttenuationSliders()
 	{
 		var mode = (int) LeftForce.AttenuationMode;
@@ -95,12 +107,6 @@ public class ControllerSettings : MonoBehaviour
 	public void SetSymmetry(int value)
 	{
 		SettingsApplicator.SetSymmetry(value);
-		
-		LeftSymmetryReporter.SetActive(LeftSymmetry.enabled);
-		RightSymmetryReporter.SetActive(RightSymmetry.enabled);
-		
-		foreach (var go in LeftPanels) go.SetActive(!LeftSymmetry.enabled);
-		foreach (var go in RightPanels) go.SetActive(!RightSymmetry.enabled);
 	}
 
 	public void SetControllerModels(bool value)
@@ -192,11 +198,11 @@ public class ControllerSettings : MonoBehaviour
 
 	public void SetRightForceAttenuationSofteningFactor(float value)
 	{
-		SettingsApplicator.SetRightForceAttenuationDistance(value);
+		SettingsApplicator.SetRightForceAttenuationSofteningFactor(value);
 	}
 	public void SetRightForceAttenuationSofteningFactorVis(int value)
 	{
-		SettingsApplicator.SetRightForceAttenuationDistanceVis(value);
+		SettingsApplicator.SetRightForceAttenuationSofteningFactorVis(value);
 	}
 	
 	public void SetLeftForceAttenuationWavelength(float value)

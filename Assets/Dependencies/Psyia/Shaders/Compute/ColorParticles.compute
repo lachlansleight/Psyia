@@ -88,6 +88,7 @@ void ColorParticles(uint3 tid : SV_GroupThreadID, uint3 gid : SV_GroupID)
 
 	//if dead, set alpha to zero and close thread
 	if (ThisParticle.IsAlive == 0) {
+	    //ThisParticle.color = float4(1,0,0,1);
 		ThisParticle.Color.a = 0;
 		ParticleBuffer[id] = ThisParticle;
 		return;

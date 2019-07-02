@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &-472061478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2145642452}
+  - component: {fileID: 1600217572}
+  - component: {fileID: -264431078}
+  m_Layer: 0
+  m_Name: AutoQuality
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2145642452
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: -472061478}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1600217572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: -472061478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743a66e92f8024342abac4b02e92c576, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runOnStart: 1
+  qualityBands:
+  - 2
+  - 4
+  - 6
+  - 8
+  - 10
+  - 12
+  useAverage: 1
+  startDelay: 0.1
+  useCache: 1
+  relativeFileCachePath: /AQHAT/Data/cache/
+  relativeFileCache: qualitycache.txt
+--- !u!114 &-264431078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: -472061478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 094064f6e7d4d414388af33fc073a707, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runOnStart: 1
+  hardwareCaps: 1
+  memoryCap: 16384
+  graphicsMemoryCap: 4096
+  processorCoreCap: 4
+  processorFrequencyCap: -1
+  multiThreadWeight: 1.25
+  graphicsMemoryWeight: 1
+  graphicsShaderWeight: 1
+  memoryWeight: 1
+  processorCoreWeight: 1
+  processorFrequencyWeight: 1
+  platformWeights: 0
+  handheldWeight: 1
+  consoleWeight: 2
+  desktopWeight: 2
+  unknownWeight: 2
+  osWeights: 1
+  windowsPhone8: 0.7
+  windowsStoreARM: 0.7
+  windowsStoreX86: 1
+  windowsStoreX64: 1
+  IOS: 1.1
+  tvOS: 1.1
+  android: 1
+  xbox360: 1
+  xboxOne: 1
+  ps3: 1
+  ps4: 1
+  psVita: 1
+  wiiU: 1
+  tizen: 1
+  samsungTV: 1
+  webGL: 1
+  windows: 1
+  osx: 1
+  linux: 1
+  IosTvosProcessorFile: {fileID: 4900000, guid: 3ddc63f3f9d9970469cab2bbf96b1007,
+    type: 3}
+  useExperimental: 1
+  gfxScanFile: {fileID: 4900000, guid: 4ebb7d9fefe27314cb8cda990baca362, type: 3}
+  gfxScanWeight: 1
+  processorScanFile: {fileID: 4900000, guid: 86fcb4030f324bf49b11a28732abb163, type: 3}
+  processorScanWeight: 1
+  useExact: 0
+  gpuNameFieldID: Videocard
+  gpuRatingFieldID: 3D Rating
+  gfxScanFileCsv: {fileID: 4900000, guid: ebbc95f3a339ee94eae7836d085eeb8e, type: 3}
+  gfxScanWeightCsv: 0.001
+  cpuNameFieldID: CPU name
+  cpuRatingFieldID: Rating
+  processorScanFileCsv: {fileID: 4900000, guid: 175152fe685132843a17278d73b360a2,
+    type: 3}
+  processorScanWeightCsv: 0.001
+  totalScore: 0
+  averageScore: 0
+  debugOverlay: 1
+  useCache: 1
+  relativeFileCachePath: /AQHAT/Data/cache/
+  relativeFileCache: ratingcache.txt
+  mockGPU: 
+  mockProcessor: 
+  mockIosTvos: 
+  mockMemory: -1
+  mockGpuMemory: -1
+  mockProcessorCores: -1
+  mockProcessorFrequency: -1
+  mockGpuShader: -1

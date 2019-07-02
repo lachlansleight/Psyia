@@ -125,8 +125,8 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 		if ((int) CurrentSettings.Visual.ParticleForm == newValue && !skipChangeCheck) return;
 		
 		CurrentSettings.Visual.ParticleForm = (PsyiaVisualSettings.Form)newValue;
-		ParticleQueue.transform.GetChild(2).gameObject.SetActive((int) CurrentSettings.Visual.ParticleForm != 2);
 		ParticleQueue.transform.GetChild(3).gameObject.SetActive((int) CurrentSettings.Visual.ParticleForm != 2);
+		ParticleQueue.transform.GetChild(4).gameObject.SetActive((int) CurrentSettings.Visual.ParticleForm != 2);
 		TargetRenderer.RenderMaterial = ParticleMaterials[(int) CurrentSettings.Visual.ParticleForm];
 	}
 
@@ -665,56 +665,63 @@ public class PsyiaSettingsApplicator : MonoBehaviour
 
 	public void ApplyDefaultSettings()
 	{
-		SetMaxParticleCount(DefaultSettings.System.MaxParticleCount, false);
-		SetAntialiasing((int)DefaultSettings.System.Antialiasing, true);
-		SetBloom(DefaultSettings.System.Bloom, true);
+		var errorString = "";
+		try {SetMaxParticleCount(DefaultSettings.System.MaxParticleCount, false);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetAntialiasing((int)DefaultSettings.System.Antialiasing, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetBloom(DefaultSettings.System.Bloom, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
 
-		SetParticleForm((int)DefaultSettings.Visual.ParticleForm, true);
-		SetParticleColor((int) DefaultSettings.Visual.ParticleColor, true);
-		SetParticleSize(DefaultSettings.Visual.ParticleSize, true);
-		SetLineLength(DefaultSettings.Visual.LineLength, true);
-		SetParticleShape((int) DefaultSettings.Visual.ParticleShape, true);
+		try {SetParticleForm((int)DefaultSettings.Visual.ParticleForm, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetParticleColor((int) DefaultSettings.Visual.ParticleColor, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetParticleColorAmount(DefaultSettings.Visual.ParticleColorAmount, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetParticleSize(DefaultSettings.Visual.ParticleSize, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetLineLength(DefaultSettings.Visual.LineLength, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetParticleShape((int) DefaultSettings.Visual.ParticleShape, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
 
-		SetParticleMass(DefaultSettings.Physics.ParticleMass, true);
-		SetParticleDamping(DefaultSettings.Physics.ParticleDamping, true);
-		SetFloorCollision(DefaultSettings.Physics.FloorCollision, true);
+		try {SetParticleMass(DefaultSettings.Physics.ParticleMass, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetParticleDamping(DefaultSettings.Physics.ParticleDamping, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetFloorCollision(DefaultSettings.Physics.FloorCollision, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
 
-		SetVisualAudioreactivity(DefaultSettings.Audio.VisualsAudioreactivity, true);
-		SetPhysicsAudioreactivity(DefaultSettings.Audio.PhysicsAudioreactivity, true);
-		SetVolume(DefaultSettings.Audio.Volume, true);
-		SetLoop(DefaultSettings.Audio.Loop, true);
-		SetSlowWithTime(DefaultSettings.Audio.SlowWithTime, true);
+		try {SetVisualAudioreactivity(DefaultSettings.Audio.VisualsAudioreactivity, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetPhysicsAudioreactivity(DefaultSettings.Audio.PhysicsAudioreactivity, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetVolume(DefaultSettings.Audio.Volume, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetLoop(DefaultSettings.Audio.Loop, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetSlowWithTime(DefaultSettings.Audio.SlowWithTime, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
 
-		SetSymmetry((int)DefaultSettings.Controller.ControllerSymmetry, true);
-		SetControllerModels(DefaultSettings.Controller.ControllerModels, true);
-		SetControllerDistance(DefaultSettings.Controller.ControllerDistance, true);
-		SetControllerHaptics(DefaultSettings.Controller.ControllerHaptics, true);
+		try {SetSymmetry((int)DefaultSettings.Controller.ControllerSymmetry, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetControllerModels(DefaultSettings.Controller.ControllerModels, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetControllerDistance(DefaultSettings.Controller.ControllerDistance, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetControllerHaptics(DefaultSettings.Controller.ControllerHaptics, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
 
-		SetLeftForceShape((int) DefaultSettings.ForceLeft.ForceShape, true);
-		SetLeftForceAttenuationMode((int) DefaultSettings.ForceLeft.ForceAttenuation, true);
-		SetLeftForceStrength(DefaultSettings.ForceLeft.ForceStrength, true);
-		SetLeftForceAttenuationDistance(DefaultSettings.ForceLeft.AttenuationDistance, true);
-		SetLeftForceAttenuationSofteningFactor(DefaultSettings.ForceLeft.SofteningFactor, true);
-		SetLeftForceAttenuationWavelength(DefaultSettings.ForceLeft.Wavelength, true);
+		try {SetLeftForceShape((int) DefaultSettings.ForceLeft.ForceShape, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetLeftForceAttenuationMode((int) DefaultSettings.ForceLeft.ForceAttenuation, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetLeftForceStrength(DefaultSettings.ForceLeft.ForceStrength, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetLeftForceAttenuationDistance(DefaultSettings.ForceLeft.AttenuationDistance, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetLeftForceAttenuationSofteningFactor(DefaultSettings.ForceLeft.SofteningFactor, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetLeftForceAttenuationWavelength(DefaultSettings.ForceLeft.Wavelength, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
 		
-		SetRightForceShape((int) DefaultSettings.ForceRight.ForceShape, true);
-		SetRightForceAttenuationMode((int) DefaultSettings.ForceRight.ForceAttenuation, true);
-		SetRightForceStrength(DefaultSettings.ForceRight.ForceStrength, true);
-		SetRightForceAttenuationDistance(DefaultSettings.ForceRight.AttenuationDistance, true);
-		SetRightForceAttenuationSofteningFactor(DefaultSettings.ForceRight.SofteningFactor, true);
-		SetRightForceAttenuationWavelength(DefaultSettings.ForceRight.Wavelength, true);
+		try {SetRightForceShape((int) DefaultSettings.ForceRight.ForceShape, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetRightForceAttenuationMode((int) DefaultSettings.ForceRight.ForceAttenuation, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetRightForceStrength(DefaultSettings.ForceRight.ForceStrength, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetRightForceAttenuationDistance(DefaultSettings.ForceRight.AttenuationDistance, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetRightForceAttenuationSofteningFactor(DefaultSettings.ForceRight.SofteningFactor, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetRightForceAttenuationWavelength(DefaultSettings.ForceRight.Wavelength, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
 
-		SetLeftEmitterCount(DefaultSettings.EmitterLeft.EmitterCount, true);
-		SetLeftEmitterRadius(DefaultSettings.EmitterLeft.EmitterRadius, true);
-		SetLeftEmitterVelocity(DefaultSettings.EmitterLeft.EmitterVelocity, true);
-		SetLeftEmitterVelocitySpread(DefaultSettings.EmitterLeft.VelocitySpread, true);
-		SetLeftEmitterInheritVelocity(DefaultSettings.EmitterLeft.InheritVelocity, true);
+		try {SetLeftEmitterCount(DefaultSettings.EmitterLeft.EmitterCount, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetLeftEmitterRadius(DefaultSettings.EmitterLeft.EmitterRadius, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetLeftEmitterVelocity(DefaultSettings.EmitterLeft.EmitterVelocity, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetLeftEmitterVelocitySpread(DefaultSettings.EmitterLeft.VelocitySpread, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetLeftEmitterInheritVelocity(DefaultSettings.EmitterLeft.InheritVelocity, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
 		
-		SetRightEmitterCount(DefaultSettings.EmitterRight.EmitterCount, true);
-		SetRightEmitterRadius(DefaultSettings.EmitterRight.EmitterRadius, true);
-		SetRightEmitterVelocity(DefaultSettings.EmitterRight.EmitterVelocity, true);
-		SetRightEmitterVelocitySpread(DefaultSettings.EmitterRight.VelocitySpread, true);
-		SetRightEmitterInheritVelocity(DefaultSettings.EmitterRight.InheritVelocity, true);
+		try {SetRightEmitterCount(DefaultSettings.EmitterRight.EmitterCount, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetRightEmitterRadius(DefaultSettings.EmitterRight.EmitterRadius, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetRightEmitterVelocity(DefaultSettings.EmitterRight.EmitterVelocity, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetRightEmitterVelocitySpread(DefaultSettings.EmitterRight.VelocitySpread, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+		try {SetRightEmitterInheritVelocity(DefaultSettings.EmitterRight.InheritVelocity, true);} catch(Exception e) { errorString += $"\n{e.Message}"; }
+
+		if (!string.IsNullOrEmpty(errorString)) {
+			errorString = "ApplyDefaultSettings encountered the following errors:" + errorString;
+			Debug.LogError(errorString);
+		}
 	}
 
 	public void SetNewDefault(PsyiaSettings newSettings)

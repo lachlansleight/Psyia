@@ -59,7 +59,7 @@ public class ModeChoreography : MonoBehaviour
 
 		foreach (var m in Modes) {
 			m.TouchSphere.LerpToScale(0f, 0f, true);
-			m.Panel.LerpToScale(0f, 0f, true);
+			//m.Panel.LerpToScale(0f, 0f, true);
 		}
 
 		ResetObjects();
@@ -199,7 +199,7 @@ public class ModeChoreography : MonoBehaviour
 		PsyiaRenderer.RenderMaterial.color = new Color(0f, 0f, 0f, 0f);
 		PsyiaRenderer.enabled = true;
 		PsyiaDispatcher.RunOnUpdate = true;
-		targetMode.Emitter.Emit(targetMode.Emitter.StartEmitCount);
+		targetMode.Emitter.Emit(SettingsApplicator.CurrentSettings.System.MaxParticleCount * 1024);
 		
 		Music.SetClip(targetMode.Song);
 
@@ -326,7 +326,7 @@ public class ModeChoreography : MonoBehaviour
 		PsyiaRenderer.RenderMaterial.color = new Color(0f, 0f, 0f, 0f);
 		PsyiaRenderer.enabled = true;
 		PsyiaDispatcher.RunOnUpdate = true;
-		Meditation.Emitter.Emit(Meditation.Emitter.StartEmitCount);
+		Meditation.Emitter.Emit(SettingsApplicator.CurrentSettings.System.MaxParticleCount * 1024);
 
 		Meditation.BeginMeditation();
 		

@@ -58,6 +58,7 @@ namespace XRP
 
 		public void Trigger()
 		{
+			
 			OnClickEvent.Invoke();
 			OnClick?.Invoke();
 
