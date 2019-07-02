@@ -3778,6 +3778,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a0b685d39ab404249a2f74af7a97e017, type: 2}
+    - target: {fileID: 2300000, guid: 1ebf440e682610d45b93c2f3a2549b72, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ebf440e682610d45b93c2f3a2549b72, type: 3}
 --- !u!1 &351833562
@@ -7559,6 +7563,7 @@ MonoBehaviour:
   LerpSpeed: 0.2
   MenuObject: {fileID: 1530795594}
   UiController: {fileID: 20849338}
+  MetaPanel: {fileID: 1161239931}
   MenuHeight: {fileID: 557759369}
   HMDObject: {fileID: 763669929}
   HeightOffset: -0.39
@@ -8294,7 +8299,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750790968}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -8509,7 +8514,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &771095896
 Transform:
   m_ObjectHideFlags: 0
@@ -8519,7 +8524,7 @@ Transform:
   m_GameObject: {fileID: 771095895}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.019999744, y: -0.311, z: -0.0039999504}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1119762138}
   - {fileID: 1771497749}
@@ -8731,7 +8736,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 787770299}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -11446,7 +11451,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1053749109
 Transform:
   m_ObjectHideFlags: 0
@@ -11456,7 +11461,7 @@ Transform:
   m_GameObject: {fileID: 1053749108}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.00000058114523}
   m_LocalPosition: {x: 0, y: -0.361, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 431939966}
   - {fileID: 2073536822}
@@ -11549,7 +11554,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1071087032}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -12830,6 +12835,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 9111359505113989908}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1161239931 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7790656893743431862, guid: 268896555873b9f4b9d99e28acd02b6c,
+    type: 3}
+  m_PrefabInstance: {fileID: 9111359505113989908}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991cb939fe2641da8a1026dcfefd5597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1168482602
 GameObject:
   m_ObjectHideFlags: 0
@@ -15646,7 +15663,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1430705410
 Transform:
   m_ObjectHideFlags: 0
@@ -15656,7 +15673,7 @@ Transform:
   m_GameObject: {fileID: 1430705409}
   m_LocalRotation: {x: -3.2927225e-10, y: -0, z: 3.2927225e-10, w: 1}
   m_LocalPosition: {x: 0, y: -0.311, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 652260556}
   - {fileID: 1711306327}
@@ -15725,7 +15742,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1444736822
 Transform:
   m_ObjectHideFlags: 0
@@ -15735,7 +15752,7 @@ Transform:
   m_GameObject: {fileID: 1444736821}
   m_LocalRotation: {x: -0, y: -0.00000035762784, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.311, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 761953959}
   - {fileID: 1267161367}
@@ -20437,7 +20454,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855626589}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -20504,7 +20521,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1867184894
 Transform:
   m_ObjectHideFlags: 0
@@ -20514,7 +20531,7 @@ Transform:
   m_GameObject: {fileID: 1867184893}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.311, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1943767500}
   - {fileID: 1745178518}
@@ -22048,7 +22065,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2057338043}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -23081,6 +23098,11 @@ PrefabInstance:
       propertyPath: MixedSettingsPanels.Array.data[4]
       value: 
       objectReference: {fileID: 739050267}
+    - target: {fileID: 2867869147006711122, guid: 268896555873b9f4b9d99e28acd02b6c,
+        type: 3}
+      propertyPath: ShowingSimpleSettings
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4858722043851353686, guid: 268896555873b9f4b9d99e28acd02b6c,
         type: 3}
       propertyPath: AudioData
@@ -23476,11 +23498,6 @@ PrefabInstance:
       propertyPath: AudioData
       value: 
       objectReference: {fileID: 394155703}
-    - target: {fileID: 7404798398023705071, guid: 268896555873b9f4b9d99e28acd02b6c,
-        type: 3}
-      propertyPath: PressThresholdDistance
-      value: 0.015
-      objectReference: {fileID: 0}
     - target: {fileID: 7225548829290940580, guid: 268896555873b9f4b9d99e28acd02b6c,
         type: 3}
       propertyPath: Physics.Array.size
@@ -23675,6 +23692,11 @@ PrefabInstance:
         type: 3}
       propertyPath: OnValueChangedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetParticleSize
+      objectReference: {fileID: 0}
+    - target: {fileID: 7404798398023705071, guid: 268896555873b9f4b9d99e28acd02b6c,
+        type: 3}
+      propertyPath: PressThresholdDistance
+      value: 0.015
       objectReference: {fileID: 0}
     - target: {fileID: 8731962077449927172, guid: 268896555873b9f4b9d99e28acd02b6c,
         type: 3}
@@ -30689,7 +30711,7 @@ PrefabInstance:
     - target: {fileID: 8746614068794381958, guid: 268896555873b9f4b9d99e28acd02b6c,
         type: 3}
       propertyPath: OnClickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8746614068794381958, guid: 268896555873b9f4b9d99e28acd02b6c,
         type: 3}
@@ -30700,11 +30722,11 @@ PrefabInstance:
         type: 3}
       propertyPath: OnClickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 20849338}
+      objectReference: {fileID: 2014381152}
     - target: {fileID: 8746614068794381958, guid: 268896555873b9f4b9d99e28acd02b6c,
         type: 3}
       propertyPath: OnClickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetMixedSettings
+      value: ReturnToMenu
       objectReference: {fileID: 0}
     - target: {fileID: 8746614068794381958, guid: 268896555873b9f4b9d99e28acd02b6c,
         type: 3}
@@ -30835,6 +30857,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ChaosToMass.m_Curve.Array.data[0].outWeight
       value: 0.08827977
+      objectReference: {fileID: 0}
+    - target: {fileID: 8718859807235265193, guid: 268896555873b9f4b9d99e28acd02b6c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8906371055997910434, guid: 268896555873b9f4b9d99e28acd02b6c, type: 3}
